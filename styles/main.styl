@@ -1,0 +1,489 @@
+// Import CSS from "node_modules" and "bower_components"
+// thanks to Stylus' "import css" and "paths" options
+//@import 'bespoke-meta-markdown/node_modules/highlight.js/styles/monokai_sublime.css'
+@import 'highlight.js/styles/monokai_sublime.css'
+
+///
+/// Variables
+$page-header-height = 12vh
+
+
+///
+/// General tags
+html, body
+  height 100%
+  overflow hidden
+
+body
+
+.bespoke-slide
+  img.full-width
+    width 100%
+  img.large-width
+    width 600px
+  img.medium-width
+    width 400px
+  img.small-width
+    width 200px
+  img.full-height
+    height 100%
+  img.large-height
+    height 400px
+  img.medium-height
+    height 300px
+  img.small-height
+    height 200px
+
+del
+  color gray
+
+h1, h2, h3, h4, h5, h6
+  text-align center
+
+
+/// Header and content layout
+$meny-offset-top = 10px
+
+body
+  perspective 800px
+  perspective-origin 50% 0
+  &.menu-open
+    &> #page-header
+      transform translate3d(0,0,0)
+      transition transform 200ms ease-out
+
+    &> #presentation-container
+      transform-origin 50% 0%
+      transform translateY($page-header-height) rotateX(-15deg)
+      transform-style preserve-3d
+
+      &:before
+        background-image linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.65) 100%)
+
+    .bespoke-progress-parent
+      transform translateY(0)
+
+#page-header
+  position fixed
+  width 100%
+  height $page-header-height
+  padding 0
+  transition transform 400ms ease-out
+  -webkit-transform-origin 50% 0% 0px
+  transform rotateX(30deg) translateY(-100%) translateY($meny-offset-top)
+  z-index 1
+  overflow hidden
+  background-color rgb(255, 213, 213)
+
+
+#page-title
+  display inline-block
+  height 10vh
+  margin 0
+  font-size 7vh
+  vertical-align top
+
+  &> a
+    &:hover
+      text-decoration none
+
+    position relative
+    color rgba(0,0,0,0.2)
+
+    &:before
+      color #b66c7e
+      content attr(data-hover)
+      position absolute
+      transition transform 0.3s, opacity 0.3s
+
+    &:hover:before
+      opacity 0
+      transform scale(0.98)
+
+.bespoke-progress-parent
+  transform translateY($meny-offset-top - 1)
+  transition transform 200ms ease-out
+
+
+#page-author
+  display inline-block
+  float right
+  margin 8px
+
+#page-author-name
+  display none
+
+.page-author-picture
+  width 60px
+  height 60px
+  border-radius 30px
+
+#presentation-container
+  position relative
+  height 100%
+  transition all 400ms ease-out
+
+  &:before
+    content ''
+    position absolute
+    display: block
+    left 0
+    top 0
+    bottom 0
+    right 0
+    z-index 1000
+    pointer-events none
+    -webkit-transition all 400ms ease-out
+    transition transform 400ms ease-out
+    background-image none
+    will-change background-image
+
+// background of the body
+@media screen and (min-device-width: 640px)
+  body
+    background-image linear-gradient(328deg, #fff, #e8e8e8, #fff, #fcfcfc, #e1e1e1, #f4f4f4)
+    background-size 800% 800%
+
+
+// bringing this from the theme, because with the use of markdown,
+// bespoke-scale can't calculate the sizes of slides properly
+.bespoke-slide
+  width 800px
+  height 600px
+
+// only render the necessary slides: current, immediately after, immed. before (to improve performance)
+.bespoke-slide.bespoke-inactive.bespoke-after:not(.bespoke-after-1):not(.bespoke-after-2)
+  display none
+.bespoke-slide.bespoke-inactive.bespoke-before:not(.bespoke-before-1):not(.bespoke-before-2)
+  display none
+
+.bullet.bullet.bullet-no-anim.bespoke-bullet-inactive
+  transform none
+  transition none
+
+
+/// Presentation
+$book-gutter-width = 30px
+$book-height = 250px
+
+.book-cover-container
+  position relative
+  perspective 400px
+  transform-style preserve-3d
+  transform rotateY(0)
+  transform-origin center center
+  transition transform 300ms ease-out
+
+  &:hover
+    transform rotateY(40deg)
+
+
+.book-cover
+  height $book-height
+
+.book-left
+  position absolute
+  top 0
+  left - $book-gutter-width
+  width $book-gutter-width
+  height $book-height
+  transform rotateY(-90deg)
+  background-color black
+  transform-origin right center 0
+  &.book-light
+    background-color beige
+
+
+.layered-paragraph
+  background-color rgba(215, 215, 250, 0.5);
+
+.pure-red
+  color #ff0000
+.pure-green
+  color #00ff00
+.pure-blue
+  color #0000ff
+
+.color-portrait
+  display inline-block
+  width 20px
+  height 20px
+  border 1px solid black
+
+  &.ffd5d5
+    background-color #ffd5d5
+
+
+$portrait-size = 100px
+.portrait,
+.portrait img
+  display inline-block
+  width $portrait-size
+  height $portrait-size
+  border-radius ($portrait-size / 2)
+  figcaption
+    background-color transparent
+
+.portrait.right
+  float right
+
+img[alt$="right"]
+  float right
+img[alt$="left"]
+  float left
+
+
+/// Tutorial
+$tutorial-right = 20px
+.tutorial
+  position absolute
+  right $tutorial-right
+  bottom 80px
+  padding .5em .75em
+  border-radius 20px
+  background-color rgba(255, 255, 255, .7)
+  font-family 'Cookie', cursive
+  font-size 2em
+  transition opacity 300ms ease-out
+  opacity 0
+  &.tutorial-on
+    opacity 1
+    animation bounce 1s ease-out 0s infinite alternate
+
+@keyframes bounce
+  from
+    right: $tutorial-right;
+
+  to
+    right: $tutorial-right * 2;
+
+
+
+
+.full-height-right
+  float right
+  max-height 80%
+
+
+// TODO: put this on the theme
+table
+  max-width 760px
+
+td:not(:last-child), th:not(:last-child)
+  border-right 1px solid rgba(0,0,0,.2)
+
+td
+  padding 6px
+
+th
+  padding 10px
+
+tr
+  border 1px solid rgba(0,0,0,.4)
+
+tr:nth-of-type(2n) > td
+  background-color rgba(255,255,255,.4)
+
+thead > tr
+  background-color #555
+  color white
+
+
+// utility slide classes
+.right-aligned
+  float right
+.left-aligned
+  float left
+
+for num in (2..5)
+  .multi-column-list-{num}
+    column-count num
+
+.side-by-side-children
+  display flex
+  flex-direction row
+  align-items flex-start
+
+
+for num in (2..5)
+  .layout-split-{num}
+    flex-direction row
+    display flex
+    justify-content center
+    align-items stretch
+    height 100%
+    width 100%
+    & > section
+      width 100%  * (1/num)
+      flex-grow 1
+      text-align center
+
+.appear-right
+  position absolute
+  left inherit
+  bottom 100%
+  transition bottom 200ms ease-out
+  &.bespoke-bullet-active
+    bottom 0
+    left inherit
+    right 0
+
+.phong-vectors
+  .reveal-on-complete
+    opacity 0
+    transition opacity 100ms ease-out
+  &.complete
+    .reveal-on-complete
+      opacity 1
+
+
+// ------------------------------------------------------------
+// Slide backdrops
+
+// Each backdrop background fades in/out
+.bespoke-backdrop
+  opacity 0
+  will-change opacity
+  transition opacity 200ms ease-out 0ms
+  pointer-events none
+  &.bespoke-backdrop-active
+    opacity 1
+    transition-delay 800ms
+
+// backdrop + bespoke-overview: should be less visible (low opacity)
+.bespoke-overview
+  .bespoke-backdrop
+    transition-delay 0ms
+    opacity .1
+
+.bespoke-slide[data-bespoke-backdrop]
+  z-index 2
+
+// Common properties for background backdrops
+full-dimension-backdrop(repeat)
+  if repeat
+    background-size initial
+    background-repeat repeat
+  else
+    background-size cover
+    background-repeat no-repeat
+  width 100%
+  height 100%
+
+.paradigma-universos.bespoke-backdrop
+  background-image url(../images/paradigma-universos-legenda.png)
+  full-dimension-backdrop(false)
+
+.stars.bespoke-backdrop
+  background-image url(../images/stars-bg.png)
+  full-dimension-backdrop(true)
+.bespoke-slide[data-bespoke-backdrop="stars"]
+  color white
+
+.skybox.bespoke-backdrop-active
+  background-image url(../images/skybox.jpg)
+  full-dimension-backdrop(false)
+.billboarding.bespoke-backdrop-active
+  background-image url(../images/billboarded-trees.jpg)
+  full-dimension-backdrop(false)
+  background-position-y 100%
+.particles.bespoke-backdrop-active
+  background-image url(../images/sistema-particulas-infamous.jpg)
+  full-dimension-backdrop(false)
+.depth-of-field.bespoke-backdrop-active
+  background-image url(../images/depth-of-field-unreal.png)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="skybox"],
+.bespoke-slide[data-bespoke-backdrop="billboarding"],
+.bespoke-slide[data-bespoke-backdrop="particles"],
+.bespoke-slide[data-bespoke-backdrop="depth-of-field"]
+  background-image linear-gradient(to bottom, rgba(white, .5) 0%, rgba(white,0.15) 100%)
+  border-radius 5px
+  h1
+    color #0833BF
+
+.bespoke-slide[data-bespoke-backdrop="billboarding"]
+  h1
+    color #0EB90D
+    text-shadow 2px 2px rgba(0, 0, 0, 0.62)
+.bespoke-slide[data-bespoke-backdrop="particles"]
+  h1
+    color #BFBB08
+
+.raytraced-teapot.bespoke-backdrop-active
+  background-image url(../images/raytraced-teapot.jpg)
+  full-dimension-backdrop(false)
+
+.bespoke-slide[data-bespoke-backdrop="raytraced-teapot"]
+  color white
+
+.cpp-vs-java.bespoke-backdrop-active
+  background-image url(../images/cpp-vs-java.jpg)
+  full-dimension-backdrop(false)
+
+.bespoke-slide[data-bespoke-backdrop="cpp-vs-java"]
+  h1
+    color #37A956
+    text-shadow 1px 1px darken(#37A956, 75%)
+
+.ninokuni.bespoke-backdrop-active
+  background-image url(../images/ni-no-kuni.jpg)
+  full-dimension-backdrop(false)
+
+.bespoke-slide[data-bespoke-backdrop="ninokuni"],
+.bespoke-slide[data-bespoke-backdrop="wind-waker-raytraced"]
+  h1
+    text-shadow 1px 1px black
+    background-color rgba(white,.5)
+    padding .3em
+    border-radius 10px
+    transition opacity 200ms ease-out
+    &:hover
+      background-color rgba(white, 0)
+      opacity 0
+
+.wind-waker-raytraced.bespoke-backdrop-active
+  background-image url(../images/zelda-ww-raytracing.jpg)
+  full-dimension-backdrop(false)
+  background-position-y 100%
+
+.wind-waker-raytraced-2.bespoke-backdrop-active
+  background-image url(../images/zelda-ww-raytracing-2.jpg)
+  full-dimension-backdrop(false)
+
+
+
+
+.bespoke-slide[data-bespoke-backdrop="big-code"] {
+  pre {
+    overflow auto
+    width 100%
+    height 320px
+  }
+}
+
+
+.threed-hardware-generation-1.bespoke-backdrop-active
+  background-image url(../images/duke-nuken-3d.png)
+  full-dimension-backdrop(false)
+
+.threed-hardware-generation-2.bespoke-backdrop-active
+  background-image url(../images/resident-evil-2-1998.jpg)
+  full-dimension-backdrop(false)
+
+.threed-hardware-generation-3.bespoke-backdrop-active
+  background-image url(../images/max-payne-2001.jpg)
+  full-dimension-backdrop(false)
+
+.threed-hardware-generation-4.bespoke-backdrop-active
+  background-image url(../images/duke-nuken-3d.png)
+  full-dimension-backdrop(false)
+
+
+
+// Print styles
+@media print
+  #page-header
+    display none !important
+  .book-cover
+    height 150px !important
