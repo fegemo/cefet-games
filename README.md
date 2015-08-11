@@ -108,7 +108,7 @@
 ## Como ganhar meus pontos?
 
 - Prova e Listas (0 pontos)
-  - ![Oh my God!](../../images/omg.png)
+  - ![Oh my God!](images/omg.png)
 - Aulas Práticas (20 pontos)
 - Seminários (10 pontos)
 - Trabalhos Práticos (30 pontos)
