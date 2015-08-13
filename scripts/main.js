@@ -16,6 +16,7 @@ var bespoke = require('bespoke'),
     backdrop = require('bespoke-backdrop'),
     overview = require('bespoke-overview'),
     tutorial = require('./tutorial'),
+    easter = require('./easter'),
     sleek = require('./sleek-menu');
 
 // Bespoke.js
@@ -63,6 +64,7 @@ bespoke.from('article', [
   search(),
   overview(),
   tutorial(document.getElementsByClassName('tutorial')[0]),
+  easter(),
   function() {
     var deck = arguments[0],
       delayedScale = function() {

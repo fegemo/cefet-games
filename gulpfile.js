@@ -115,9 +115,16 @@ gulp.task('samples', function() {
     .pipe(connect.reload());
 });
 
-gulp.task('videos', ['clean:videos'], function() {
-  var destination = 'dist/videos';
-  return gulp.src('videos/**/*')
+gulp.task('video', function() {
+  var destination = 'dist/video';
+  return gulp.src('video/**/*')
+    .pipe(changed(destination))
+    .pipe(gulp.dest(destination));
+});
+
+gulp.task('audio', function() {
+  var destination = 'dist/audio';
+  return gulp.src('audio/**/*')
     .pipe(changed(destination))
     .pipe(gulp.dest(destination));
 });
@@ -153,10 +160,6 @@ gulp.task('clean:images', function(cb) {
   del('dist/images', cb);
 });
 
-gulp.task('clean:videos', function(cb) {
-  del('dist/videos', cb);
-});
-
 gulp.task('clean:attachments', function(cb) {
   del('dist/attachments', cb);
 });
@@ -173,7 +176,7 @@ function getFolders(cwd, dir) {
     });
 }
 
-gulp.task('build', ['js', 'js-classes', 'html', 'md', 'css', 'css-classes', 'images', 'videos', 'attachments', 'samples', 'favicon'], function() {
+gulp.task('build', ['js', 'js-classes', 'html', 'md', 'css', 'css-classes', 'images', 'audio', 'video', 'attachments', 'samples', 'favicon'], function() {
   var folders = getFolders('.', 'classes').concat(getFolders('.', 'assignments')),
       tasks = folders.map(function(folder) {
         var t = [];

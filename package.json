@@ -28,6 +28,7 @@
     "bespoke-state": "^1.0.0",
     "bespoke-theme-fancy": "^0.5.1",
     "bespoke-touch": "^1.0.0",
+    "cheet.js": "^0.3.3",
     "d3": "^3.5.6",
     "ismobilejs": "^0.3.8"
   },

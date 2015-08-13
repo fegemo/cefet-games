@@ -257,7 +257,29 @@ $tutorial-right = 20px
   to
     right: $tutorial-right * 2;
 
+/// Easter egg
+#easter-egg-panel
+  position absolute
+  right 1vw
+  bottom 4vh
+  color black
+  padding 5px
+  font-size 11px
+  background-color white
+  border-radius 5px
+  transition opacity 100ms ease-out
+  pointer-events none
+  opacity 0
+  &.active
+    opacity 0.5
 
+.easter-egg-key
+  transition all 100ms ease-out
+  opacity 0
+  transform translate3d(1em, 0, 0)
+  &.active
+    opacity 1
+    transform translate3d(0, 0, 0)
 
 
 .full-height-right
@@ -370,9 +392,11 @@ full-dimension-backdrop(repeat)
   width 100%
   height 100%
 
-.paradigma-universos.bespoke-backdrop
-  background-image url(../images/paradigma-universos-legenda.png)
+.zelda-wii-u.bespoke-backdrop
+  background-image url(../images/screenshot-zelda-wii-u.jpg)
   full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="zelda-wii-u"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
 
 .stars.bespoke-backdrop
   background-image url(../images/stars-bg.png)
