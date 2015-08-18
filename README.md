@@ -1,7 +1,13 @@
+<!--
+bespokeEvent: bullets.disable
+-->
+
 # Desenvolvimento de Jogos Digitais
+
 *Professor:* Flávio Coutinho
 
 <img class="page-author-picture" src="images/flavio-avatar.jpg">
+
 
 ---
 # Objetivos
@@ -99,7 +105,17 @@
 ---
 # Aulas
 
-- História, Característica e Jogadores [](classes/intro/) (13/08/2015)
+- Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
+  - Prática RPG Maker
+- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
+  - Prática Game Maker
+- Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
+
+<!--
+  - Prática 
+- Ferramentas de Desenvolvimento [](classes/tools/)(27/08/2015)
+  - Prática Geração de Conteúdo Procedural
+-->  
 
 ---
 # Atividades Avaliativas
