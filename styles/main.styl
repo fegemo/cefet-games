@@ -1,6 +1,5 @@
 // Import CSS from "node_modules" and "bower_components"
 // thanks to Stylus' "import css" and "paths" options
-//@import 'bespoke-meta-markdown/node_modules/highlight.js/styles/monokai_sublime.css'
 @import 'highlight.js/styles/monokai_sublime.css'
 
 ///
@@ -39,7 +38,8 @@ del
 
 h1, h2, h3, h4, h5, h6
   text-align center
-
+h1, h2
+  font-family 'Share Tech Mono', Verdana;
 
 /// theme: slide layouts
 $checkpoint-slide-main-colors = #4a488e #cc7a09 #ff1530 #20aa12 #949416 #ccbd0d
@@ -511,104 +511,15 @@ full-dimension-backdrop(repeat)
 .bespoke-slide[data-bespoke-backdrop="stars"]
   color white
 
-.skybox.bespoke-backdrop-active
-  background-image url(../images/skybox.jpg)
+.rpgmaker-sand.bespoke-backdrop
+  background-image url(../images/rpgmaker-sand-map.jpg)
   full-dimension-backdrop(false)
-.billboarding.bespoke-backdrop-active
-  background-image url(../images/billboarded-trees.jpg)
-  full-dimension-backdrop(false)
-  background-position-y 100%
-.particles.bespoke-backdrop-active
-  background-image url(../images/sistema-particulas-infamous.jpg)
-  full-dimension-backdrop(false)
-.depth-of-field.bespoke-backdrop-active
-  background-image url(../images/depth-of-field-unreal.png)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="skybox"],
-.bespoke-slide[data-bespoke-backdrop="billboarding"],
-.bespoke-slide[data-bespoke-backdrop="particles"],
-.bespoke-slide[data-bespoke-backdrop="depth-of-field"]
-  background-image linear-gradient(to bottom, rgba(white, .5) 0%, rgba(white,0.15) 100%)
-  border-radius 5px
-  h1
-    color #0833BF
-
-.bespoke-slide[data-bespoke-backdrop="billboarding"]
-  h1
-    color #0EB90D
-    text-shadow 2px 2px rgba(0, 0, 0, 0.62)
-.bespoke-slide[data-bespoke-backdrop="particles"]
-  h1
-    color #BFBB08
-
-.raytraced-teapot.bespoke-backdrop-active
-  background-image url(../images/raytraced-teapot.jpg)
-  full-dimension-backdrop(false)
-
-.bespoke-slide[data-bespoke-backdrop="raytraced-teapot"]
-  color white
-
-.cpp-vs-java.bespoke-backdrop-active
-  background-image url(../images/cpp-vs-java.jpg)
-  full-dimension-backdrop(false)
-
-.bespoke-slide[data-bespoke-backdrop="cpp-vs-java"]
-  h1
-    color #37A956
-    text-shadow 1px 1px darken(#37A956, 75%)
-
-.ninokuni.bespoke-backdrop-active
-  background-image url(../images/ni-no-kuni.jpg)
-  full-dimension-backdrop(false)
-
-.bespoke-slide[data-bespoke-backdrop="ninokuni"],
-.bespoke-slide[data-bespoke-backdrop="wind-waker-raytraced"]
-  h1
-    text-shadow 1px 1px black
-    background-color rgba(white,.5)
-    padding .3em
-    border-radius 10px
-    transition opacity 200ms ease-out
-    &:hover
-      background-color rgba(white, 0)
-      opacity 0
-
-.wind-waker-raytraced.bespoke-backdrop-active
-  background-image url(../images/zelda-ww-raytracing.jpg)
-  full-dimension-backdrop(false)
-  background-position-y 100%
-
-.wind-waker-raytraced-2.bespoke-backdrop-active
-  background-image url(../images/zelda-ww-raytracing-2.jpg)
-  full-dimension-backdrop(false)
-
-
-
-
-.bespoke-slide[data-bespoke-backdrop="big-code"] {
-  pre {
-    overflow auto
-    width 100%
-    height 320px
-  }
-}
-
-
-.threed-hardware-generation-1.bespoke-backdrop-active
-  background-image url(../images/duke-nuken-3d.png)
-  full-dimension-backdrop(false)
-
-.threed-hardware-generation-2.bespoke-backdrop-active
-  background-image url(../images/resident-evil-2-1998.jpg)
-  full-dimension-backdrop(false)
-
-.threed-hardware-generation-3.bespoke-backdrop-active
-  background-image url(../images/max-payne-2001.jpg)
-  full-dimension-backdrop(false)
-
-.threed-hardware-generation-4.bespoke-backdrop-active
-  background-image url(../images/duke-nuken-3d.png)
-  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="rpgmaker-sand"] h1
+  padding .5em 1em
+  border-radius .2em
+  box-sizing border-box
+  text-shadow 2px 2px white
+  background-color rgba(black, .4)
 
 
 

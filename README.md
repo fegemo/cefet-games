@@ -61,9 +61,9 @@ bespokeEvent: bullets.disable
   <div class="book-left book-light"></div>
 </div>
 
-- **Título**	_Artificial Intelligence for Games_
-- **Autores**	Ian Millington
-- **Editora**	Taylor &amp; Francis, 2006
+- **Título**	_Artificial Intelligence for Games, 2nd Edition_
+- **Autores**	Ian Millington, John Funge
+- **Editora**	CRC Press, 2009
 
 ---
 ## _Game Engine Architecture_
@@ -106,16 +106,18 @@ bespokeEvent: bullets.disable
 # Aulas
 
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
-  - Prática RPG Maker
+  - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
   - Prática Game Maker
 - Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
 
 <!--
-  - Prática 
+  - Prática
 - Ferramentas de Desenvolvimento [](classes/tools/)(27/08/2015)
   - Prática Geração de Conteúdo Procedural
 -->  
+
+[activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 
 ---
 # Atividades Avaliativas
