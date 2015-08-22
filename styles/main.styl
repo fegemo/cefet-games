@@ -41,6 +41,54 @@ h1, h2, h3, h4, h5, h6
 h1, h2
   font-family 'Share Tech Mono', Verdana;
 
+// message bubbles (like chat messages)
+$bubble-tip-size = 8px
+.bubble-chat
+  display block
+  box-sizing border-box
+  width 100%
+  padding 0 (2 * $bubble-tip-size)
+  clearfix()
+.narration
+  clear both
+  display block
+.bubble
+  position relative
+  display block
+  width 85%
+  margin 10px 0
+  padding 4px 7px 7px 7px
+  background-color white
+  border-radius 5px
+  &.bubble-left
+    float left
+    text-align left
+  &.bubble-right
+    float right
+    text-align right
+    &:before
+      left inherit
+      right - (2 * $bubble-tip-size)
+      border-color transparent transparent transparent white
+  &:before
+    content ""
+    position absolute
+    border-width $bubble-tip-size
+    border-style solid
+    border-color transparent white transparent transparent
+    left - (2 * $bubble-tip-size)
+    top "calc(50% - %s)" % ($bubble-tip-size)
+    width 0
+    height 0
+.bubble-author
+  display block
+  text-transform uppercase
+  font-weight bold
+  font-size 75%
+  for author-color, i in blueviolet brown cornflowerblue crimson darkmagenta forrestgreen limegreen darkgray
+    &.bubble-author-{i}
+      color author-color
+
 /// theme: slide layouts
 $checkpoint-slide-main-colors = #4a488e #cc7a09 #ff1530 #20aa12 #949416 #ccbd0d
 $checkpoint-slide-sencodary-colors = #d496a2 #dfadee #93ef9a #e87777 #b6a7e4 #e4aef5
@@ -505,11 +553,26 @@ full-dimension-backdrop(repeat)
   h2
     color white
 
-.stars.bespoke-backdrop
-  background-image url(../images/stars-bg.png)
-  full-dimension-backdrop(true)
-.bespoke-slide[data-bespoke-backdrop="stars"]
-  color white
+.unity-vikings.bespoke-backdrop-active
+  background-image url(../images/unity-viking-village.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="unity-vikings"]
+  h1
+    background-color rgba(black, .6)
+    border-radius .25em
+    padding .5em 1em
+    text-shadow 7px 7px rgba(black,0.25), 2px 2px rgba(black,0.5), 1px 1px rgba(black,0.75)
+    color #DC0B00
+    transition opacity 200ms ease-out
+    &:hover
+      opacity 0
+.orc-progress-3ds.bespoke-backdrop-active
+  background-image url(../images/orc-progress-3ds.jpg)
+  full-dimension-backdrop(false)
+  background-position-x 50%
+  opacity .7
+.bespoke-slide[data-bespoke-backdrop="orc-progress-3ds"]
+    text-shadow 2px 2px white
 
 .rpgmaker-sand.bespoke-backdrop
   background-image url(../images/rpgmaker-sand-map.jpg)
