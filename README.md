@@ -8,6 +8,22 @@ bespokeEvent: bullets.disable
 
 <img class="page-author-picture" src="images/flavio-avatar.jpg">
 
+---
+# Aulas
+
+- Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
+  - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
+- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
+  - Prática Game Maker
+- Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
+
+<!--
+  - Prática
+- Ferramentas de Desenvolvimento [](classes/tools/)(27/08/2015)
+  - Prática Geração de Conteúdo Procedural
+-->  
+
+[activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 
 ---
 # Objetivos
@@ -101,23 +117,6 @@ bespokeEvent: bullets.disable
 
 - **Autor** Will Goldstone
 - **Editora** Packt Publishing, 2011
-
----
-# Aulas
-
-- Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
-  - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
-- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
-  - Prática Game Maker
-- Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
-
-<!--
-  - Prática
-- Ferramentas de Desenvolvimento [](classes/tools/)(27/08/2015)
-  - Prática Geração de Conteúdo Procedural
--->  
-
-[activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 
 ---
 # Atividades Avaliativas
