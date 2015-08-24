@@ -11,7 +11,7 @@ backdrop: rpgmaker-sand
 ## Por que alguém precisa do RPG Maker?
 
 - Criar jogos pode ser uma tarefa bem complexa
-  - Tipicamente, programadores gostam de programam, artistas gostam de desenhar e projetistas gostam de projetar
+  - Tipicamente, programadores gostam de programar, artistas gostam de desenhar e projetistas gostam de projetar
   - Para criar um bom jogo, **é vital deixar as pessoas fazendo o que elas gostam** (_e.g_, não coloque o projetista para programar)
   - Para isso, construímos **ferramentas de apoio**
 
