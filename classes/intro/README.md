@@ -53,9 +53,9 @@ bespokeState: checkpoint
 ---
 ## Os Primeiros Computadores
 
-- Nas décadas 50 e 60, surgiram os primeiros computadores e 
-  eles estavam concentrados em **universidades** e **instalações militares** 
-- Alguns estudantes, programadores, professores e pesquisadores "sangue-nos-olhos" 
+- Nas décadas 50 e 60, surgiram os primeiros computadores e
+  eles estavam concentrados em **universidades** e **instalações militares**
+- Alguns estudantes, programadores, professores e pesquisadores "sangue-nos-olhos"
   tornavam seus **_mainframes_ em _video games_** nas horas vagas
   <ul class="multi-column-inline-list-2">
     <li>Tic Tac Toe (1952)
@@ -161,7 +161,7 @@ bespokeState: checkpoint
   - 1976 Faichild Channel F
   - 1977 **Atari 2600**
   - 1978 Magnavox Odissey 2
-  
+
 ---
 ## Atari 2600
 
@@ -196,14 +196,14 @@ bespokeState: checkpoint
 ---
 ## **Crash** de 1983 - 1984
 
-- Depois de um grande sucesso até 1982, a indústria de jogos começou a ter 
-  problemas e **várias empresas entraram em colapso** 
+- Depois de um grande sucesso até 1982, a indústria de jogos começou a ter
+  problemas e **várias empresas entraram em colapso**
   - Não havia grandes avanços tecnológicos
   - Excesso de jogos e cartuchos (mais de 50 empresas)
-  - **Jogos de baixa qualidade** e consoles que não fizeram sucesso 
-    (Exemplo: ET, Atari 5200) 
+  - **Jogos de baixa qualidade** e consoles que não fizeram sucesso
+    (Exemplo: ET, Atari 5200)
   - Série de dúvidas quanto ao futuro da indústria.
-    O público se questionava os jogos digitais seriam uma 
+    O público se questionava os jogos digitais seriam uma
     moda passageira como o banbolê
 
 ---
@@ -213,9 +213,9 @@ bespokeState: checkpoint
   - Ameaça ou salvação da indústria?
 - Algumas plataformas fizeram muito sucesso com jogos
   - Commodore, Amiga, Apple II
-- Mas o IBM PC e os vários clones posteriores, que acabaram virando 
+- Mas o IBM PC e os vários clones posteriores, que acabaram virando
   o padrão da indústria
-- Hoje em dia se fala em "jogos de computador", "jogos de video game", 
+- Hoje em dia se fala em "jogos de computador", "jogos de video game",
   "jogos eletrônicos" ou "jogos digitais" indistintamente
 
 ---
@@ -238,7 +238,7 @@ bespokeState: checkpoint
 
 ---
 ## Alguns Marcos nos **"Jogos p/ PC"**
- 
+
 <div class="item-grid">
   <div class="item-grid-col">
     <figure class="polaroid item-200w">
@@ -267,7 +267,7 @@ bespokeState: checkpoint
     </figure>
   </div>
 </div>
- 
+
 ---
 ## Guerra dos Consoles
 
@@ -398,16 +398,16 @@ bespokeState: checkpoint
 
 ## O que precisamos saber?
 
-- Como a **escolha do _hardware_** alvo de um jogo afeta a forma 
+- Como a **escolha do _hardware_** alvo de um jogo afeta a forma
   como ele é **desenvolvido e jogado**?
 - Quais são as principais **características classificatórias** de jogos?
 - **Além de entreter**, jogos podem ter **outros objetivos**?
 - Quais são os **gêneros de jogos** mais comuns?
 
 ---
-## **Características** dos Jogos 
+## **Características** dos Jogos
 
-- Existem várias características que devem ser consideradas na hora 
+- Existem várias características que devem ser consideradas na hora
   desenvolver um jogo
   <ul class="multi-column-list-2">
 - Plataforma
@@ -417,7 +417,7 @@ bespokeState: checkpoint
 - Objetivo do jogo
 - Público/Mercado alvo
   </ul>
-- As decisões corretas com relação a essas várias características são 
+- As decisões corretas com relação a essas várias características são
   fundamentais para o sucesso do jogo
 
 ---
@@ -436,10 +436,10 @@ bespokeState: checkpoint
   - **Input**
     - _e.g._, _Joystick_, Mouse+Teclado, _Touch_, _Gesture_...
   - **Output**
-    - _e.g._, TV, Monitor, duas telas, tela curva, autoestereoscópica (3d), _virtual reality_... 
+    - _e.g._, TV, Monitor, duas telas, tela curva, autoestereoscópica (3d), _virtual reality_...
   - Capacidade de **processamento gráfico** e geral, RAM etc.
   - Tipo de **distribuição** dos jogos
-    - _e.g._, cartucho, mídia óptica, digital 
+    - _e.g._, cartucho, mídia óptica, digital
   - Tipo de **licenciamento** dos jogos
 
 ---
@@ -449,14 +449,14 @@ bespokeState: checkpoint
     <img src="../../images/arcade-mach3.jpg">
     <figcaption>Jogo **Mach 3** sendo jogado na E3</figcaption>
   </figure>
-  Sistemas de jogos independentes, normalmente encontrados em locais 
+  Sistemas de jogos independentes, normalmente encontrados em locais
   públicos
 - **Tipicamente "alugados"** a jogadores por um tempo breve (5-10 min)
   - Compra-se "fichas" para jogar
 - Jogador normalmente **joga em pé**
 - Controles consistem de botões, _joysticks_ ou uma combinação deles
-- Não é possível salvar/carregar uma sessão de jogo   
-- Devido à brevidade da sessão de jogo, a maior parte dos **jogos** é **de 
+- Não é possível salvar/carregar uma sessão de jogo
+- Devido à brevidade da sessão de jogo, a maior parte dos **jogos** é **de
   ação**, com **pouca história/narrativa**
 
 ---
@@ -465,38 +465,38 @@ bespokeState: checkpoint
 - ![right](../../images/arcade-jet-ski.png)
   É uma oportunidade para jogos com **interfaces exóticas**
 - Modelo:
-  1. **Fabricante do _hardware_**: detém o direito sobre o _hardware_ e 
+  1. **Fabricante do _hardware_**: detém o direito sobre o _hardware_ e
      controle sobre o conteúdo jogado
-  1. **Desenvolvedor de jogos**: normalmente desenvolve para o fabricante, 
+  1. **Desenvolvedor de jogos**: normalmente desenvolve para o fabricante,
      mas costuma ser a própria empresa
-  1. **Operador local**: licencia ou compra o jogo da fabricante e cobra 
+  1. **Operador local**: licencia ou compra o jogo da fabricante e cobra
      dos jogadores para jogarem
 
 ---
 ## Consoles
 
 - Sistemas de jogo dedicados (pelo menos eram!) a apenas jogos
-  - Hoje em dia têm Internet, _media players_, **_video streaming_** etc. 
+  - Hoje em dia têm Internet, _media players_, **_video streaming_** etc.
 - Normalmente jogados em casa, usando-se a **TV como saída**
-- A **entrada** é normalmente feita por **controles com direcionais 
+- A **entrada** é normalmente feita por **controles com direcionais
   e vários botões**
-- **Plataforma proprietária**: Sony, Nintendo, Microsoft decidem quem 
+- **Plataforma proprietária**: Sony, Nintendo, Microsoft decidem quem
   pode desenvolver e vender jogos para seus videogames
   - Vantagem: o _hardware_ do videogame (_e.g._, do PS3) é sempre o mesmo
   - Desvantagem: precisa-se comprar licenças e kits de desenvolvimento ($$)
-  
+
 ---
 ## Computadores
 
 - **Plataforma aberta**
-  - Qualquer um pode produzir e vender um jogo que 
-    possa ser jogado em um "Dell" rodando "Windows" sem ter que pedir nem 
+  - Qualquer um pode produzir e vender um jogo que
+    possa ser jogado em um "Dell" rodando "Windows" sem ter que pedir nem
     pagar nada para as fabricantes de _hardware_ e _software_
 - Há grande (gigante) variação na capacidade do _hardware_
-  - Para assegurar que o jogo execute, estabelece-se **requisitos mínimos** 
+  - Para assegurar que o jogo execute, estabelece-se **requisitos mínimos**
     e **requisitos recomendados** (placa de vídeo, processador, RAM e HD)
-  - Ao desenvolver o jogo, deve-se considerar perfis de configurações 
-    para parametrizar o custo/benefício de **qualidade gráfica _vs._ 
+  - Ao desenvolver o jogo, deve-se considerar perfis de configurações
+    para parametrizar o custo/benefício de **qualidade gráfica _vs._
     frequência de renderização**
 
 ---
@@ -506,7 +506,7 @@ bespokeState: checkpoint
 - Plataformas proprietárias, assim como os consoles (Sony e Nintendo)
 - Controle via direcionais, botões, telas sensíveis a toque
   - E também: acelerômetro, giroscópio, microfone, GPS
-- Jogos precisam sempre poder ser **pausados a qualquer momento**, devido 
+- Jogos precisam sempre poder ser **pausados a qualquer momento**, devido
   ao fato que as sessões de jogo podem ser interrompidas (saindo do õnibus, etc.)
 - Jogos distribuídos como **"cartuchos" (_flash card_) ou digitalmente**
 
@@ -517,24 +517,24 @@ bespokeState: checkpoint
 
 - Bem mais recentes (iOS: 2007, Android: 2008, <abbr title="Windows Phone">WinPho</abbr>: 2010)
 - Plataformas **proprietárias** (Apple, Google, Microsoft)
-- **Distribuição** de jogos (e aplicativos) **por meio das lojas virtuais** 
+- **Distribuição** de jogos (e aplicativos) **por meio das lojas virtuais**
   das fabricantes dos sistemas operacionais
   - Licenciamento no **modelo ganha-ganha: 70%/30%**
     - 70% da receita do jogo é do desenvolvedor, 30% da fabricante
-     
+
 ---
 ## Característica: **Intervalo de Tempo**
 
 - Cada tipo de jogo configura como o **tempo passa dentro do jogo**
 - Isso define se o jogo é jogado **por reflexo** ou **refletivamente**:
-  - **Baseado em turnos**: como em jogos de carta ou tabuleiro, cada jogador joga 
+  - **Baseado em turnos**: como em jogos de carta ou tabuleiro, cada jogador joga
     em sua vez (turno)
-  - Em **tempo real**: todos os jogadores jogam ao mesmo tempo e o jogo não pára para 
+  - Em **tempo real**: todos os jogadores jogam ao mesmo tempo e o jogo não pára para
     esperar que jogadores tenham longas reflexões sobre suas ações
     - **Maior complexidade técnica** quando em modo **multi-jogador**
-  - **Limitado por tempo**: mescla dos outros dois, com limite de tempo para que 
+  - **Limitado por tempo**: mescla dos outros dois, com limite de tempo para que
     cada jogador tome sua ação em seu turno
-  
+
 ---
 ## Característica: **Número de Jogadores**
 
@@ -542,7 +542,7 @@ bespokeState: checkpoint
   - A infra-estrutura de redes que pode ser necessária
   - A necessidade de equipe de suporte técnico 24/7
   - O uso de divisão da tela de jogo em mútliplas câmeras virtais
-- Varia de **jogador único** (_single-player_) a multi-massivo 
+- Varia de **jogador único** (_single-player_) a multi-massivo
   online (<abbr title="multi-massive online">MMO</abbr>)
 
 ---
@@ -554,7 +554,7 @@ bespokeState: checkpoint
       <figcaption>Paciência (_Hardwood Solitaire IV_), _single-player_ clássico</figcaption>
     </figure>
     <ul style="text-align: left">
-      <li>Apenas **uma jogador** por vez</li>
+      <li>Apenas **um jogador** por vez</li>
       <li>**Oponentes**, quando existem, são **controlados por <abbr title="inteligência artificial">IA</abbr>**
         <ul>
           <li>São chamados de personagens não-jogáveis ou **<abbr title="non-player character">NPCs</abbr>**</li>
@@ -578,7 +578,7 @@ bespokeState: checkpoint
     </ul>
   </section>
 </div>
-  
+
 ---
 <div class="layout-split-3" style="height: auto;">
   <section style="border-right: 4px dotted silver;">
@@ -620,7 +620,7 @@ bespokeState: checkpoint
   - Saúde / _Fitness_
   - Consciência / Mudança (_games for change_)
   - Estética / Criatividade (_art/concept games_)
- 
+
 ---
 ## Propósitos mais raros: _Advergame_
 
@@ -639,17 +639,17 @@ bespokeState: checkpoint
 
 - ![right](../../images/aether.jpg)
   [Aether](http://cache.armorgames.com/misc/downloads/aether.zip) (criadores do Super Meat Boy)
-  - _"Players control a lonely boy and an octopus-like monster [...] solving puzzles_ 
+  - _"Players control a lonely boy and an octopus-like monster [...] solving puzzles_
     _on different planets to restore them from monochrome to color"_
 - ![cright](../../images/flow.jpg)
   [Flow](http://interactive.usc.edu/projects/cloud/flowing/) (baseado em pesquisa sobre **ajuste dinâmico de dificuldade**)
-  - _"In Flow, the player navigates a series 2D planes with an aquatic microorganism_ 
+  - _"In Flow, the player navigates a series 2D planes with an aquatic microorganism_
     _that evolves by consuming other microorganisms"_
 
 ---
 ## Característica: **Gêneros**
 
-- São categorias nas quais os jogos são classificados levando em consideração o 
+- São categorias nas quais os jogos são classificados levando em consideração o
   estilo, a narrativa, a perspectiva dos jogadores, _gameplay_, etc
   - Ex.: Ação, Aventura, <abbr title="Role-playing game">RPG</abbr>, <abbr title="Real-time strategy">RTS</abbr>...
 - Novos gêneros são criados continuamente
@@ -667,7 +667,7 @@ bespokeState: checkpoint
   - Plataforma (Donkey kong, Sonic, ...)
   - Luta
   - Corrida
-  - “Outros”: Pac-Man, Guitar Hero... 
+  - “Outros”: Pac-Man, Guitar Hero...
 
 ---
 ## Gênero: **Ação**
@@ -746,9 +746,9 @@ bespokeState: checkpoint
 ---
 ## Gênero: **RPG**
 
-- Jogadores assumem papéis como personagens dentro do jogo (cavaleiros, mágicos, ladrões, etc), 
+- Jogadores assumem papéis como personagens dentro do jogo (cavaleiros, mágicos, ladrões, etc),
   e evoluem o personagem ao longo do jogo
-- Normalmente possuem uma narrativa longa, grandes cenários e 
+- Normalmente possuem uma narrativa longa, grandes cenários e
   os jogadores tem que cumprir desafios (_quests_) ao longo do jogo
 - Originários dos tradicionais RPG de papel e cartas (_Dungeons and Dragons_)
 
@@ -793,7 +793,7 @@ bespokeState: checkpoint
 - Mais recentemente: MOBA
   - Action RTS: combates do jogo RTS
   - _Micromanagement_ de poucas unidades
-  
+
 ---
 ## Gênero: **Estratégia**
 
@@ -815,7 +815,7 @@ bespokeState: checkpoint
 ---
 ## Gênero: **MMOG**
 
-- Apesar de derivado de outros gêneros, acabou se tornando 
+- Apesar de derivado de outros gêneros, acabou se tornando
   um gênero próprio por suas características
   - MMORPG, MMOFPS, etc...
 - Um grande número de pessoas, fisicamente distribuídas, jogando _on-line_
@@ -874,7 +874,6 @@ bespokeState: checkpoint
 # Referências
 
 - Livro _Game Development Essentials: An Introduction, Third Edition_
-  1. Capítulo 1: _Historical Elements_ 
+  1. Capítulo 1: _Historical Elements_
   1. Capítulo 2: _Platforms &amp; Player Modes_
   1. Capítulo 3: _Goals &amp; Genres_
-

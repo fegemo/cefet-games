@@ -41,6 +41,7 @@ h1, h2, h3, h4, h5, h6
 h1, h2
   font-family 'Share Tech Mono', Verdana;
 
+
 // message bubbles (like chat messages)
 $bubble-tip-size = 8px
 .bubble-chat
@@ -111,7 +112,8 @@ for color, i in $checkpoint-slide-main-colors
       color white
       float left
       box-sizing border-box
-      padding 0.5em
+      padding 0.2em
+      font-size 32px
       word-wrap break-word
       word-break break-word
 
@@ -583,6 +585,26 @@ full-dimension-backdrop(repeat)
   box-sizing border-box
   text-shadow 2px 2px white
   background-color rgba(black, .4)
+
+
+.beyond-two-souls.bespoke-backdrop-active
+  background-image url(../images/beyond-two-souls.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="beyond-two-souls"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  color white
+.lol-final-seoul.bespoke-backdrop-active
+  background-image url(../images/lol-finals-2014-seoul.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="lol-final-seoul"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  color white
+  background rgba(white, .35)
+  padding .5em 1.5em
+  box-sizing border-box
+.heroes.bespoke-backdrop-active
+  background-image url(../images/heroes.png)
+  full-dimension-backdrop(false)
 
 
 
