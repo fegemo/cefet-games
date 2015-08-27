@@ -14,7 +14,7 @@ bespokeEvent: bullets.disable
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
   - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
-  - Prática Game Maker
+  - Prática Game Maker: [atividade](activity-gamemaker)
 - Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
 
 <!--
@@ -24,6 +24,7 @@ bespokeEvent: bullets.disable
 -->  
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
+[activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
 
 ---
 # Objetivos
@@ -127,7 +128,9 @@ bespokeEvent: bullets.disable
 - Prova e Listas (0 pontos)
   - ![Oh my God!](images/omg.png)
 - Aulas Práticas (20 pontos)
-- Seminários (10 pontos)
+- [Seminários][seminar] (10 pontos)
+  - Parte escrita em 16/11/2015 (segunda-feira)
+  - Apresentação em 26/11/2015 (quinta-feira)
 - Trabalhos Práticos (30 pontos)
   - TP1 (15 pontos, 03/09/2015 + 14 dias)
   - TP2 (15 pontos, 01/10/2015 + 14 dias)
