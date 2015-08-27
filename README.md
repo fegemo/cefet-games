@@ -137,7 +137,7 @@ bespokeEvent: bullets.disable
 - Projeto Final (40 pontos)
   - 3 entregas
 
-[tp1]: https://github.com/fegemo/cefet-games/tree/master/src/assignments/tp1
-[tp2]: https://github.com/fegemo/cefet-games/tree/master/src/assignments/tp2
-[final]: https://github.com/fegemo/cefet-games/tree/master/src/assignments/final
-[seminar]: https://github.com/fegemo/cefet-games/tree/master/src/assignments/seminar
+[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1
+[tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2
+[final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
+[seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
