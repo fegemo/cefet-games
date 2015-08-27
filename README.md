@@ -14,7 +14,7 @@ bespokeEvent: bullets.disable
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
   - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
-  - Prática Game Maker
+  - Prática Game Maker: [atividade](activity-gamemaker)
 - Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
 
 <!--
@@ -24,6 +24,7 @@ bespokeEvent: bullets.disable
 -->  
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
+[activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
 
 ---
 # Objetivos
