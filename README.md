@@ -9,13 +9,35 @@ bespokeEvent: bullets.disable
 <img class="page-author-picture" src="images/flavio-avatar.jpg">
 
 ---
+# Atividades Avaliativas
+
+- Prova e Listas (0 pontos)
+  - ![Oh my God!](images/omg.png)
+- Aulas Práticas (20 pontos)
+- [Seminários][seminar] (10 pontos)
+  - Parte escrita em 16/11/2015 (segunda-feira)
+  - Apresentação em 26/11/2015 (quinta-feira)
+- Trabalhos Práticos (30 pontos)
+  - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
+  - TP2 (15 pontos, 01/10/2015 + 14 dias)
+- Projeto Final (40 pontos)
+  - 3 entregas
+
+[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1
+[tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2
+[final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
+[seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
+
+---
 # Aulas
 
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
   - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
   - Prática Game Maker: [atividade][activity-gamemaker]
-- Introdução: [Level Design, Equipe, Produção](classes/intro3/) (01/09/2015)
+- [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (01/09/2015)
+- IA: Algoritmos de Busca Clássica [](attachments/busca.pdf) (03/09/2015)
+- Introdução: _Level Design_, Equipe, Produção [](classes/intro3/) (08/09/2015)
 
 <!--
   - Prática
@@ -118,26 +140,3 @@ bespokeEvent: bullets.disable
 
 - **Autor** Will Goldstone
 - **Editora** Packt Publishing, 2011
-
----
-# Atividades Avaliativas
-
----
-## Como ganhar meus pontos?
-
-- Prova e Listas (0 pontos)
-  - ![Oh my God!](images/omg.png)
-- Aulas Práticas (20 pontos)
-- [Seminários][seminar] (10 pontos)
-  - Parte escrita em 16/11/2015 (segunda-feira)
-  - Apresentação em 26/11/2015 (quinta-feira)
-- Trabalhos Práticos (30 pontos)
-  - TP1 (15 pontos, 03/09/2015 + 14 dias)
-  - TP2 (15 pontos, 01/10/2015 + 14 dias)
-- Projeto Final (40 pontos)
-  - 3 entregas
-
-[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1
-[tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2
-[final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
-[seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
