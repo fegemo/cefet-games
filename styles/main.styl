@@ -606,7 +606,30 @@ full-dimension-backdrop(repeat)
   background-image url(../images/heroes.png)
   full-dimension-backdrop(false)
 
-
+.super-mario-3d-world.bespoke-backdrop-active
+  background-image url(../images/super-mario-3d-world.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="super-mario-3d-world"]
+  background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  color darken(darkgray, 30)
+.jobs-blizzard.bespoke-backdrop-active
+  background-image url(../images/jobs-blizzard.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="jobs-blizzard"]
+  a
+    position relative
+    background-color rgba(white, .5)
+    border-radius .5em
+    padding .15em .5em
+    color black
+    text-decoration underline
+    box-shadow 0 0 0 rgba(black, .7)
+    top 0
+    transition top 200ms ease-out, box-shadow 200ms ease-out
+    &:hover
+      top -.2em
+      box-shadow .2em .2em .2em rgba(black, .3)
 
 // Print styles
 @media print

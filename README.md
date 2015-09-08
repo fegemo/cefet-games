@@ -37,7 +37,7 @@ bespokeEvent: bullets.disable
   - Prática Game Maker: [atividade][activity-gamemaker]
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (01/09/2015)
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
-- Introdução: _Level Design_, Equipe, Produção [](classes/intro3/) (08/09/2015)
+- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (08/09/2015)
 
 <!--
   - Prática
