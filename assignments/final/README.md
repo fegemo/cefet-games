@@ -40,6 +40,7 @@ A plataforma, gênero e estilo do jogo são completamente livres. Você pode at�
 - **Jogos multijogador** em rede (Redes)
 - **Física** mais avançada
 - **Áudio** mais avançado do que efeitos sonoros e música
+- **Acessibilidade** universal ou para uma maior gama de jogadores
 
 Quanto mais componentes escolher, não necessariamente as notas serão melhores. O importante aqui é criar um jogo que seja bonito, divertido e polido, muito mais do que recursos e pontuações extras para cada um. Portanto, use sua liberdade e criatividade para propor o jogo e a nota refletirá o bom desempenho dos 3 critérios descritos anteriormente.
 
