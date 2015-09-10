@@ -20,7 +20,7 @@ bespokeEvent: bullets.disable
 - Trabalhos Práticos (30 pontos)
   - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
   - TP2 (15 pontos, 01/10/2015 + 14 dias)
-- Projeto Final (40 pontos)
+- [Projeto Final][final] (40 pontos)
   - 3 entregas
 
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1
