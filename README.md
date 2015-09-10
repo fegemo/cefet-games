@@ -6,13 +6,13 @@ bespokeEvent: bullets.disable
 
 *Professor:* Flávio Coutinho
 
-<img class="page-author-picture" src="images/flavio-avatar.jpg">
+<img class="portrait" src="images/flavio-avatar.jpg">
 
 ---
 # Atividades Avaliativas
 
 - Prova e Listas (0 pontos)
-  - ![Oh my God!](images/omg.png)
+  <!-- - ![Oh my God!](images/omg.png)-->
 - Aulas Práticas (20 pontos)
 - [Seminários][seminar] (10 pontos)
   - Parte escrita em 16/11/2015 (segunda-feira)
