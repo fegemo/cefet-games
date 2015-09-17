@@ -38,6 +38,8 @@ bespokeEvent: bullets.disable
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (01/09/2015)
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (08/09/2015)
+- IA: Agentes Inteligentes (15/09/2015)
+  - Prática Robocode: [atividade][activity-robocode]
 
 <!--
   - Prática
@@ -47,6 +49,7 @@ bespokeEvent: bullets.disable
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
+[activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 
 ---
 # Objetivos

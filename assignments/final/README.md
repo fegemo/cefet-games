@@ -27,6 +27,7 @@ Um jogo criado usando uma API gráfica, naturalmente, poderá não ter a mesma
 quantidade de conteúdo do que um jogo feito usando um _Maker_ ou _Engine_.
 Contudo, não tema por sua decisão - o que será avaliado não será apenas o
 resultado final, mas também:
+
 - Criatividade
 - Esforço
 - Complexidade
@@ -34,6 +35,7 @@ resultado final, mas também:
 ## Instruções sobre o jogo
 
 A plataforma, gênero e estilo do jogo são completamente livres. Você pode até mesmo fazer um _audiogame_, em vez de um _videogame_ (wtf!!). Basta que você escolha um subconjunto dos ingredientes apresentados a seguir:
+
 - **Gráficos** (CG)
 - **Comportamento inteligente** (IA)
 - **Conteúdo procedural** (PCG)
@@ -44,9 +46,16 @@ A plataforma, gênero e estilo do jogo são completamente livres. Você pode at�
 
 Quanto mais componentes escolher, não necessariamente as notas serão melhores. O importante aqui é criar um jogo que seja bonito, divertido e polido, muito mais do que recursos e pontuações extras para cada um. Portanto, use sua liberdade e criatividade para propor o jogo e a nota refletirá o bom desempenho dos 3 critérios descritos anteriormente.
 
+## Atenção para Licenças
+
+Você pode usar recursos (_assets_) de outras pessoas (sons, imagens, modelos, animações, etc.) sem problemas, contanto que o recurso possua uma licença que permita fazê-lo.
+
+Além disso, na entrega do seu trabalho (_technical design document_), você **precisa mencionar (dar créditos) aos autores desses recursos**.
+
 ## Cronograma
 
 As datas de entrega são:
+
 1. Etapa 1: Sumário
   - 17/09/2015
 1. Etapa 2: GDD + Protótipo
@@ -68,6 +77,7 @@ receberão nota 0.
 Alguns descuidos podem fazer com que sua nota fique muito abaixo do esperado:
 - A não entrega de uma etapa
 - A entrega em atraso da última etapa não é permitida, uma vez que os jogos serão apresentados em sala
+- Esquecer/deixar de atribuir créditos a terceiros por recursos utilizados cuja autoria não é de ninguém do grupo
 - Atraso na entrega das 2 primeiras etapas. Cada dia de atraso reduz o valor máximo de nota da
   maneira abaixo. Considere `x` como dias de atraso e `f(x)` a penalidade
   percentual na nota:
@@ -81,6 +91,7 @@ Alguns descuidos podem fazer com que sua nota fique muito abaixo do esperado:
 ## O que deve ser **entregue**
 
 Deve ser entregue **um arquivo .tar.gz ou .zip** via **Moodle** contendo:
+
   1. 3+ _screenshots_ de diferentes cenas do seu jogo
   1. Todo o programa fonte, juntamente com as bibliotecas necessárias
      para compilação e execução
