@@ -7,7 +7,7 @@ Pré-requisitos:
   1. Baixar e instalar o [Robocode][dl] (~6 MB)
 
 Objetivos:
-  1. Ter contato com ao problema de controle da movimentação e ações de um agente inteligente
+  1. Ter contato com ao problema de controle da movimentação não-holonômica e ações de um agente inteligente
   1. Praticar a criação de um agente de inteligência artificial
 
 ## Atividade Prática
@@ -31,6 +31,13 @@ Exemplos:
   1. Robô parado mas que tenta sempre mirar no inimigo
   1. Robô tenta atropelar o inimigo
   1. Robô tenta desviar dos tiros
+
+### Estudo
+
+Referências, além da API do Robocode:
+
+  - http://www.ibm.com/developerworks/library/j-robocode/
+  - http://mark.random-article.com/weber/java/robocode/
 
 ## Entrega
 
