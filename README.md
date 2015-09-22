@@ -38,15 +38,11 @@ bespokeEvent: bullets.disable
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (01/09/2015)
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (08/09/2015)
-- IA: Agentes Inteligentes (15/09/2015)
+- IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
   - Prática Robocode: [atividade][activity-robocode]
-
-<!--
-  - Prática
-- Ferramentas de Desenvolvimento [](classes/tools/)(27/08/2015)
-  - Prática Geração de Conteúdo Procedural
--->  
-
+- IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
+  - Prática de Movimentação
+  
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
