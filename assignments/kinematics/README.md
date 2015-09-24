@@ -5,12 +5,11 @@
 Pré-requisitos:
   1. Assistir [o vídeo promocional][promo] do  _framework_ de jogos LibGDX
   1. Um pouco de Java
-  1. Um pouco (muito peqeueno) de OpenGL
-  1. Geometria afim bem leve
-  1. [Baixar (~113 MB)][dl] e instalar o Game Maker no computador, versão gratuita
-  1. Assistir [o vídeo promocional][promo] do Game Maker: Studio
+    - Sugiro IDE NetBeans com plugin _Gradle Support_ instalado
+  1. Geometria afim (bem de leve)
 
 Objetivos:
+
   1. Enxergar a movimentação de agentes como um algoritmo
   1. Entrar em contato com um _framework_ para desenvolvimento de jogos
   1. Praticar algoritmos de movimentação simples usando cinemática
@@ -28,6 +27,10 @@ aceleração constante). Os algoritmos são:
 1. **Fugir (_flee_)**
 1. **Vagar (_wander_)**
 1. **Chegar (_arrive_)** [opcional]
+
+## Resultado Esperado
+
+![](images/cefet-games-kinematics-anim.gif)
 
 ## _Background Teórico_
 
