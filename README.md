@@ -41,11 +41,13 @@ bespokeEvent: bullets.disable
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
   - Prática Robocode: [atividade][activity-robocode]
 - IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
-  - Prática de Movimentação
-  
+  - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
+
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
+[activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
+[activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/archive/exercicio-cinematica.zip
 
 ---
 # Objetivos
