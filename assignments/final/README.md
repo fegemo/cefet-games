@@ -59,7 +59,7 @@ As datas de entrega são:
 1. Etapa 1: Sumário
   - 17/09/2015
 1. Etapa 2: GDD + Protótipo
-  - 15/09/2015
+  - 15/10/2015
 1. Etapa 3: Apresentação
   - 26/11/2015
 

@@ -1,171 +1,218 @@
-# Trabalho Prático 2 - Boids (Simulação de Bandos)
+# Trabalho Prático 2 - Ecossistema
 
-![Estorninhos, primos das andorinhas](images/starlings.jpg)
+![Tela do jogo Eco mostrando um cervo comendo grama](images/eco-deer.png)
 
-_Veja a bicharada em ação: [https://www.youtube.com/watch?v=A6nvvFkbRkY](https://www.youtube.com/watch?v=A6nvvFkbRkY)_
+Ecossistemas tem sido estudados usando-se simulações cada vez
+[mais complexas][aries]. Alguns jogos digitais têm como peça central de sua
+jogabilidade um simulador de ecossistema, como é o caso do [jogo Eco][eco],
+que tem um objetivo educacional, e do [jogo Universim][universim], cujo
+objetivo é possibilitar o jogador evoluir a civilização de seu planeta,
+mas havendo consequências devido a forma como ele lida com o meio ambiente.
 
-[Craig Reynolds](http://www.red3d.com/cwr/), como todo bom programador,
-era um cara preguiçoso. Um dia, ele precisou criar a animação de vários animais
-que andavam em bando e, em vez de passar dias planejando
-a trajetória de cada animal, ele optou por escrever um programa que
-fizesse esse trabalho por ele (danadão). Ele chamou cada animal de _boid_ e
-[publicou um artigo na conferência SIGGRAPH de 1987 sobre seu
-trabalho](http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/).
+![](images/wakfu-animals.png)
 
-Inúmeros jogos e sistemas de simulação física envolvem o planejamento e
-coordenação de movimento de grupos. Neste trabalho, vamos desenvolver um
-programa que modela **um bando de pássaros virtuais (_boids_) navegando num
-espaço tridimensional**.
+Outra abordagem, introduzida pelo
+<abbr title="Massively Multiplayer Online Role-Playing Game">MMORPG</abbr>
+[Wakfu][wakfu], é usar um pequeno simulador de ecossistema como um
+recurso adicional de _gameplay_ no jogo. Nele, fauna e flora formam um
+ecossistema vivo cuja prosperidade depende indiretamente das decisões
+feitas pelo jogador ao controlar seu personsagem.
 
-Cada _boid_ é uma entidade independente, que possui uma posição no espaço e um
-vetor velocidade associado (- alô? - oi, aqui é a `struct` falando. Tudo correto, `vetor.h`?). O movimento
-do bando obedece um conjunto básico de elementos:
+Por exemplo, se o jogador mata muitos _gobbals_ (ovelhinhas divertidas)
+para ganhar experiência e evoluir, mas não dá tempo suficiente para eles
+se reproduzirem, a espécie pode ser extinta. Se colher frutos demais
+(recuperar vida) sem replantar, pode ser a última colheita e os animais
+herbívoros podem passar apertado também.
 
-![](images/separation.gif)
-![](images/cohesion.gif)
-![](images/alignment.gif)
+![](images/wakfu-ecosystem.gif)
 
-- **Separação** (esq.): cada _boid_ deve manter uma certa distância mínima de
-  separação entre ele mesmo e os boids vizinhos (ou outros obstáculos que
-  podem estar presentes no cenário)
-- **Coesão** (meio): Os _boids_ devem se manter unidos no bando. Na presença de
-  obstáculos, eles até podem se separar para evitar o obstáculo, mas devem
-  se reagrupar uma vez vencido o obstáculo (assumindo que esse não seja
-  muito grande)
-- **Alinhamento** (dir.): Os _boids_ tendem a se mover na mesma direção e com a mesma
-  velocidade que os boids vizinhos
+Neste trabalho prático, vamos implementar um pequeno simulador de ecossistema
+usando um motor de jogos a sua escolha. O objetivo do trabalho é praticar
+mais os conceitos de computação gráfica do que a simulação propriamente dita.
+Portanto, procure fazer uma simulação o mais simples possível inicialmente e,
+caso tenha tempo e interesse, evolua-a com novos comportamentos, espécies e
+interações.
 
-_(use [o site de Craig Reynolds](http://www.red3d.com/cwr/boids/) e seu [artigo na SIGGRAPH'87](http://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/) para saber exatamente como funcionam)_
+## Características do simulador
 
-O conjunto de restrições acima definem a natureza do movimento num nível
-local, mas não define o movimento coletivo do grupo. Para tanto, o
-programa deverá implementar um _boid_ especial que representa o objetivo,
-ou seja, o grupo, como um tudo, tende a voar na direção desse _boid_-objetivo.
-Tanto os _boids_ quanto o _boid_-objetivo devem ser inicializados com valores
-razoáveis, e o vetor velocidade do _boid_-objetivo deve ser controlado pelo
-usuário através de comandos do teclado (ou do mouse). Lembre-se de
-ajustar a direção e o módulo do vetor velocidade de cada _boid_, de forma
-a manter o grupo.
+Considere as seguintes características para o simulador:
+- Deve ser usado um motor de jogos em 3 dimensões.
+- Deve haver um cenário relativamente grande onde as espécies viverão.
+- Deve existir um _skybox_ representando uma visão do horizonte.
+- Deve ser possível passear no cenário usando um controle semelhante ao
+  de jogos _first-person_ (`w,a,s,d` + _mouse_) ou _third-person_.
+- Deve haver um terreno, que pode ser plano.
+- Deve haver 3 entidades que formam o ecossistema (serão descritas
+  mais adiante).
+  - As entidades devem ser modelos 3D¹ e devem ter animação de, no mínimo,
+    à toa, movimentação e comendo (exceto para vegetação).
+  - A simulação deve começar com um conjunto balanceado de entidades.
 
-Esse trabalho deve ser individual ou em duplas, e como funcionalidade básica, valendo
-70% da nota, deve ter os seguintes itens:
 
-1. Deve haver um mundo definido razoavelmente grande, com um "chão" que pode
-   ser modelado por um plano horizontal. No centro desse mundo deve haver uma
-   torre em forma de cone ou cilindro
-1. Devem haver pelo menos 3 modos de visualização (câmeras) distintos:
-   1. o olho posicionado no alto da torre no centro do mundo
-   1. o olho atrás do bando, a uma distância fixa
-   1. o olho a uma distância fixa em direção perpendicular ao vetor que
-      representa a velocidade do bando e paralelo ao chão
+### Sobre o ecossistema
 
-   Em todos os três modos, a direção de visualização é partindo do olho para o
-   centro do bando (ponto médio das posições de cada _boid_), com a normal
-   apontando perpendicular ao plano do chão
-1. O mundo deve ser iluminado, devendo usar o modelo padrão do OpenGL
-1. Cada _boid_ deve ser desenhado como um poliedro tridimensional. Pode ser
-   algo simples, como 5 pirâmides:
+Seu ecossistema deve ter 3 entidades, que formam uma cadeia alimentar linear:
+1. Plantas
+2. Animais herbívoros (_e.g._, ovelhas)
+3. Animais carnívoros (_e.g._, ~~lobos~~ ovelhas canibais :)
 
-   ![](images/boid-poliedros.png)
-1. O número de _boids_ deve poder variar de acordo com comandos do usuário, por
-   exemplo, pressionando a tecla "+" deve criar um novo _boid_ próximo ao bando
-   e a tecla "-" elimina um _boid_ do bando (aleatoriamente ou o último
-   adicionado)  
+Veja um [simulador online de ecossistema][learner-sim] para ter uma ideia
+de como funciona a lógica de evolução do sistema. O nosso será muito mais
+simples que esse do ponto de vista lógico.
 
-Para se obter o restante dos pontos do trabalho (ou até mesmo mais pontos
-extras, até um limite de 133% da pontuação original) funcionalidades adicionais
-podem/devem ser implementadas no jogo. Essas funcionalidades serão avaliadas
-conforme a **dificuldade da implementação**, o **efeito obtido** com ela no
-trabalho e a **qualidade da implementação**. Exemplos de funcionalidades
-extras com suas respectivas pontuações **máximas**:
+Cada entidade possui uma quantidade de energia vital (pense HP) e, se essa
+energia zera por algum motivo, ela morre.
 
-1. **Obstáculos (até 10%)**: além do chão e da torre de visualização, outros
-   objetos podem ser acrescentados à cena (sugestões: esferas e cones,
-   cujos algoritmos de interseção com raios estão dados nas notas de aula
-   do Prof. David Mount) e os _boids_ devem evitar colisões com esses
-   obstáculos, inclusive violando os outros fatores determinantes do
-   comportamento do grupo. O _boid_-objetivo é um fantasma, e passa através
-   dos obstáculos
-1. **Animação (até 7%)**: Os _boids_ devem ter movimentos animados
-   correspondentes ao batido das asas. Isso pode ser implementado
-   acrescentando um estado a cada _boid_, que corresponde à posição/rotação da
-   asa. Cada _boid_ tem o seu estado independente dos demais
-1. **Modelo (até 10%)**: em vez de desenhar os _boids_ usando poliedros
-   tridimensionais, você pode criar um modelo usando um _software_ de modelagem
-   (e.g., blender, 3dstudio, Maya) e usá-lo no seu programa
-1. **Música (até 5%)**: você pode incluir ambientação sonora para seu simulador
-1. **Temática (até 5%)**: você pode usar outra temática para seus _boids_ que não
-   passarinhos. Por exemplo, pode ser um cardume de peixes, esquadrão de
-   aviões anti-alienígenas ou rebanho de ovelhas. Basta que saibam voar
-1. **Fog (5%)**: funcionalidade acrescentada por comando do teclado (f),
-   podendo ser habilitada e desabilitada durante a execução
-1. **Modo de pausa (3%)**: acionado pelo teclado para a simulação dos _bois_,
-   congelando a imagem (_boids_ podem ser acrescentados e retirados durante
-   a pausa)
-1. **Modo de _debug_ (5%)**: acionado pelo teclado, deve mostrar em que direção
-   cada _boid_ está voando desenhando um pequeno vetor (setinha) no nariz de
-   cada um
-1. **Reshape (5%)**: permitir o redimensionamento da janela de visualização sem
-   perda da razão de aspecto (sem que haja distorção de achatamento/alongamento)
-1. **Skybox (5%)**: se considerarmos que nosso mundo está definido dentro de um
-   cubo, podemos colocar uma imagem de textura em cada face interna (6) que
-   represente o horizonte naquela direção. [Veja exemplos de skyboxes][skybox]
-1. **Roll/pitch/yaw (10%)**: um objeto no espaço está sujeito a rotações em 3
-   eixos básicos. Tipicamente, andamos e voamos para a frente. Assim,
-   podemos pensar que estamos rotacionados (em cada eixo) com um ângulo
-   equivalente à nossa velocidade (em cada eixo). Essas são rotações especiais
-   e recebem o nome de _roll, pictch_ e _yaw_. Este item adicional refere-se a
-   fazer as rotações _roll, pictch_ e _yaw_ para cada _boid_ de acordo com sua
-   velocidade no momento
+As plantas estão constantemente se alimentando (aumentando energia) e, quando
+elas antingem um certo nível (_e.g._, 80%), elas passam a ter uma chance
+de se reproduzirem (de forma assexuada) em sua vizinhança próxima. Quando
+se reproduzem, elas gastam uma quantidade aleatória de energia (_e.g._, 30
+a 60%). Quando uma nova plantinha nasce, ela começa com 10% apenas.
 
-   ![](images/roll-pitch-yaw.jpg)
-1. **Qualquer outra idéia (??%)** que torne a simulação mais interessante ou
-   agradável aos sentidos. Essas idéias precisam ser documentadas e explicadas
-   no documento de entrega do trabalho (README.txt)
+Os animais herbívoros possuem 4 estados: `VAGANDO`, `PROCURANDO_COMIDA`,
+`COMENDO` e `FUGINDO`. A implementação pode ser feita usando-se uma máquina de
+estados simples (<abbr>Finite State Machine</abbr>) e você tem toda a
+liberdade para estipular os critérios de transição entre estados: por exemplo,
+quando a energia está abaixo de 50%, se o animal não está sendo perseguido,
+ele passa para o estado `PROCURANDO_COMIDA`.
+
+Os animais carnívoros possuem 3 estados: `DORMINDO`, `CAÇANDO` e
+`COMENDO`. Devido ao grande esforço físico, os carnívoros perdem vida
+gradativamente enquanto estão caçando (eles multiplicam sua velocidade
+por 1,5x enquanto estão caçando). Portanto, se eles caçam por muito tempo
+sem pegar uma presa, podem morrer.
+
+Enquanto um animal está comendo, ele vai recuperando vida gradativamente,
+enquanto que o que está sendo comido vai perdendo.
+
+Os animais possuem também sexo e uma idade e, a partir de um certo valor,
+passam a poder se reproduzir, porém de forma sexuada. Para se candidatar
+à reprodução, o animal precisa estar com boa energia (_e.g._, 80%+) e estar
+próximo de outro animal, do sexo oposto, nas mesmas condições.
+
+Esse conjunto de funcionalidades descritas até aqui vale 70% da nota do
+trabalho. Para se obter o restante dos pontos do trabalho (ou até mesmo
+alguns pontos extras, até o limite de 133% da pontuação do trabalho)
+funcionalidades adicionais podem ser implementadas no jogo. Essas
+funcionalidades serão avaliadas conforme a **dificuldade da implementação**,
+o **efeito obtido** com ela no jogo e a **qualidade da implementação**.
+Exemplos de funcionalidades extras com suas respectivas pontuações
+**máximas**:
+
+- Relativas ao **Cenário**:
+  1. **Cenário rico (até 10%)**: pode haver objetos variados¹ espalhados
+    pelo cenário: vários tipos de rochas, árvores, ruínas etc.
+    - Entidades que se movimentam não podem entrar nos obstáculos.
+    - Fazer as entidades **desviarem dos obstáculos (+4%)**.
+  1. **Distribuição pseudo-aleatória (4%)**: em vez de posicionar os
+    objetos (do cenário rico) você mesmo, você pode usar um algoritmo
+    para fazê-lo. Veja como o pessoal do jogo Spore usou uma
+    [sequência de Halton para distribuir objetos][spore] nos planetas.
+  1. **Relevo** não plano:
+    - Relevo exceto em uma **"clareira plana" (4%)**: onde as entidades
+      ficam
+    - Relevo em **todo o chão (10%)**: precisa considerar posição Z e
+      orientação 3D das entidades.
+  1. **Lago ou cachoeira (até 4%)** ¹
+- Funcionalidades **Gráficas**:
+  1. **Sombras (até 3%)**: provocadas pelas fontes de luz.
+  1. **Dia/noite (até 8%)**: faça o tempo passar dentro do simulador.
+    A duração de 1 dia pode ser, por exemplo, 3 minutos. A iluminação e/ou
+    o _skybox_ e/ou sombras das entidades podem refletir o horário.
+    - Entidades podem fazer **coisas diferentes dependendo do horário (+3%)**:
+      por exemplo, dormir.
+  1. **Efeitos atmosféricos (até 8%)**: neblina, chuva e neve podem compor
+    o cenário. Estas duas últimas podem ser feitas usando-se efeitos de
+    partículas.
+    - **Previsão do tempo (5%)**: em vez de gerar o efeito atmosférico
+      aleatoriamente, faça uma consulta a um _web service_ de consulta às condições atuais (ou previsão) do tempo para instanciar o efeito de
+      acordo.
+  1. **_God rays_ (4%)**: também conhecido como _sun shafts_ são um efeito
+    visual obtido pelos raios solares que passam por "buracos" em nuvens
+    ou outros objetos e formam colunas de ar iluminado separados por
+    regiões mais escuras, não iluminadas.
+
+    ![](images/god-rays.jpg)
+  1. **_Lens flare_ (2%)**: efeito (~~in~~)desejado causado pela incidência
+    forte de raios de luz intensos em lentes.
+
+    ![](images/lens-flare.jpg)
+  1. **Mini-câmera (5%)**: quando um evento importante está para acontecer
+    (_e.g._, uma entidade está prestes a morrer), crie uma mini-câmera,
+    mostrada no canto direito inferior, para deixar que o usuário veja
+    essa importante cena. Você deve usar um recurso chamado textura
+    renderizada (ou _render texture_).
+  1. **_Shaders_ não convencionais (até 8%)**: em vez de usar o _Phong_ ou
+    suas variações classiconas, use _shaders_ não-fotorrealistas
+    (<abbr title="Non-Photorrealistic Rendering">NPR</abbr>) ou então
+    super-realistas
+    (<abbr title="Physically-Based Rendering">PBR</abbr>).
+    - Contudo, seja consistente no estilo geral da sua simulação.
+    - Para ganhar total, você mesmo deve escrever o código do _shader_
+- Funcionalidades **Diversas**:
+  1. **Música e efeitos sonoros (até 8%)**: para compor e ambientar o cenário.
+  1. **Modo de _debug_ (3%)**: mostra, a cada momento, como cada entidade
+    está se comportando.
+  1. Gerar um **_screensaver_ ou _live wallpaper_ (5%)**: para que pessoas
+    possam ficar assistindo ao ecossistema enquanto comem pipoca.
+  1. Qualquer **outra idéia (??)**: que torne a simulação melhor ou mais
+    bonito. Essas idéias precisam ser documentadas e explicadas no
+    documento de entrega do trabalho e a pontuação será dada de acordo
+    com a complexidade e a qualidade da implementação.
 
 ## Instruções gerais
 
-O trabalho pode ser feito individualmente ou em duplas e deve ser produzido
-integralmente pelos aluno ou dupla. Podem discutir idéias com outros colegas,
-mas cada aluno/dupla deve ter a sua implementação independente dos demais.
-**Trabalhos muito semelhantes receberão notas muito semelhantes (iguais a 0)**,
-independente de quem copiou de quem. Trabalhos semelhantes aos de outras
-pessoas (ex-alunos, pessoas na Internet) também receberão nota 0.
-
+O trabalho pode ser feito em grupos de até 3 (sem exceções) e deve
+ser produzido integralmente pelos alunos. Podem discutir idéias entre
+os colegas, mas cada grupo deve ter a sua implementação independente dos
+demais. **Trabalhos muito semelhantes receberão notas muito semelhantes
+e tendendo a 0**, independente de quem copiou de quem. Trabalhos
+semelhantes aos de outras pessoas (ex-alunos, coleguinhas na Internet)
+também receberão nota 0.
 
 ## O que faz perder nota
 
-Alguns descuidos podem fazer com que sua nota fique abaixo do esperado:
+Alguns descuidos podem fazer com que sua nota fique muito abaixo do esperado:
 - Seu trabalho não executa: nota 0
 - Cópia de trabalho de outrem: nota 0
 - Ausência de qualquer item obrigatório da entrega (descrito na próxima seção)
 - Ausência de itens da especificação obrigatória
-- Baixa legibilidade do código
-- Baixa qualidade da implementação
 - Atraso na entrega. Cada dia de atraso reduz o valor máximo de nota da
- maneira abaixo. Considere `x` como dias de atraso e `y` a penalidade
- percentual na nota:
+  maneira abaixo. Considere `x` como dias de atraso e `f(x)` a penalidade
+  percentual na nota:
 
- ![](images/penalidade-por-atraso.png)
- - Isso implica que 1 ou 2 dias de atraso são pouco penalizados
- - E após 5 dias de atraso, o trabalho vale 0
- - _Seeing is believing_: https://www.google.com.br/search?q=y%3D(2%5E(x-2)%2F0.16-1.5625)%2Cy%3D100
+  ![Fórmula de penalidade por dias de atraso na entrega](../../images/penalidade-por-atraso.png)
+  - Isso implica que 1 ou 2 dias de atraso são pouco penalizados
+  - E após 5 dias de atraso, o trabalho vale 0
+  - _Seeing is believing_: https://www.google.com.br/search?q=y%3D(2%5E(x-2)%2F0.16)%2Cy%3D100
 
 
 ## O que deve ser **entregue**
 
 Deve ser entregue **um arquivo .tar.gz ou .zip** via **Moodle** contendo:
- 1. 3+ _screenshots_ de diferentes cenas do seu jogo
- 1. Todo o programa fonte, com os _Makefiles_ e bibliotecas necessárias
-    para a compilação e execução do programa
- 1. O arquivo executável
- 1. Um arquivo **README** contendo:
-    - Instruções para **compilação e execução**
-    - **Lista de itens adicionais** que seu jogo está pleiteando
- 1. [opcional, +3%] O link para um vídeo (youtube, vimeo, dailymotion etc.) do
-    seu jogo mostrando as opções implementadas
+  1. 3+ _screenshots_ de diferentes cenas do seu jogo
+  1. Todo o programa fonte, juntamente com as bibliotecas necessárias
+     para compilação e execução
+  1. O arquivo executável/instalador
+  1. Um arquivo **`README`** contendo:
+     - Instruções para **compilação e execução**
+     - **Lista de itens adicionais** que seu simulador está pleiteando
+     - Breve descrição das decições de implementação
+  1. (opcional, +3%) O link para **um vídeo curto** (youtube, vimeo,
+     dailymotion etc.) do seu simulador mostrando as opções implementadas
 
 Qualquer dúvida, entre em contato comigo. Ou acrescente a sua interpretação no
-arquivo README e mãos à obra.
+arquivo `README` e mãos à obra.
 
-[skybox]: https://www.google.com.br/search?q=skybox&safe=off&hl=pt-BR&source=lnms&tbm=isch&sa=X&ei=jMM_VenRNKuasQSCwYDABw&ved=0CAgQ_AUoAg&biw=1366&bih=599
+¹ Você pode usar recursos de terceiros, mas deve documentar isso no
+`README` que será entregue e também dentro do simulador (_e.g._,
+tela de créditos). Você deve colocar, também, o _hyperlink_ de
+onde baixou o recurso.
+
+
+[wakfu]: http://www.wakfu.com/en/mmorpg
+[spore]: http://www.cs.cmu.edu/~ajw/s2007/0312-ObjectDistribution.pdf
+[learner-sim]: http://www.learner.org/courses/envsci/interactives/ecology/ecology.html
+[aries]: http://www.ariesonline.org/
+[eco]: http://www.strangeloopgames.com/eco/
+[universim]: https://theuniversim.com/
