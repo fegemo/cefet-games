@@ -36,22 +36,23 @@ interações.
 ## Características do simulador
 
 Considere as seguintes características para o simulador:
+
 - Deve ser usado um motor de jogos em 3 dimensões.
 - Deve haver um cenário relativamente grande onde as espécies viverão.
 - Deve existir um _skybox_ representando uma visão do horizonte.
-- Deve ser possível passear no cenário usando um controle semelhante ao
-  de jogos _first-person_ (`w,a,s,d` + _mouse_) ou _third-person_.
+- Deve ser possível passear no cenário usando um controle semelhante
+  ao de jogos _first-person_ (`w,a,s,d` + _mouse_) ou _third-person_.
 - Deve haver um terreno, que pode ser plano.
 - Deve haver 3 entidades que formam o ecossistema (serão descritas
   mais adiante).
-  - As entidades devem ser modelos 3D¹ e devem ter animação de, no mínimo,
-    à toa, movimentação e comendo (exceto para vegetação).
-  - A simulação deve começar com um conjunto balanceado de entidades.
-
+- As entidades devem ser modelos 3D[¹](#notas) e devem ter animação
+  de, no mínimo, à toa, movimentação e comendo (exceto para vegetação).
+- A simulação deve começar com um conjunto balanceado de entidades.
 
 ### Sobre o ecossistema
 
 Seu ecossistema deve ter 3 entidades, que formam uma cadeia alimentar linear:
+
 1. Plantas
 2. Animais herbívoros (_e.g._, ovelhas)
 3. Animais carnívoros (_e.g._, ~~lobos~~ ovelhas canibais :)
@@ -100,7 +101,7 @@ Exemplos de funcionalidades extras com suas respectivas pontuações
 **máximas**:
 
 - Relativas ao **Cenário**:
-  1. **Cenário rico (até 10%)**: pode haver objetos variados¹ espalhados
+  1. **Cenário rico (até 10%)**: pode haver objetos variados[¹](#notas) espalhados
     pelo cenário: vários tipos de rochas, árvores, ruínas etc.
     - Entidades que se movimentam não podem entrar nos obstáculos.
     - Fazer as entidades **desviarem dos obstáculos (+4%)**.
@@ -113,7 +114,7 @@ Exemplos de funcionalidades extras com suas respectivas pontuações
       ficam
     - Relevo em **todo o chão (10%)**: precisa considerar posição Z e
       orientação 3D das entidades.
-  1. **Lago ou cachoeira (até 4%)** ¹
+  1. **Lago ou cachoeira (até 4%)** [¹](#notas)
 - Funcionalidades **Gráficas**:
   1. **Sombras (até 3%)**: provocadas pelas fontes de luz.
   1. **Dia/noite (até 8%)**: faça o tempo passar dentro do simulador.
@@ -150,15 +151,22 @@ Exemplos de funcionalidades extras com suas respectivas pontuações
     - Contudo, seja consistente no estilo geral da sua simulação.
     - Para ganhar total, você mesmo deve escrever o código do _shader_
 - Funcionalidades **Diversas**:
-  1. **Música e efeitos sonoros (até 8%)**: para compor e ambientar o cenário.
-  1. **Modo de _debug_ (3%)**: mostra, a cada momento, como cada entidade
-    está se comportando.
+  1. **Música e efeitos sonoros (até 8%)**: para compor e ambientar o cenário[¹](#notas).
+  1. **Modo de _debug_ (5%)**: mostra, a cada momento, como cada entidade
+    está se comportando e sua energia.
   1. Gerar um **_screensaver_ ou _live wallpaper_ (5%)**: para que pessoas
     possam ficar assistindo ao ecossistema enquanto comem pipoca.
   1. Qualquer **outra idéia (??)**: que torne a simulação melhor ou mais
     bonito. Essas idéias precisam ser documentadas e explicadas no
     documento de entrega do trabalho e a pontuação será dada de acordo
     com a complexidade e a qualidade da implementação.
+
+### Notas
+¹ Você pode usar recursos de terceiros, mas deve documentar isso no
+`README` que será entregue e também dentro do simulador (_e.g._,
+tela de créditos). Você deve colocar, também, o _hyperlink_ de
+onde baixou o recurso.
+
 
 ## Instruções gerais
 
@@ -203,11 +211,6 @@ Deve ser entregue **um arquivo .tar.gz ou .zip** via **Moodle** contendo:
 
 Qualquer dúvida, entre em contato comigo. Ou acrescente a sua interpretação no
 arquivo `README` e mãos à obra.
-
-¹ Você pode usar recursos de terceiros, mas deve documentar isso no
-`README` que será entregue e também dentro do simulador (_e.g._,
-tela de créditos). Você deve colocar, também, o _hyperlink_ de
-onde baixou o recurso.
 
 
 [wakfu]: http://www.wakfu.com/en/mmorpg
