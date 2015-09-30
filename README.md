@@ -19,7 +19,7 @@ bespokeEvent: bullets.disable
   - Apresentação em 26/11/2015 (quinta-feira)
 - Trabalhos Práticos (30 pontos)
   - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
-  - TP2 (15 pontos, 01/10/2015 + 14 dias)
+  - [TP2][tp2] (15 pontos, 01/10/2015 + 21 dias)
 - [Projeto Final][final] (40 pontos)
   - 3 entregas
 
