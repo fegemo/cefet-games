@@ -19,7 +19,7 @@ bespokeEvent: bullets.disable
   - Apresentação em 26/11/2015 (quinta-feira)
 - Trabalhos Práticos (30 pontos)
   - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
-  - [TP2][tp2] (15 pontos, 01/10/2015 + 21 dias)
+  - [TP2][tp2] (15 pontos, 01/10/2015 + 28 dias)
 - [Projeto Final][final] (40 pontos)
   - 3 entregas
 
@@ -48,6 +48,15 @@ bespokeEvent: bullets.disable
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 [activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
 [activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/archive/exercicio-cinematica.zip
+
+---
+## Aulas (2)
+
+- IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (06/10/2015)
+  - Prática de A*: [atividade][activity-aster], [código seminal][activity-astar-starter]
+
+[activity-astar]: https://github.com/fegemo/cefet-games/tree/master/assignments/astar
+[activity-astar-starter]:https://github.com/fegemo/cefet-games-astar/archive/cefet-games-aster.zip
 
 ---
 # Objetivos

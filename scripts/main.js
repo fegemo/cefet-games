@@ -92,7 +92,7 @@ window.deck = bespoke.from('article', [
       delayedScale = function() {
         return scale(isMobile.any ? 'transform' : 'zoom')(deck);
       };
-    setTimeout(delayedScale, 700);
+    if (isMobile()) setTimeout(delayedScale, 700);
   }
 ]);
 
