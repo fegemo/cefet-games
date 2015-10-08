@@ -12,7 +12,6 @@ bespokeEvent: bullets.disable
 # Atividades Avaliativas
 
 - Prova e Listas (0 pontos)
-  <!-- - ![Oh my God!](images/omg.png)-->
 - Aulas Práticas (20 pontos)
 - [Seminários][seminar] (10 pontos)
   - Parte escrita em 16/11/2015 (segunda-feira)
@@ -53,27 +52,10 @@ bespokeEvent: bullets.disable
 ## Aulas (2)
 
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (06/10/2015)
-  - Prática de A*: [atividade][activity-aster], [código seminal][activity-astar-starter]
+    - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
 
-[activity-astar]: https://github.com/fegemo/cefet-games/tree/master/assignments/astar
-[activity-astar-starter]:https://github.com/fegemo/cefet-games-astar/archive/cefet-games-aster.zip
-
----
-# Objetivos
-
-1. Conhecer os processos envolvidos na **concepção e desenvolvimento** de jogos.
-1. Conhecer os **fundamentos teóricos e práticos** do desenvolvimento de jogos digitais.
-1. Capacitar ao desenvolvimento de **jogos completos** envolvendo **conteúdo gráfico**,
-   **inteligência artificial** e **lógica de jogo**.
-
----
-## Interdisciplinariedades
-
-- Pré-requisitos
-  - Algoritmos e Estruturas de Dados II
-  - Computação Gráfica
-- Co-requisito
-  - Redes de Computadores I
+[activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
+[activity-pathfinding-starter]:https://github.com/fegemo/cefet-games-pathfinding/archive/cefet-games-pathfinding.zip
 
 ---
 # Bibliografia Básica

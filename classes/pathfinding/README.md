@@ -264,8 +264,8 @@ def pathfindDijkstra(graph, start, end):
         # corresponding to the endNode.
         endNodeRecord = open.find(endNode)
 
-      if endNodeRecord.cost <= endNodeCost:
-        continue
+        if endNodeRecord.cost <= endNodeCost:
+          continue
 
       # Otherwise we know we’ve got an unvisited
       # node, so make a record for it
@@ -397,6 +397,21 @@ bespokeState: checkpoint
   - No exemplo, a distância direta entre duas cidades é sempre menor ou igual a distância através das estradas. Logo, a solução encontrada é ótima
 - Complexidade depende da heurística
   - Pior caso é exponencial no tamanho da solução
+
+---
+## Heurísticas Admissíveis
+
+- Heurística é admissível se:
+  `h(n)` <= `h*(n)` em que `h*(n)` é o custo real a partir de `n`
+- Exemplos:
+  - **Distância Euclidiana** (espaço contínuo)
+  - **Distância de Manhattan** (espaço discreto)
+    - ![right](../../images/astar-manhattan.png)
+      `h1(n)` = número de quadrados trocados
+      `h2(n)` = distância de Manhattan total
+        (_i.e._, número de quadrados a partir da posição desejada para cada espaço)
+    - `h1(S) = 6`
+    - `h2(S) = 4+0+3+3+1+0+2+1 = 14`
 
 ---
 ## Outros detalhes
