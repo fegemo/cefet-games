@@ -55,7 +55,7 @@ bespokeEvent: bullets.disable
     - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
-[activity-pathfinding-starter]:https://github.com/fegemo/cefet-games-pathfinding/archive/cefet-games-pathfinding.zip
+[activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
 
 ---
 # Bibliografia Básica
