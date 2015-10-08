@@ -1,19 +1,19 @@
 # Prática: Planejamento de Caminhos
 
-![](images/forest-hills.png)
+![](images/pathfinding-still.gif)
 
 Pré-requisitos:
   1. Um pouco de Java
-    - Sugiro IDE NetBeans com plugin _Gradle Support_ instalado
+    - Sugiro IDE NetBeans com _plugin_ _Gradle Support_ instalado
     - Mesmo _setup_ da prática sobre movimentação
   1. Conhecimento sobre grafos
 
 Objetivos:
 
-1. Implementar algoritmos de planejamento de caminhos em grafos
-1. Traduzir o algoritmo de Dijkstra em código Java
-1. Implementar o algoritmo A*
-1. Perceber que o algoritmo de Dijkstra é o A* que não considera heurística
+1. Praticar o uso de algoritmos de planejamento de caminhos em grafos
+1. Implementar **heurísticas para o algoritmo A***
+1. Perceber que o **algoritmo de Dijkstra é o A\* que não usa heurística**
+1. Entender o que é uma **heurística admissível** e o impacto do uso de uma que não é
 
 ## Atividade Prática
 
@@ -24,7 +24,7 @@ atividade. Você deve implementar 3 heurísticas para o algoritmo A*:
 2. A heurística de distância Euclidiana
 3. (Opcional) Uma outra heurística à sua escolha (e pesquisa ;)
 
-## _Background Teórico_
+## Sobre o código
 
 Descrevemos um **Agente** (`Agent.java`) por:
 
@@ -87,6 +87,51 @@ public void setGoal(int x, int y) {
     pathIterator = path.iterator();
 }
 ```
+
+---
+## Interação com o Exercício
+
+Ao abrir o código na IDE (sugiro NetBeans), você pode compilar e executar o código e deve aparecer o mapa, com o agente (bolinha vermelha) no canto esquerdo, assim como mostra a figura "pratrasmente".
+
+Nesse momento, ao clicar com o botão do mouse em alguma posição válida (fora de um obstáculo), o agente deveria planejar o (melhor) caminho e ir até lá. Contudo, o programa (e talvez seu computador - cuidado) vão explodir porque a heurística não está implementada, mas apenas lançando uma bomba chamada exceção:
+
+```java
+// AQUI ESTAMOS CHAMANDO O ALGORITMO A* (instância pathFinder)
+pathFinder.searchConnectionPath(startNode, targetNode, new Heuristic<TileNode>() {
+
+    @Override
+    public float estimate(TileNode n, TileNode n1) {
+        throw new UnsupportedOperationException("MEIMPLEMENTEPORFAVOR");
+    }
+}, path);
+```
+
+Além disso, a qualquer momento você pode pressionar a tecla `d` do teclado para **ativar o modo _debug_** e poder enxergar o grafo que foi construído para representar o mapa:
+
+![](images/forest-hills.png)
+
+O modo de _debug_ mostra todos os nós e conexões do grafo de navegação, que é usado pelo algoritmo de planejamento (o A* neste caso).
+
+- Nó vermelho: obstáculo
+- Nó azul: "passável"
+  - Peso das arestas incidentes:
+    - Grama: 1
+    - Água: 9
+    - Água com pedrinhas para pisar: 5
+    - Ponte: 1
+
+---
+## Como Avaliar MinhaPrimeiraHeurística (s2)
+
+O algoritmo de Dijkstra é conhecidamente (1) completo e (2) ótimo:
+  1. Se há um caminho do ponto atual ao desejado, ele acha
+  1. Esse caminho é o melhor possível (_i.e._, um que minimiza o peso das arestas)
+
+Como vimos em aula, o A* também é completo, mas para que ele seja ótimo também, **a heurística deve ser admissível** (volte nos slides e veja o quê isso significa :).
+
+Ou seja, para saber se a sua heurística bacanuda está funcionando devidamente, o A* usando ela **precisa dar a mesma rota que o Dijkstra (que é A\* sem heurística, ou com a "herística nula")**.
+
+Caso o agente esteja passando toda hora por cima da água, é provável que a função heurística que você implementou não está admissível. Neste caso, reveja o conceito de admissibilidade e conserte-a =)
 
 ---
 ## Entrega
