@@ -52,10 +52,13 @@ bespokeEvent: bullets.disable
 ## Aulas (2)
 
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (06/10/2015)
-    - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
+  - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
+- Acessibilidade: [Aula de Introdução](attachments/acess.pptx) (15/10/2015)
+  - Prática de Acessibilidade: [atividade][activity-access]
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
+[activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
 
 ---
 # Bibliografia Básica
