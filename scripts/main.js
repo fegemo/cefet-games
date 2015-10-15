@@ -57,7 +57,7 @@ window.deck = bespoke.from('article', [
         events.split(' ').forEach(function(event) {
           deck.fire(event);
         });
-      },100);
+      },1000);
     },
     bespokeState: function(slide, classNames) {
       slide.setAttribute('data-bespoke-state', classNames);
@@ -92,7 +92,7 @@ window.deck = bespoke.from('article', [
       delayedScale = function() {
         return scale(isMobile.any ? 'transform' : 'zoom')(deck);
       };
-    if (isMobile()) setTimeout(delayedScale, 700);
+    if (isMobile.phone) setTimeout(delayedScale, 700);
   }
 ]);
 
