@@ -53,7 +53,7 @@ bespokeEvent: bullets.disable
 
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (06/10/2015)
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
-- Acessibilidade: [Aula de Introdução](attachments/acess.pptx) (15/10/2015)
+- Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (15/10/2015)
   - Prática de Acessibilidade: [atividade][activity-access]
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
