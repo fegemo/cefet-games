@@ -372,10 +372,18 @@ class GuardinhaFSM:
 ![](../../images/bt3.png)
 
 ---
+## Árvore de Comportamento na <abbr title="Unreal Engine">UE4</abbr>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/EotkBaTPLXE?rel=0" frameborder="0" allowfullscreen></iframe>
+
+---
 ## Mais sobre
 
 - Extensões
-  - Outras tarefas: _decorator_, composição paralela...
+  - Outras tarefas:
+    - **_decorator_**: apenas 1 filho, executa sob certa condição
+    - **composição paralela**: executa todos os filhos em paralelo até
+      todos completarem ou algum falhar
 - Problema:
   - Difícil modelar "alarmes"
   - Não há como o mundo interferir na execução de forma ativa
