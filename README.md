@@ -55,6 +55,8 @@ bespokeEvent: bullets.disable
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
 - Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (15/10/2015)
   - Prática de Acessibilidade: [atividade][activity-access]
+- IA: [Representação do Mundo](attachments/IA 03 - Movimentação Simples.pptx) (20/10/2015)
+- IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
