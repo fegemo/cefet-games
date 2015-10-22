@@ -447,6 +447,43 @@ $tutorial-right = 20px
   float right
   max-height 80%
 
+ul.bt-tasks > li
+  line-height 1em
+  padding 0.15em .3em
+  border-radius .2em
+  border 1px solid silver
+  background-color rgba(white, .3)
+  font-family consolas, monospace
+  font-size 75%
+
+ul.gob-goals > li,
+.gob-goal
+  line-height 1em
+  border-radius .2em
+  border 1px solid silver
+  background-color rgba(white, .3)
+  & > span
+    padding 0.15em .3em
+    font-family consolas, monospace
+    font-size 75%
+    &:last-child
+      border-left 1px solid silver
+  &.blue
+    background-color cornflowerblue
+  &.green
+    background-color #06D006
+  &.yellow
+    background-color gold
+  &.pink
+    background-color pink
+
+.gob-goal
+  display inline-block
+
+ul.horizontal > li
+  display inline-block
+  list-style-type none
+  margin-right 0.8em
 
 // TODO: put this on the theme
 table
@@ -656,6 +693,41 @@ full-dimension-backdrop(repeat)
     &:hover
       top -.2em
       box-shadow .2em .2em .2em rgba(black, .3)
+
+.mgs-quiet.bespoke-backdrop-active
+  background-image url(../images/mgs-quiet.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.decision-tree-sample.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/decision-tree-sample.png)
+  full-dimension-backdrop(false)
+  background-position 50% 80%
+  background-size initial
+.fsm-sample.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/fsm-sample.png)
+  full-dimension-backdrop(false)
+  background-position 50% 50%
+  background-size initial
+.halo2.bespoke-backdrop-active
+  background-image url(../images/halo2.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.the-sims4.bespoke-backdrop-active
+  background-image url(../images/the-sims4.png)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="mgs-quiet"],
+.bespoke-slide[data-bespoke-backdrop="decision-tree-sample"],
+.bespoke-slide[data-bespoke-backdrop="fsm-sample"],
+.bespoke-slide[data-bespoke-backdrop="halo2"],
+.bespoke-slide[data-bespoke-backdrop="the-sims4"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+.bespoke-slide[data-bespoke-backdrop="decision-tree-sample"],
+.bespoke-slide[data-bespoke-backdrop="fsm-sample"]
+  background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
+
 
 // Print styles
 @media print

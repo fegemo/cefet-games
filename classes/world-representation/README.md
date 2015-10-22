@@ -27,7 +27,6 @@ bespokeState: checkpoint
 - **Onde** se encaixa o **planejamento de caminhos** na arquitetura de IA?
 - Como que **estrutura de dados** posso **representar grafos**?
 
----
 
 ---
 # Referências
