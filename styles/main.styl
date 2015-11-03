@@ -728,6 +728,39 @@ full-dimension-backdrop(repeat)
 .bespoke-slide[data-bespoke-backdrop="fsm-sample"]
   background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
 
+.unity-ssao.bespoke-backdrop-active
+  background-image url(../images/unity-ssao.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.scene-graph-sample.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/scene-graph-sample.png)
+  full-dimension-backdrop(false)
+  background-size initial
+  background-position 50% 5%
+.lod-tank.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/lod-tank.png)
+  full-dimension-backdrop(false)
+  background-size contain
+.the-witcher-2-shadows.bespoke-backdrop-active
+  background-image url(../images/the-witcher-2-shadows.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.ssao-farcry4.bespoke-backdrop-active
+  background-image url(../images/ssao-farcry4.png)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="ssao-farcry4"],
+.bespoke-slide[data-bespoke-backdrop="scene-graph-sample"],
+.bespoke-slide[data-bespoke-backdrop="lod-tank"],
+.bespoke-slide[data-bespoke-backdrop="the-witcher-2-shadows"],
+.bespoke-slide[data-bespoke-backdrop="unity-ssao"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+.bespoke-slide[data-bespoke-backdrop="lod-tank"] > h1
+  color #60FF00
+
+
 
 // Print styles
 @media print

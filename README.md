@@ -57,6 +57,8 @@ bespokeEvent: bullets.disable
   - Prática de Acessibilidade: [atividade][activity-access]
 - IA: [Representação do Mundo](attachments/IA 03 - Movimentação Simples.pptx) (20/10/2015)
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
+- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
