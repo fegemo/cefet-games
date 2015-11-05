@@ -18,7 +18,7 @@ bespokeEvent: bullets.disable
   - Apresentação em 26/11/2015 (quinta-feira)
 - Trabalhos Práticos (30 pontos)
   - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
-  - [TP2][tp2] (15 pontos, 01/10/2015 + 28 dias)
+  - [TP2][tp2] (15 pontos, 01/10/2015 ~~+ 28 dias~~ até 05/11/2015)
 - [Projeto Final][final] (40 pontos)
   - 3 entregas
 
@@ -59,6 +59,7 @@ bespokeEvent: bullets.disable
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (05/11/2015)
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
