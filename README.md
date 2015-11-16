@@ -14,7 +14,7 @@ bespokeEvent: bullets.disable
 - Prova e Listas (0 pontos)
 - Aulas Práticas (20 pontos)
 - [Seminários][seminar] (10 pontos)
-  - Parte escrita em 16/11/2015 (segunda-feira)
+  - Parte escrita em ~~16~~ 24/11/2015 (~~segunda~~ terça-feira)
   - Apresentação em 26/11/2015 (quinta-feira)
 - Trabalhos Práticos (30 pontos)
   - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
