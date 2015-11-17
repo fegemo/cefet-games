@@ -50,11 +50,11 @@ bespokeEvent: bullets.disable
 ---
 ## Tipo: **Animação Hierárquica Rígida** (_Skeletal_)
 
-- Personagens são modelados como um conjunto de partes rígidas
-  - Quando começamos com jogos 3D, esta foi a "primeira" técnica (Doom ainda usava _sprites_)
 - ![right](../../images/animation-hierarchical-rigid.png)
-  **Partes dispostas em hierarquia** (partindo da pelvis)
-  - ![left](../../images/animation-joint-crack.png)
+  Personagens são modelados como um conjunto de partes rígidas
+  - Quando começamos com jogos 3D, esta foi a "primeira" técnica (Doom ainda usava _sprites_)
+- **Partes dispostas em hierarquia** (partindo da pelvis)
+  - ![cright](../../images/animation-joint-crack.png)
     Problema: "rachaduras" nas juntas
   - Funciona bem para robôs e maquinário, construídos de partes rígidas
 
@@ -65,15 +65,15 @@ bespokeEvent: bullets.disable
 - Inicialmente proposto para personagens 3D, mas hoje em dia estamos fazendo também em 2D!
   <ul class="multi-column-inline-list-2">
     <li>
-      <figure class="polaroid item-250w">
-        <img src="../../images/2d-bones.gif">
-        <figcaption>Avengers: Age Of Ultron – Global Chaos</figcaption>
+      <figure class="polaroid item-200h">
+        <img src="../../images/2d-bones-animation.gif">
+        <figcaption>Avengers: Age Of Ultron – Global Chaos (2D)</figcaption>
       </figure>
     </li>
     <li>
-      <figure class="polaroid item-250w">
+      <figure class="polaroid item-200h">
         <img src="../../images/3d-bones-animation-mario.gif">
-        <figcaption>Feito por um artista ([hopeabandoner](http://imgur.com/gallery/6v5Pj0h))</figcaption>
+        <figcaption>Super Mario 64 (3D)</figcaption>
       </figure>
     </li>
   </ul>
@@ -85,7 +85,7 @@ bespokeEvent: bullets.disable
   - Posição
   - Orientação
   - Escala
-- Tipicamente representada por uma estrutura SQT (_**S**cale, Rotation **Q**uaterion, **T**ranslation_)
+- Tipicamente representada por uma estrutura SQT (_**S**cale, Rotation **Q**uaternion, **T**ranslation_)
 - **Uma pose de um modelo** é formada pelo **conjunto das poses** relativas **de cada osso** (junta)
 
 ---
@@ -102,7 +102,7 @@ bespokeEvent: bullets.disable
 - Para cada tempo <span class="math">t</span> tal que <span class="math">t_i < t < t_j</span>:
   - O motor de animação pode interpolar entre poses definidas em <span class="math">t_i < t < t_j</span>
   - A interpolação gera as poses intermediárias
-- <figure class="polaroid item-250w">
+- <figure class="polaroid item-250w right">
     <img src="../../images/2d-bones-robot-dragonbones.png">
     <figcaption>[Exemplo](http://dragonbones.github.io/demo.html) usando motor de animação DragonBones</figcaption>
   </figure>
@@ -114,10 +114,10 @@ bespokeEvent: bullets.disable
 - Possibilidade para deformar a malha poligonal
   - Impossível com a animação rígida
   - Muito usado para **representar o rosto do personagem**
-- ![right](../../images/morph-target-ellie.jpg)
-  Artista cria objeto em **pose neutra** (_poker face_), depois o deforma em vários extremos (sorrindo, gargalhando, super triste, chorando etc.)
-    - Também conhecido como _blendshape_
-    - Consegue-se muitas possibilidades usando-se variação de pesos da face neutra + (peso x _blendshape_)
+    ![](../../images/morph-target-ellie.jpg)
+- Artista cria objeto em **pose neutra** (_poker face_), depois o deforma em vários extremos (sorrindo, gargalhando, super triste, chorando etc.)
+  - Também conhecido como _blendshape_
+  - Consegue-se muitas possibilidades usando-se variação de pesos da face neutra + (peso x _blendshape_)
 
 ---
 ## Como funcionam _Morph Targets_/_Blendshapes_
@@ -151,7 +151,7 @@ bespokeEvent: bullets.disable
 ---
 ## _Skinning_ (2)
 
-- Coordenadas dos vértices da pela são **definidas em relação ao osso**
+- Coordenadas dos vértices da pele são **definidas em relação ao osso**
   - Primeiramente, obtém-se a matriz de transformação do osso
   - Essa matriz é, então, usada em cada um dos vértices da malha da pele
 
@@ -162,12 +162,12 @@ bespokeEvent: bullets.disable
 
 - Em geral, vértices da pele podem estar associados a mais de um osso
 
-<figure style="position: relative; width: 100%; height: 226px;">
-  <img src="../../images/skinning3.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/skinning4.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/skinning5.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/skinning6.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/skinning7.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
+<figure style="position: relative; height: 226px; width: 460px; margin: 0 auto; border-radius: .25em;">
+  <img src="../../images/skinning3.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; background: white;">
+  <img src="../../images/skinning4.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; background: white;">
+  <img src="../../images/skinning5.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; background: white;">
+  <img src="../../images/skinning6.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; background: white;">
+  <img src="../../images/skinning7.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; background: white;">
 </figure>
 
 ---
@@ -241,5 +241,5 @@ bespokeEvent: bullets.disable
 
 - Livro _Game Engine Architecture, Second Edition_
   - Capítulo 11: _Animation Systems_
-- [Max Payne 3](https://www.youtube.com/watch?v=bgGcsjCoPSI)
-- [Euphoria](https://www.youtube.com/watch?v=HauN98naZ9U) - Sistema "de movimento natural"
+- Livro _Real-Time Rendering_
+  - Capítulo _Transformations_, seção _Morphing_
