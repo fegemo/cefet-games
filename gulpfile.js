@@ -116,8 +116,8 @@ gulp.task('samples', function() {
 });
 
 gulp.task('video', function() {
-  var destination = 'dist/video';
-  return gulp.src('video/**/*')
+  var destination = 'dist/videos';
+  return gulp.src('videos/**/*')
     .pipe(changed(destination))
     .pipe(gulp.dest(destination));
 });
