@@ -60,6 +60,7 @@ bespokeEvent: bullets.disable
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (05/11/2015)
+- CG: [Animação de Personagens](classes/animation) (17/11/2015)
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
