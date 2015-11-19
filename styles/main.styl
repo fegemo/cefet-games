@@ -784,6 +784,18 @@ full-dimension-backdrop(repeat)
   &> h1
     color #FF4900
 
+.the-incredible-machine.bespoke-backdrop-active
+  background-image url(../images/the-incredible-machine.gif)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="the-incredible-machine"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  &> h1
+    color #8E8E8E
+    background-color rgba(white, .75)
+    padding .5em .25em
+    border-radius .25em
+
 // Print styles
 @media print
   #page-header
