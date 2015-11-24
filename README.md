@@ -39,18 +39,16 @@ bespokeEvent: bullets.disable
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (08/09/2015)
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
   - Prática Robocode: [atividade][activity-robocode]
-- IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
-  - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
-[activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
-[activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/archive/exercicio-cinematica.zip
 
 ---
 ## Aulas (2)
 
+- IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
+  - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (06/10/2015)
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
 - Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (15/10/2015)
@@ -58,9 +56,9 @@ bespokeEvent: bullets.disable
 - IA: [Representação do Mundo](attachments/IA 03 - Movimentação Simples.pptx) (20/10/2015)
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (05/11/2015)
 
+[activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
+[activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/archive/exercicio-cinematica.zip
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
 [activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
@@ -69,8 +67,11 @@ bespokeEvent: bullets.disable
 ---
 ## Aulas (3)
 
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (05/11/2015)
 - CG: [Animação de Personagens](classes/animation) (17/11/2015)
 - [Física para Jogos](classes/physics) (19/11/2015)
+- [Jogos em Rede](classes/networking) (24/11/2015)
 
 ---
 # Bibliografia Básica
