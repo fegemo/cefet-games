@@ -14,12 +14,14 @@ bespokeEvent: bullets.disable
 - ~~Prova e Listas~~ (0 pontos!!!)
 - Aulas Práticas (20 pontos)
 - Questionários Marotos (5 pontos)
-- [Seminários][seminar] (15 pontos)
+- [Seminários][seminar] - grupos de até 3 alunos (15 pontos)
 - Trabalhos Práticos (60 pontos)
-  - TP1[][tp1] (20 pontos)
+  - [TP0][tp0] (3 pontos, para 08/08/2016)
+  - TP1[][tp1] (17 pontos)
   - TP2[][tp2] (20 pontos)
-  - TP3[][tp3] (20 pontos)
+  - TP3 (20 pontos)
 
+[tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2
 [final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
