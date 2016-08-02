@@ -11,23 +11,23 @@ bespokeEvent: bullets.disable
 ---
 # Atividades Avaliativas
 
-- Prova e Listas (0 pontos)
+- ~~Prova e Listas~~ (0 pontos!!!)
 - Aulas Práticas (20 pontos)
-- [Seminários][seminar] (10 pontos)
-  - Parte escrita em ~~16~~ 24/11/2015 (~~segunda~~ terça-feira)
-  - Apresentação em 26/11/2015 (quinta-feira)
-- Trabalhos Práticos (30 pontos)
-  - [TP1][tp1] (15 pontos, 01/09/2015 + 21 dias)
-  - [TP2][tp2] (15 pontos, 01/10/2015 ~~+ 28 dias~~ até 05/11/2015)
-- [Projeto Final][final] (40 pontos)
-  - 3 entregas
+- Questionários Marotos (5 pontos)
+- [Seminários][seminar] - grupos de até 3 alunos (15 pontos)
+- Trabalhos Práticos (60 pontos)
+  - [TP0][tp0] (3 pontos, para 08/08/2016)
+  - TP1[][tp1] (17 pontos)
+  - TP2[][tp2] (20 pontos)
+  - TP3 (20 pontos)
 
+[tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2
 [final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
----
+<!--
 # Aulas
 
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
@@ -44,7 +44,7 @@ bespokeEvent: bullets.disable
 [activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 
----
+<!--
 ## Aulas (2)
 
 - IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
@@ -64,7 +64,6 @@ bespokeEvent: bullets.disable
 [activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
 
 
----
 ## Aulas (3)
 
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
@@ -72,6 +71,7 @@ bespokeEvent: bullets.disable
 - CG: [Animação de Personagens](classes/animation) (17/11/2015)
 - [Física para Jogos](classes/physics) (19/11/2015)
 - [Jogos em Rede](classes/networking) (24/11/2015)
+--->
 
 ---
 # Bibliografia Básica
