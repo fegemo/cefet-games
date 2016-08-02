@@ -27,7 +27,7 @@ herbívoros podem passar apertado também.
 ![](images/wakfu-ecosystem.gif)
 
 Neste trabalho prático, vamos implementar um pequeno simulador de ecossistema
-usando um motor de jogos a sua escolha. O objetivo do trabalho é praticar
+**usando um motor de jogos** à sua escolha. O objetivo do trabalho é praticar
 mais os conceitos de computação gráfica do que a simulação propriamente dita.
 Portanto, procure fazer uma simulação o mais simples possível inicialmente e,
 caso tenha tempo e interesse, evolua-a com novos comportamentos, espécies e
