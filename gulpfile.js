@@ -1,46 +1,58 @@
 var fs = require('fs'),
-    gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    plumber = require('gulp-plumber'),
-    del = require('del'),
-    rename = require('gulp-rename'),
-    connect = require('gulp-connect'),
-    browserify = require('gulp-browserify'),
-    uglify = require('gulp-uglify'),
-    stylus = require('gulp-stylus'),
-    replace = require('gulp-replace'),
-    preprocess = require('gulp-preprocess'),
-    autoprefixer = require('gulp-autoprefixer'),
-    csso = require('gulp-csso'),
-    through = require('through'),
-    opn = require('opn'),
-    ghpages = require('gh-pages'),
-    changed = require('gulp-changed'),
-    path = require('path'),
-    merge = require('merge-stream'),
-    isDist = process.argv.indexOf('serve') === -1;
+  gulp = require('gulp'),
+  gutil = require('gulp-util'),
+  plumber = require('gulp-plumber'),
+  del = require('del'),
+  rename = require('gulp-rename'),
+  // minifier = require('gulp-uglify/minifier'),
+  // uglify = require('uglify-js-harmony'),
+  uglify = require('gulp-uglify'),
+  stylus = require('gulp-stylus'),
+  replace = require('gulp-replace'),
+  preprocess = require('gulp-preprocess'),
+  autoprefixer = require('gulp-autoprefixer'),
+  csso = require('gulp-csso'),
+  changed = require('gulp-changed'),
+  sourcemaps = require('gulp-sourcemaps'),
+  connect = require('gulp-connect'),
+  source = require('vinyl-source-stream'),
+  buffer = require('vinyl-buffer'),
+  browserify = require('browserify'),
+  through = require('through'),
+  ghpages = require('gh-pages'),
+  path = require('path'),
+  merge = require('merge-stream'),
+  opn = require('opn'),
+  isDist = process.argv.indexOf('dev') === -1;
 
 gulp.task('js', function() {
-  return gulp.src(['scripts/tutorial.js', 'scripts/main.js'])
-    .pipe(changed('dist/build'))
-    .pipe(isDist ? through() : plumber())
-    .pipe(browserify({ transform: ['debowerify'], debug: !isDist }))
-    .pipe(isDist ? uglify() : through())
-    .pipe(rename('build.js'))
+  const b = browserify({
+      entries: 'scripts/main',
+      extensions: ['.js', '.json'],
+      debug: !isDist
+    });
+  return b.bundle()
+    .pipe(source('build.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    // .pipe(isDist ? minifier({}, uglify) : through())
+      .pipe(isDist ? uglify() : through())
+      .on('error', gutil.log)
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
 });
 
-gulp.task('js-classes', function() {
-  var destination = 'dist/scripts/classes';
-  return gulp.src(['scripts/classes/**/*.js'])
-    .pipe(changed(destination))
-    .pipe(isDist ? through() : plumber())
-    .pipe(browserify({ transform: ['debowerify'], debug: !isDist }))
-    .pipe(isDist ? uglify() : through())
-    .pipe(uglify())
-    .pipe(gulp.dest(destination));
-});
+// gulp.task('js-classes', function() {
+//   var destination = 'dist/scripts/classes';
+//   return gulp.src(['scripts/classes/**/*.js'])
+//     .pipe(changed(destination))
+//     .pipe(isDist ? through() : plumber())
+//     .pipe(browserify({ transform: ['debowerify'], debug: !isDist }))
+//     .pipe(isDist ? uglify() : through())
+//     .pipe(uglify())
+//     .pipe(gulp.dest(destination));
+// });
 
 gulp.task('html', function() {
   return gulp.src('html/index.html')
@@ -63,17 +75,13 @@ gulp.task('md', function() {
     .pipe(isDist ? through() : plumber())
     .pipe(gulp.dest('dist/classes'))
     .pipe(connect.reload()));
-  tasks.push(gulp.src('assignments/**/*.md')
-    .pipe(changed('dist/assignments'))
-    .pipe(isDist ? through() : plumber())
-    .pipe(gulp.dest('dist/assignments'))
-    .pipe(connect.reload()));
   return merge(tasks);
 });
 
 gulp.task('css', function() {
+  const destination = 'dist/build';
   return gulp.src('styles/main.styl')
-    .pipe(changed('dist/build'))
+    .pipe(changed(destination))
     .pipe(isDist ? through() : plumber())
     .pipe(stylus({
       // Allow CSS to be imported from node_modules and bower_components
@@ -83,7 +91,7 @@ gulp.task('css', function() {
     .pipe(autoprefixer('last 2 versions', { map: false }))
     .pipe(isDist ? csso() : through())
     .pipe(rename('build.css'))
-    .pipe(gulp.dest('dist/build'))
+    .pipe(gulp.dest(destination))
     .pipe(connect.reload());
 });
 
@@ -91,79 +99,45 @@ gulp.task('css-classes', function() {
   var destination = 'dist/styles/classes';
   return gulp.src(['styles/classes/**/*.css'])
     .pipe(changed(destination))
-    .pipe(gulp.dest(destination));
+    .pipe(gulp.dest(destination))
+    .pipe(connect.reload());
 });
 
 gulp.task('images', function() {
+  const destination = 'dist/images';
   return gulp.src('images/**/*')
-    .pipe(changed('dist/images'))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(changed(destination))
+    .pipe(gulp.dest(destination))
     .pipe(connect.reload());
 });
 
 gulp.task('attachments', function() {
+  const destination = 'dist/attachments';
   return gulp.src('attachments/**/*')
-    .pipe(changed('dist/attachments'))
-    .pipe(gulp.dest('dist/attachments'))
-    .pipe(connect.reload());
-});
-
-gulp.task('samples', function() {
-  return gulp.src('samples/**/*')
-    .pipe(changed('dist/samples'))
-    .pipe(gulp.dest('dist/samples'))
-    .pipe(connect.reload());
-});
-
-gulp.task('video', function() {
-  var destination = 'dist/videos';
-  return gulp.src('videos/**/*')
     .pipe(changed(destination))
-    .pipe(gulp.dest(destination));
+    .pipe(gulp.dest(destination))
+    .pipe(connect.reload());
 });
 
 gulp.task('audio', function() {
-  var destination = 'dist/audio';
+  const destination = 'dist/audio';
   return gulp.src('audio/**/*')
     .pipe(changed(destination))
-    .pipe(gulp.dest(destination));
+    .pipe(gulp.dest(destination))
+    .pipe(connect.reload());
 });
 
 gulp.task('favicon', function() {
-  var destination = 'dist/favicon';
+  const destination = 'dist/favicon';
   return gulp.src('favicon/**/*')
     .pipe(changed(destination))
-    .pipe(gulp.dest(destination));
+    .pipe(gulp.dest(destination))
+    .pipe(connect.reload());
 });
 
 gulp.task('clean', function(cb) {
   del('dist', cb);
 });
-
-gulp.task('clean:html', function(cb) {
-  del('dist/index.html', cb);
-});
-
-gulp.task('clean:md', function(cb) {
-  del('dist/**/*.md', cb);
-});
-
-gulp.task('clean:js', function(cb) {
-  del('dist/build/build.js', cb);
-});
-
-gulp.task('clean:css', function(cb) {
-  del('dist/build/build.css', cb);
-});
-
-gulp.task('clean:images', function(cb) {
-  del('dist/images', cb);
-});
-
-gulp.task('clean:attachments', function(cb) {
-  del('dist/attachments', cb);
-});
-
 
 function getFolders(cwd, dir) {
   var targetDirectory = path.join(cwd, dir);
@@ -176,7 +150,8 @@ function getFolders(cwd, dir) {
     });
 }
 
-gulp.task('build', ['js', 'js-classes', 'html', 'md', 'css', 'css-classes', 'images', 'audio', 'video', 'attachments', 'samples', 'favicon'], function() {
+gulp.task('build', ['js', 'html', 'md', 'css', 'css-classes', 'images',
+  'audio', 'attachments', 'favicon'], function() {
   var folders = getFolders('.', 'classes').concat(getFolders('.', 'assignments')),
       tasks = folders.map(function(folder) {
         var t = [];
@@ -191,14 +166,19 @@ gulp.task('build', ['js', 'js-classes', 'html', 'md', 'css', 'css-classes', 'ima
   return merge(tasks);
 });
 
-gulp.task('connect', ['build'], function(done) {
+gulp.task('deploy', function(done) {
+  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
+});
+
+gulp.task('dev', ['watch', 'build'], function(done) {
+  const port = 8082;
   connect.server({
     root: ['dist'],
-    port: 8082,
+    port: port,
     livereload: true
   });
 
-  opn('http://localhost:8082', done);
+  opn(`http://localhost:${port}`, done);
 });
 
 gulp.task('watch', function() {
@@ -210,12 +190,5 @@ gulp.task('watch', function() {
   gulp.watch('styles/classes/*.css', ['css-classes']);
   gulp.watch('images/**/*', ['images']);
   gulp.watch('scripts/**/*.js', ['js']);
-  gulp.watch('scripts/classes/*.js', ['js-classes']);
+  // gulp.watch('scripts/classes/*.js', ['js-classes']);
 });
-
-gulp.task('deploy', ['build'], function(done) {
-  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
-});
-
-gulp.task('serve', ['connect', 'watch']);
-gulp.task('default', ['serve']);

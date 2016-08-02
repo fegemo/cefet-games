@@ -1,5 +1,3 @@
-// Require Node modules in the browser thanks to Browserify: http://browserify.org
-
 var bespoke = require('bespoke'),
     isMobile = require('ismobilejs'),
     fancy = require('bespoke-theme-fancy'),
