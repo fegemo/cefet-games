@@ -19893,56 +19893,56 @@ module.exports = function() {
   document.getElementById('presentation-container').appendChild(commandPanelEl);
 
   cheet('↑ ↑ ↓ ↓ ← → ← → b a', {
-      next: function(str, key, num, seq) {
-        commandPanelEl.classList.add('active');
-        commandPanelEl.innerHTML += ' <span class="easter-egg-key">' + key + '</span> ';
-        var lastAddedKeyEl = commandPanelEl.querySelectorAll('.easter-egg-key:last-child')[0];
-        setTimeout(function() {
-          lastAddedKeyEl.classList.add('active');
-        },0);
-      },
-      fail: function() {
-        commandPanelEl.classList.remove('active');
+    next: function(str, key) {
+      commandPanelEl.classList.add('active');
+      commandPanelEl.innerHTML += ' <span class="easter-egg-key">' + key + '</span> ';
+      var lastAddedKeyEl = commandPanelEl.querySelectorAll('.easter-egg-key:last-child')[0];
+      setTimeout(function() {
+        lastAddedKeyEl.classList.add('active');
+      },0);
+    },
+    fail: function() {
+      commandPanelEl.classList.remove('active');
+      commandPanelEl.innerHTML = '';
+    },
+    done: function() {
+      // super mario audio from: http://themushroomkingdom.net/media/smw/wav
+      var soundNames = ['1-up', 'coin', 'egg_hatching'],
+        chosenSoundName = 'smw_' + soundNames[Math.floor(Math.random()*soundNames.length)] + '.wav',
+        chosenSoundPath = (location.pathname.indexOf('/classes/') === 0 ? '../../' : '') + 'audio/' + chosenSoundName,
+        audio = new Audio(chosenSoundPath);
+
+      audio.play();
+
+      commandPanelEl.classList.remove('active');
+      setTimeout(function() {
         commandPanelEl.innerHTML = '';
-      },
-      done: function() {
-        // super mario audio from: http://themushroomkingdom.net/media/smw/wav
-        var soundNames = ['1-up', 'coin', 'egg_hatching'],
-          chosenSoundName = 'smw_' + soundNames[Math.floor(Math.random()*soundNames.length)] + '.wav',
-          chosenSoundPath = (location.pathname.indexOf('/classes/') === 0 ? '../../' : '') + 'audio/' + chosenSoundName,
-          audio = new Audio(chosenSoundPath);
-
-        audio.play();
-
-        commandPanelEl.classList.remove('active');
-        setTimeout(function() {
-          commandPanelEl.innerHTML = '';
-        }, 200);
-      }
+      }, 200);
     }
-  );
+  });
 
   return function() {};
 };
+
 },{"cheet.js":15}],188:[function(require,module,exports){
 var bespoke = require('bespoke'),
-    isMobile = require('ismobilejs'),
-    fancy = require('bespoke-theme-fancy'),
-    keys = require('bespoke-keys'),
-    touch = require('bespoke-touch'),
-    bullets = require('bespoke-bullets'),
-    scale = require('bespoke-scale'),
-    hash = require('bespoke-hash'),
-    progress = require('bespoke-progress'),
-    state = require('bespoke-state'),
-    math = require('bespoke-math'),
-    markdown = require('bespoke-meta-markdown'),
-    // search = require('bespoke-search'),
-    backdrop = require('bespoke-backdrop'),
-    overview = require('bespoke-simple-overview'),
-    tutorial = require('./tutorial'),
-    easter = require('./easter'),
-    sleek = require('./sleek-menu');
+  isMobile = require('ismobilejs'),
+  fancy = require('bespoke-theme-fancy'),
+  keys = require('bespoke-keys'),
+  touch = require('bespoke-touch'),
+  bullets = require('bespoke-bullets'),
+  scale = require('bespoke-scale'),
+  hash = require('bespoke-hash'),
+  progress = require('bespoke-progress'),
+  state = require('bespoke-state'),
+  math = require('bespoke-math'),
+  markdown = require('bespoke-meta-markdown'),
+  // search = require('bespoke-search'),
+  backdrop = require('bespoke-backdrop'),
+  overview = require('bespoke-simple-overview'),
+  tutorial = require('./tutorial'),
+  easter = require('./easter'),
+  sleek = require('./sleek-menu');
 
 // Bespoke.js
 window.deck = bespoke.from('article', [
@@ -19960,7 +19960,7 @@ window.deck = bespoke.from('article', [
         s.src = url[i];
         if (i < url.length - 1) {
           s.addEventListener('load', function () {
-              loadScriptChain(i+1);
+            loadScriptChain(i+1);
           });
         }
         placeToPutScripts.appendChild(s);
@@ -19980,7 +19980,9 @@ window.deck = bespoke.from('article', [
     bespokeEvent: function(slide, events) {
       setTimeout(function() {
         events.split(' ').forEach(function(event) {
-          deck.fire(event);
+          if (!(window.deck instanceof 'undefined')) {
+            window.deck.fire(event);
+          }
         });
       },1000);
     },
@@ -20026,7 +20028,7 @@ sleek();
 },{"./easter":187,"./sleek-menu":189,"./tutorial":190,"bespoke":14,"bespoke-backdrop":1,"bespoke-bullets":2,"bespoke-hash":3,"bespoke-keys":4,"bespoke-math":6,"bespoke-meta-markdown":7,"bespoke-progress":8,"bespoke-scale":9,"bespoke-simple-overview":10,"bespoke-state":11,"bespoke-theme-fancy":12,"bespoke-touch":13,"ismobilejs":155}],189:[function(require,module,exports){
 module.exports = function() {
   var pageHeaderEl = document.getElementById('page-header'),
-      bodyClasses = document.body.classList;
+    bodyClasses = document.body.classList;
 
   if (pageHeaderEl) {
     pageHeaderEl.addEventListener('mouseover', function() {
@@ -20041,41 +20043,41 @@ module.exports = function() {
 
 },{}],190:[function(require,module,exports){
 var tutorial = {
-    turnedOn: true,
+  turnedOn: true,
 
-    timer: 0,
+  timer: 0,
 
-    boundEvents: [],
+  boundEvents: [],
 
-    start: function(deck, el) {
-      this.el = el;
+  start: function(deck, el) {
+    this.el = el;
 
-      var appearances = localStorage.getItem('bespoke-tutorial-appeared') || 0;
-      appearances = window.parseInt(appearances);
+    var appearances = localStorage.getItem('bespoke-tutorial-appeared') || 0;
+    appearances = window.parseInt(appearances);
 
-      if (appearances < 3) {
-        // Listens for changes in the slide
-        this.boundEvents.push(deck.on('next', this.deactivate.bind(this)));
-        this.boundEvents.push(deck.on('prev', this.deactivate.bind(this)));
+    if (appearances < 3) {
+      // Listens for changes in the slide
+      this.boundEvents.push(deck.on('next', this.deactivate.bind(this)));
+      this.boundEvents.push(deck.on('prev', this.deactivate.bind(this)));
 
-        this.timer = window.setTimeout(this.show.bind(this), 3000);
-        localStorage.setItem('bespoke-tutorial-appeared', ++appearances);
-      }
-    },
-
-    deactivate: function() {
-      this.turnedOn = false;
-      this.el.parentNode.removeChild(this.el);
-      window.clearTimeout(this.timer);
-      for (var i = 0; i < this.boundEvents.length; i++) {
-        this.boundEvents[i]();
-      }
-    },
-
-    show: function() {
-      this.el.classList.add('tutorial-on');
+      this.timer = window.setTimeout(this.show.bind(this), 3000);
+      localStorage.setItem('bespoke-tutorial-appeared', ++appearances);
     }
-  };
+  },
+
+  deactivate: function() {
+    this.turnedOn = false;
+    this.el.parentNode.removeChild(this.el);
+    window.clearTimeout(this.timer);
+    for (var i = 0; i < this.boundEvents.length; i++) {
+      this.boundEvents[i]();
+    }
+  },
+
+  show: function() {
+    this.el.classList.add('tutorial-on');
+  }
+};
 
 module.exports = function(tutorialEl) {
   return function(deck) {
