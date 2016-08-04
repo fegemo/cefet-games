@@ -53,7 +53,12 @@ gulp.task('js', function() {
 
 gulp.task('html', function() {
   return gulp.src('html/index.html')
-    .pipe(preprocess({context: { NODE_ENV: isDist ? 'production' : 'development', DEBUG: true}}))
+    .pipe(preprocess({
+      context: {
+        NODE_ENV: isDist ? 'production' : 'development',
+        DEBUG: true
+      }
+    }))
     .pipe(isDist ? through() : plumber())
     .pipe(replace('{path-to-root}', '.'))
     .pipe(gulp.dest('dist'))

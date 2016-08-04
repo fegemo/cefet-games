@@ -808,6 +808,33 @@ full-dimension-backdrop(repeat)
     padding .5em .25em
     border-radius .25em
 
+
+
+// --- class specific styles
+#megaman
+  float right
+  width 60px
+  height 60px
+  margin 0
+.sprite
+  position relative
+  overflow hidden
+  > img
+    position absolute
+    animation sprite-sequence 250ms steps(3) infinite alternate-reverse
+    &:hover
+      animation-duration 100ms
+  // arrow to the right, pointing to megaman
+  + [alt$=right]
+    margin-top 15px
+
+
+@keyframes sprite-sequence
+  from
+    left 0px
+  to
+    left -180px
+
 // Print styles
 @media print
   #page-header

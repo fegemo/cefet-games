@@ -53,7 +53,7 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
   - Colisão, Cinemática, Dinâmica, Simulações
 - Redes
   - Arquitetura, Protocolos
-  
+
 ---
 ## O que estes jogos têm **em comum**? E de **diferente**?
 
@@ -205,9 +205,9 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
 - Para isso, usamos um **_game loop_** parecido com a forma abaixo:
   ```java
     while (true) {
-      aguardarPorEventos();
-      atualizarLogicaDoJogo();
-      desenharCenaAtual();
+      aguardaPorEventos();
+      atualizaLogicaDoJogo();
+      desenhaCenaAtual();
     }
     return 0;
   }
@@ -216,6 +216,7 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
 ---
 ## APIs Gráficas: **Veredito**
 ### Perfeito para **programador** que não quer "usar a cueca de **terceiros**"
+... e quer deter conhecimento e controle sobre todo o processo
 
 ---
 # Usando **_frameworks_** (bibliotecas)
@@ -223,12 +224,16 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
 ---
 ## _Frameworks_: **O que são?**
 
-- Nível mais alto que APIs gráficas, **provêem facilidades** não encontradas
+- Nível mais alto que APIs gráficas, **proveem facilidades** não encontradas
   nelas, como:
   - Carregar imagens e áudio em vários formatos
   - Multiplataforma (em algum nível)
   - Comandos de interação
-  - ![right](../../images/sprite-megaman.png)
+  - <figure class="sprite" id="megaman">
+      <img src="../../images/sprite-megaman.png">
+    </figure>
+    ![right](../../images/seta-direita.png)
+    ![right](../../images/sprite-megaman.png)
     Animações de **_sprites_**
 - Possui estrutura pronta:
   - Um **_game loop_ pronto**
