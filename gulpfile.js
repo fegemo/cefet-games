@@ -4,8 +4,6 @@ var fs = require('fs'),
   plumber = require('gulp-plumber'),
   del = require('del'),
   rename = require('gulp-rename'),
-  // minifier = require('gulp-uglify/minifier'),
-  // uglify = require('uglify-js-harmony'),
   uglify = require('gulp-uglify'),
   stylus = require('gulp-stylus'),
   replace = require('gulp-replace'),
@@ -35,7 +33,6 @@ gulp.task('js', function() {
     .pipe(source('build.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
-    // .pipe(isDist ? minifier({}, uglify) : through())
       .pipe(isDist ? uglify() : through())
       .on('error', gutil.log)
     .pipe(sourcemaps.write('./'))
@@ -84,9 +81,9 @@ gulp.task('css', function() {
     .pipe(changed(destination))
     .pipe(isDist ? through() : plumber())
     .pipe(stylus({
-      // Allow CSS to be imported from node_modules and bower_components
+      // Allow CSS to be imported from node_modules
       'include css': true,
-      'paths': ['./node_modules', './bower_components']
+      'paths': ['./node_modules']
     }))
     .pipe(autoprefixer('last 2 versions', { map: false }))
     .pipe(isDist ? csso() : through())
