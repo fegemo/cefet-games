@@ -25,10 +25,10 @@ var fs = require('fs'),
 
 gulp.task('js', function() {
   const b = browserify({
-      entries: 'scripts/main',
-      extensions: ['.js', '.json'],
-      debug: !isDist
-    });
+    entries: 'scripts/main',
+    extensions: ['.js', '.json'],
+    debug: !isDist
+  });
   return b.bundle()
     .pipe(source('build.js'))
     .pipe(buffer())
@@ -154,7 +154,7 @@ function getFolders(cwd, dir) {
 
 gulp.task('build', ['js', 'html', 'md', 'css', 'css-classes', 'images',
   'audio', 'attachments', 'favicon'], function() {
-  var folders = getFolders('.', 'classes').concat(getFolders('.', 'assignments')),
+    var folders = getFolders('.', 'classes').concat(getFolders('.', 'assignments')),
       tasks = folders.map(function(folder) {
         var t = [];
         t.push(gulp.src(['html/index.html'])
@@ -165,8 +165,8 @@ gulp.task('build', ['js', 'html', 'md', 'css', 'css-classes', 'images',
           .pipe(gulp.dest(path.join('dist', folder, 'fonts'))));
         return merge(t);
       });
-  return merge(tasks);
-});
+    return merge(tasks);
+  });
 
 gulp.task('deploy', function(done) {
   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);

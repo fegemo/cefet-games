@@ -1,21 +1,21 @@
 var bespoke = require('bespoke'),
-    isMobile = require('ismobilejs'),
-    fancy = require('bespoke-theme-fancy'),
-    keys = require('bespoke-keys'),
-    touch = require('bespoke-touch'),
-    bullets = require('bespoke-bullets'),
-    scale = require('bespoke-scale'),
-    hash = require('bespoke-hash'),
-    progress = require('bespoke-progress'),
-    state = require('bespoke-state'),
-    math = require('bespoke-math'),
-    markdown = require('bespoke-meta-markdown'),
-    // search = require('bespoke-search'),
-    backdrop = require('bespoke-backdrop'),
-    overview = require('bespoke-simple-overview'),
-    tutorial = require('./tutorial'),
-    easter = require('./easter'),
-    sleek = require('./sleek-menu');
+  isMobile = require('ismobilejs'),
+  fancy = require('bespoke-theme-fancy'),
+  keys = require('bespoke-keys'),
+  touch = require('bespoke-touch'),
+  bullets = require('bespoke-bullets'),
+  scale = require('bespoke-scale'),
+  hash = require('bespoke-hash'),
+  progress = require('bespoke-progress'),
+  state = require('bespoke-state'),
+  math = require('bespoke-math'),
+  markdown = require('bespoke-meta-markdown'),
+  // search = require('bespoke-search'),
+  backdrop = require('bespoke-backdrop'),
+  overview = require('bespoke-simple-overview'),
+  tutorial = require('./tutorial'),
+  easter = require('./easter'),
+  sleek = require('./sleek-menu');
 
 // Bespoke.js
 window.deck = bespoke.from('article', [
@@ -33,7 +33,7 @@ window.deck = bespoke.from('article', [
         s.src = url[i];
         if (i < url.length - 1) {
           s.addEventListener('load', function () {
-              loadScriptChain(i+1);
+            loadScriptChain(i+1);
           });
         }
         placeToPutScripts.appendChild(s);
@@ -53,7 +53,9 @@ window.deck = bespoke.from('article', [
     bespokeEvent: function(slide, events) {
       setTimeout(function() {
         events.split(' ').forEach(function(event) {
-          deck.fire(event);
+          if (!(window.deck instanceof 'undefined')) {
+            window.deck.fire(event);
+          }
         });
       },1000);
     },
