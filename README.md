@@ -31,9 +31,9 @@ bespokeEvent: bullets.disable
 # Aulas
 
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (04/08/2016)
+- Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2015)
 
 <!--
-- Introdução: [História, Plataformas e Gêneros](classes/intro/) (18/08/2015)
   - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
   - Prática Game Maker: [atividade][activity-gamemaker]
