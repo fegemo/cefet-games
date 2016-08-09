@@ -403,6 +403,7 @@ bespokeState: checkpoint
 - Quais são as principais **características classificatórias** de jogos?
 - **Além de entreter**, jogos podem ter **outros objetivos**?
 - Quais são os **gêneros de jogos** mais comuns?
+- [Questionário Maroto](https://moodle.cefetmg.br/mod/quiz/view.php?id=19524)
 
 ---
 ## **Características** dos Jogos
