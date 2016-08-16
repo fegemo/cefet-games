@@ -31,20 +31,24 @@ bespokeEvent: bullets.disable
 # Aulas
 
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (04/08/2016)
-- Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2015)
+- Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2016)
+- Prática _Maker_: [slides](classes/rpgmaker),
+  atividade: [RPG Maker][activity-rpgmaker] ou [RPG Boss][activity-rpgboss]
+- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (16/08/2016)
+
+
+
+[activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
+[activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
+[activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
+[activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
 
 <!--
-  - Prática RPG Maker: [slides](classes/rpgmaker), [atividade][activity-rpgmaker]
-- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (25/08/2015)
   - Prática Game Maker: [atividade][activity-gamemaker]
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (08/09/2015)
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
   - Prática Robocode: [atividade][activity-robocode]
-
-[activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
-[activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
-[activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 
 <!--
 ## Aulas (2)
