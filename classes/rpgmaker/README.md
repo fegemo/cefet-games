@@ -24,9 +24,9 @@ backdrop: rpgmaker-sand
   - _Level design_
 - Um tipo de ferramenta é o tipo "_game/genre maker_", ou fazedor de jogos de um certo tipo
   - O RPG Maker é provavelmente o _maker_ de RPGs bidimensionais mais popular
-   - Mas existem [vários][rpg-boss] [outros][tool-rpgtoolkit] [também][tool-ggmaker]
+   - Mas existem [outros][tool-rpgtoolkit] [também][tool-ggmaker]
 
-[rpg-boss]: http://rpgboss.com/
+
 [tool-rpgtoolkit]: http://rpgtoolkit.net/home
 [tool-ggmaker]: http://ggmaker.com/
 
@@ -36,11 +36,10 @@ backdrop: rpgmaker-sand
 ---
 ## _RPG-Maker-made_, no Steam
 
-[![](../../images/steam-rpgmaker-tagged-games.png)][steam-rpgmaker-tagged-games]
+<iframe width="800" height="360" src="http://store.steampowered.com/tag/en/RPGMaker/#p=0&tab=TopSellers">Trecho de página do steam mostrando os jogos da loja que foram feitos usando o RPG Maker</iframe>
 
 - Destaque para o jogo _To the Moon_ (97% _**overwhelmingly**_ positivo)
 
-[steam-rpgmaker-tagged-games]: http://store.steampowered.com/tag/en/RPGMaker/#p=0&tab=TopSellers
 ---
 ## Nosso uso do RPG Maker
 
@@ -49,7 +48,7 @@ backdrop: rpgmaker-sand
     - Criadores podem focar em conteúdo, em vez em de código
     - Muito bom para aprender como um jogo funciona
     - Excelente para criar protótipos para testar narrativas
-    - Jogos com gráficos 8-16 bits são sempre bem vindos
+    - Jogos com gráficos 8-16 bits são sempre bem vindos :wink:
   - Cons:
     - Pouca flexibilidade nos tipos de jogos criados
 
@@ -78,14 +77,7 @@ backdrop: rpgmaker-sand
 ---
 ## Atividade Prática
 
-- E possível que não seja possível instalar o RPG Maker (necessário ter
-    permissão de administrador)
-  - Se for o caso, vamos usar o [RPG Boss][rpgboss] (gratuito, _open source_)
-- Enunciado da atividade de hoje:
-  - [RPG Maker][activity-rpgmaker]
-  - [RPG Boss][activity-rpgboss]
+- Veja o enunciado da atividade de hoje [aqui][activity-rpgmaker].
 
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
-[activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
-[rpgboss]: http://rpgboss.com/
