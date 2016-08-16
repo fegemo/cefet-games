@@ -11,6 +11,9 @@ bespokeEvent: bullets.disable
 # Roteiro
 
 1. Jogadores
+  - Características Geográficas
+  - Características Psicográficas
+  - Características Demográficas
 1. Narrativa
 1. _Gameplay_
 
@@ -39,6 +42,7 @@ bespokeState: checkpoint
   - 51% das residências possuem um console
   - 42% dos americanos jogam regularmente
     - 3h+ por semana
+- [Estatísticas 2016](http://essentialfacts.theesa.com/Essential-Facts-2016.pdf)
 
 ---
 # Motivação dos Jogadores
@@ -169,8 +173,8 @@ they are integrated, and **nearly everyone plays**."_
 ---
 ## Por quê fazer o estudo psicográfico?
 
-_"Knowing your target player market isn’t just an issue of pure marketin; [...].
-Knowing your audience [...] means understanding the way your game fits
+_"Knowing your target player market isn’t just an issue of pure marketing;
+[...]. Knowing your audience [...] means understanding the way your game fits
 into your players’ lives."_
 
 _"Do your players think of gaming as a **time waster or a dedicated
@@ -184,7 +188,7 @@ Brandii Grace (Game Designer, Engaging Designs)
 ---
 # Características **Demográficas**
 
-- Informação demográfica **inclui sexo, idade, receita, nivel educacional,
+- Informação demográfica **inclui sexo, idade, receita, nível educacional,
   estado civil, etnia e religião**
 - **Sexo**
   - Era dos arcades e consoles teve grande predomínio do público masculino
@@ -196,13 +200,16 @@ Brandii Grace (Game Designer, Engaging Designs)
 
 - Uma geração é composta por **pessoas cuja localização comum na história
   os torna "uma pessoa coletiva"**
-- Nos EUA, há aproximadamente 5 gerações:  
-  ![](../../images/generations.png)
+- ![right](../../images/generations.png)
+  Nos EUA, há ~5 gerações:  
   1. Geração do Silêncio (~70–90 anos)
   2. Geração _Baby Boomer_ (~50–70 anos)
   3. Geração X (~30–50 anos)
-  4. Geração Milenar (~10–30 anos)
-  5. Geração "Homelander" (~10 anos ou mais jovem)
+    - Crianças "soltas", adultos empreendedores
+  4. Geração Milenar (Y) (~10–30 anos)
+    - Computadores, "mimos paternais", autoconfiantes (especiais)
+  5. Geração "Homelander" (Z) (~10 anos ou mais jovem)
+    - Internet, gamificação, "criançarcado"
 
 ---
 <!--
@@ -546,9 +553,9 @@ backdrop: heroes
 ---
 ## Personagens - Arte
 
-- ![right](../../images/rw-donkey-concept.png)
+- ![right](../../images/rw-donkey-animated.gif)
   ![right](../../images/rw-donkey-modeled.png)
-  ![right](../../images/rw-donkey-animated.gif)
+  ![right](../../images/rw-donkey-concept.png)
   (Levantamento do Perfil)
 - **Arte Conceitual**
 - Modelagem
