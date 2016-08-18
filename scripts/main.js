@@ -61,6 +61,9 @@ window.deck = bespoke.from('article', [
     },
     bespokeState: function(slide, classNames) {
       slide.setAttribute('data-bespoke-state', classNames);
+    },
+    classes: function(slide, names) {
+      names.split(' ').forEach((n) => slide.classList.add(n));
     }
   }),
   keys(),
