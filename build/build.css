@@ -540,6 +540,19 @@ body.menu-open .bespoke-progress-parent {
   transform: translateY(9px);
   transition: transform 200ms ease-out;
 }
+.floating-right-code pre {
+  float: right;
+  width: auto;
+  margin-left: 1em;
+}
+.floating-left-code pre {
+  float: left;
+  width: auto;
+  margin-right: 1em;
+}
+.smaller-code code {
+  font-size: 70%;
+}
 #page-author {
   display: inline-block;
   float: right;

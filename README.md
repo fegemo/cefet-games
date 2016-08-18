@@ -32,17 +32,19 @@ bespokeEvent: bullets.disable
 
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (04/08/2016)
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2016)
-- Prática _Maker_: [slides](classes/rpgmaker),
-  atividade: [RPG Maker][activity-rpgmaker] ou [RPG Boss][activity-rpgboss]
+  - Prática _Maker_: [slides](classes/rpgmaker),
+    atividade: [RPG Maker][activity-rpgmaker] ou [RPG Boss][activity-rpgboss]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (16/08/2016)
+  - Prática _Sprites_: [slides](classes/2d-graphics),
+    atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
 
 
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
-[activity-gamemaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/gamemaker
+[activity-sprites]: https://github.com/fegemo/cefet-games/tree/master/assignments/sprites
+[activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
-
 <!--
   - Prática Game Maker: [atividade][activity-gamemaker]
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)

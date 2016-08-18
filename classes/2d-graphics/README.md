@@ -3,21 +3,74 @@ backdrop: 2d-graphics
 bespokeEvent: bullets.disable
 -->
 
-# Gráficos em 2D
+# Gráficos em 2D - Texturas e Sprites
 ---
 # Roteiro
 
+1. LibGDX: introdução
 1. Imagens discretas _vs._ contínuas
 1. Desenho de objetos 2D
-  - _Sprites_ e _spritesheets_
   - Texturas e atlas
-1. Desenho de cenários 2D
+  - _Sprite Batching_
+  - _Sprites_ e _spritesheets_
+1. Prática Goombas
+<!--1. Desenho de cenários 2D
   - _Tiles_ e _tilesets_
   - _Scrolling_
   - _Parallaxing_
-1. LibGDX: introdução
-  - _Sprite Batching_
-  - Exercício
+-->
+
+---
+![LibGDX](../../images/logo-libgdx.png)
+---
+## ![LibGDX](../../images/logo-libgdx.png)
+
+- Um _framework_ para desenvolvimento de jogos 2D/3D
+  - Multiplataforma: desktop, web, Android e iOS
+  - Escrito em Java
+  - Baseado em OpenGL <abbr title="Embedded Systems">ES</abbr>
+  - Gratuito, de código aberto
+- [Site oficial](https://libgdx.badlogicgames.com/)
+
+---
+<!--
+  classes: floating-right-code
+-->
+
+## Funcionamento da LibGDX
+
+- Gameloop
+  - Já está devidamente implementado pelo _framework_
+- ```java
+  public class MeuJogo implements
+    ApplicationListener {
+    public void create() { }
+    public void resize(int w,
+      int h) { }
+    public void render() { }
+    public void pause() { }
+    public void resume() { }
+    public void dispose() { }
+  }
+  ```
+  Basta **implementar `ApplicationListener`** ou herdar `ApplicationAdapter`:
+  - `create()` é chamada 1x
+  - `resize(w,h)` é chamada quando a tela muda de tamanho
+  - `render()` é chamada sempre
+
+
+---
+<!--
+classes: floating-left-code smaller-code
+-->
+
+## Ciclo de vida de uma aplicação LigGDX
+
+![right](../../images/libgdx-life-cycle.png)
+
+- [Documentação][docs-lifecycle]
+
+[docs-lifecycle]: https://github.com/libgdx/libgdx/wiki/The-life-cycle
 
 ---
 # Imagens Discretas _vs._ Contínuas
@@ -51,31 +104,223 @@ bespokeEvent: bullets.disable
 ---
 ## Texturas
 
-- Quando usamos 2D + _bitmaps_:
-  - Usamos imagens previamente criadas representando com os pixels que queremos
-    desenhar
-
+- <figure class="polaroid" class="right" style="width: 180px; float:right; background: transparent;">
+    <img src="../../images/treasure-chest-texture.png" style="background: transparent;">
+    <figcaption>bau.png</figcaption>
+  </figure>
+  Quando usamos 2D + _bitmaps_:
+  - Usamos imagens previamente criadas por artistas gráficos
+    - A essas imagens damos o nome de **texturas**
+  - Mais tecnicamente, **textura é uma imagem enviada para a placa de vídeo**
+    e eventualmente usada para ser <u>aplicada a um retângulo</u>
 
 ---
-## _Sprite_
+## [Texture][docs-texture] na LibGDX
 
+```java
+// na função "create":
+batch = new SpriteBatch();
+fundo = new Texture("tela-de-fundo.png");
+fundoX = 20;
+fundoY = 0;
+
+// na função "render":
+batch.draw(fundo, fundoX, fundoY);
 ```
-class Sprite {
-  Texture textura;
-  Rect dimensoes;
-  Vector2 posicao;
-  Vector2 ancora;
+- Mas quem é esse `SpriteBatch`?
 
-  void desenha() {
-    // ...
-  }
+[docs-texture]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html
+
+---
+<!--
+  classes: floating-right-code
+-->
+
+## SpriteBatch ([documentação][docs-spritebatch])
+
+- Cada vez que se desenha algo, há um **processo de comunicação** com a
+  placa de vídeo que é **dispendioso**
+  - Para evitar fazer várias pequenas comunicações, <u>optamos por fazer
+    uma menor quantidade de comunicações maiores</u>
+  - ```java
+    batch.begin();
+    batch.draw(texturaFundo);
+    batch.draw(texturaCeu);
+    batch.draw(texturaTerreno);
+    // ...outros desenhos...
+    batch.end(); // apenas 1 chamada à GPU
+    ```
+    Para tal, usamos uma [`SpriteBatch`][docs-spritebatch]
+    - Acumulamos vários desenhos (texturas) e mandamos desenhar apenas 1 vez
+
+[docs-spritebatch]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/SpriteBatch.html
+
+---
+## SpriteBatch (continuação)
+
+```java
+public class MeuJogo extends ApplicationAdapter {
+    private SpriteBatch batch;
+
+    public void create () {
+        batch = new SpriteBatch();
+    }
+
+    public void render () {
+        // apaga a tela para redesenhar nela
+        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        batch.begin();
+        // comandos de desenho aqui...
+        // batch.draw(...)
+        batch.end();
+    }
 }
 ```
 
 ---
+<!--
+  classes: floating-right-code
+-->
+
+## _Sprite_
+
+- ```java
+  class Sprite {
+    Texture textura;
+    float largura, altura;
+    float x, y;
+
+    void desenha() {
+      // ...
+    }
+  }
+  ```
+  Uma _sprite_ é um objeto gráfico (possui uma textura) posicionado na
+  tela do jogo
+  - Textura + dimensão (largura, altura) + posição (x, y)
+  - Pode ser estática (apenas 1 quadro) ou animada (múltiplos quadros)
+  - Pode ter movimento
+
+---
+## [_Sprite_][docs-sprite] na LibGDX
+
+- ```java
+  // na função "create":
+  batch = new SpriteBatch();
+  jogador = new Sprite("jogador.png");
+  jogador.setPosition(50, 20);
+
+  // na função "render":
+  batch.begin();
+  batch.draw(texturaFundo);
+  batch.draw(texturaCeu);
+  jogador.draw(batch);  // a sprite que se desenha,
+  batch.end();          // recebendo o "batch"
+  ```
+
+[docs-sprite]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Sprite.html
+
+---
 ## _Spritesheet_
 
-![](../../images/spritesheet-anchor-points.png)
+<figure class="polaroid" class="right" style="width: 180px; float:right; background: transparent;">
+    <img src="../../images/goomba-spritesheet.png" style="background: transparent;">
+    <figcaption>`goomba-spritesheet.png`</figcaption>
+</figure>
+
+- É muito comum termos **_sprites_ com animações**
+- Nesse caso, criamos uma **_spritesheet_** contendo **todos os quadros
+  de animação** de um personagem
+  - Usar apenas 1 arquivo (e, portanto, 1 textura) em vez de 20 tem
+    desempenho muito melhor
+
+---
+## **Animações** em LibGDX (1/3)
+
+```java
+Texture spriteSheet;
+TextureRegion[][] quadrosDaAnimacao;
+Animation andarParaFrente;
+float tempoDaAnimacao;
+
+// passo 1: na "create()"
+spriteSheet = new Texture("goomba-spritesheet.png");
+quadrosDaAnimacao = TextureRegion.split(spriteSheet, 20, 30);
+andarParaFrente = new Animation(0.1f, new TextureRegion[] {
+  quadrosDaAnimacao[0][0], // 1ª linha, 1ª coluna
+  quadrosDaAnimacao[0][1], // idem, 2ª coluna
+  quadrosDaAnimacao[0][2],
+  quadrosDaAnimacao[0][3],
+  quadrosDaAnimacao[0][4],
+});
+andarParaFrente.setPlayMode(PlayMode.LOOP_PINGPONG);
+tempoDaAnimacao = 0;
+
+// passo 2: na "render()"
+tempoDaAnimacao += Gdx.graphics.getDeltaTime();
+batch.draw(
+  animacaoFrente.getKeyFrame(tempoDaAnimacao),
+  x, y);
+```
+
+---
+## Animações na LibGDX (2/3)
+
+- Classe `Animation` ([documentação][docs-animation],
+  [informações][guide-animation])
+  ```java
+  Animation andarParaFrente =
+    new Animation(tempoEntreQuadros, sequenciaDeQuadros);
+  ```
+  - Contém uma sequência de `TextureRegion` que são alternadas ao longo do tempo
+- Classe `TextureRegion` ([documentação][docs-textureregion],
+  [informações][guide-textureregion])
+  ```java
+  TextureRegion quadroDoMeio =
+    new TextureRegion(textura, 0, 0,
+      larguraDoQuadro, alturaDoQuadro);
+  ```
+  - É um pedaço de uma textura
+
+
+[docs-animation]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Animation.html
+[guide-animation]: https://github.com/libgdx/libgdx/wiki/2D-Animation
+[docs-textureregion]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/TextureRegion.html
+[guide-textureregion]: https://github.com/libgdx/libgdx/wiki/Textures,-textureregion-and-spritebatch#textureregion
+
+---
+## Animações na LibGDX (3/3)
+
+- Método estático
+  `TextureRegion.split(textura, larguraDoQuadro, alturaDoQuadro)`:
+  - **Divide a textura** em uma matriz de quadros (`TextureRegion[][]`)
+  - Usamos essa matriz para **instanciar as animações**
+- Classe `Animation` (continuação)
+  ```java
+    //...na função "render()"
+    tempoDaAnimacao += Gdx.graphics.getDeltaTime();
+    TextureRegion quadroCorrente = andarParaFrente
+      .getKeyFrame(tempoDaAnimacao);
+    batch.draw(quadroCorrente, x, y);
+  ```
+  - Desenhamos apenas o **"quadro corrente"**
+
+---
+# Prática Goombas
+---
+## Prática Goombas
+
+1. Faça um _fork_ do
+  [repositório com o código seminal][activity-sprites-starter] no GitHub
+1. Clone **seu _fork_** para seu computador
+1. Faça a atividade descrita no [enunciado][activity-sprites]
+1. Faça _add_ e _commit_ com as suas mudanças
+1. Faça _push_ para enviar seus _commits_
+1. Envie o link do seu repositório no Moodle
+
+[activity-sprites]: https://github.com/fegemo/cefet-games/tree/master/assignments/sprites
+[activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
 
 ---
 # Referências
