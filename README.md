@@ -37,6 +37,7 @@ bespokeEvent: bullets.disable
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (16/08/2016)
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
+- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (23/08/2016)
 
 
 
@@ -48,7 +49,6 @@ bespokeEvent: bullets.disable
 <!--
   - Prática Game Maker: [atividade][activity-gamemaker]
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
-- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (08/09/2015)
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
   - Prática Robocode: [atividade][activity-robocode]
 
