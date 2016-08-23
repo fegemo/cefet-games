@@ -30,8 +30,7 @@ bespokeState: checkpoint
     - UnrealEd (Epic Games)
     - World Builder (EA)
     - Aurora Toolset (Bioware)...
-
-- _Level design_ pode ser usado para prover estrutura .... fas klzxcçvlkjzcçlkjçxzclkjvadçslkjfaçlkdjf
+    - Tiled
 
 ---
 # Estrutura
@@ -102,7 +101,7 @@ bespokeState: checkpoint
   - **Perspectiva e Câmera:** o ponto de vista em que o jogador é colocado em referência ao mundo de jogo
     - ![right](../../images/halo-wars.png)
       **Onipresente:** habilidade de ver diferentes partes do mundo e tomar ações em qualquer lugar
-    - **Aérea (_top-town_):** mostra o mundo de jogo como visto "por cima". Exemplos: Pac-Man, Legend of Zelda
+    - **Aérea (_top-down_):** mostra o mundo de jogo como visto "por cima" do personagem. Exemplos: Pac-Man, Legend of Zelda
 
 ---
 ## Espaço (2)
@@ -150,6 +149,7 @@ bespokeState: checkpoint
 - **Limites:** até onde é possível ir dentro do mundo
   - Em jogos RTS, tipicamente o mundo termina onde começa um vácuo negro :)
 - **Realismo:** uso de dados e imagens do mundo real
+  - Exemplo: Pokémon Go
 - **Estilo:** comunica o sentimento geral do mundo de jogo, tentando evocar certos sentimentos ou sensações nos jogadores
 
   ![](../../images/flowers-and-residentevil5.jpg)
@@ -189,8 +189,8 @@ bespokeState: checkpoint
 ## Papéis de Empresas (2)
 
 - Outros envolvidos:
-  - **_Manufacturers_:** empresas que desenvolvem o console ou hardware específico. Normalmente tem que aprovar o jogo e dar uma licença de desenvolvimento
-  - **_Licensor_:** caso o jogo seja adaptador de alguma fonte (cinema, livro, etc) é necessário obter uma licença de direitos do autor
+  - **_Manufacturers_:** empresas que desenvolvem o console ou _hardware_ específico. Normalmente tem que aprovar o jogo e dar uma licença de desenvolvimento
+  - **_Licensor_:** caso o jogo seja adaptado de alguma fonte (cinema, livro, etc) é necessário obter uma licença de direitos do autor
 
 ---
 # Organização da Equipe
@@ -202,7 +202,7 @@ bespokeState: checkpoint
   - Arte
   - Programação
   - Áudio
-  - Teste &amp; QA
+  - Teste &amp; QA (Quality Assurance)
   - _Marketing_
 
 ---
@@ -324,20 +324,25 @@ bespokeState: checkpoint
 ---
 ## Fases: Conceito
 
-- Essa fase começa com a idéia do jogo e termina quando decide-se realmente partir para o planejamento do projeto
-  - Leva-se em consideração a idéia, mercado, público alvo, compatibilidade com a empresa, recursos de pessoal e financeiro, etc
+- Essa fase começa com a **idéia do jogo** e termina quando decide-se
+  realmente partir para o **planejamento do projeto**
+  - Leva-se em consideração a idéia, mercado, público alvo,
+    compatibilidade com a empresa, recursos de pessoal e financeiro, etc
 - Nessa fase a equipe pode ser bem pequena
 
 ---
 ## Fases: Pré-Produção e Protótipo
 
-- Na **Pré-Produção se elabora a proposta e se planeja o desenvolvimento do jogo**
-  - Aspectos que variam desde o gameplay, personagens, etc até o cronograma de execução
-  - Elaboração do Documento de Design e de outros documentos auxiliares (Style Guide, Production Plan, etc)
+- Na **Pré-Produção se elabora a proposta e se planeja o desenvolvimento
+  do jogo**
+  - Aspectos que variam desde o _gameplay_, personagens, etc até o
+    cronograma de execução
+  - Elaboração do <u>Documento de Design</u> e de outros documentos auxiliares
+    (_Style Guide_, _Production Plan_, etc)
 - **Protótipo**:
-  - “A working **piece of software** that captures on-screen the **essence of
+  - _“A working **piece of software** that captures on-screen the **essence of
     what makes your game special**, what sets it apart from the rest, and
-    **what will make it successful**”
+    **what will make it successful**”_
   - Fundamental para verificar viabilidade e vender a idéia
 
 ---
@@ -357,11 +362,11 @@ bespokeState: checkpoint
   - **Versão jogável do início ao fim**, talvez faltando ainda alguns aspectos
     de arte e acessórios
   - Vai ser testado pela equipe de testes
-  - Foco: remover bugs, finalizar e aparar arestas
+  - Foco: remover _bugs_, finalizar e aparar arestas
 - **Beta**
   - Versão **praticamente pronta**, que vai ser liberada para os
     _beta testers_, normalmente voluntários _off-house_
-  - Foco: remover bugs, estabilizar, performance tunning
+  - Foco: remover _bugs_, estabilizar, _performance tunning_
 - **Gold**
   - Versão **liberada para o mercado**
 
@@ -405,7 +410,7 @@ bespokeState: checkpoint
 ## Sumário executivo (2)
 
 - Tecnologia
-  - Engines, middlewares, etc
+  - _Engines_, _middlewares_, etc
 - Público alvo
   - Quem vai jogar o seu jogo? Idade, sexo, tipo, etc...
 - _Key Features / Unique Selling Points_ (USPs)
@@ -417,7 +422,7 @@ bespokeState: checkpoint
 # _Game Design Document_
 
 - Objetivos:
-  - Descrever o jogo em detalhes, aprofundando e esclarecendo as idéias
+  - **Descrever o jogo em detalhes**, aprofundando e esclarecendo as idéias
   - Guiar o desenvolvimento do jogo para todas as subequipes envolvidas
 - Visão geral
   - Descrição do jogo, expansão da sinopse
@@ -428,12 +433,14 @@ bespokeState: checkpoint
 ## _Game Design Document_ (2)
 
 - Mecânica do jogo
-  - Core gameplay (experiência de interação)
+  - _Core gameplay_ (experiência de interação)
   - Modos de jogo (regras)
   - Ações possíveis do jogador
   - Inteligência artificial proposta
 - Personagens
-  - Descrição detalhada dos personagens (perfil, comportamento, habilidades, papel na trama, esboço de sua aparência, controlável ou não, etc)
+  - Descrição detalhada dos personagens (perfil, comportamento,
+    habilidades, papel na trama, esboço de sua aparência, controlável ou
+    não, etc)
 
 ---
 ## _Game Design Document_ (3)
@@ -443,7 +450,7 @@ bespokeState: checkpoint
     - Características, esboços, funções, efeitos visuais e sonoros
   - Elementos decorativos
     - Esboços
-- Cenários (level design)
+- Cenários (_level design_)
   - Descrição de fases e seus objetivos
   - Estrutura de fluxo (evolução da dificuldade)
   - Descrição de desafios
@@ -463,20 +470,23 @@ bespokeState: checkpoint
 ## _Game Design Document_ (5)
 
 - Arte
-  - Estilo visual do jogo (toon, realista, futurista, etc)
+  - Estilo visual do jogo (_toon_, realista, futurista, etc)
     - Indicar referências para inspiração
   - Estilo sonoro do jogo
     - Indicar referências para inspiração
   - Lista de elementos a serem produzidos/coletados
-    - Cenários, personagens, objetos interativos e decorativos, músicas, efeitos sonoros, texturas, sprites, HUD
+    - Cenários, personagens, objetos interativos e decorativos, músicas,
+      efeitos sonoros, texturas, sprites, HUD
     - Descrição dos efeitos especiais (opcional)
 
 ---
 # _Technical Design Document_
 
 - Objetivos:
-  - Descrever a estrutura interna do código do jogo a nível de classes (Diagramas UML)
-  - Auxiliar na visualização do funcionamento do jogo e como os objetos se comunicam
+  - Descrever a estrutura interna do código do jogo a nível de classes
+    (_e.g._, Diagramas UML)
+  - Auxiliar na visualização do funcionamento do jogo e como os objetos
+    se comunicam
 - Diagramas de classe:
   - Gerenciamento de entrada (controles)
   - Gerenciamento de áudio
@@ -489,16 +499,14 @@ bespokeState: checkpoint
 ## _Technical Design Document_ (2)
 
 - Diagramas de sequência:
-  - Loop principal - métodos
+  - _Loop_ principal - métodos
   - Menus e fluxo de janelas
-  - Inicialização do jogo (loading)
+  - Inicialização do jogo (_loading_)
   - Tratamento de colisão
   - Pontuação, alteração de atributos, evolução, etc
   - Inteligência artificial
   - Transição de fases
   - Persistência do mundo do jogo
-
-
 
 ---
 # Referências
