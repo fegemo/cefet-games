@@ -115,9 +115,12 @@ Criar um _microgame_ no jogo é uma tarefa com 3 etapas:
       // ... outros métodos
   }
   ```
-  - Caso o jogador consiga vencer o desafio antes do tempo do _microgame_, você deve chamar `super.challengeSolved()` nesse momento.
-  - Analogamente, caso o jogador perca o desafio antes do tempo, você deve chamar `super.challengeFailed()`.
-1. **Criar uma classe** (_e.g._, `MicroJogoMarotexFactory`) que implementa (_i.e._, `implements`) a interface `MiniGameFactory`. Exemplo:
+  - Caso o jogador consiga vencer o desafio antes do tempo do _microgame_,
+    você deve chamar `super.challengeSolved()` nesse momento.
+  - Analogamente, caso o jogador perca o desafio antes do tempo, você
+    deve chamar `super.challengeFailed()`.
+1. **Criar uma classe** (_e.g._, `MicroJogoMarotexFactory`) que
+  implementa (_i.e._, `implements`) a interface `MiniGameFactory`. Exemplo:
   ```java
   public class MicroJogoMarotexFactory implements MiniGameFactory {
       @Override
@@ -136,7 +139,9 @@ Criar um _microgame_ no jogo é uma tarefa com 3 etapas:
       }
   }
   ```
-1. **Alterar a classe da tela de jogo** (`PlayingGamesScreen`) para colocar o novo _minigame_ como elegível para sorteio:
+1. **Alterar a classe da tela de jogo** (`PlayingGamesScreen`) para colocar
+  o novo _minigame_ como elegível para sorteio:
+  
   ```java
   // ...
   public PlayingGamesScreen(Game game, BaseScreen previous) {
@@ -153,7 +158,8 @@ Criar um _microgame_ no jogo é uma tarefa com 3 etapas:
 
 ## Avaliação
 
-Seu trabalho será avaliado quanto à criatividade dos _microgames_ e à qualidade do resultado final e da implementação.
+Seu trabalho será avaliado quanto à criatividade dos _microgames_ e à
+qualidade do resultado final e da implementação.
 
 ## O que faz perder nota
 

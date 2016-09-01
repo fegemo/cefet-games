@@ -17,12 +17,13 @@ bespokeEvent: bullets.disable
 - [Seminários][seminar] - grupos de até 3 alunos (15 pontos)
 - Trabalhos Práticos (60 pontos)
   - [TP0][tp0] (3 pontos, para 08/08/2016)
-  - [TP1][tp1] (9 + 7 pontos, para 15/09/2016)
+  - [TP1][tp1], [repositório][tp1-repo] (9 + 7 pontos, para 15/09/2016)
   - TP2[][tp2] (20 pontos)
   - TP3 (20 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-brushmyteethplz
+[tp1-repo]: https://github.com/fegemo/cefet-games-brushmyteethplz
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2
 [final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
