@@ -49,6 +49,9 @@ bespokeEvent: bullets.disable
 [activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
+[activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
+[activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/
+
 <!--
   - Prática Game Maker: [atividade][activity-gamemaker]
 - IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
@@ -66,8 +69,6 @@ bespokeEvent: bullets.disable
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
 
-[activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
-[activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/archive/exercicio-cinematica.zip
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
 [activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
