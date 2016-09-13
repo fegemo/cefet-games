@@ -39,6 +39,8 @@ bespokeEvent: bullets.disable
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (23/08/2016)
+- IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
+  - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 
 
 
@@ -56,8 +58,6 @@ bespokeEvent: bullets.disable
 <!--
 ## Aulas (2)
 
-- IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
-  - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (06/10/2015)
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
 - Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (15/10/2015)
