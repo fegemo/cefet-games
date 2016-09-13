@@ -153,7 +153,7 @@ function getFolders(cwd, dir) {
 }
 
 gulp.task('build', ['js', 'html', 'md', 'css', 'css-classes', 'images',
-  'audio', 'attachments', 'favicon'], function() {
+  'audio', 'favicon'], function() {
     var folders = getFolders('.', 'classes').concat(getFolders('.', 'assignments')),
       tasks = folders.map(function(folder) {
         var t = [];

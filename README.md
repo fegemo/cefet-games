@@ -39,7 +39,7 @@ bespokeEvent: bullets.disable
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (23/08/2016)
-- IA: [Movimentação cinemática, dinâmica e _steering_](attachments/IA 03 - Movimentação Simples.pptx) (22/09/2015)
+- IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement] (22/09/2015)
   - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 
 
@@ -49,6 +49,7 @@ bespokeEvent: bullets.disable
 [activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
 [activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
+[chaimo-movement]: https://github.com/fegemo/cefet-games/blob/master/attachments/IA%2003%20-%20Movimenta%C3%A7%C3%A3o%20Simples.pptx?raw=true
 [activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
 [activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/
 
