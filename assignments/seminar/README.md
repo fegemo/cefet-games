@@ -55,7 +55,7 @@ traz os seguintes benefícios:
   - Realidade Aumentada
   - Técnicas de Câmeras
   - Cloud Gaming, Gaming as a Service
-  - [Restante aqui...](http://www.sbgames.org/sbgames2015/#/trilhas/computacao)
+  - [Restante aqui...](http://www.sbgames.org/sbgames2016/trilha/computacao/#potential-topics-include-but-are-not-limited-to:47fe538ead686a3d050a2d28554c1a76)
 
 ## Critérios de Avaliação
 
