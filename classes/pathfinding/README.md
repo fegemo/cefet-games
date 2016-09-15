@@ -314,7 +314,7 @@ def pathfindDijkstra(graph, start, end):
 ---
 ##  Algoritmo de Dijkstra
 
-- Complexidade: O( (V+E) * Log(V) )
+- Complexidade: <span class="math">O((V+E)* log(V))</span>
 - Problema:
   - [![right](../../images/dijkstra-fillers.png)](http://qiao.github.io/PathFinding.js/visual/)
     Há _fillers_ demais - **perde-se tempo buscando em lugares distantes
@@ -342,10 +342,10 @@ bespokeState: checkpoint
 ---
 ## Algoritmo A*
 
-- Um dos algoritmos mais utilizados em jogos para fazer o planejamento
-  de trajetórias
+- Um dos **algoritmos <u>mais utilizados</u> em jogos** para fazer o **planejamento
+  de trajetórias**
 - Algoritmo de pesquisa em grafos no qual o próximo nodo a ser pesquisado
-  é escolhido com o auxílio de uma função heurística
+  é escolhido com o **auxílio de uma função heurística**
   - Normalmente envolve ter um conhecimento prévio sobre o problema
 - Algoritmo de “busca com informação”: _informed search_
 
@@ -355,11 +355,12 @@ bespokeState: checkpoint
 - A escolha do próximo nó a ser investigado é feita
   considerando-se:
 
-  f(n) = g(n) + h(n)
-  - g(n): **custo de chegar ao nó atual** (_cost-so-far_)
-  - h(n): **estimativa** do custo do **nó atual para o gol**
-- Portanto, f(n) vai ser a estimativa do de custo da melhor solução
-  que passa por n
+  <div class="math">f(n) = g(n) + h(n)</div>
+  - <span class="math">g(n)</span>: **custo de chegar ao nó atual** (_cost-so-far_)
+  - <span class="math">h(n)</span>: **estimativa** do custo do **nó atual
+    para o gol**
+- Portanto, <span class="math">f(n)</span> vai ser a estimativa do de custo
+  da melhor solução que passa por <span class="math">n</span>
 
 ---
 ## Exemplo de Execução do A*
@@ -368,8 +369,8 @@ bespokeState: checkpoint
   (objetivo)**
 - Possuímos um mapa com as estradas e respectivas distâncias entre cada
   cidade (grafo)
-- A heurística usada vai ser a distância direta (Euclidiana) entre qualquer
-  cidade e Bucarest (objetivo)
+- A **heurística** usada vai ser a <u>distância em linha reta</u> (i.e.,
+  distância Euclidiana) entre qualquer cidade e Bucarest (objetivo)
 
 ---
 ## A* - Exemplo
@@ -392,9 +393,11 @@ bespokeState: checkpoint
 ---
 ## Algoritmo A*
 
-- Provadamente fornece a solução ótima se a **heurística é admissível**
-  - Custo indicado pela heurística é menor ou igual ao custo real para o gol
-  - No exemplo, a distância direta entre duas cidades é sempre menor ou igual a distância através das estradas. Logo, a solução encontrada é ótima
+- Provadamente fornece a solução ótima se a **<u>heurística é admissível</u>**
+  - **Custo** indicado pela **heurística** é <u>menor ou igual ao custo real
+    </u> para o gol
+  - No exemplo, a distância direta entre duas cidades é sempre menor ou
+    igual a distância através das estradas. Logo, a solução encontrada é ótima
 - Complexidade depende da heurística
   - Pior caso é exponencial no tamanho da solução
 
