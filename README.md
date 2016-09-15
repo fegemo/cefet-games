@@ -13,11 +13,11 @@ bespokeEvent: bullets.disable
 
 - ~~Prova e Listas~~ (0 pontos!!!)
 - Aulas Práticas (20 pontos)
-- Questionários Marotos (5 pontos)
-- [Seminários][seminar] - grupos de até 3 alunos (15 pontos)
+- ~~Questionários Marotos (5 pontos)~~
+- [Seminários][seminar] - grupos de até 2 alunos (~~15~~ 20 pontos)
 - Trabalhos Práticos (60 pontos)
   - [TP0][tp0] (3 pontos, para 08/08/2016)
-  - [TP1][tp1], [repositório][tp1-repo] (9 + 7 pontos, para 15/09/2016)
+  - [TP1][tp1], [repositório][tp1-repo] (10 + 7 pontos, para ~~15~~ 22/09/2016)
   - TP2[][tp2] (20 pontos)
   - TP3 (20 pontos)
 
@@ -29,7 +29,7 @@ bespokeEvent: bullets.disable
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
 ---
-# Aulas
+# Aulas (1/2)
 
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (04/08/2016)
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2016)
@@ -39,24 +39,33 @@ bespokeEvent: bullets.disable
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (23/08/2016)
+  - Física: Prática de Colisão AABB, MEB: [atividade da navinha][]
 - IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement] (08/09/2015)
   - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
-- IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (15/09/2015)
-  - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
-
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
+[activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
 [activity-sprites]: https://github.com/fegemo/cefet-games/tree/master/assignments/sprites
 [activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
-[activity-robocode]: https://github.com/fegemo/cefet-games/tree/master/assignments/robocode
-[activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
+[activity-navinha]: https://github.com/fegemo/cefet-games-navinha
 [chaimo-movement]: https://github.com/fegemo/cefet-games/blob/master/attachments/IA%2003%20-%20Movimenta%C3%A7%C3%A3o%20Simples.pptx?raw=true
 [activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
 [activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/
 
+---
+# Aulas (2/2)
+
+- IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (15/09/2015)
+  - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
+
+
+[activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
+[activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
+[activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
+
 <!--
   - Prática Game Maker: [atividade][activity-gamemaker]
-- IA: [Algoritmos de Busca com Adversários](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
+- IA: [Jogos de Tabuleiro](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
   - Prática Robocode: [atividade][activity-robocode]
 
@@ -68,10 +77,6 @@ bespokeEvent: bullets.disable
 - IA: [Representação do Mundo](attachments/IA 03 - Movimentação Simples.pptx) (20/10/2015)
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
-
-[activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
-[activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
-[activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
 
 
 ## Aulas (3)
