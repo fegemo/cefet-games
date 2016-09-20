@@ -13,7 +13,8 @@ Objetivos:
 1. Praticar o uso de algoritmos de planejamento de caminhos em grafos
 1. Implementar **heurísticas para o algoritmo A***
 1. Perceber que o **algoritmo de Dijkstra é o A\* que não usa heurística**
-1. Entender o que é uma **heurística admissível** e o impacto do uso de uma que não é
+1. Entender o que é uma **heurística admissível** e o impacto do uso
+  de uma que não é
 
 ## Atividade Prática
 
@@ -45,7 +46,7 @@ A movimentação acontece em três passos. Assim que um clique é feito:
 
 Um algoritmo de controle identifica se o passo de movimentação cumpriu
 seu objetivo e, em caso afirmativo, define o objetivo como o próximo nó do
-caminho. Veja o trecho de código de `Agent.java:44`:
+caminho. Veja o trecho de código de `Agent.java:58`:
 
 ```java
 public void update(float delta) {
@@ -73,7 +74,7 @@ public void update(float delta) {
 }
 ```
 
-O Agente (`Agent.java:68`) recebe um evento de clique quando o usuário clica em
+O Agente (`Agent.java:95`) recebe um evento de clique quando o usuário clica em
 uma parte do mapa. Nesse momento, acionamos o algoritmo de planejamento para
 traçar a rota:
 
@@ -91,9 +92,14 @@ public void setGoal(int x, int y) {
 ---
 ## Interação com o Exercício
 
-Ao abrir o código na IDE (sugiro NetBeans), você pode compilar e executar o código e deve aparecer o mapa, com o agente (bolinha vermelha) no canto esquerdo, assim como mostra a figura "pratrasmente".
+Ao abrir o código na IDE (sugiro NetBeans), você pode compilar e executar o
+código e deve aparecer o mapa, com o agente (bolinha vermelha) no canto
+esquerdo, assim como mostra a figura "pratrasmente".
 
-Nesse momento, ao clicar com o botão do mouse em alguma posição válida (fora de um obstáculo), o agente deveria planejar o (melhor) caminho e ir até lá. Contudo, o programa (e talvez seu computador - cuidado) vão explodir porque a heurística não está implementada, mas apenas lançando uma bomba chamada exceção:
+Nesse momento, ao clicar com o botão do mouse em alguma posição válida (fora
+de um obstáculo), o agente deveria planejar o (melhor) caminho e ir até lá.
+Contudo, o programa (e talvez seu computador - cuidado) vão explodir porque
+a heurística não está implementada, mas apenas lançando uma bomba chamada exceção:
 
 ```java
 // AQUI ESTAMOS CHAMANDO O ALGORITMO A* (instância pathFinder)
@@ -106,17 +112,20 @@ pathFinder.searchConnectionPath(startNode, targetNode, new Heuristic<TileNode>()
 }, path);
 ```
 
-Além disso, a qualquer momento você pode pressionar a tecla `d` do teclado para **ativar o modo _debug_** e poder enxergar o grafo que foi construído para representar o mapa:
+Além disso, a qualquer momento você pode pressionar a tecla `d` do teclado
+para **ativar o modo _debug_** e poder enxergar o grafo que foi construído
+para representar o mapa:
 
 ![](images/forest-hills.png)
 
-O modo de _debug_ mostra todos os nós e conexões do grafo de navegação, que é usado pelo algoritmo de planejamento (o A* neste caso).
+O modo de _debug_ mostra todos os nós e conexões do grafo de navegação, que
+é usado pelo algoritmo de planejamento (o A* neste caso).
 
 - Nó vermelho: obstáculo
 - Nó azul: "passável"
   - Peso das arestas incidentes:
     - Grama: 1
-    - Água: 9
+    - Água: 9 (**maior custo possível**)
     - Água com pedrinhas para pisar: 5
     - Ponte: 1
 
@@ -125,17 +134,26 @@ O modo de _debug_ mostra todos os nós e conexões do grafo de navegação, que 
 
 O algoritmo de Dijkstra é conhecidamente (1) completo e (2) ótimo:
   1. Se há um caminho do ponto atual ao desejado, ele acha
-  1. Esse caminho é o melhor possível (_i.e._, um que minimiza o peso das arestas)
+  1. Esse caminho é o melhor possível (_i.e._, um que minimiza o peso
+    das arestas)
 
-Como vimos em aula, o A* também é completo, mas para que ele seja ótimo também, **a heurística deve ser admissível** (volte nos slides e veja o quê isso significa :).
+Como vimos em aula, o A* também é completo, mas para que ele seja ótimo
+também, **a heurística deve ser admissível** (volte nos slides e veja o quê
+isso significa :).
 
-Ou seja, para saber se a sua heurística bacanuda está funcionando devidamente, o A* usando ela **precisa dar a mesma rota que o Dijkstra (que é A\* sem heurística, ou com a "herística nula")**.
+Ou seja, para saber se a sua heurística bacanuda está funcionando devidamente,
+o A* usando ela **precisa dar a mesma rota que o Dijkstra (que é A\* sem
+heurística, ou com a "herística nula")**.
 
-Caso o agente esteja passando toda hora por cima da água, é provável que a função heurística que você implementou não está admissível. Neste caso, reveja o conceito de admissibilidade e conserte-a =)
+Caso o agente esteja passando toda hora por cima da água, é provável que a
+função heurística que você implementou não está admissível. Neste caso,
+reveja o conceito de admissibilidade e conserte-a =)
 
 ---
 ## Entrega
 
-~~Este trabalho deve ser entregue **via Moodle**. Mas caso o Moodle ainda não esteja funcionando de vento em polpa,~~ considere o parágrafo a seguir.
+Este trabalho deve ser entregue **via Moodle**. Entregue o link para seu _fork_
+do repositório do código seminal.
 
-Os exercícios desta aula prática serão corrigidos ao final do nosso horário. Assim que estiver pronto, chame o professor para que possa ver seu trabalho.
+Os exercícios desta aula prática serão corrigidos ao final do nosso horário.
+Assim que estiver pronto, chame o professor para que possa ver seu trabalho.

@@ -60,7 +60,7 @@ bespokeEvent: bullets.disable
 
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
-[activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/archive/exercise-heuristic.zip
+[activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/
 [activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
 
 <!--
