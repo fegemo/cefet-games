@@ -1170,7 +1170,16 @@ thead > tr {
   height: 100%;
   background-position-x: 50%;
 }
-.bespoke-slide[data-bespoke-backdrop="pathfinder"] {
+.world-representation.bespoke-backdrop-active {
+  background-image: url("../images/nav-mesh-big.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-position-x: 50%;
+}
+.bespoke-slide[data-bespoke-backdrop="pathfinder"],
+.bespoke-slide[data-bespoke-backdrop="world-representation"] {
   text-shadow: 3px 3px rgba(0,0,0,0.25), 2px 2px rgba(0,0,0,0.5), 1px 1px rgba(0,0,0,0.75);
 }
 .bespoke-slide[data-bespoke-backdrop="jobs-blizzard"] a {
