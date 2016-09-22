@@ -1,5 +1,5 @@
 <!--
-backdrop: pathfinder
+backdrop: world-representation
 bespokeEvent: bullets.disable
 -->
 
@@ -99,7 +99,8 @@ bespokeState: checkpoint
 - Útil para jogos 2D, mas também para 3D que representam seu mundo usando um
   _grid_ de regiões quadradas (ou hexagonais)
 - O _grid_ pode ser facilmente transformado em um grafo
-  ![](../../images/imagem da pratica do gon mostrando o grid de tiles e o grafo gerado)
+
+  ![](../../images/tile-graph-generation.png)
 
 ---
 ## Grafos de _Tiles_: **Quantização e Localização**
@@ -127,14 +128,54 @@ bespokeState: checkpoint
     - Pode ser gerado sob demanda, em partes (para cenários muito grandes - <abbr title="Real-Time Strategy">RTS</abbr>)
 - **Validade**:
   - Garantidamente válido se não houver _tiles_ parcialmente bloqueados
-    IMAGEM PARCIALMENTE BLOQUEADO OK, PARC. BLOQ. BAD
+    <ul class="multi-column-inline-list-2">
+      <li>
+          <figure class="polaroid">
+            <img src="../../images/tile-graph-partially-blocked-ok.png" style="height: 150px;">
+            <figcaption>Parcialmente bloqueado, mas caminho ok</figcaption>
+          </figure>
+      </li>
+      <li>
+          <figure class="polaroid">
+            <img src="../../images/tile-graph-partially-blocked-bad.png" style="height: 150px;">
+            <figcaption>Parcialmente bloqueado, com problema</figcaption>
+          </figure>
+      </li>
+    </ul>
+
 
 ---
-## Grafo de _Tiles_: Exemplo
+## Grafo de _Tiles_: Exemplo ([GraphGenerator.java][graph-generator])
 
-Código do Hunter x Hunter:
-```java
+```ruby
+def geraGrafo(mapa)
+  Grafo g = new Grafo()
+
+  # gera um nó do grafo para cada tile,
+  # passável ou obstáculo
+  for i = 0 to mapa.verticais
+    for j = 0 to mapa.horizontais
+      No novo = new No(i, j)
+      novo.ehObstaculo = mapa.ehObstaculo(i,j)
+      novo.posicao = ondeNoCenario(mapa,i,j)
+      g.novoNo(novo)
+
+  # gera arestas saindo de cada nó (se passável),
+  # exceto destinos que são obstáculos
+  for i = 0 to mapa.verticais
+    for j = 0 to mapa.horizontais
+      No atual = mapa.getNo(i,j)
+      if atual.ehObstaculo
+        continue
+      tentaConectarCom(atual, g, mapa,  1,  0) # N
+      tentaConectarCom(atual, g, mapa,  0,  1) # L
+      tentaConectarCom(atual, g, mapa, -1,  0) # S
+      tentaConectarCom(atual, g, mapa,  0, -1) # O
+
+  return g
 ```
+
+[graph-generator]: https://github.com/fegemo/cefet-games-pathfinding/blob/exercise-heuristic2/core/src/br/cefetmg/games/pathfinding/GraphGenerator.java#L18
 
 ---
 # (2) Diagrama de Voronoi
@@ -142,28 +183,29 @@ Código do Hunter x Hunter:
 ---
 ## Diagrama de Voronoi
 
-![right](../../images/voronoi-polygon.png)<p class="note" style="max-width: 80%;">
+<p class="note" style="max-width: 80%;">
 Uma **célula de Voronoi** é uma região ao redor
 de um ponto cujo interior consiste de tudo o que está mais próximo
 desse ponto do que de outro ponto de um conjunto</p>
 
-- Esquema de divisão: cada nó do grafo é um ponto no espaço chamado
+- ![right](../../images/voronoi-polygon.png)
+  Esquema de divisão: cada nó do grafo é um ponto no espaço chamado
   **ponto característico** (_i.e._, um ponto do domínio)
   - A quantização mapeia cada região do domínio de Dirichlet a um nó
     do ponto característico
   - Os pontos característicos são tipicamente definidos pelos _level designers_
   - Arestas são colocadas entre polígonos adjacentes usando
     _Delaunay Triangulation_
-- [Exemplo online](http://blog.ivank.net/voronoi-diagram-in-javascript.html)
 
 ---
 ## Diagrama de Voronoi: **Quantização e Localização**
 
+- [Exemplo online](http://blog.ivank.net/voronoi-diagram-in-javascript.html)
 - **Quantização**: achar em que ponto característico uma coordenada está
   - Percorre lista de pontos para determinar o mais
     próximo: <span class="math">O(n)</span>
   - Usando uma estrutura de particionamento espacial
-    (_quadtree_, _octree_): (<span class="math">O(log n)</span>)
+    (_quadtree_, _octree_)
 - **Localização**: determinar a posição do cenário onde um nó do grafo
   se encontra:
   - As coordenadas do ponto característico
@@ -178,12 +220,12 @@ desse ponto do que de outro ponto de um conjunto</p>
   - Contudo, o _level designer_ exclui do diagrama as células
     que contém obstáculos
 
+---
 ## Variação: **Diagrama de Voronoi <u>Generalizado</u>**
 
-![](../../images/voronoi-generalized.png)
-
-1. Cria-se vários pontos característicos nas fronteiras dos obstáculos
-1. Simplifica-se o diagrama removendo as células dentro dos obstáculos
+1. ![right](../../images/voronoi-generalized.png)
+  Cria-se vários **pontos característicos nas fronteiras dos obstáculos**
+1. **Simplifica-se o diagrama** removendo as células dentro dos obstáculos
   (ou pega-se os centros dos círculos de Delaunay)
   - Resultado: curvas equidistantes dos obstáculos da cena
   - [Exemplo online](http://blog.ivank.net/voronoi-diagram-in-javascript.html)
@@ -201,13 +243,14 @@ desse ponto do que de outro ponto de um conjunto</p>
   gerá-los automaticamente
 - **Geração**: automaticamente a partir da geometria de colisão
   - Cria-se nós nos vértices dos obstáculos
-  - Raios são lançados de entre todos os pares de nós de obstáculos diferentes
+  - **Raios são lançados** de entre todos os pares de nós de
+    obstáculos diferentes
     - Aqueles que não atingem um obstáculo, são arestas válidas
 
 ---
 ## Pontos de Visibilidade
 
-<figure class="picture-steps clean">
+<figure class="picture-steps clean" style="background: white;">
   <img src="../../images/points-of-visibility-1.png" class="bullet bespoke-bullet-active">
   <img src="../../images/points-of-visibility-2.png" class="bullet">
   <img src="../../images/points-of-visibility-3.png" class="bullet">
@@ -228,7 +271,7 @@ desse ponto do que de outro ponto de um conjunto</p>
   - Mover do nó mais próximo de B para B propriamente dito
 
 ---
-## Pontos de Visibilidade: Exemplo
+## Diagramas de Voronoi: Exemplo
 
 ![](../../images/wow-points-of-visibility.png)
 
@@ -240,7 +283,7 @@ desse ponto do que de outro ponto de um conjunto</p>
 
 - ![right](../../images/wow-nav-mesh.png)
   Comum nos jogos 3D mais recentes
-- Usa a própria geometria gráfica do cenário como base
+- Usa a própria **geometria <u>gráfica</u>** do cenário como base
   - _Level designer_ marca que polígonos formam o "chão"
 
 ---
@@ -258,7 +301,7 @@ desse ponto do que de outro ponto de um conjunto</p>
 - **Quantização**: achar em que nó uma coordenada do cenário está
   - Verifica-se qual dos polígonos contém o ponto desejado
     - Isso é relativamente caro
-  - Usa-se o princípio da coerência: é possível que o personagem continue
+  - Usa-se o <u>princípio da coerência</u>: é possível que o personagem continue
     no mesmo polígono nos quadros seguintes, ou em um adjacente
     - Começa-se a busca por eles
 - **Localização**: achar a coordenada do mundo de um nó do grafo
@@ -294,13 +337,13 @@ desse ponto do que de outro ponto de um conjunto</p>
 <ul class="multi-column-inline-list-2">
   <li>Diagrama de Voronoi
       <figure class="polaroid">
-        <img src="../../images/wow-points-of-visibility-route.png" style="height: 180px;">
+        <img src="../../images/wow-points-of-visibility-route.jpg" style="height: 220px;">
         <figcaption>Caminho em zig-zag</figcaption>
       </figure>
   </li>
   <li>_NavMesh_
       <figure class="polaroid">
-        <img src="../../images/wow-nav-mesh-route.png" style="height: 180px;">
+        <img src="../../images/wow-nav-mesh-route.jpg" style="height: 220px;">
         <figcaption>Linha reta</figcaption>
       </figure>
   </li>
