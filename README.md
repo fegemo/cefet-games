@@ -60,7 +60,7 @@ bespokeEvent: bullets.disable
 - IA: [Representação do Mundo](classes/world-representation) (22/09/2016)
   - [Demonstração](classes/unity) da Unity (27/09/2016)
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/09/2016)
-  - Workshop Blender (01/10/2016)
+  - Workshop Blender (04/10/2016)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (06/10/2016)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (13/10/2016)
 
