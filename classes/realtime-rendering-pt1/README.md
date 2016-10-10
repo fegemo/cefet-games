@@ -69,9 +69,9 @@
 - É possível podar a árvore usando a informação espacial
 
 ---
-## Exemplo de **_Frustum Culling_**
+## **_Frustum Culling_** usando _Octrees_ como Grafo de Cena
 
-<iframe width="640" height="480" src="https://www.youtube.com/embed/fNa_Gh5gFWY" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="480" src="https://www.youtube.com/embed/H-SsvZZv1sw?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ---
 ## <u>Otimização</u>: **_Occlusion Culling_**
