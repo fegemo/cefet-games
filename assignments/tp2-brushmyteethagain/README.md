@@ -53,6 +53,7 @@ Os passos para fazer uma tarefa são:
 
 1. Atualizar o _branch_ `master` do _fork_ com o _branch_ `master` do repositório original ([sincronizando _forks_][sync-fork])
 1. Criar um _branch_ local, a partir do `master`, com nome da dupla e código da tarefa (_e.g._, `sandy-junior-20`)
+
   ```
   git checkout master
   git branch sandy-junior-20
@@ -68,6 +69,7 @@ Os passos para fazer uma tarefa são:
   - Caso não seja possível fazer o _merge_ automático, você deve atualizar seu _branch_ (`sandy-junior-20`) com base no `master` do repositório original (_i.e._, `upstream/master`). Para fazê-lo:
     1. Abandone a criação do _pull request_ por ora
     1. Rebaseie seu _branch_ em cima do `upstream/master`:
+
       ```
       git fetch upstream
       git checkout sandy-junior-20
