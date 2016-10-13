@@ -88,7 +88,7 @@
 
 - Na renderização tradicional (_"forward"_), a geometria é enviada
   ao _pipeline_, que (a) calcula suas posições e (b) a colore
-- Uma potencial problema é o **alto custo**
+- Um potencial problema é o **alto custo**
   (<span class="math">O(geometria * luzes)</span>) associado à porção
   relacionada à **iluminação (b)**, combinado à possibilidade
   de se **desenhar geometria** que será **posteriormente sobrescrita**
@@ -99,20 +99,21 @@
 ---
 ## Renderização Tardia (_Deferred Rendering_)
 
-- Renderização (ou Iluminação, ou Sombreamento) Tardio é a ideia de **separar
+- Renderização (ou Iluminação, ou Sombreamento) Tardia é a ideia de **separar
   a renderização da geometria de sua colorização** (iluminação)
   - É um _hack_ inteligentão do _pipeline_
-- Acontece em 2 passos (2 viagens no _pipeline_):
+- Acontece em 2 passos:
   - Renderização (sem cálculo de iluminação) da cena "em texturas"
   - Colorização da textura e combinação para gerar a imagem final
 - Exemplo de cena com 1000 vértices:
-  - (1) 1000 vértices vão para _pipeline_ e a geometria é rasterizada, sem cor,
-    para uma textura (na verdade, umas 4)
+  - (1) 1000 vértices vão para o _pipeline_ e a geometria é rasterizada,
+    cálculo de iluminação, para uma textura (na verdade, umas 4+)
+    - Esse _frame buffer_ profundo se chama _g-buffer_
   - (2) as texturas são enviadas ao _pipeline_ e o _fragment shader_
     as combina, gerando a imagem final
 
 ---
-## Exemplo: _Engine_ Leadwerks
+## Exemplo: _Engine_ [Leadwerks](http://www.leadwerks.com/werkspace/page/home?shownav=0)
 
 <figure style="position: relative; width: 100%; height: 585px;">
   <img src="../../images/deferred-rendering-leadwerks1.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
