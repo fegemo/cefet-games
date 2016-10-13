@@ -58,6 +58,11 @@ bespokeEvent: bullets.disable
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (15/09/2016)
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
 - IA: [Representação do Mundo](classes/world-representation) (22/09/2016)
+  - [Demonstração](classes/unity) da Unity (27/09/2016)
+- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/09/2016)
+  - Workshop Blender (01/10/2016)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (06/10/2016)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (13/10/2016)
 
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
@@ -76,13 +81,10 @@ bespokeEvent: bullets.disable
 - Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (15/10/2015)
   - Prática de Acessibilidade: [atividade][activity-access]
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
-- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/10/2015)
 
 
 ## Aulas (3)
 
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (03/11/2015)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (05/11/2015)
 - CG: [Animação de Personagens](classes/animation) (17/11/2015)
 - [Física para Jogos](classes/physics) (19/11/2015)
 - [Jogos em Rede](classes/networking) (24/11/2015)
