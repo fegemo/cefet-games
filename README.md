@@ -63,11 +63,13 @@ bespokeEvent: bullets.disable
   - Workshop Blender (04/10/2016)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (06/10/2016)
 - CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (13/10/2016)
+- Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (18/10/2016)
+  - Prática de Acessibilidade: [atividade][activity-access]
 
 
 [activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/
-[activity-access]: https://github.com/fegemo/cefet-games/tree/master/assignments/gameover
+[activity-access]: https://github.com/fegemo/cefet-games/blob/master/assignments/gameover/README.md#prática-diretrizes-de-acessibilidade
 
 <!--
   - Prática Game Maker: [atividade][activity-gamemaker]
@@ -78,8 +80,6 @@ bespokeEvent: bullets.disable
 <!--
 ## Aulas (2)
 
-- Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (15/10/2015)
-  - Prática de Acessibilidade: [atividade][activity-access]
 - IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
 
 
