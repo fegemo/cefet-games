@@ -1278,6 +1278,7 @@ thead > tr {
   width: 100%;
   height: 100%;
   background-size: contain;
+  background-position: 50% 50%;
 }
 .the-witcher-2-shadows.bespoke-backdrop-active {
   background-image: url("../images/the-witcher-2-shadows.jpg");
