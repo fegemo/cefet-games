@@ -29,7 +29,7 @@ bespokeEvent: bullets.disable
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
 ---
-# Aulas (1/2)
+# Aulas (1/3)
 
 - [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (04/08/2016)
 - Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2016)
@@ -53,7 +53,7 @@ bespokeEvent: bullets.disable
 [activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/
 
 ---
-# Aulas (2/2)
+# Aulas (2/3)
 
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (15/09/2016)
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
@@ -71,20 +71,21 @@ bespokeEvent: bullets.disable
 [activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/
 [activity-access]: https://github.com/fegemo/cefet-games/blob/master/assignments/gameover/README.md#prática-diretrizes-de-acessibilidade
 
-<!--
-  - Prática Game Maker: [atividade][activity-gamemaker]
-- IA: [Jogos de Tabuleiro](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
-- IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
-  - Prática Robocode: [atividade][activity-robocode]
+---
+## Aulas (3/3)
+
+
+- IA: [Tomada de Decisão](classes/decision-making/) (20/10/2016)
+  - Apresentação de seminários (25/10/2016)
 
 <!--
-## Aulas (2)
-
-- IA: [Tomada de Decisão](classes/decision-making/) (22/10/2015)
-
 
 ## Aulas (3)
 
+- Prática Game Maker: [atividade][activity-gamemaker]
+- IA: [Jogos de Tabuleiro](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
+- IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
+- Prática Robocode: [atividade][activity-robocode]
 - CG: [Animação de Personagens](classes/animation) (17/11/2015)
 - [Física para Jogos](classes/physics) (19/11/2015)
 - [Jogos em Rede](classes/networking) (24/11/2015)

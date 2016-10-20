@@ -33,18 +33,18 @@ bespokeState: checkpoint
 
 ![](../../images/decision-making.png)
 
-- Basicamente, o "comportamento" define quais ações um agente deve tomar
+- Basicamente, o **"comportamento"** define quais ações um agente deve tomar
   em um determinado momento do jogo
-- O problema: "dado um conhecimento, uma ação deve ser tomada a partir de um
-  conjunto de possibilidades"
+- O problema: _"dado um conhecimento, uma ação deve ser tomada a partir de um
+  conjunto de possibilidades"_
 
 ---
 ## Arquitetura
 
 - ![right](../../images/decision-making-arch.png)
-  Conhecimento interno: vida, munição etc.
-- Conhecimento externo: mapa, vista do inimigo, escuta de passos etc.
-- Ação: atacar, fugir, proteger-se etc.
+  **Conhecimento interno**: vida, munição etc.
+- **Conhecimento externo**: mapa, vista do inimigo, escuta de passos etc.
+- **Ação**: atacar, fugir, proteger-se etc.
 
 ---
 <!--
@@ -64,14 +64,14 @@ bespokeState: checkpoint
 ## Pseudo-código: estruturas de dados
 
 ```ruby
-class NoArvoreDecisao
+class NoDaArvoreDecisao
   def tomarDecisao() # método abstrato
 
-class Acao (NoArvoreDecisao):
+class Acao (NoDaArvoreDecisao):
   def tomarDecisao():
     return this
 
-class Decisao (NoArvoreDecisao):
+class Decisao (NoDaArvoreDecisao):
   noVerdadeiro
   noFalso
   valorSendoTestado
@@ -112,9 +112,9 @@ class Decisao
 
 - A árvore de decisão tem custo <span class="math">O(\log _2 \left( n \right))</span>,
   sendo <span class="math">n</span> o número de nós se:
-  1. O custo de tomar cada decisão é unitário
+  1. O custo de tomar cada decisão é unitário/constante
   2. A árvore está balanceada... mas pode ser que não esteja!
-- Uma árvore balanceada **tem o mesmo número de folhas em cada ramo**
+    - Uma árvore balanceada **tem o mesmo número de folhas em cada ramo**
 - Dicas:
   1. Deixe as árvores o mais balanceadas possível
   2. Faça ramos frequentes menores
@@ -203,7 +203,7 @@ class MaquinaEstados:
         transicaoDisparada = transicao
         break
 
-    # se alguma foi disparada, retorna a lista de ações e muda estado
+    # se alguma foi disparada, ret. a lista de ações e muda est.
     if transicaoDisparada:
       estadoAlvo = transicaoDisparada.getEstadoAlvo()
 
@@ -273,12 +273,12 @@ class GuardinhaFSM:
 ## Possíveis extensões
 
 1. Máquina de Estado Não-Determinística
-  - Introduz imprevisibilidade (e _believability_)
+  - Introduz **imprevisibilidade** (e _believability_)
   - Um mesmo evento pode levar a diferentes estados
 1. Máquina de Estados Hierárquica
-  - Estados podem ser decompostos em um conjunto de estados
+  - Estados podem ser **decompostos** em um conjunto de estados
 1. Máquina de Estados Compartilhada
-  - Mais de um NPC executando uma máquina de estados
+  - **Mais de um NPC** executando uma máquina de estados
   - Útil para NPCs com ações coordenadas
     - _e.g._, várias formigas se juntando para carregar uma aranha e
       fazer um churrasco
@@ -351,8 +351,8 @@ class GuardinhaFSM:
 
 - Uma tarefa de composição sequencia/coordena as condições e ações
 - Pode ser de 2 tipos:
-  1. **Seletora**: retorna assim que a primeira tarefa obtém sucesso
-  2. **Sequenciadora**: retorna assim que a primeira tarefa falha
+  1. **Seletora (?)**: retorna assim que a primeira tarefa obtém sucesso
+  2. **Sequenciadora (&rarr;)**: retorna assim que a primeira tarefa falha
 
 ![](../../images/bt-selector.png)
 ![](../../images/bt-sequencer.png)
@@ -362,15 +362,17 @@ class GuardinhaFSM:
 
 ![](../../images/bt1.png)
 
-- E se a porta estiver trancada?
+- Indo de uma sala até a outra passando por uma porta
+  - E se a porta estiver trancada? (próximo slide)
 
 ---
 ![](../../images/bt2.png)
----
+
+<!--
 ## Composições não-determinísticas
 
 ![](../../images/bt3.png)
-
+-->
 ---
 ## Árvore de Comportamento na <abbr title="Unreal Engine">UE4</abbr>
 
