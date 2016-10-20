@@ -1206,7 +1206,6 @@ thead > tr {
   background-size: cover;
 }
 .decision-tree-sample.bespoke-backdrop-active {
-  background-color: #fff;
   background-image: url("../images/decision-tree-sample.png");
   background-size: cover;
   background-repeat: no-repeat;
