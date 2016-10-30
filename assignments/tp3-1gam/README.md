@@ -3,7 +3,7 @@
 
 ## _One Game a Month_ ([#1GAM][1gam])
 
-![Foto do rosto do desenvolvedor Christer Kaitila](images/christer-kaitila.jpg)
+![Foto do rosto do desenvolvedor Christer Kaitila](images/christer-kaitila.png)
 
 O autoproclamado [druida canadense][lostcast-177] chamado Christer Kaitila
 ([@McFunkyPants][mcfunkypants] no Twitter) um dia se cansou de tentar e
