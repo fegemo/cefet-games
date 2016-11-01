@@ -19,13 +19,13 @@ bespokeEvent: bullets.disable
   - [TP0][tp0] (3 pontos, para 08/08/2016)
   - [TP1][tp1], [repositório][tp1-repo] (10 + 7 pontos, para ~~15~~ 22/09/2016)
   - [TP2][tp2] (15 pontos)
-  - TP3 (25 pontos)
+  - [TP3][tp3] (25 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-brushmyteethplz
 [tp1-repo]: https://github.com/fegemo/cefet-games-brushmyteethplz
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2-brushmyteethagain
-[final]: https://github.com/fegemo/cefet-games/tree/master/assignments/final
+[tp3]: https://github.com/fegemo/cefet-games/blob/master/assignments/tp3-1gam/README.md#trabalho-prático-3---1gam
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
 ---
@@ -77,10 +77,12 @@ bespokeEvent: bullets.disable
 
 - IA: [Tomada de Decisão](classes/decision-making/) (20/10/2016)
   - Apresentação de seminários (25/10/2016)
+- Apresentação de seminários (27/10/2016)
+  - Prática de Efeitos de Partículas: [atividade + código seminal][activity-particle-effects]
+
+[activity-particle-effects]: https://github.com/fegemo/cefet-games-cauldron
 
 <!--
-
-## Aulas (3)
 
 - Prática Game Maker: [atividade][activity-gamemaker]
 - IA: [Jogos de Tabuleiro](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)

@@ -29,14 +29,19 @@ processo de começar, avançar e concluir um jogo todo mês.
 ## O Trabalho Prático
 
 No dia 1º de cada mês, um novo tema é revelado e ele deve inspirar as
-criações dos participantes da 1GAM. O tema de novembro/16 é ______.
+criações dos participantes da 1GAM. O tema de novembro/16 é ~~ainda não foi liberado~~.
 
 Cada grupo de 1 a 3 integrantes deve se inscrever no [_one game
 a month_][one-game-a-month], desenvolver um jogo e entregá-lo até nossa aula no
 dia 01/dez/16, quando ele será apresentado para a turma.
 
 O jogo desenvolvido deve aderir ao tema da 1GAM e, de preferência, deve usar
-dos conhecimentos adquiridos na nossa matéria: CG, IA, Física etc. Minha sugestão é criar um jogo em uma plataforma que facilite que ele seja jogado via _web_. Estão liberadas APIs gráficas, _frameworks_ e motores de jogos.
+dos conhecimentos adquiridos na nossa matéria: CG, IA, Física etc.
+Minha sugestão é criar um jogo em uma plataforma que **facilite que ele
+seja jogado via _web_**. Estão liberadas **APIs gráficas,
+_frameworks_ e motores de jogos** (_makers_ estão vetados a priori - caso
+queira muito usar um, converse na primeira semana com o professor sobre a
+possibilidade).
 
 ## O Processo e o Cronograma
 
@@ -44,42 +49,47 @@ O senhor [@McFunkyPants][mcfunkypants] publicou um [tutorial][tutorial]
 descrevendo seu próprio processo para fazer os jogos para a 1GAM. Ele
 já está em seu 4º ano consecutivo, então acho que funciona!!
 
+No tutorial (indico muito a leitura) ele mostra como exemplo um dos jogos
+que ele criou (o [Pathos][pathos]) em um dos 40+ meses dele. O conceito do
+jogo era muito simples - ele queria brincar com a implementação do
+algoritmo A* e fez um jogo simples em torno dessa mecânica.
+
 Para quem não quiser ler na íntegra, segue um esquema-resumo:
 
-1. Estágio de _brainstorming_
+1. Estágio de **_brainstorming_**
   - Termine tendo uma lista de itens que devem estar na versão 1.0 do jogo e
     outra lista de itens para a versão 2.0 (versões futuras)
-1. Listas de "Preciso disso" e "Quero isso"
+1. Listas de **"Preciso disso" e "Quero isso"**
   - Priorize os itens da versão 1.0 de acordo com seu custo/benefício
     e, depois, pegue os itens mais importantes e classifique-os em
     "estritamente necessários" ou "muito interessantes"
   - A lista de itens "estritamente necessários" será seu produto mínimo viável
-1. Descrição de elevador
+1. **Descrição de elevador**
   - Crie um parágrafo que descreva seu jogo de forma tão sucinta e informativa
     que seja possível explicá-lo para alguém enquanto estão subindo num elevador
-1. _Storyboard_ com bonecos de palitinhos
+1. **_Storyboard_** com bonecos de palitinhos
   - Faça uns quadrinhos em papel com um esboço do jogo inteiro, do íncio ao fim
-1. Protótipo jogável sem arte
+1. **Protótipo jogável sem arte**
   - Faça um protótipo do jogo com a ideia principal implementada. Não coloque
     imagens, sons etc. (a menos que eles façam parte da ideia principal). Use
     primitivas geométricas (e.g., retângulos) coloridas
   - Apenas um nível (fase) jogável é necessário neste momento
-1. Tornando o protótipo bonito
+1. Tornando o **protótipo bonito**
   - Comece a fazer e integrar a arte no protótipo. Ainda não é a hora de fazer
     telas acessórias como Menu, Créditos etc.
   - Comece a se preocupar com restrições técnicas como uso de memória, quadros
     por segundo etc.
-1. Entregável
+1. **Entregável**
   - Torne seu jogo entregável do jeito que ele está, testando-o na
     plataforma de destino
-1. Trabalhe em apenas 1 funcionalidade por vez
+1. Trabalhe em apenas **1 funcionalidade por vez**
   - Com a ideia principal implementada, agora é hora de implementar 1
     funcionalidade por vez: outro níveis, caixas de diálogo, outros inimigos
     etc.
-1. Continue iterando de forma sustentável
+1. **Continue iterando** de forma sustentável
   - Procure criar e entregar cada funcionalidade, i.e., a cada uma, gere uma
     nova versão entregável do jogo
-1. Alcance a linha de chegada
+1. Alcance a **linha de chegada**
   - Após várias iterações de funcionalidades, chega a hora de considerar o jogo
     pronto
   - Saiba que sempre estará faltando pelo menos 50% das coisas idealizadas
@@ -96,12 +106,17 @@ Minha sugestão de cronograma das etapas do processo são:
 
 ## Entrega
 
-A entrega deve ser feita por pelo menos 1 integrante do grupo (sugiro todos) pelo site [_one game a month_][one-game-a-month]. Além disso, alguém deve _twittar_ o jogo usando a _hashtag_ [#1GAM][1gam] e citando o [professor no Twitter][fegemo-twitter].
+A entrega deve ser feita por pelo menos 1 integrante do grupo (sugiro todos)
+pelo site [_one game a month_][one-game-a-month]. Cadastre-se hoje mesmo
+no site e preencha seu perfil para já ganhar alguns pontos de experiência.
+Além disso, alguém deve _twittar_ o jogo usando a _hashtag_
+[#1GAM][1gam] e citando o [professor no Twitter][fegemo-twitter].
 
 ## Avaliação
 
-Seu trabalho será avaliado quanto à qualidade do resultado final, da
-diversão provocada no professor e do esforço com o desenvolvimento do jogo.
+Seu trabalho será avaliado quanto à **qualidade** do resultado final, da
+**diversão** provocada no professor (`métrica raio do sorriso * número de
+gargalhadas`) e do **esforço** com o desenvolvimento do jogo.
 
 [1gam]: https://twitter.com/hashtag/1GAM
 [lostcast-177]: http://www.lostdecadegames.com/lostcast-177/
@@ -109,3 +124,4 @@ diversão provocada no professor e do esforço com o desenvolvimento do jogo.
 [mcfunkypants]: https://twitter.com/McFunkypants
 [tutorial]: https://gamedevelopment.tutsplus.com/articles/1gam-how-to-succeed-at-making-one-game-a-month--gamedev-3695
 [fegemo-twitter]: https://twitter.com/fegemo
+[pathos]: http://mcfunkypants.com/2012/pathos-puzzle-strategy-game/
