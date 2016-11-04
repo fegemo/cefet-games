@@ -29,7 +29,8 @@ processo de começar, avançar e concluir um jogo todo mês.
 ## O Trabalho Prático
 
 No dia 1º de cada mês, um novo tema é revelado e ele deve inspirar as
-criações dos participantes da 1GAM. O tema de novembro/16 é ~~ainda não foi liberado~~.
+criações dos participantes da 1GAM. O tema de novembro/16 é
+[_Tabula Rasa_][tabula-rasa].
 
 Cada grupo de 1 a 3 integrantes deve se inscrever no [_one game
 a month_][one-game-a-month], desenvolver um jogo e entregá-lo até nossa aula no
@@ -122,6 +123,7 @@ gargalhadas`) e do **esforço** com o desenvolvimento do jogo.
 [lostcast-177]: http://www.lostdecadegames.com/lostcast-177/
 [one-game-a-month]: http://www.onegameamonth.com/
 [mcfunkypants]: https://twitter.com/McFunkypants
+[tabula-rasa]: https://www.google.com.br/search?hl=pt-BR&q=tabula+rasa&meta=&gws_rd=ssl
 [tutorial]: https://gamedevelopment.tutsplus.com/articles/1gam-how-to-succeed-at-making-one-game-a-month--gamedev-3695
 [fegemo-twitter]: https://twitter.com/fegemo
 [pathos]: http://mcfunkypants.com/2012/pathos-puzzle-strategy-game/
