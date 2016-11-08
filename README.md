@@ -79,6 +79,8 @@ bespokeEvent: bullets.disable
   - Apresentação de seminários (25/10/2016)
 - Apresentação de seminários (27/10/2016)
   - Prática de Efeitos de Partículas: [atividade + código seminal][activity-particle-effects]
+- [Dinâmica](classes/dynamics) (03/11/2016)
+  - CG: [Animação de Personagens](classes/animation) (08/11/2016)
 
 [activity-particle-effects]: https://github.com/fegemo/cefet-games-cauldron
 
@@ -88,8 +90,6 @@ bespokeEvent: bullets.disable
 - IA: [Jogos de Tabuleiro](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
 - Prática Robocode: [atividade][activity-robocode]
-- CG: [Animação de Personagens](classes/animation) (17/11/2015)
-- [Física para Jogos](classes/physics) (19/11/2015)
 - [Jogos em Rede](classes/networking) (24/11/2015)
 --->
 
