@@ -81,16 +81,16 @@ bespokeEvent: bullets.disable
   - Prática de Efeitos de Partículas: [atividade + código seminal][activity-particle-effects]
 - [Dinâmica](classes/dynamics) (03/11/2016)
   - CG: [Animação de Personagens](classes/animation) (08/11/2016)
+- [Jogos em Rede](classes/networking) (17/11/2016)
+  - IA: Jogos de Tabuleiro[](attachments/IA 02 - AdversarialSearch.pptx) 22/11/2016)
 
 [activity-particle-effects]: https://github.com/fegemo/cefet-games-cauldron
 
 <!--
 
 - Prática Game Maker: [atividade][activity-gamemaker]
-- IA: [Jogos de Tabuleiro](attachments/IA 02 - AdversarialSearch.pptx) (03/09/2015)
 - IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
 - Prática Robocode: [atividade][activity-robocode]
-- [Jogos em Rede](classes/networking) (24/11/2015)
 --->
 
 ---
