@@ -111,8 +111,8 @@
   - Tipicamente, um pacote é enviado para uma tupla [IP, porta] (_e.g._,
     [192.168.1.2, 8008])
   - IP: endereço de destino
-  - **Porta**: número (1-65535) que identifica o programa no computador
-    de destino que deve receber o pacote
+  - **Porta**: número (1-65535) que identifica <u>o programa no computador
+    de destino</u> que deve receber o pacote
 - **Servidor**: um nó que oferece algum serviço (_e.g._, armazenar dados,
   controlar a lógica de jogo, guardar uma lista de "salas de jogos" abertas)
 - **Cliente**: um nó que solicita serviços a um servidor
@@ -127,7 +127,7 @@
   <img src="../../images/network-layers-protocols.png" class="bullet left">
 
 ---
-## Camadas: **Física** e de **Enlace** (_Link_)
+## Camadas: **Física** (1) e de **Enlace** (2) (_Link_)
 
 - Camada **física**:
   - É o meio por onde os dados são transmitidos
@@ -141,7 +141,7 @@
   <abbr title="Media Access Control">MAC</abbr>**
 
 ---
-## Camada: de **Rede**
+## Camada: de **Rede** (3)
 
 - Camada de **rede**:
   - **Entrega pacotes** de um computador a outro, **mesmo fora da mesma rede**
@@ -152,7 +152,7 @@
   - Nova versão: IPv6 (16 bytes)
 
 ---
-## Camda: de **Transporte**
+## Camada: de **Transporte** (4)
 
 - Camada de **transporte**:
   - **Transparência na transferência de dados** entre computadores
@@ -191,10 +191,10 @@
     - _E.g._, atualização de posição de personagens
     - Daí escolhemos quais problemas realmente precisamos resolver e resolvemos nós mesmos
   - Para **sistemas com menor restrição de tempo**, usamos **TCP**
-    - _E.g._, mensagens de _chat_, sala de espera
+    - _E.g._, mensagens de _chat_, sala de espera, jogo em turnos
 
 ---
-## Camadas: de **Sessão** e **Apresentação**
+## Camadas: de **Sessão** (5) e **Apresentação** (6)
 
 - Camada de **sessão**:
   - Gerencia **conexões entre aplicações**
@@ -204,9 +204,12 @@
   - Funções da API de um _socket_:
     - `Criar(TipoConexao tcpOuUdp)`
     - `Conectar(Endereco ip, int porta)`
-    - `EnviaFluxo(byte[] dados)` para TCP
+    - `EnviaFluxoDeDados(byte[] dados)` para TCP
     - `EnviaTransmissao(byte[] dados)` para UDP
 - **O que enviar**? Depende do jogo... será feito na **camada de aplicação**!
+
+---
+![](../../images/rafael-starling-protocol.png)
 
 ---
 # Tipos de Arquiteturas
