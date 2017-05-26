@@ -129,6 +129,14 @@ gulp.task('audio', function() {
     .pipe(connect.reload());
 });
 
+gulp.task('videos', function() {
+  const destination = 'dist/videos';
+  return gulp.src('videos/**/*')
+    .pipe(changed(destination))
+    .pipe(gulp.dest(destination))
+    .pipe(connect.reload());
+});
+
 gulp.task('favicon', function() {
   const destination = 'dist/favicon';
   return gulp.src('favicon/**/*')
@@ -153,7 +161,7 @@ function getFolders(cwd, dir) {
 }
 
 gulp.task('build', ['js', 'html', 'md', 'css', 'css-classes', 'images',
-  'audio', 'favicon'], function() {
+  'audio', 'videos', 'favicon'], function() {
     var folders = getFolders('.', 'classes').concat(getFolders('.', 'assignments')),
       tasks = folders.map(function(folder) {
         var t = [];

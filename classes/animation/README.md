@@ -180,8 +180,9 @@ bespokeEvent: bullets.disable
 
 - Feito no [Creature do Kestrelmoon](http://creature.kestrelmoon.com/index.html)
 - Outros:
-  - [Spine](http://esotericsoftware.com/)
-  - [Puppet2D](http://www.puppet2d.com/)
+  - [Spriter](https://brashmonkey.com/) (originalmente _"kickstarted"_)
+  - [Spine](http://esotericsoftware.com/) (dos caras que revoltaram com Spriter)
+  - [DragonBones](http://esotericsoftware.com/)
 
 ---
 ## **Mesclagem de Clipes**

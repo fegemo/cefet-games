@@ -53,7 +53,7 @@ window.deck = bespoke.from('article', [
     bespokeEvent: function(slide, events) {
       setTimeout(function() {
         events.split(' ').forEach(function(event) {
-          if (!(window.deck instanceof 'undefined')) {
+          if (!!window.deck) {
             window.deck.fire(event);
           }
         });
