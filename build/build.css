@@ -876,20 +876,16 @@ thead > tr {
   float: left;
 }
 .multi-column-list-2 {
-  -moz-column-count: 2;
-       column-count: 2;
+  column-count: 2;
 }
 .multi-column-list-3 {
-  -moz-column-count: 3;
-       column-count: 3;
+  column-count: 3;
 }
 .multi-column-list-4 {
-  -moz-column-count: 4;
-       column-count: 4;
+  column-count: 4;
 }
 .multi-column-list-5 {
-  -moz-column-count: 5;
-       column-count: 5;
+  column-count: 5;
 }
 .multi-column-inline-list-2 > li {
   display: inline-block;
