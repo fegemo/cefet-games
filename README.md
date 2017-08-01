@@ -13,13 +13,12 @@ bespokeEvent: bullets.disable
 
 - ~~Prova e Listas~~ (0 pontos!!!)
 - Aulas Práticas (20 pontos)
-- ~~Questionários Marotos (5 pontos)~~
-- [Seminários][seminar] - grupos de até 2 alunos (~~15~~ 20 pontos)
-- Trabalhos Práticos (60 pontos)
-  - [TP0][tp0] (3 pontos, para 08/08/2016)
-  - [TP1][tp1], [repositório][tp1-repo] (10 + 7 pontos, para ~~15~~ 22/09/2016)
-  - [TP2][tp2] (15 pontos)
-  - [TP3][tp3] (25 pontos)
+- [Seminários][seminar] - grupos de até 2 alunos (15 pontos)
+- Trabalhos Práticos (65 pontos)
+  - [TP0][tp0] (3 pontos, para 07/08/2016)
+  - [TP1][tp1], [repositório][tp1-repo] (15 pontos)
+  - [TP2][tp2] (17 pontos)
+  - [Projeto][tp3] (30 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-brushmyteethplz
@@ -31,16 +30,16 @@ bespokeEvent: bullets.disable
 ---
 # Aulas (1/3)
 
-- [Ferramentas de Desenvolvimento de Jogos](classes/tools/) (04/08/2016)
-- Introdução: [História, Plataformas e Gêneros](classes/intro/) (09/08/2016)
+- [Ferramentas de Desenvolvimento de Jogos](classes/tools/)
+- Introdução: [História, Plataformas e Gêneros](classes/intro/)
   - Prática _Maker_: [slides](classes/rpgmaker),
     atividade: [RPG Maker][activity-rpgmaker] ou [RPG Boss][activity-rpgboss]
-- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/) (16/08/2016)
+- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/)
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
-- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/) (23/08/2016)
+- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
   - Física: Prática de Colisão AABB, MEB: [atividade da navinha][activity-navinha]
-- IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement] (08/09/2015)
+- IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement]
   - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
@@ -55,15 +54,15 @@ bespokeEvent: bullets.disable
 ---
 # Aulas (2/3)
 
-- IA: [_Pathfinding_ usando Grafos](classes/pathfinding) (15/09/2016)
+- IA: [_Pathfinding_ usando Grafos](classes/pathfinding)
   - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
-- IA: [Representação do Mundo](classes/world-representation) (22/09/2016)
-  - [Demonstração](classes/unity) da Unity (27/09/2016)
-- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/) (29/09/2016)
-  - Workshop Blender (04/10/2016)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1) (06/10/2016)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2) (13/10/2016)
-- Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx) (18/10/2016)
+- IA: [Representação do Mundo](classes/world-representation)
+  - [Demonstração](classes/unity) da Unity
+- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/)
+  - Workshop Blender
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2)
+- Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx)
   - Prática de Acessibilidade: [atividade][activity-access]
 
 
@@ -72,16 +71,16 @@ bespokeEvent: bullets.disable
 [activity-access]: https://github.com/fegemo/cefet-games/blob/master/assignments/gameover/README.md#prática-diretrizes-de-acessibilidade
 
 ---
-## Aulas (3/3)
+# Aulas (3/3)
 
 
-- IA: [Tomada de Decisão](classes/decision-making/) (20/10/2016)
-  - Apresentação de seminários (25/10/2016)
-- Apresentação de seminários (27/10/2016)
+- IA: [Tomada de Decisão](classes/decision-making/)
+  - Apresentação de seminários
+- Apresentação de seminários
   - Prática de Efeitos de Partículas: [atividade + código seminal][activity-particle-effects]
-- [Dinâmica](classes/dynamics) (03/11/2016)
-  - CG: [Animação de Personagens](classes/animation) (08/11/2016)
-- [Jogos em Rede](classes/networking) (17/11/2016)
+- [Dinâmica](classes/dynamics)
+  - CG: [Animação de Personagens](classes/animation)
+- [Jogos em Rede](classes/networking)
   - IA: Jogos de Tabuleiro[](attachments/IA 02 - AdversarialSearch.pptx) 22/11/2016)
 
 [activity-particle-effects]: https://github.com/fegemo/cefet-games-cauldron
