@@ -605,6 +605,9 @@ body.menu-open .bespoke-progress-parent {
   transform: none;
   transition: none;
 }
+.zelda-transition .bespoke-slide {
+  transition-duration: 250ms;
+}
 .book-cover-container {
   position: relative;
   perspective: 400px;
