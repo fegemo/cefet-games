@@ -142,11 +142,11 @@ batch.draw(fundo, fundoX, fundoY);
   placa de vídeo que é **dispendioso**
   - Para evitar fazer várias pequenas comunicações, <u>optamos por fazer
     uma menor quantidade de comunicações maiores</u>
-  - ```java
+    ```java
     batch.begin();
-    batch.draw(texturaFundo);
-    batch.draw(texturaCeu);
-    batch.draw(texturaTerreno);
+    batch.draw(texturaFundo, 0, 0);
+    batch.draw(texturaCeu, 0, 250);
+    batch.draw(texturaTerreno, 0, 0);
     // ...outros desenhos...
     batch.end(); // apenas 1 chamada à GPU
     ```
@@ -189,13 +189,14 @@ public class MeuJogo extends ApplicationAdapter {
 - ```java
   // na função "create":
   batch = new SpriteBatch();
-  jogador = new Sprite("jogador.png");
+  textura = new Texture("jogador.png");
+  jogador = new Sprite(textura);
   jogador.setPosition(50, 20);
 
   // na função "render":
   batch.begin();
-  batch.draw(texturaFundo);
-  batch.draw(texturaCeu);
+  batch.draw(texturaFundo, 0, 0);
+  batch.draw(texturaCeu, 0, 200);
   jogador.draw(batch);  // ela se desenha,
   batch.end();          // com o "batch"
   ```
@@ -235,13 +236,12 @@ float tempoDaAnimacao;
 // na "create()"
 spriteSheet = new Texture("goomba-spritesheet.png");
 quadrosDaAnimacao = TextureRegion.split(spriteSheet, 20, 30);
-andarParaFrente = new Animation(0.1f, new TextureRegion[] {
+andarParaFrente = new Animation(0.1f,
   quadrosDaAnimacao[0][0], // 1ª linha, 1ª coluna
   quadrosDaAnimacao[0][1], // idem, 2ª coluna
   quadrosDaAnimacao[0][2],
   quadrosDaAnimacao[0][3],
-  quadrosDaAnimacao[0][4],
-});
+  quadrosDaAnimacao[0][4]);
 andarParaFrente.setPlayMode(PlayMode.LOOP_PINGPONG);
 tempoDaAnimacao = 0;
 
@@ -249,8 +249,8 @@ tempoDaAnimacao = 0;
 tempoDaAnimacao += Gdx.graphics.getDeltaTime();
 
 // na "render()"
-batch.draw(
-  animacaoFrente.getKeyFrame(tempoDaAnimacao), x, y);
+batch.draw((TextureRegion)
+  andarParaFrente.getKeyFrame(tempoDaAnimacao), x, y);
 ```
 
 ---
@@ -260,7 +260,7 @@ batch.draw(
   [informações][guide-animation])
   ```java
   Animation andarParaFrente =
-    new Animation(tempoEntreQuadros, sequenciaDeQuadros);
+    new Animation(tempoEntreQuadros, quadro1, quadro2...);
   ```
   - Contém uma sequência de `TextureRegion` que são alternadas ao longo do tempo
 - Classe `TextureRegion` ([documentação][docs-textureregion],
@@ -289,8 +289,8 @@ batch.draw(
   ```java
     //...na função "render()"
     tempoDaAnimacao += Gdx.graphics.getDeltaTime();
-    TextureRegion quadroCorrente = andarParaFrente
-      .getKeyFrame(tempoDaAnimacao);
+    TextureRegion quadroCorrente = (TextureRegion)
+      andarParaFrente.getKeyFrame(tempoDaAnimacao);
     batch.draw(quadroCorrente, x, y);
   ```
   - Desenhamos apenas o **"quadro corrente"**
@@ -301,15 +301,14 @@ batch.draw(
 ## Prática Goombas
 
 1. Faça um _fork_ do
-  [repositório com o código seminal][activity-sprites-starter] no GitHub
+  [repositório com o código seminal][activity-sprites] no GitHub
 1. Clone **seu _fork_** para seu computador
 1. Faça a atividade descrita no [enunciado][activity-sprites]
 1. Faça _add_ e _commit_ com as suas mudanças
 1. Faça _push_ para enviar seus _commits_
 1. Envie o link do seu repositório no Moodle
 
-[activity-sprites]: https://github.com/fegemo/cefet-games/tree/master/assignments/sprites
-[activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
+[activity-sprites]: https://github.com/fegemo/cefet-games-goomba
 
 ---
 # Referências
