@@ -183,27 +183,8 @@ public class MeuJogo extends ApplicationAdapter {
   classes: floating-right-code
 -->
 
-## _Sprite_
+## **Sprite**
 
-- ```java
-  class Sprite {
-    Texture textura;
-    float largura, altura;
-    float x, y;
-
-    void desenha() {
-      // ...
-    }
-  }
-  ```
-  Uma _sprite_ é um objeto gráfico (possui uma textura) posicionado na
-  tela do jogo
-  - Textura + dimensão (largura, altura) + posição (x, y)
-  - Pode ser estática (apenas 1 quadro) ou animada (múltiplos quadros)
-  - Pode ter movimento
-
----
-## [_Sprite_][docs-sprite] na LibGDX
 
 - ```java
   // na função "create":
@@ -215,9 +196,15 @@ public class MeuJogo extends ApplicationAdapter {
   batch.begin();
   batch.draw(texturaFundo);
   batch.draw(texturaCeu);
-  jogador.draw(batch);  // a sprite que se desenha,
-  batch.end();          // recebendo o "batch"
+  jogador.draw(batch);  // ela se desenha,
+  batch.end();          // com o "batch"
   ```
+  Uma [_Sprite_][docs-sprite] é um objeto gráfico (possui uma textura)
+  posicionado na tela do jogo:
+  1. textura +
+  1. dimensão (largura, altura) +
+  1. posição (x, y)
+
 
 [docs-sprite]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Sprite.html
 
@@ -229,12 +216,13 @@ public class MeuJogo extends ApplicationAdapter {
     <figcaption>`goomba-spritesheet.png`</figcaption>
 </figure>
 
-- É muito comum termos **_sprites_ com animações**
+- É muito comum termos **animações** de _sprites_
 - Nesse caso, criamos uma **_spritesheet_** contendo **todos os quadros
   de animação** de um personagem
   - Usar apenas 1 arquivo (e, portanto, 1 textura) em vez de 20 tem
     desempenho muito melhor
-
+- Na LibGDX, não há `AnimatedSprite`¹, então usamos `Texture` e `Animation`
+  - ¹mas dá pra criar!
 ---
 ## **Animações** em LibGDX (1/3)
 
@@ -244,7 +232,7 @@ TextureRegion[][] quadrosDaAnimacao;
 Animation andarParaFrente;
 float tempoDaAnimacao;
 
-// passo 1: na "create()"
+// na "create()"
 spriteSheet = new Texture("goomba-spritesheet.png");
 quadrosDaAnimacao = TextureRegion.split(spriteSheet, 20, 30);
 andarParaFrente = new Animation(0.1f, new TextureRegion[] {
@@ -257,11 +245,12 @@ andarParaFrente = new Animation(0.1f, new TextureRegion[] {
 andarParaFrente.setPlayMode(PlayMode.LOOP_PINGPONG);
 tempoDaAnimacao = 0;
 
-// passo 2: na "render()"
+// na "update()"
 tempoDaAnimacao += Gdx.graphics.getDeltaTime();
+
+// na "render()"
 batch.draw(
-  animacaoFrente.getKeyFrame(tempoDaAnimacao),
-  x, y);
+  animacaoFrente.getKeyFrame(tempoDaAnimacao), x, y);
 ```
 
 ---

@@ -36,7 +36,7 @@ bespokeEvent: bullets.disable
     atividade: [RPG Maker][activity-rpgmaker] ou [RPG Boss][activity-rpgboss]
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/)
   - Prática _Sprites_: [slides](classes/2d-graphics),
-    atividade: [Goombas][activity-sprites], [código seminal][activity-sprites-starter]
+    atividade: [Goombas][activity-sprites]
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
   - Física: Prática de Colisão AABB, MEB: [atividade da navinha][activity-navinha]
 - IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement]
@@ -44,8 +44,7 @@ bespokeEvent: bullets.disable
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
-[activity-sprites]: https://github.com/fegemo/cefet-games/tree/master/assignments/sprites
-[activity-sprites-starter]: https://github.com/fegemo/cefet-games-goomba
+[activity-sprites]: https://github.com/fegemo/cefet-games-goomba
 [activity-navinha]: https://github.com/fegemo/cefet-games-navinha
 [chaimo-movement]: https://github.com/fegemo/cefet-games/blob/master/attachments/IA%2003%20-%20Movimenta%C3%A7%C3%A3o%20Simples.pptx?raw=true
 [activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
