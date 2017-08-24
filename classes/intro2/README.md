@@ -64,7 +64,7 @@ bespokeState: checkpoint
       <li>![right](../../images/guitar-hero.jpg)
       **Maestria**</li>
       <li>Interação social</li>
-      <li>Isliamento físico</li>
+      <li>Isolamento físico</li>
       <li>Competição</li>
       <li>Conhecimento</li>
       <li>Vício</li>
