@@ -89,6 +89,8 @@ características:
 1. Ser em 3D em vez de 2D
 1. Ter algum tipo inteligência artificial
 1. Ter 2 "etapas" do jogo
+1. Utilizar áudio de uma forma incomum
+1. Utilizar animação em tempo de execução em vez de sprite
 
 Há dois tipos de _microgame_ e você deve escolher os formatos dos seus:
 
