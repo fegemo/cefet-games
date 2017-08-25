@@ -161,46 +161,46 @@ Criar um _microgame_ no jogo é uma tarefa com 3 etapas:
        // ... outros métodos
    }
    ```
-  - Caso o jogador consiga vencer o desafio antes do tempo do _microgame_,
-    você deve chamar `super.challengeSolved()` nesse momento.
-  - Analogamente, caso o jogador perca o desafio antes do tempo, você
-    deve chamar `super.challengeFailed()`.
+   - Caso o jogador consiga vencer o desafio antes do tempo do _microgame_,
+     você deve chamar `super.challengeSolved()` nesse momento.
+   - Analogamente, caso o jogador perca o desafio antes do tempo, você
+     deve chamar `super.challengeFailed()`.
 1. **Criar uma classe** (_e.g._, `MicroJogoMarotexFactory`) que
-  implementa (_i.e._, `implements`) a interface `MiniGameFactory`. Exemplo:
-  ```java
-  public class MicroJogoMarotexFactory implements MiniGameFactory {
-      @Override
-      public MiniGame createMiniGame(BaseScreen screen,
-        GameStateObserver observer, float difficulty) {
-          // retorna uma nova instância de
-          // MicroJogoMarotex, e.g.:
-          // return new MicroJogoMarotex(...);
-      }
+   implementa (_i.e._, `implements`) a interface `MiniGameFactory`. Exemplo:
+   ```java
+   public class MicroJogoMarotexFactory implements MiniGameFactory {
+       @Override
+       public MiniGame createMiniGame(BaseScreen screen,
+         GameStateObserver observer, float difficulty) {
+           // retorna uma nova instância de
+           // MicroJogoMarotex, e.g.:
+           // return new MicroJogoMarotex(...);
+       
 
-      @Override
-      public Map<String, Class> getAssetsToPreload() {
-          // retorna um conjunto de assets para serem
-          // pré-carregados antes deste
-          // minigame começar
-      }
-  }
-  ```
+       @Override
+       public Map<String, Class> getAssetsToPreload() {
+           // retorna um conjunto de assets para serem
+           // pré-carregados antes deste
+           // minigame começar
+       }
+   }
+   ```
 1. **Alterar a classe da tela de jogo** (`PlayingGamesScreen`) para colocar
-  o novo _minigame_ como elegível para sorteio:
+   o novo _minigame_ como elegível para sorteio:
 
-  ```java
-  // ...
-  public PlayingGamesScreen(Game game, BaseScreen previous) {
-      // ...
-      this.sequencer = new GameSequencer(5, new HashSet<MiniGameFactory>(
-              Arrays.asList(
-                      new ShootTheCariesFactory(),
-                      new ShooTheTartarusFactory()),
-                      // COLOQUE ESTA LINHA:
-                      new MicroJogoMarotexFactory()
-      ), this, this);
-  }
-  ```
+   ```java
+   // ...
+   public PlayingGamesScreen(Game game, BaseScreen previous) {
+       // ...
+       this.sequencer = new GameSequencer(5, new HashSet<MiniGameFactory>(
+               Arrays.asList(
+                       new ShootTheCariesFactory(),
+                       new ShooTheTartarusFactory()),
+                       // COLOQUE ESTA LINHA:
+                       new MicroJogoMarotexFactory()
+       ), this, this);
+   }
+   ```
 
 ## Avaliação
 
