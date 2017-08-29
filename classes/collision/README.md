@@ -62,10 +62,10 @@ backdrop: collision
 
 - Representamos com uma posição e n escalares (4 ou 6 valores)
   - Ou por 2 ou 3 pontos (equivalente, mas mais caro)
-- Segmento <span class="math">A(a_{min}, a_{max})</span> _vs_ segmento <span class="math">B(b_{min}, b_{max})</span>:
+- Segmento <span class="math">A(a\_{min}, a\_{max})</span> _vs_ segmento <span class="math">B(b\_{min}, b\_{max})</span>:
   ![](../../images/intersecao-segmentos-alinhados.png)
-  - Interseção ocorre se: <span class="math">a_{max} \leq b_{min}</span> e
-    <span class="math">a\_{min} \geq b_{max}</span>
+  - Interseção ocorre se: <span class="math">a\_{max} \geq b\_{min}</span> e
+    <span class="math">a\_{min} \leq b\_{max}</span>
 - Retângulo _vs_ retângulo: _(próximo slide)_
 
 ---
