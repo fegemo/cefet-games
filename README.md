@@ -37,8 +37,9 @@ bespokeEvent: bullets.disable
 - Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/)
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites]
-- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
+- Física: [Detecção de Colisão](classes/collision/)
   - Física: Prática de Colisão AABB, MEB: [atividade da navinha][activity-navinha]
+- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
 - IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement]
   - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 
