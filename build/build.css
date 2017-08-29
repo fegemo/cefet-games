@@ -205,6 +205,9 @@ h1,
 h2 {
   font-family: 'Share Tech Mono', Verdana;
 }
+p {
+  margin: 0;
+}
 .note {
   padding: 1em;
   margin: 0;
@@ -1064,6 +1067,21 @@ thead > tr {
   text-shadow: 3px 3px rgba(0,0,0,0.25), 2px 2px rgba(0,0,0,0.5), 1px 1px rgba(0,0,0,0.75);
 }
 .bespoke-slide[data-bespoke-backdrop="zelda-wii-u"] h2 {
+  color: #fff;
+}
+.collision.bespoke-backdrop {
+  background-image: url("../images/sat.jpg");
+  background-color: #fff;
+  background-position: center center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.bespoke-slide[data-bespoke-backdrop="collision"] {
+  text-shadow: 3px 3px rgba(0,0,0,0.25), 2px 2px rgba(0,0,0,0.5), 1px 1px rgba(0,0,0,0.75);
+}
+.bespoke-slide[data-bespoke-backdrop="collision"] h2 {
   color: #fff;
 }
 .unity-vikings.bespoke-backdrop-active {
