@@ -1179,6 +1179,15 @@ thead > tr {
   width: 100%;
   height: 100%;
 }
+.movement.bespoke-backdrop-active {
+  background-image: url("../images/movement.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-position-x: 50%;
+  background-size: contain;
+}
 .pathfinder.bespoke-backdrop-active {
   background-image: url("../images/pathfinder.jpg");
   background-size: cover;
@@ -1195,6 +1204,14 @@ thead > tr {
   height: 100%;
   background-position-x: 50%;
 }
+.white.bespoke-backdrop-active {
+  background-color: #fff;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.bespoke-slide[data-bespoke-backdrop="movement"],
 .bespoke-slide[data-bespoke-backdrop="pathfinder"],
 .bespoke-slide[data-bespoke-backdrop="world-representation"] {
   text-shadow: 3px 3px rgba(0,0,0,0.25), 2px 2px rgba(0,0,0,0.5), 1px 1px rgba(0,0,0,0.75);

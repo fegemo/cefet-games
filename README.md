@@ -40,14 +40,13 @@ bespokeEvent: bullets.disable
 - Física: [Detecção de Colisão](classes/collision/)
   - Física: Prática de Colisão AABB, MEB: [atividade da navinha][activity-navinha]
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
-- IA: [Movimentação cinemática, dinâmica e _steering_][chaimo-movement]
+- IA: [Movimentação cinemática e dinâmica](classes/movement)
   - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
 [activity-sprites]: https://github.com/fegemo/cefet-games-goomba
 [activity-navinha]: https://github.com/fegemo/cefet-games-navinha
-[chaimo-movement]: https://github.com/fegemo/cefet-games/blob/master/attachments/IA%2003%20-%20Movimenta%C3%A7%C3%A3o%20Simples.pptx?raw=true
 [activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
 [activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/
 
