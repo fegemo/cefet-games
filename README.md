@@ -41,14 +41,13 @@ bespokeEvent: bullets.disable
   - Física: Prática de Colisão AABB, MEB: [atividade da navinha][activity-navinha]
 - Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
 - IA: [Movimentação cinemática e dinâmica](classes/movement)
-  - Prática de Movimentação: [atividade][activity-kinematics], [código seminal][activity-kinematics-starter]
+  - Prática de Movimentação: [atividade da cinemática][activity-kinematics]
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
 [activity-sprites]: https://github.com/fegemo/cefet-games-goomba
 [activity-navinha]: https://github.com/fegemo/cefet-games-navinha
-[activity-kinematics]: https://github.com/fegemo/cefet-games/tree/master/assignments/kinematics
-[activity-kinematics-starter]:https://github.com/fegemo/cefet-games-cinematica/
+[activity-kinematics]: https://github.com/fegemo/cefet-games-cinematica
 
 ---
 # Aulas (2/3)
