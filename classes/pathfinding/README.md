@@ -68,7 +68,7 @@ bespokeState: checkpoint
 
 - É uma **estrutura matemática** normalmente representada em diagrama
 - Consiste de **nós** (ou vértices) e **conexões** (arestas)
-- Pode ser usados como **estrutura de dados** em uma miríade de problemas em
+- Podem ser usados como **estrutura de dados** em uma miríade de problemas em
   Ciência da Computação (_e.g._, **_pathfinding_**)
 
 ---
