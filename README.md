@@ -53,19 +53,17 @@ bespokeEvent: bullets.disable
 # Aulas (2/3)
 
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding)
-  - Prática de A*: [atividade][activity-pathfinding], [código seminal][activity-pathfinding-starter]
+  - Prática de A*: [atividade][activity-pathfinding]
 - IA: [Representação do Mundo](classes/world-representation)
   - [Demonstração](classes/unity) da Unity
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/)
-  - Workshop Blender
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2)
 - Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx)
   - Prática de Acessibilidade: [atividade][activity-access]
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2)
 
 
-[activity-pathfinding]: https://github.com/fegemo/cefet-games/tree/master/assignments/pathfinding
-[activity-pathfinding-starter]: https://github.com/fegemo/cefet-games-pathfinding/
+[activity-pathfinding]: https://github.com/fegemo/cefet-games-pathfinding/
 [activity-access]: https://github.com/fegemo/cefet-games/blob/master/assignments/gameover/README.md#prática-diretrizes-de-acessibilidade
 
 ---
