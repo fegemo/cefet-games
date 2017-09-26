@@ -1,6 +1,5 @@
 <!--
 backdrop: world-representation
-bespokeEvent: bullets.disable
 -->
 
 # IA: Representações do Mundo para _Pathfinding_
@@ -64,7 +63,7 @@ bespokeState: checkpoint
 
 - Um **esquema de divisão** possui 3 importantes características:
   1. **Quantização e localização**: mudança do espaço do cenário para o espaço do grafo, e vice-versa
-  1. **Geração**: manual (_level designer_ ou automática (algorítmica)
+  1. **Geração**: manual (_level designer_) ou automática (algorítmica)
   1. **Validade**: todos os caminhos gerados devem poder se executados
 
 ---
@@ -108,7 +107,7 @@ bespokeState: checkpoint
 - **Quantização**: determinar em que _tile_ uma coordenada do mundo está:
   ```ruby
   def emQualTile(x, y)  
-    tileX = floor(x / ladoDoTile)
+    tileX = floor(x / ladoDoTile)   # floor: inteiro abaixo
     tileY = floor(y / ladoDoTile)
     return grafo[tileX][tileY]
   ```
