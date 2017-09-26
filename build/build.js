@@ -20033,7 +20033,7 @@ window.deck = bespoke.from('article', [
     });
   },
   touch(),
-  bullets('li, .bullet'),
+  bullets('.bullet'),
   hash(),
   progress(),
   math(),
