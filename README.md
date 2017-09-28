@@ -13,18 +13,18 @@ bespokeEvent: bullets.disable
 
 - ~~Prova e Listas~~ (0 pontos!!!)
 - Aulas Práticas (20 pontos)
-- [Seminários][seminar] - grupos de até 2 alunos (15 pontos)
-- Trabalhos Práticos (65 pontos)
-  - [TP0][tp0] (3 pontos, para 07/08/2016)
-  - [TP1][tp1], [repositório][tp1-repo] (15 pontos)
-  - TP2[][tp2] (17 pontos)
-  - [Projeto][tp3] (30 pontos)
+- ~~Seminários [][seminar] - grupos de até 2 alunos (15 pontos)~~
+- Trabalhos Práticos (80 pontos)
+  - [TP0][tp0] (3 pontos, para 07/08/2017)
+  - [TP1][tp1], [repositório][tp1-repo] (20 pontos, para 17/09/2017)
+  - TP2[][tp2] (20 pontos)
+  - [Projeto][final] (37 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-meow-au
 [tp1-repo]: https://github.com/fegemo/cefet-games-meow-au
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2-brushmyteethagain
-[tp3]: https://github.com/fegemo/cefet-games/blob/master/assignments/tp3-1gam/README.md#trabalho-prático-3---1gam
+[final]: https://github.com/fegemo/cefet-games/blob/master/assignments/final/README.md
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
 ---
@@ -53,7 +53,7 @@ bespokeEvent: bullets.disable
 # Aulas (2/3)
 
 - IA: [_Pathfinding_ usando Grafos](classes/pathfinding)
-  - Prática de A*: [atividade][activity-pathfinding]
+  - Prática de A*: [atividade][activity-pathfinding]lp
 - IA: [Representação do Mundo](classes/world-representation)
   - [Demonstração](classes/unity) da Unity
 - CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/)
