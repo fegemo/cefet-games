@@ -139,13 +139,6 @@ module.exports = function(options) {
 },{}],3:[function(require,module,exports){
 module.exports = function() {
   return function(deck) {
-    var activateSlide = function(index) {
-      var indexToActivate = -1 < index && index < deck.slides.length ? index : 0;
-      if (indexToActivate !== deck.slide()) {
-        deck.slide(indexToActivate);
-      }
-    };
-
     var parseHash = function() {
       var hash = window.location.hash.slice(1),
         slideNumberOrName = parseInt(hash, 10);
@@ -155,7 +148,7 @@ module.exports = function() {
           activateSlide(slideNumberOrName - 1);
         } else {
           deck.slides.forEach(function(slide, i) {
-            if (slide.getAttribute('data-bespoke-hash') === hash || slide.id === hash) {
+            if (slide.getAttribute('data-bespoke-hash') === hash) {
               activateSlide(i);
             }
           });
@@ -163,11 +156,18 @@ module.exports = function() {
       }
     };
 
+    var activateSlide = function(index) {
+      var indexToActivate = -1 < index && index < deck.slides.length ? index : 0;
+      if (indexToActivate !== deck.slide()) {
+        deck.slide(indexToActivate);
+      }
+    };
+
     setTimeout(function() {
       parseHash();
 
       deck.on('activate', function(e) {
-        var slideName = e.slide.getAttribute('data-bespoke-hash') || e.slide.id;
+        var slideName = e.slide.getAttribute('data-bespoke-hash');
         window.location.hash = slideName || e.index + 1;
       });
 
@@ -14627,7 +14627,7 @@ module.exports = function(hljs) {
 };
 },{}],155:[function(require,module,exports){
 /**
- * isMobile.js v0.4.1
+ * isMobile.js v0.4.0
  *
  * A simple library to detect Apple phones and tablets,
  * Android phones and tablets, other mobile devices (like blackberry, mini-opera and windows phone),
@@ -14646,7 +14646,7 @@ module.exports = function(hljs) {
         android_tablet      = /Android/i,
         amazon_phone        = /(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,
         amazon_tablet       = /(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,
-        windows_phone       = /Windows Phone/i,
+        windows_phone       = /IEMobile/i,
         windows_tablet      = /(?=.*\bWindows\b)(?=.*\bARM\b)/i, // Match 'Windows' AND 'ARM'
         other_blackberry    = /BlackBerry/i,
         other_blackberry_10 = /BB10/i,
@@ -14949,7 +14949,8 @@ function compileStyleMap(schema, map) {
     if (tag.slice(0, 2) === '!!') {
       tag = 'tag:yaml.org,2002:' + tag.slice(2);
     }
-    type = schema.compiledTypeMap['fallback'][tag];
+
+    type = schema.compiledTypeMap[tag];
 
     if (type && _hasOwnProperty.call(type.styleAliases, style)) {
       style = type.styleAliases[style];
@@ -16007,7 +16008,7 @@ function mergeMappings(state, destination, source, overridableKeys) {
   }
 }
 
-function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, startLine, startPos) {
+function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode) {
   var index, quantity;
 
   keyNode = String(keyNode);
@@ -16028,8 +16029,6 @@ function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valu
     if (!state.json &&
         !_hasOwnProperty.call(overridableKeys, keyNode) &&
         _hasOwnProperty.call(_result, keyNode)) {
-      state.line = startLine || state.line;
-      state.position = startPos || state.position;
       throwError(state, 'duplicated mapping key');
     }
     _result[keyNode] = valueNode;
@@ -16260,9 +16259,8 @@ function readSingleQuotedScalar(state, nodeIndent) {
       ch = state.input.charCodeAt(++state.position);
 
       if (ch === 0x27/* ' */) {
-        captureStart = state.position;
+        captureStart = captureEnd = state.position;
         state.position++;
-        captureEnd = state.position;
       } else {
         return true;
       }
@@ -16677,7 +16675,6 @@ function readBlockMapping(state, nodeIndent, flowIndent) {
   var following,
       allowCompact,
       _line,
-      _pos,
       _tag          = state.tag,
       _anchor       = state.anchor,
       _result       = {},
@@ -16698,7 +16695,6 @@ function readBlockMapping(state, nodeIndent, flowIndent) {
   while (ch !== 0) {
     following = state.input.charCodeAt(state.position + 1);
     _line = state.line; // Save the current line.
-    _pos = state.position;
 
     //
     // Explicit notation case. There are two separate blocks:
@@ -16793,7 +16789,7 @@ function readBlockMapping(state, nodeIndent, flowIndent) {
       }
 
       if (!atExplicitKey) {
-        storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, _line, _pos);
+        storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode);
         keyTag = keyNode = valueNode = null;
       }
 
@@ -17109,8 +17105,8 @@ function composeNode(state, parentIndent, nodeContext, allowToSeek, allowCompact
           break;
         }
       }
-    } else if (_hasOwnProperty.call(state.typeMap[state.kind || 'fallback'], state.tag)) {
-      type = state.typeMap[state.kind || 'fallback'][state.tag];
+    } else if (_hasOwnProperty.call(state.typeMap, state.tag)) {
+      type = state.typeMap[state.tag];
 
       if (state.result !== null && type.kind !== state.kind) {
         throwError(state, 'unacceptable node kind for !<' + state.tag + '> tag; it should be "' + type.kind + '", not "' + state.kind + '"');
@@ -17413,7 +17409,7 @@ function compileList(schema, name, result) {
 
   schema[name].forEach(function (currentType) {
     result.forEach(function (previousType, previousIndex) {
-      if (previousType.tag === currentType.tag && previousType.kind === currentType.kind) {
+      if (previousType.tag === currentType.tag) {
         exclude.push(previousIndex);
       }
     });
@@ -17428,20 +17424,16 @@ function compileList(schema, name, result) {
 
 
 function compileMap(/* lists... */) {
-  var result = {
-        scalar: {},
-        sequence: {},
-        mapping: {},
-        fallback: {}
-      }, index, length;
+  var result = {}, index, length;
 
   function collectType(type) {
-    result[type.kind][type.tag] = result['fallback'][type.tag] = type;
+    result[type.tag] = type;
   }
 
   for (index = 0, length = arguments.length; index < length; index += 1) {
     arguments[index].forEach(collectType);
   }
+
   return result;
 }
 
@@ -17768,10 +17760,7 @@ function constructYamlBinary(data) {
   }
 
   // Wrap into Buffer for NodeJS and leave Array for browser
-  if (NodeBuffer) {
-    // Support node 6.+ Buffer API when available
-    return NodeBuffer.from ? NodeBuffer.from(result) : new NodeBuffer(result);
-  }
+  if (NodeBuffer) return new NodeBuffer(result);
 
   return result;
 }
@@ -17874,27 +17863,16 @@ var common = require('../common');
 var Type   = require('../type');
 
 var YAML_FLOAT_PATTERN = new RegExp(
-  // 2.5e4, 2.5 and integers
-  '^(?:[-+]?(?:0|[1-9][0-9_]*)(?:\\.[0-9_]*)?(?:[eE][-+]?[0-9]+)?' +
-  // .2e4, .2
-  // special case, seems not from spec
-  '|\\.[0-9_]+(?:[eE][-+]?[0-9]+)?' +
-  // 20:59
+  '^(?:[-+]?(?:[0-9][0-9_]*)\\.[0-9_]*(?:[eE][-+][0-9]+)?' +
+  '|\\.[0-9_]+(?:[eE][-+][0-9]+)?' +
   '|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*' +
-  // .inf
   '|[-+]?\\.(?:inf|Inf|INF)' +
-  // .nan
   '|\\.(?:nan|NaN|NAN))$');
 
 function resolveYamlFloat(data) {
   if (data === null) return false;
 
-  if (!YAML_FLOAT_PATTERN.test(data) ||
-      // Quick hack to not allow integers end with `_`
-      // Probably should update regexp & check speed
-      data[data.length - 1] === '_') {
-    return false;
-  }
+  if (!YAML_FLOAT_PATTERN.test(data)) return false;
 
   return true;
 }
@@ -18039,7 +18017,7 @@ function resolveYamlInteger(data) {
         if (ch !== '0' && ch !== '1') return false;
         hasDigits = true;
       }
-      return hasDigits && ch !== '_';
+      return hasDigits;
     }
 
 
@@ -18053,7 +18031,7 @@ function resolveYamlInteger(data) {
         if (!isHexCode(data.charCodeAt(index))) return false;
         hasDigits = true;
       }
-      return hasDigits && ch !== '_';
+      return hasDigits;
     }
 
     // base 8
@@ -18063,13 +18041,10 @@ function resolveYamlInteger(data) {
       if (!isOctCode(data.charCodeAt(index))) return false;
       hasDigits = true;
     }
-    return hasDigits && ch !== '_';
+    return hasDigits;
   }
 
   // base 10 (except 0) or base 60
-
-  // value should not start with `_`;
-  if (ch === '_') return false;
 
   for (; index < max; index++) {
     ch = data[index];
@@ -18081,8 +18056,7 @@ function resolveYamlInteger(data) {
     hasDigits = true;
   }
 
-  // Should have digits and should not end with `_`
-  if (!hasDigits || ch === '_') return false;
+  if (!hasDigits) return false;
 
   // if !base60 - done;
   if (ch !== ':') return true;
@@ -20115,5 +20089,6 @@ module.exports = function(tutorialEl) {
 };
 
 },{}]},{},[188])
+
 
 //# sourceMappingURL=build.js.map
