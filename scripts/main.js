@@ -80,7 +80,7 @@ window.deck = bespoke.from('article', [
     });
   },
   touch(),
-  bullets('.bullet'),
+  bullets('.bullet, .bulleted > *'),
   hash(),
   progress(),
   math(),

@@ -1,6 +1,5 @@
 <!--
 backdrop: max-payne3
-bespokeEvent: bullets.disable
 -->
 
 # Animação de Personagens
