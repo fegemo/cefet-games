@@ -139,6 +139,13 @@ module.exports = function(options) {
 },{}],3:[function(require,module,exports){
 module.exports = function() {
   return function(deck) {
+    var activateSlide = function(index) {
+      var indexToActivate = -1 < index && index < deck.slides.length ? index : 0;
+      if (indexToActivate !== deck.slide()) {
+        deck.slide(indexToActivate);
+      }
+    };
+
     var parseHash = function() {
       var hash = window.location.hash.slice(1),
         slideNumberOrName = parseInt(hash, 10);
@@ -148,7 +155,7 @@ module.exports = function() {
           activateSlide(slideNumberOrName - 1);
         } else {
           deck.slides.forEach(function(slide, i) {
-            if (slide.getAttribute('data-bespoke-hash') === hash) {
+            if (slide.getAttribute('data-bespoke-hash') === hash || slide.id === hash) {
               activateSlide(i);
             }
           });
@@ -156,18 +163,11 @@ module.exports = function() {
       }
     };
 
-    var activateSlide = function(index) {
-      var indexToActivate = -1 < index && index < deck.slides.length ? index : 0;
-      if (indexToActivate !== deck.slide()) {
-        deck.slide(indexToActivate);
-      }
-    };
-
     setTimeout(function() {
       parseHash();
 
       deck.on('activate', function(e) {
-        var slideName = e.slide.getAttribute('data-bespoke-hash');
+        var slideName = e.slide.getAttribute('data-bespoke-hash') || e.slide.id;
         window.location.hash = slideName || e.index + 1;
       });
 
@@ -14627,7 +14627,7 @@ module.exports = function(hljs) {
 };
 },{}],155:[function(require,module,exports){
 /**
- * isMobile.js v0.4.0
+ * isMobile.js v0.4.1
  *
  * A simple library to detect Apple phones and tablets,
  * Android phones and tablets, other mobile devices (like blackberry, mini-opera and windows phone),
@@ -14646,7 +14646,7 @@ module.exports = function(hljs) {
         android_tablet      = /Android/i,
         amazon_phone        = /(?=.*\bAndroid\b)(?=.*\bSD4930UR\b)/i,
         amazon_tablet       = /(?=.*\bAndroid\b)(?=.*\b(?:KFOT|KFTT|KFJWI|KFJWA|KFSOWI|KFTHWI|KFTHWA|KFAPWI|KFAPWA|KFARWI|KFASWI|KFSAWI|KFSAWA)\b)/i,
-        windows_phone       = /IEMobile/i,
+        windows_phone       = /Windows Phone/i,
         windows_tablet      = /(?=.*\bWindows\b)(?=.*\bARM\b)/i, // Match 'Windows' AND 'ARM'
         other_blackberry    = /BlackBerry/i,
         other_blackberry_10 = /BB10/i,
@@ -14949,8 +14949,7 @@ function compileStyleMap(schema, map) {
     if (tag.slice(0, 2) === '!!') {
       tag = 'tag:yaml.org,2002:' + tag.slice(2);
     }
-
-    type = schema.compiledTypeMap[tag];
+    type = schema.compiledTypeMap['fallback'][tag];
 
     if (type && _hasOwnProperty.call(type.styleAliases, style)) {
       style = type.styleAliases[style];
@@ -14993,6 +14992,7 @@ function State(options) {
   this.lineWidth    = options['lineWidth'] || 80;
   this.noRefs       = options['noRefs'] || false;
   this.noCompatMode = options['noCompatMode'] || false;
+  this.condenseFlow = options['condenseFlow'] || false;
 
   this.implicitTypes = this.schema.compiledImplicit;
   this.explicitTypes = this.schema.compiledExplicit;
@@ -15362,7 +15362,7 @@ function writeFlowSequence(state, level, object) {
   for (index = 0, length = object.length; index < length; index += 1) {
     // Write only valid elements.
     if (writeNode(state, level, object[index], false, false)) {
-      if (index !== 0) _result += ', ';
+      if (index !== 0) _result += ',' + (!state.condenseFlow ? ' ' : '');
       _result += state.dump;
     }
   }
@@ -15383,7 +15383,14 @@ function writeBlockSequence(state, level, object, compact) {
       if (!compact || index !== 0) {
         _result += generateNextLine(state, level);
       }
-      _result += '- ' + state.dump;
+
+      if (state.dump && CHAR_LINE_FEED === state.dump.charCodeAt(0)) {
+        _result += '-';
+      } else {
+        _result += '- ';
+      }
+
+      _result += state.dump;
     }
   }
 
@@ -15415,7 +15422,7 @@ function writeFlowMapping(state, level, object) {
 
     if (state.dump.length > 1024) pairBuffer += '? ';
 
-    pairBuffer += state.dump + ': ';
+    pairBuffer += state.dump + ':' + (state.condenseFlow ? '' : ' ');
 
     if (!writeNode(state, level, objectValue, false, false)) {
       continue; // Skip this pair because of invalid value.
@@ -15688,6 +15695,11 @@ function YAMLException(reason, mark) {
   // Super constructor
   Error.call(this);
 
+  this.name = 'YAMLException';
+  this.reason = reason;
+  this.mark = mark;
+  this.message = (this.reason || '(unknown reason)') + (this.mark ? ' ' + this.mark.toString() : '');
+
   // Include stack trace in error object
   if (Error.captureStackTrace) {
     // Chrome and NodeJS
@@ -15696,11 +15708,6 @@ function YAMLException(reason, mark) {
     // FF, IE 10+ and Safari 6+. Fallback for others
     this.stack = (new Error()).stack || '';
   }
-
-  this.name = 'YAMLException';
-  this.reason = reason;
-  this.mark = mark;
-  this.message = (this.reason || '(unknown reason)') + (this.mark ? ' ' + this.mark.toString() : '');
 }
 
 
@@ -15813,6 +15820,7 @@ function fromDecimalCode(c) {
 }
 
 function simpleEscapeSequence(c) {
+  /* eslint-disable indent */
   return (c === 0x30/* 0 */) ? '\x00' :
         (c === 0x61/* a */) ? '\x07' :
         (c === 0x62/* b */) ? '\x08' :
@@ -15839,8 +15847,10 @@ function charFromCodepoint(c) {
   }
   // Encode UTF-16 surrogate pair
   // https://en.wikipedia.org/wiki/UTF-16#Code_points_U.2B010000_to_U.2B10FFFF
-  return String.fromCharCode(((c - 0x010000) >> 10) + 0xD800,
-                             ((c - 0x010000) & 0x03FF) + 0xDC00);
+  return String.fromCharCode(
+    ((c - 0x010000) >> 10) + 0xD800,
+    ((c - 0x010000) & 0x03FF) + 0xDC00
+  );
 }
 
 var simpleEscapeCheck = new Array(256); // integer, for fast access
@@ -15972,9 +15982,7 @@ function captureSegment(state, start, end, checkJson) {
     _result = state.input.slice(start, end);
 
     if (checkJson) {
-      for (_position = 0, _length = _result.length;
-           _position < _length;
-           _position += 1) {
+      for (_position = 0, _length = _result.length; _position < _length; _position += 1) {
         _character = _result.charCodeAt(_position);
         if (!(_character === 0x09 ||
               (0x20 <= _character && _character <= 0x10FFFF))) {
@@ -16008,7 +16016,7 @@ function mergeMappings(state, destination, source, overridableKeys) {
   }
 }
 
-function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode) {
+function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, startLine, startPos) {
   var index, quantity;
 
   keyNode = String(keyNode);
@@ -16029,6 +16037,8 @@ function storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valu
     if (!state.json &&
         !_hasOwnProperty.call(overridableKeys, keyNode) &&
         _hasOwnProperty.call(_result, keyNode)) {
+      state.line = startLine || state.line;
+      state.position = startPos || state.position;
       throwError(state, 'duplicated mapping key');
     }
     _result[keyNode] = valueNode;
@@ -16259,8 +16269,9 @@ function readSingleQuotedScalar(state, nodeIndent) {
       ch = state.input.charCodeAt(++state.position);
 
       if (ch === 0x27/* ' */) {
-        captureStart = captureEnd = state.position;
+        captureStart = state.position;
         state.position++;
+        captureEnd = state.position;
       } else {
         return true;
       }
@@ -16675,6 +16686,7 @@ function readBlockMapping(state, nodeIndent, flowIndent) {
   var following,
       allowCompact,
       _line,
+      _pos,
       _tag          = state.tag,
       _anchor       = state.anchor,
       _result       = {},
@@ -16695,6 +16707,7 @@ function readBlockMapping(state, nodeIndent, flowIndent) {
   while (ch !== 0) {
     following = state.input.charCodeAt(state.position + 1);
     _line = state.line; // Save the current line.
+    _pos = state.position;
 
     //
     // Explicit notation case. There are two separate blocks:
@@ -16789,7 +16802,7 @@ function readBlockMapping(state, nodeIndent, flowIndent) {
       }
 
       if (!atExplicitKey) {
-        storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode);
+        storeMappingPair(state, _result, overridableKeys, keyTag, keyNode, valueNode, _line, _pos);
         keyTag = keyNode = valueNode = null;
       }
 
@@ -17087,9 +17100,7 @@ function composeNode(state, parentIndent, nodeContext, allowToSeek, allowCompact
 
   if (state.tag !== null && state.tag !== '!') {
     if (state.tag === '?') {
-      for (typeIndex = 0, typeQuantity = state.implicitTypes.length;
-           typeIndex < typeQuantity;
-           typeIndex += 1) {
+      for (typeIndex = 0, typeQuantity = state.implicitTypes.length; typeIndex < typeQuantity; typeIndex += 1) {
         type = state.implicitTypes[typeIndex];
 
         // Implicit resolving is not allowed for non-scalar types, and '?'
@@ -17105,8 +17116,8 @@ function composeNode(state, parentIndent, nodeContext, allowToSeek, allowCompact
           break;
         }
       }
-    } else if (_hasOwnProperty.call(state.typeMap, state.tag)) {
-      type = state.typeMap[state.tag];
+    } else if (_hasOwnProperty.call(state.typeMap[state.kind || 'fallback'], state.tag)) {
+      type = state.typeMap[state.kind || 'fallback'][state.tag];
 
       if (state.result !== null && type.kind !== state.kind) {
         throwError(state, 'unacceptable node kind for !<' + state.tag + '> tag; it should be "' + type.kind + '", not "' + state.kind + '"');
@@ -17278,6 +17289,10 @@ function loadDocuments(input, options) {
 function loadAll(input, iterator, options) {
   var documents = loadDocuments(input, options), index, length;
 
+  if (typeof iterator !== 'function') {
+    return documents;
+  }
+
   for (index = 0, length = documents.length; index < length; index += 1) {
     iterator(documents[index]);
   }
@@ -17298,7 +17313,11 @@ function load(input, options) {
 
 
 function safeLoadAll(input, output, options) {
-  loadAll(input, output, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+  if (typeof output === 'function') {
+    loadAll(input, output, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+  } else {
+    return loadAll(input, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+  }
 }
 
 
@@ -17409,7 +17428,7 @@ function compileList(schema, name, result) {
 
   schema[name].forEach(function (currentType) {
     result.forEach(function (previousType, previousIndex) {
-      if (previousType.tag === currentType.tag) {
+      if (previousType.tag === currentType.tag && previousType.kind === currentType.kind) {
         exclude.push(previousIndex);
       }
     });
@@ -17424,16 +17443,20 @@ function compileList(schema, name, result) {
 
 
 function compileMap(/* lists... */) {
-  var result = {}, index, length;
+  var result = {
+        scalar: {},
+        sequence: {},
+        mapping: {},
+        fallback: {}
+      }, index, length;
 
   function collectType(type) {
-    result[type.tag] = type;
+    result[type.kind][type.tag] = result['fallback'][type.tag] = type;
   }
 
   for (index = 0, length = arguments.length; index < length; index += 1) {
     arguments[index].forEach(collectType);
   }
-
   return result;
 }
 
@@ -17760,7 +17783,10 @@ function constructYamlBinary(data) {
   }
 
   // Wrap into Buffer for NodeJS and leave Array for browser
-  if (NodeBuffer) return new NodeBuffer(result);
+  if (NodeBuffer) {
+    // Support node 6.+ Buffer API when available
+    return NodeBuffer.from ? NodeBuffer.from(result) : new NodeBuffer(result);
+  }
 
   return result;
 }
@@ -17863,16 +17889,27 @@ var common = require('../common');
 var Type   = require('../type');
 
 var YAML_FLOAT_PATTERN = new RegExp(
-  '^(?:[-+]?(?:[0-9][0-9_]*)\\.[0-9_]*(?:[eE][-+][0-9]+)?' +
-  '|\\.[0-9_]+(?:[eE][-+][0-9]+)?' +
+  // 2.5e4, 2.5 and integers
+  '^(?:[-+]?(?:0|[1-9][0-9_]*)(?:\\.[0-9_]*)?(?:[eE][-+]?[0-9]+)?' +
+  // .2e4, .2
+  // special case, seems not from spec
+  '|\\.[0-9_]+(?:[eE][-+]?[0-9]+)?' +
+  // 20:59
   '|[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*' +
+  // .inf
   '|[-+]?\\.(?:inf|Inf|INF)' +
+  // .nan
   '|\\.(?:nan|NaN|NAN))$');
 
 function resolveYamlFloat(data) {
   if (data === null) return false;
 
-  if (!YAML_FLOAT_PATTERN.test(data)) return false;
+  if (!YAML_FLOAT_PATTERN.test(data) ||
+      // Quick hack to not allow integers end with `_`
+      // Probably should update regexp & check speed
+      data[data.length - 1] === '_') {
+    return false;
+  }
 
   return true;
 }
@@ -18017,7 +18054,7 @@ function resolveYamlInteger(data) {
         if (ch !== '0' && ch !== '1') return false;
         hasDigits = true;
       }
-      return hasDigits;
+      return hasDigits && ch !== '_';
     }
 
 
@@ -18031,7 +18068,7 @@ function resolveYamlInteger(data) {
         if (!isHexCode(data.charCodeAt(index))) return false;
         hasDigits = true;
       }
-      return hasDigits;
+      return hasDigits && ch !== '_';
     }
 
     // base 8
@@ -18041,10 +18078,13 @@ function resolveYamlInteger(data) {
       if (!isOctCode(data.charCodeAt(index))) return false;
       hasDigits = true;
     }
-    return hasDigits;
+    return hasDigits && ch !== '_';
   }
 
   // base 10 (except 0) or base 60
+
+  // value should not start with `_`;
+  if (ch === '_') return false;
 
   for (; index < max; index++) {
     ch = data[index];
@@ -18056,7 +18096,8 @@ function resolveYamlInteger(data) {
     hasDigits = true;
   }
 
-  if (!hasDigits) return false;
+  // Should have digits and should not end with `_`
+  if (!hasDigits || ch === '_') return false;
 
   // if !base60 - done;
   if (ch !== ':') return true;
@@ -18637,7 +18678,7 @@ var block = {
   lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
   blockquote: /^( *>[^\n]+(\n(?!def)[^\n]+)*\n*)+/,
   list: /^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
-  html: /^ *(?:comment|closed|closing) *(?:\n{2,}|\s*$)/,
+  html: /^ *(?:comment *(?:\n|\s*$)|closed *(?:\n{2,}|\s*$)|closing *(?:\n{2,}|\s*$))/,
   def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,
   table: noop,
   paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
@@ -18692,8 +18733,9 @@ block.normal = merge({}, block);
  */
 
 block.gfm = merge({}, block.normal, {
-  fences: /^ *(`{3,}|~{3,}) *(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)/,
-  paragraph: /^/
+  fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]*?)\s*\1 *(?:\n+|$)/,
+  paragraph: /^/,
+  heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n+|$)/
 });
 
 block.gfm.paragraph = replace(block.paragraph)
@@ -18805,7 +18847,7 @@ Lexer.prototype.token = function(src, top, bq) {
       this.tokens.push({
         type: 'code',
         lang: cap[2],
-        text: cap[3]
+        text: cap[3] || ''
       });
       continue;
     }
@@ -18976,7 +19018,8 @@ Lexer.prototype.token = function(src, top, bq) {
         type: this.options.sanitize
           ? 'paragraph'
           : 'html',
-        pre: cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style',
+        pre: !this.options.sanitizer
+          && (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
         text: cap[0]
       });
       continue;
@@ -19071,7 +19114,7 @@ var inline = {
   reflink: /^!?\[(inside)\]\s*\[([^\]]*)\]/,
   nolink: /^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,
   strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
-  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+  em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
   code: /^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,
   br: /^ {2,}\n(?!\s*$)/,
   del: noop,
@@ -19223,8 +19266,10 @@ InlineLexer.prototype.output = function(src) {
       }
       src = src.substring(cap[0].length);
       out += this.options.sanitize
-        ? escape(cap[0])
-        : cap[0];
+        ? this.options.sanitizer
+          ? this.options.sanitizer(cap[0])
+          : escape(cap[0])
+        : cap[0]
       continue;
     }
 
@@ -19295,7 +19340,7 @@ InlineLexer.prototype.output = function(src) {
     // text
     if (cap = this.rules.text.exec(src)) {
       src = src.substring(cap[0].length);
-      out += escape(this.smartypants(cap[0]));
+      out += this.renderer.text(escape(this.smartypants(cap[0])));
       continue;
     }
 
@@ -19329,7 +19374,9 @@ InlineLexer.prototype.smartypants = function(text) {
   if (!this.options.smartypants) return text;
   return text
     // em-dashes
-    .replace(/--/g, '\u2014')
+    .replace(/---/g, '\u2014')
+    // en-dashes
+    .replace(/--/g, '\u2013')
     // opening singles
     .replace(/(^|[-\u2014/(\[{"\s])'/g, '$1\u2018')
     // closing singles & apostrophes
@@ -19347,6 +19394,7 @@ InlineLexer.prototype.smartypants = function(text) {
  */
 
 InlineLexer.prototype.mangle = function(text) {
+  if (!this.options.mangle) return text;
   var out = ''
     , l = text.length
     , i = 0
@@ -19485,7 +19533,7 @@ Renderer.prototype.link = function(href, title, text) {
     } catch (e) {
       return '';
     }
-    if (prot.indexOf('javascript:') === 0) {
+    if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0) {
       return '';
     }
   }
@@ -19504,6 +19552,10 @@ Renderer.prototype.image = function(href, title, text) {
   }
   out += this.options.xhtml ? '/>' : '>';
   return out;
+};
+
+Renderer.prototype.text = function(text) {
+  return text;
 };
 
 /**
@@ -19700,7 +19752,8 @@ function escape(html, encode) {
 }
 
 function unescape(html) {
-  return html.replace(/&([#\w]+);/g, function(_, n) {
+	// explicitly match decimal, hex, and named HTML entities 
+  return html.replace(/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/g, function(_, n) {
     n = n.toLowerCase();
     if (n === 'colon') return ':';
     if (n.charAt(0) === '#') {
@@ -19771,8 +19824,13 @@ function marked(src, opt, callback) {
 
     pending = tokens.length;
 
-    var done = function() {
-      var out, err;
+    var done = function(err) {
+      if (err) {
+        opt.highlight = highlight;
+        return callback(err);
+      }
+
+      var out;
 
       try {
         out = Parser.parse(tokens, opt);
@@ -19801,6 +19859,7 @@ function marked(src, opt, callback) {
           return --pending || done();
         }
         return highlight(token.text, token.lang, function(err, code) {
+          if (err) return done(err);
           if (code == null || code === token.text) {
             return --pending || done();
           }
@@ -19843,6 +19902,8 @@ marked.defaults = {
   breaks: false,
   pedantic: false,
   sanitize: false,
+  sanitizer: null,
+  mangle: true,
   smartLists: false,
   silent: false,
   highlight: null,
@@ -19870,7 +19931,7 @@ marked.inlineLexer = InlineLexer.output;
 
 marked.parse = marked;
 
-if (typeof exports === 'object') {
+if (typeof module !== 'undefined' && typeof exports === 'object') {
   module.exports = marked;
 } else if (typeof define === 'function' && define.amd) {
   define(function() { return marked; });
@@ -20007,7 +20068,7 @@ window.deck = bespoke.from('article', [
     });
   },
   touch(),
-  bullets('.bullet'),
+  bullets('.bullet, .bulleted > *'),
   hash(),
   progress(),
   math(),
@@ -20089,6 +20150,5 @@ module.exports = function(tutorialEl) {
 };
 
 },{}]},{},[188])
-
 
 //# sourceMappingURL=build.js.map
