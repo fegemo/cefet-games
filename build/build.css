@@ -1440,6 +1440,13 @@ thead > tr {
     height: 150px !important;
   }
 }
+.floating {
+  display: block;
+  animation: floating 3s ease-in-out 0ms infinite alternate, floating-shadow 3s ease-in-out 0ms infinite alternate;
+}
+.floating:nth-of-type(2n) {
+  animation-delay: 1s;
+}
 @keyframes bounce {
   from {
     right: 20px;
@@ -1454,5 +1461,21 @@ thead > tr {
   }
   to {
     left: -180px;
+  }
+}
+@keyframes floating {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -1em, 0);
+  }
+}
+@keyframes floating-shadow {
+  from {
+    box-shadow: 0 0 0 rgba(0,0,0,0.3);
+  }
+  to {
+    box-shadow: 0 1em 1em rgba(0,0,0,0.3);
   }
 }
