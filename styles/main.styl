@@ -885,3 +885,25 @@ full-dimension-backdrop(repeat)
     display none !important
   .book-cover
     height 150px !important
+
+
+.floating
+  display block
+  animation floating 3s ease-in-out 0ms infinite alternate, floating-shadow 3s ease-in-out 0ms infinite alternate
+  &:nth-of-type(2n)
+    animation-delay 1s
+
+
+$floating-max-height = 1em
+$floating-shadow-color = rgba(black, .3)
+
+@keyframes floating
+  from
+    transform translate3d(0,0,0)
+  to
+    transform translate3d(0, - $floating-max-height, 0)
+@keyframes floating-shadow
+  from
+    box-shadow 0 0 0 $floating-shadow-color
+  to
+    box-shadow 0 $floating-max-height $floating-max-height $floating-shadow-color *0.5

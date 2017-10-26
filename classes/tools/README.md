@@ -16,12 +16,19 @@ backdrop: unity-vikings
 
 Notícia em [npr.org](http://www.npr.org/templates/story/story.php?storyId=94025221)
 
+<img src="../../images/avatar-jonathan-blow.jpg" class="portrait floating">
+
 ---
 ## Em 2010...
 
 ### _"Games review - **Super Meat Boy** is a **prime cut**"_
 
-![](../../images/super-meat-boy.png)
+<img src="../../images/avatar-edmund-mcmillen.jpg" class="portrait floating" style="float: left;">
+<img src="../../images/avatar-tommy-refenes.jpg" class="portrait floating" style="float: right;">
+<img src="../../images/super-meat-boy.png" style="margin: 0 2em;">
+
+<!-- ![](../../images/super-meat-boy.png) -->
+
 
 Notícia em [Metro.co.uk](http://metro.co.uk/2010/10/21/games-review-super-meat-boy-555869/)
 
