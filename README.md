@@ -17,13 +17,13 @@ bespokeEvent: bullets.disable
 - Trabalhos Práticos (80 pontos)
   - [TP0][tp0] (3 pontos, para 07/08/2017)
   - [TP1][tp1], [repositório][tp1-repo] (20 pontos, para 17/09/2017)
-  - TP2[][tp2] (20 pontos)
+  - [TP2][tp2] (20 pontos)
   - [Projeto][final] (37 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/#9
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-meow-au
 [tp1-repo]: https://github.com/fegemo/cefet-games-meow-au
-[tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2-brushmyteethagain
+[tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2-meow-au-again
 [final]: https://github.com/fegemo/cefet-games/blob/master/assignments/final/README.md
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
