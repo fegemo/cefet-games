@@ -119,6 +119,10 @@ Os passos para fazer uma tarefa são:
     1. Teste o jogo para ver se está tudo funcionando e se suas
        alterações estão presentes
     1. Volte para a interface web do GitHub e crie o _pull request_
+       - Nesse momento, você pode mover o _card_ no Trello para a coluna
+         "Implementação concluída" e, então, anexar o _pull request_ no _card_
+
+         ![](images/anexando-pull-request.png)
 
 ## Avaliação
 
