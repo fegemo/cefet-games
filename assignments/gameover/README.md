@@ -6,9 +6,8 @@
 
 Pré-requisitos:
   1. O primeiro **jogo universalmente <u>in</u>acessível**:
-    [Game Over!][dl-gameover], [link alternativo][dl-alt]
-  1. Papel e caneta para anotar
-    - Se você é moderninho, um editor de texto
+     [Game Over!][dl-gameover], [link alternativo][dl-alt]
+  1. Um editor de texto
   1. Mais que 10 dedos nas mãos (você entenderá)
 
 [dl-gameover]: http://ua-games.gr/game-over/downloads.html
@@ -27,6 +26,4 @@ Você deve jogar cada fase do sensacional jogo Game Over! e anotar qual é a dir
 ---
 ## Entrega
 
-~~Este trabalho deve ser entregue **via Moodle**. Mas caso o Moodle ainda não esteja funcionando de vento em polpa,~~ considere o parágrafo a seguir.
-
-Os exercícios desta aula prática serão corrigidos ao final do nosso horário. Assim que estiver pronto, chame o professor para que possa ver seu trabalho.
+Este trabalho deve ser entregue **via Moodle**.
