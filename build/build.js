@@ -14992,6 +14992,7 @@ function State(options) {
   this.lineWidth    = options['lineWidth'] || 80;
   this.noRefs       = options['noRefs'] || false;
   this.noCompatMode = options['noCompatMode'] || false;
+  this.condenseFlow = options['condenseFlow'] || false;
 
   this.implicitTypes = this.schema.compiledImplicit;
   this.explicitTypes = this.schema.compiledExplicit;
@@ -15361,7 +15362,7 @@ function writeFlowSequence(state, level, object) {
   for (index = 0, length = object.length; index < length; index += 1) {
     // Write only valid elements.
     if (writeNode(state, level, object[index], false, false)) {
-      if (index !== 0) _result += ', ';
+      if (index !== 0) _result += ',' + (!state.condenseFlow ? ' ' : '');
       _result += state.dump;
     }
   }
@@ -15382,7 +15383,14 @@ function writeBlockSequence(state, level, object, compact) {
       if (!compact || index !== 0) {
         _result += generateNextLine(state, level);
       }
-      _result += '- ' + state.dump;
+
+      if (state.dump && CHAR_LINE_FEED === state.dump.charCodeAt(0)) {
+        _result += '-';
+      } else {
+        _result += '- ';
+      }
+
+      _result += state.dump;
     }
   }
 
@@ -15414,7 +15422,7 @@ function writeFlowMapping(state, level, object) {
 
     if (state.dump.length > 1024) pairBuffer += '? ';
 
-    pairBuffer += state.dump + ': ';
+    pairBuffer += state.dump + ':' + (state.condenseFlow ? '' : ' ');
 
     if (!writeNode(state, level, objectValue, false, false)) {
       continue; // Skip this pair because of invalid value.
@@ -15687,6 +15695,11 @@ function YAMLException(reason, mark) {
   // Super constructor
   Error.call(this);
 
+  this.name = 'YAMLException';
+  this.reason = reason;
+  this.mark = mark;
+  this.message = (this.reason || '(unknown reason)') + (this.mark ? ' ' + this.mark.toString() : '');
+
   // Include stack trace in error object
   if (Error.captureStackTrace) {
     // Chrome and NodeJS
@@ -15695,11 +15708,6 @@ function YAMLException(reason, mark) {
     // FF, IE 10+ and Safari 6+. Fallback for others
     this.stack = (new Error()).stack || '';
   }
-
-  this.name = 'YAMLException';
-  this.reason = reason;
-  this.mark = mark;
-  this.message = (this.reason || '(unknown reason)') + (this.mark ? ' ' + this.mark.toString() : '');
 }
 
 
@@ -15812,6 +15820,7 @@ function fromDecimalCode(c) {
 }
 
 function simpleEscapeSequence(c) {
+  /* eslint-disable indent */
   return (c === 0x30/* 0 */) ? '\x00' :
         (c === 0x61/* a */) ? '\x07' :
         (c === 0x62/* b */) ? '\x08' :
@@ -15838,8 +15847,10 @@ function charFromCodepoint(c) {
   }
   // Encode UTF-16 surrogate pair
   // https://en.wikipedia.org/wiki/UTF-16#Code_points_U.2B010000_to_U.2B10FFFF
-  return String.fromCharCode(((c - 0x010000) >> 10) + 0xD800,
-                             ((c - 0x010000) & 0x03FF) + 0xDC00);
+  return String.fromCharCode(
+    ((c - 0x010000) >> 10) + 0xD800,
+    ((c - 0x010000) & 0x03FF) + 0xDC00
+  );
 }
 
 var simpleEscapeCheck = new Array(256); // integer, for fast access
@@ -15971,9 +15982,7 @@ function captureSegment(state, start, end, checkJson) {
     _result = state.input.slice(start, end);
 
     if (checkJson) {
-      for (_position = 0, _length = _result.length;
-           _position < _length;
-           _position += 1) {
+      for (_position = 0, _length = _result.length; _position < _length; _position += 1) {
         _character = _result.charCodeAt(_position);
         if (!(_character === 0x09 ||
               (0x20 <= _character && _character <= 0x10FFFF))) {
@@ -17091,9 +17100,7 @@ function composeNode(state, parentIndent, nodeContext, allowToSeek, allowCompact
 
   if (state.tag !== null && state.tag !== '!') {
     if (state.tag === '?') {
-      for (typeIndex = 0, typeQuantity = state.implicitTypes.length;
-           typeIndex < typeQuantity;
-           typeIndex += 1) {
+      for (typeIndex = 0, typeQuantity = state.implicitTypes.length; typeIndex < typeQuantity; typeIndex += 1) {
         type = state.implicitTypes[typeIndex];
 
         // Implicit resolving is not allowed for non-scalar types, and '?'
@@ -17282,6 +17289,10 @@ function loadDocuments(input, options) {
 function loadAll(input, iterator, options) {
   var documents = loadDocuments(input, options), index, length;
 
+  if (typeof iterator !== 'function') {
+    return documents;
+  }
+
   for (index = 0, length = documents.length; index < length; index += 1) {
     iterator(documents[index]);
   }
@@ -17302,7 +17313,11 @@ function load(input, options) {
 
 
 function safeLoadAll(input, output, options) {
-  loadAll(input, output, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+  if (typeof output === 'function') {
+    loadAll(input, output, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+  } else {
+    return loadAll(input, common.extend({ schema: DEFAULT_SAFE_SCHEMA }, options));
+  }
 }
 
 
@@ -18663,7 +18678,7 @@ var block = {
   lheading: /^([^\n]+)\n *(=|-){2,} *(?:\n+|$)/,
   blockquote: /^( *>[^\n]+(\n(?!def)[^\n]+)*\n*)+/,
   list: /^( *)(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?!\1bull )\n*|\s*$)/,
-  html: /^ *(?:comment|closed|closing) *(?:\n{2,}|\s*$)/,
+  html: /^ *(?:comment *(?:\n|\s*$)|closed *(?:\n{2,}|\s*$)|closing *(?:\n{2,}|\s*$))/,
   def: /^ *\[([^\]]+)\]: *<?([^\s>]+)>?(?: +["(]([^\n]+)[")])? *(?:\n+|$)/,
   table: noop,
   paragraph: /^((?:[^\n]+\n?(?!hr|heading|lheading|blockquote|tag|def))+)\n*/,
@@ -18718,8 +18733,9 @@ block.normal = merge({}, block);
  */
 
 block.gfm = merge({}, block.normal, {
-  fences: /^ *(`{3,}|~{3,}) *(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)/,
-  paragraph: /^/
+  fences: /^ *(`{3,}|~{3,})[ \.]*(\S+)? *\n([\s\S]*?)\s*\1 *(?:\n+|$)/,
+  paragraph: /^/,
+  heading: /^ *(#{1,6}) +([^\n]+?) *#* *(?:\n+|$)/
 });
 
 block.gfm.paragraph = replace(block.paragraph)
@@ -18831,7 +18847,7 @@ Lexer.prototype.token = function(src, top, bq) {
       this.tokens.push({
         type: 'code',
         lang: cap[2],
-        text: cap[3]
+        text: cap[3] || ''
       });
       continue;
     }
@@ -19002,7 +19018,8 @@ Lexer.prototype.token = function(src, top, bq) {
         type: this.options.sanitize
           ? 'paragraph'
           : 'html',
-        pre: cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style',
+        pre: !this.options.sanitizer
+          && (cap[1] === 'pre' || cap[1] === 'script' || cap[1] === 'style'),
         text: cap[0]
       });
       continue;
@@ -19097,7 +19114,7 @@ var inline = {
   reflink: /^!?\[(inside)\]\s*\[([^\]]*)\]/,
   nolink: /^!?\[((?:\[[^\]]*\]|[^\[\]])*)\]/,
   strong: /^__([\s\S]+?)__(?!_)|^\*\*([\s\S]+?)\*\*(?!\*)/,
-  em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
+  em: /^\b_((?:[^_]|__)+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
   code: /^(`+)\s*([\s\S]*?[^`])\s*\1(?!`)/,
   br: /^ {2,}\n(?!\s*$)/,
   del: noop,
@@ -19249,8 +19266,10 @@ InlineLexer.prototype.output = function(src) {
       }
       src = src.substring(cap[0].length);
       out += this.options.sanitize
-        ? escape(cap[0])
-        : cap[0];
+        ? this.options.sanitizer
+          ? this.options.sanitizer(cap[0])
+          : escape(cap[0])
+        : cap[0]
       continue;
     }
 
@@ -19321,7 +19340,7 @@ InlineLexer.prototype.output = function(src) {
     // text
     if (cap = this.rules.text.exec(src)) {
       src = src.substring(cap[0].length);
-      out += escape(this.smartypants(cap[0]));
+      out += this.renderer.text(escape(this.smartypants(cap[0])));
       continue;
     }
 
@@ -19355,7 +19374,9 @@ InlineLexer.prototype.smartypants = function(text) {
   if (!this.options.smartypants) return text;
   return text
     // em-dashes
-    .replace(/--/g, '\u2014')
+    .replace(/---/g, '\u2014')
+    // en-dashes
+    .replace(/--/g, '\u2013')
     // opening singles
     .replace(/(^|[-\u2014/(\[{"\s])'/g, '$1\u2018')
     // closing singles & apostrophes
@@ -19373,6 +19394,7 @@ InlineLexer.prototype.smartypants = function(text) {
  */
 
 InlineLexer.prototype.mangle = function(text) {
+  if (!this.options.mangle) return text;
   var out = ''
     , l = text.length
     , i = 0
@@ -19511,7 +19533,7 @@ Renderer.prototype.link = function(href, title, text) {
     } catch (e) {
       return '';
     }
-    if (prot.indexOf('javascript:') === 0) {
+    if (prot.indexOf('javascript:') === 0 || prot.indexOf('vbscript:') === 0) {
       return '';
     }
   }
@@ -19530,6 +19552,10 @@ Renderer.prototype.image = function(href, title, text) {
   }
   out += this.options.xhtml ? '/>' : '>';
   return out;
+};
+
+Renderer.prototype.text = function(text) {
+  return text;
 };
 
 /**
@@ -19726,7 +19752,8 @@ function escape(html, encode) {
 }
 
 function unescape(html) {
-  return html.replace(/&([#\w]+);/g, function(_, n) {
+	// explicitly match decimal, hex, and named HTML entities 
+  return html.replace(/&(#(?:\d+)|(?:#x[0-9A-Fa-f]+)|(?:\w+));?/g, function(_, n) {
     n = n.toLowerCase();
     if (n === 'colon') return ':';
     if (n.charAt(0) === '#') {
@@ -19797,8 +19824,13 @@ function marked(src, opt, callback) {
 
     pending = tokens.length;
 
-    var done = function() {
-      var out, err;
+    var done = function(err) {
+      if (err) {
+        opt.highlight = highlight;
+        return callback(err);
+      }
+
+      var out;
 
       try {
         out = Parser.parse(tokens, opt);
@@ -19827,6 +19859,7 @@ function marked(src, opt, callback) {
           return --pending || done();
         }
         return highlight(token.text, token.lang, function(err, code) {
+          if (err) return done(err);
           if (code == null || code === token.text) {
             return --pending || done();
           }
@@ -19869,6 +19902,8 @@ marked.defaults = {
   breaks: false,
   pedantic: false,
   sanitize: false,
+  sanitizer: null,
+  mangle: true,
   smartLists: false,
   silent: false,
   highlight: null,
@@ -19896,7 +19931,7 @@ marked.inlineLexer = InlineLexer.output;
 
 marked.parse = marked;
 
-if (typeof exports === 'object') {
+if (typeof module !== 'undefined' && typeof exports === 'object') {
   module.exports = marked;
 } else if (typeof define === 'function' && define.amd) {
   define(function() { return marked; });

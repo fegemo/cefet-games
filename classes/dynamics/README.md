@@ -2,7 +2,7 @@
   backdrop: the-incredible-machine
 -->
 
-# Física para Jogos
+# Dinâmica de Corpos Rígidos
 ---
 # Roteiro
 
@@ -52,7 +52,7 @@
   - O corpo rígido possui:
     - 3 graus de liberdade em 2D (2 lineares e 1 angular)
     - 6 graus de liberdade em 3D (3 lineares e 3 angulares)
-  - É possível separar a computação para movimentos lineares e angulares
+  - É possível <u>separar a computação</u> para movimentos lineares e angulares
 
 ---
 ## **Propriedades** de um corpo rígido
@@ -102,8 +102,11 @@
 
 - Devemos resolver as equações para pequenos passos de tempo
   - Definimos um passo de tempo <span class="math">\Delta t</span>
-  - Dados: posição, velocidade, força no tempo <span class="math">t_1</span>
-  - Encontrar: posição, velocidade no tempo <span class="math">t_2=t_1+\Delta t</span>
+  - **Dados**, no tempo <span class="math">t_1</span>:
+    - posição (<span class="math">P</span>)
+    - velocidade (<span class="math">\vec{v}</span>)
+    - força (<span class="math">\vec{F}</span>)
+  - **Encontrar**: posição, velocidade no tempo <span class="math">t_2=t_1+\Delta t</span>
 
 ---
 ## Método 1: Integração de Euler Explícita
@@ -121,7 +124,7 @@
 - Integração de Euler explícita tende a acumular erros e não é estável
 - Podemos usar, então, a Integração de Verlet:
   - Posição:
-    <div class="math">P(t_2)=2P(t_1)-P(t-\Delta t)+\frac{\vec{F}(t_1)}{m}\Delta t^2</div>
+    <div class="math">P(t_2)=2P(t_1)-P(t_1-\Delta t)+\frac{\vec{F}(t_1)}{m}\Delta t^2</div>
   - Velocidade:
     <div class="math">\vec{v}(t_2)=\frac{P(t_2)-P(t_1)}{\Delta t}</div>
 
@@ -130,16 +133,16 @@
 
 - Exemplo de **integração de Euler explítica** em Java:
   ```java
-  public void update(PhysicsObject po, double timeStep) {
-    Vector2d r = po.shape.position;
-    Vector2d v = po.linear_speed;
+  public void atualiza(ObjetoFisico obj, double delta) {
+    Vetor posicao = obj.posicao;
+    Vetor velocidade = obj.velocidadeLinear;
     // atualizando posição:
-    r.add(new Vector2d(po.linear_speed).scale(timeStep));
+    posicao.add(new Vetor(obj.velocidadeLinear).scale(delta));
     // atualizando velocidade:
-    Vector2d tmp = new Vector2d(po.force);
-    tmp.scale(timeStep);
-    tmp.scale(1/po.mass);
-    v.add(tmp);
+    Vetor forca = new Vetor(obj.forca);
+    forca.scale(delta);
+    forca.scale(1/obj.massa);
+    velocidade.add(forca);
   }
   ```
 
@@ -184,7 +187,7 @@
   **momento de inércia**
   - Que é a resistência de um objeto a mudar sua velocidade angular em torno de um eixo
 - Fórmula geral:
-  <div class="math">I=\int_V \rho(r)r^2dV</div>
+  <div class="math">I=\int_Q r^2dm</div>
 
 
 ---
@@ -216,7 +219,7 @@
   <div class="math">N=\left| \vec{p}-\vec{r} \right| \left| \vec{F} \right| \sin{\alpha}</div>
   <div class="math">\omega(t_2)=\omega(t_1)+\frac{N(t_1)}{I}\Delta t</div>
 
----
+<!--
 ## Dinâmica Angular **3D**
 
 - Mais complexo porque:
@@ -226,7 +229,7 @@
 
 <div class="math">I= \begin{bmatrix} I_{xx} & I_{xy} & I_{xz} \\\\ I_{yx} & I_{yy} & I_{yz} \\\\ I_{zx} & I_{zy} & I_{zz}   \end{bmatrix}</div>
 
----
+
 ## Dinâmica Angular 3D
 
 - Rotação em 3 dimensões:
@@ -237,12 +240,12 @@
 - _Quaternion_: vetor 4D representando uma **rotação de <span class="math">\alpha</span> graus ao redor de um vetor <span class="math">\vec{u}</span>**:
   <div class="math">q= \begin{bmatrix} u_x\sin{\frac{\alpha}{2}} & u_y\sin{\frac{\alpha}{2}} & u_z\sin{\frac{\alpha}{2}} & \cos{\frac{\alpha}{2}} \end{bmatrix}</div>
 
----
+
 ## Qua...Quê?
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/zc8b2Jo7mno?rel=0" frameborder="0" allowfullscreen></iframe>
 
----
+
 ## Dinâmica Angular 3D
 
 - Velocidade angular representada como um vetor 3D:
@@ -250,9 +253,9 @@
 - Momento angular:
   <div class="math">L(t)=I\omega(t)</div>
 
----
-# Outras Características
 
+# Outras Características
+-->
 ---
 ## Colisões 1-1
 
@@ -279,7 +282,7 @@
   - É bem improvável que objetos muito distantes um do outro precisem interagir entre si
   - Eles podem ser calculados em simulações separadas
     - Podemos dividir o espaço (e.g., _octrees_ ou a cena)
-- Bodadinha (sono):
+- ~~Bodadinha~~ Sono:
   - Quando objetos "descansam", podemos parar de atualizá-los
   - Contudo, é difícil detectar quando um objeto foi para o estágio "descansar"
 
@@ -291,7 +294,32 @@
   - Molas (_springs_)
   - Rodas etc.
 - Eles restringem o movimento dos objetos:
-  - Depois do estágio de simulação física, todos os objetos são devolvidos para uma posição onde eles satisfazem sua(s) restrições
+  - Depois do estágio de simulação física, todos os objetos são devolvidos
+    para uma posição onde eles satisfazem sua(s) restrições
+
+
+---
+<div class="item-grid">
+  <div class="item-grid-col">
+    <figure class="polaroid item-180w">
+      <img src="../../images/constraint-point-to-point.png" style="height: 200px">
+      <figcaption>Point to point</figcaption>
+    </figure>
+    <figure class="polaroid item-180w">
+      <img src="../../images/constraint-stiff-spring.png" style="height: 200px">
+      <figcaption>Mola dura</figcaption>
+    </figure>
+    <figure class="polaroid item-180w">
+      <img src="../../images/constraint-hinge.png" style="height: 200px">
+      <figcaption>Dobradiça</figcaption>
+    </figure>
+    <figure class="polaroid item-180w">
+      <img src="../../images/constraint-prismatic.png" style="height: 200px">
+      <figcaption>Prismática (piston)</figcaption>
+    </figure>
+  </div>
+</div>
+
 
 ---
 ## O _Game Loop_ da Física
