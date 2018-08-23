@@ -20,7 +20,7 @@ bespokeEvent: bullets.disable
   - [Projeto][final] - sendo redigido (42 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/
-[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-meow-au
+[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-autogame
 [tp1-repo]: https://github.com/fegemo/cefet-games-meow-au
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2-meow-au-again
 [final]: https://github.com/fegemo/cefet-games/blob/master/assignments/final/README.md
