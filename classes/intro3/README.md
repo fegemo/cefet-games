@@ -177,10 +177,10 @@ bespokeState: checkpoint
 ---
 # Papéis de Empresas
 
-- **_Publisher_:** quem financia o jogo, faz o _marketing_ e distribui (vende)
+- **_Publisher_:** quem financia o jogo, faz o _marketing_ e distribui (vende)
   - _e.g._, Atari, Activision, EA, Ubisoft...
-  - Várias tem o seu próprio time de desenvolvimento (_in-house development studio_)
-- **_Developer (development studio)_:** quem desenvolve o jogo, desde a idéia, protótipo e produto final
+  - Várias tem o seu próprio time de desenvolvimento (_in-house development studio_)
+- **_Developer (development studio)_:** quem desenvolve o jogo, desde a idéia, protótipo e produto final
   - _Third Party Developer_
     - _e.g._, Konami, Eidos, Liquid, ...
     - Estúdio _Indie_ (independente)
@@ -311,17 +311,24 @@ bespokeState: checkpoint
 - Que **tipos de documentação** podemos/devemos usar?
 
 ---
-# Processo
+<!--
+  backdrop: oldtimes
+-->
+# Processo **Tradicional** (em cascata)
 
-- O processo de desenvolvimento pode variar, mas é geralmente dividido nas seguintes fases:
-  - Conceito
-  - Pré-Produção
-  - Protótipo
-  - Produção
-  - _Release_ (_Alpha, Beta, Gold_)
-  - Pós-Produção
+- O processo de desenvolvimento pode variar, mas é geralmente dividido
+  nas seguintes fases:
+  1. Conceito
+  1. Pré-Produção
+  1. Protótipo
+  1. Produção
+  1. _Release_ (_Alpha, Beta, Gold_)
+  1. Pós-Produção
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## Fases: Conceito
 
 - Essa fase começa com a **idéia do jogo** e termina quando decide-se
@@ -331,6 +338,9 @@ bespokeState: checkpoint
 - Nessa fase a equipe pode ser bem pequena
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## Fases: Pré-Produção e Protótipo
 
 - Na **Pré-Produção se elabora a proposta e se planeja o desenvolvimento
@@ -346,6 +356,9 @@ bespokeState: checkpoint
   - Fundamental para verificar viabilidade e vender a idéia
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## Fases: Produção
 
 - Fase na qual **o jogo é realmente desenvolvido**
@@ -356,6 +369,9 @@ bespokeState: checkpoint
 - Documentação técnica é constantemente consultada e modificada
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## _Releases_
 
 - **Alpha**
@@ -371,6 +387,9 @@ bespokeState: checkpoint
   - Versão **liberada para o mercado**
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## Pós-Produção
 
 - Dois focos: _Marketing_ e Manutenção
@@ -385,7 +404,26 @@ bespokeState: checkpoint
   - (depois de tudo: fazer o _post mortem_)
 
 ---
-# Documentação
+## Processo **Moderno**
+
+1. Conceito, pré-produção e **protótipo** produzidos e colocados "à prova"
+   em _play testing_
+   - A ideia é pôr o jogo na mão de jogadores o quanto antes
+   - Ideia: errar cedo para corrigir rápido
+1. Desenvolvimento, reconceitualização, _marketing_ e distribuição contínua
+   - Lançar desde a versão alpha
+   - Pegar **_feedback_ dos jogadores** sempre
+   - Fazer o _marketing_ **durante** o desenvolvimento
+     - Ideia: envolver mídia especializada, YouTubers, Twitchers etc.
+   - Manutenção contínua
+     - Dependendo do sucesso
+     - Construção de comunidade
+
+---
+<!--
+  backdrop: oldtimes
+-->
+# Documentação **Tradicional**
 
 - Não há padronização, mas vamos citar alguns:
   1. _Pitch Document_ (sumário executivo)
@@ -394,6 +432,9 @@ bespokeState: checkpoint
   1. _Technical Design Document_
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 # Sumário executivo
 
 - Título
@@ -407,6 +448,9 @@ bespokeState: checkpoint
   - _Gameplay_, controles, desafios
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## Sumário executivo (2)
 
 - Tecnologia
@@ -419,6 +463,9 @@ bespokeState: checkpoint
   - Porque o jogo vai vender bem?
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 # _Game Design Document_
 
 - Objetivos:
@@ -430,6 +477,9 @@ bespokeState: checkpoint
   - História do jogo contada de maneira criativa e intrigante, descrevendo porque certos elementos existem e como se relacionam no mundo do jogo
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## _Game Design Document_ (2)
 
 - Mecânica do jogo
@@ -443,6 +493,9 @@ bespokeState: checkpoint
     não, etc)
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## _Game Design Document_ (3)
 
 - Objetos de cena
@@ -457,6 +510,9 @@ bespokeState: checkpoint
   - Posicionamento de objetos e desafios (esboços)
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## _Game Design Document_ (4)
 
 - Interface com o usuário
@@ -467,6 +523,9 @@ bespokeState: checkpoint
   - Configurações (volume, resolução, etc)
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## _Game Design Document_ (5)
 
 - Arte
@@ -480,6 +539,9 @@ bespokeState: checkpoint
     - Descrição dos efeitos especiais (opcional)
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 # _Technical Design Document_
 
 - Objetivos:
@@ -496,6 +558,9 @@ bespokeState: checkpoint
   - Sistemas (colisão, iluminação, partículas)
 
 ---
+<!--
+  backdrop: oldtimes
+-->
 ## _Technical Design Document_ (2)
 
 - Diagramas de sequência:
@@ -507,6 +572,29 @@ bespokeState: checkpoint
   - Inteligência artificial
   - Transição de fases
   - Persistência do mundo do jogo
+
+---
+# Documentação **Moderna** (1/2)
+
+- [![right](../../images/sgdd-motta-trigueiro.png)][motta-trigueiro-large]
+  [_Short Game Design Document_][motta-trigueiro] (Motta e Trigueiro, 2013)
+  - Proposto para _advergames_ ou jogos de pequeno porte
+  - Descrição textual em 01 página, ressaltando demandas
+    de _assets_ (1) gráficos, (2) de programação e (3) sonoros
+
+[motta-trigueiro]: http://www.sbgames.org/sbgames2013/proceedings/artedesign/15-dt-paper_SGDD.pdf
+[motta-trigueiro-large]: ../../images/sgdd-motta-trigueiro-large.png
+
+---
+# Documentação **Moderna** (2/2)
+
+- [![right](../../images/sgdd-carvalho-gomes.png)][carvalho-gomes-large]
+  [_Simple Game Design Document_][carvalho-gomes] (Carvalho e Gomes, 2016)
+  - Baseado em Motta e Trigueiro (2013)
+  - Contempla ilustrações e foco em _game play_
+
+[carvalho-gomes]: http://www.sbgames.org/sbgames2016/downloads/anais/157232.pdf
+[carvalho-gomes-large]: ../../images/sgdd-carvalho-gomes-large.png
 
 ---
 # Referências
