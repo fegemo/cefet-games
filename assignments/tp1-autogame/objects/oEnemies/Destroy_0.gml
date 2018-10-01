@@ -1,0 +1,1 @@
+global.coins += 10;
