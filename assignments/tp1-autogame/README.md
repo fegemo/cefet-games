@@ -17,7 +17,7 @@ papel de (a) técnico de um time - poderia fazer substituições e definir a tá
 
 ![](images/elifoot-98.jpg)
 
-Na década de 90, a Bandai, uma empresa Japonesa criou o conceito de bichinho virtual, que rapidamente se tornou um produto e foi mundialmente comercializado. Tratava-se de um pequeno dispositivo de hardware - cabia na mão e no bolso, em forma similar à de um ovo e com uma telinha de cristal líquuidok e alguns poucos botões - e, assim que ativado pela primeira vez, um bichinho nascia do ovo e precisava de cuidados (receber comida, remédio, limpar cocô etc.) e, ao longo do tempo, conforme a alimentação e qualidade dos cuidados, evoluía para outras formas - virava um monstrinho adolescente, depois adulto, depois morria, deixando um novo ovinho.
+Na década de 90, a Bandai, uma empresa Japonesa criou o conceito de bichinho virtual, que rapidamente se tornou um produto e foi mundialmente comercializado. Tratava-se de um pequeno dispositivo de hardware - cabia na mão e no bolso, em forma similar à de um ovo e com uma telinha de cristal líquido e alguns poucos botões - e, assim que ativado pela primeira vez, um bichinho nascia do ovo e precisava de cuidados (receber comida, remédio, limpar cocô etc.) e, ao longo do tempo, conforme a alimentação e qualidade dos cuidados, evoluía para outras formas - virava um monstrinho adolescente, depois adulto, depois morria, deixando um novo ovinho.
 
 ![](images/tamagotchi.jpeg)
 
@@ -60,20 +60,3 @@ Alguns descuidos podem fazer com que sua nota fique muito abaixo do esperado:
   - Isso implica que 1 ou 2 dias de atraso são pouco penalizados
   - E após 5 dias de atraso, o trabalho vale 0
   - _Seeing is believing_: https://www.google.com.br/search?q=y%3D(2%5E(x-2)%2F0.16)%2Cy%3D100
-
-
-## O que deve ser **entregue**
-
-Deve ser entregue **um _pull request_** via **GitHub** contendo os _commits_
-com o código e _assets_ criados pelo grupo.
-
-Veja no [repositório][repo] algumas instruções mais detalhes acerca da entrega.
-
-[changed-world]: http://www.makeuseof.com/tag/10-video-games-that-changed-the-world/
-[warioware-video]: https://www.youtube.com/watch?v=Ch9YyYiBvQY
-[dumb-ways]: https://www.youtube.com/watch?v=IJNR2EpS0jw
-[mini-mix]: https://play.google.com/store/apps/details?id=com.brokenbeta.minimixmayhem&hl=pt_BR
-[beat-the-boot]: http://beattheboot.appspot.com/
-[repo]: https://github.com/fegemo/cefet-games-meow-au
-[box2d-libgdx]: https://github.com/libgdx/libgdx/wiki/Box2d
-[resolution-independence]: https://github.com/fegemo/cefet-games-brushmyteethplz/blob/master/README.md#sistema-de-coordenadas
