@@ -579,8 +579,14 @@ bespokeState: checkpoint
 - [![right](../../images/sgdd-motta-trigueiro.png)][motta-trigueiro-large]
   [_Short Game Design Document_][motta-trigueiro] (Motta e Trigueiro, 2013)
   - Proposto para _advergames_ ou jogos de pequeno porte
-  - Descrição textual em 01 página, ressaltando demandas
-    de _assets_ (1) gráficos, (2) de programação e (3) sonoros
+  - Descrição (01 página)
+- Passos:
+  1. Descrever o enredo
+  1. Descrever o jogo todo
+  1. Destacar (1) arte, (2) mecânicas e (3) áudio
+  1. Listar os _assets_
+  1. Esboçar o _level design_
+
 
 [motta-trigueiro]: http://www.sbgames.org/sbgames2013/proceedings/artedesign/15-dt-paper_SGDD.pdf
 [motta-trigueiro-large]: ../../images/sgdd-motta-trigueiro-large.png
