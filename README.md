@@ -12,12 +12,12 @@ bespokeEvent: bullets.disable
 # Atividades Avaliativas
 
 - ~~Prova e Listas~~ (0 pontos!!!)
-- Aulas Práticas (20 pontos)
-- Trabalhos Práticos (80 pontos)
+- Aulas Práticas (24 pontos)
+- Trabalhos Práticos (76 pontos)
   - [TP0][tp0] (3 pontos)
-  - [TP1][tp1] - sendo redigido, [repositório][tp1-repo] (17 pontos)
-  - [TP2][tp2] - sendo redigido (18 pontos)
-  - [Projeto][final] - sendo redigido (42 pontos)
+  - [TP1][tp1-autogame] - Autogame (25 pontos)
+  - Projeto - Jogo Completo (35 pontos)
+  - Seminário sobre PCG (13 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/
 [tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-autogame
