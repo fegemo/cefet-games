@@ -15,7 +15,7 @@ bespokeEvent: bullets.disable
 - Aulas Práticas (24 pontos)
 - Trabalhos Práticos (76 pontos)
   - [TP0][tp0] (3 pontos)
-  - [TP1][tp1-autogame] - Autogame (25 pontos)
+  - [TP1][tp1] - Autogame (25 pontos)
   - Projeto - Jogo Completo (35 pontos)
   - Seminário sobre PCG (13 pontos)
 
