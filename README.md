@@ -1,14 +1,10 @@
-<!--
-bespokeEvent: bullets.disable
--->
-
+<!-- {"layout": "title", "state": "transition-book"} -->
 # Desenvolvimento de Jogos Digitais
 
-*Professor:* Flávio Coutinho
-
-<img class="portrait" src="images/flavio-avatar.jpg">
+## Material de aula do professor **Flávio Coutinho** ![Foto do Flávio](images/flavio-avatar.jpg) <!-- {.portrait style="vertical-align: middle"} --> <!-- {h2:style="color: #333"} -->
 
 ---
+<!-- {"layout": "regular"} -->
 # Atividades Avaliativas
 
 - ~~Prova e Listas~~ (0 pontos!!!)
@@ -27,138 +23,227 @@ bespokeEvent: bullets.disable
 [seminar]: https://github.com/fegemo/cefet-games/tree/master/assignments/seminar
 
 ---
-# Aulas (1/3)
+<!-- {"layout": "regular"} -->
+# Aulas (1/2)
 
-- [Ferramentas de Desenvolvimento de Jogos](classes/tools/)
-- Introdução: [História, Plataformas e Gêneros](classes/intro/)
+- Ferramentas: [Ferramentas de Desenvolvimento de Jogos](classes/tools/)
+- GD: [História, Plataformas e Gêneros](classes/intro/)
   - Prática _Maker_: [slides](classes/rpgmaker),
     atividade: [RPG Maker][activity-rpgmaker] ou [RPG Boss][activity-rpgboss]
-- Introdução: [Jogadores, Narrativa, Gameplay](classes/intro2/)
+- GD: [Jogadores, Narrativa, Gameplay](classes/intro2/)
   - Prática _Sprites_: [slides](classes/2d-graphics),
     atividade: [Goombas][activity-sprites]
 - Física: [Detecção de Colisão](classes/collision/)
   - Física: Prática de Colisão AABB, MEB: [atividade da navinha][activity-navinha]
-- Introdução: [_Level Design_, Equipe, Produção](classes/intro3/)
+- GD: [_Level Design_, Equipe, Produção](classes/intro3/)
 - IA: [Movimentação cinemática e dinâmica](classes/movement)
   - Prática de Movimentação: [atividade da cinemática][activity-kinematics]
+- IA: [_Pathfinding_ usando Grafos](classes/pathfinding)
+  - Prática de A*: [atividade][activity-pathfinding]
 
 [activity-rpgmaker]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgmaker
 [activity-rpgboss]: https://github.com/fegemo/cefet-games/tree/master/assignments/rpgboss
 [activity-sprites]: https://github.com/fegemo/cefet-games-goomba
 [activity-navinha]: https://github.com/fegemo/cefet-games-navinha
 [activity-kinematics]: https://github.com/fegemo/cefet-games-cinematica
-
----
-# Aulas (2/3)
-
-- IA: [_Pathfinding_ usando Grafos](classes/pathfinding)
-  - Prática de A*: [atividade][activity-pathfinding]lp
-- IA: [Representação do Mundo](classes/world-representation)
-  - [Demonstração](classes/unity) da Unity
-- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/)
-- Acessibilidade: [Aula de Introdução](attachments/game-accessibility/Acessibilidade em Jogos.pptx)
-  - Prática de Acessibilidade: [atividade][activity-access]
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1)
-- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2)
-
-
 [activity-pathfinding]: https://github.com/fegemo/cefet-games-pathfinding/
-[activity-access]: https://github.com/fegemo/cefet-games/blob/master/assignments/gameover/README.md#prática-diretrizes-de-acessibilidade
+
+*[GD]: Game Design*
+*[IA]: Inteligência Artificial*
 
 ---
-# Aulas (3/3)
+<!-- {"layout": "regular"} -->
+# Aulas (2/2)
 
-
-- IA: [Tomada de Decisão](classes/decision-making/)
-  - Apresentação de seminários
-- Apresentação de seminários
+- IA: [Representação do Mundo](classes/world-representation)
+- Ferramentas: [Demonstração](classes/unity) da Unity
+- CG: [_Pipeline_ Programável](http://fegemo.github.io/cefet-cg/classes/programmable-pipeline/)
+- Game Design: [Acessibilidade em Jogos](attachments/game-accessibility/acessibilidade-em-jogos.pptx)
+  - Prática: [atividade][activity-access]
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt1)
   - Prática de Efeitos de Partículas: [atividade + código seminal][activity-particle-effects]
-- [Dinâmica](classes/dynamics)
-  - CG: [Animação de Personagens](classes/animation)
+- CG: [Renderização em Tempo-Real](classes/realtime-rendering-pt2) (parte 2)
+- IA: [Tomada de Decisão](classes/decision-making/)
+- Física: [Dinâmica](classes/dynamics)
+- CG: [Animação de Personagens](classes/animation)
 - [Jogos em Rede](classes/networking)
-  - IA: Jogos de Tabuleiro[](attachments/IA 02 - AdversarialSearch.pptx) 22/11/2016)
 
+
+*[CG]: Computação Gráfica*
+*[GD]: Game Design*
+*[IA]: Inteligência Artificial*
+
+
+[activity-access]: https://github.com/fegemo/cefet-games/blob/master/assignments/gameover/README.md#prática-diretrizes-de-acessibilidade
 [activity-particle-effects]: https://github.com/fegemo/cefet-games-cauldron
 
-<!--
-
-- Prática Game Maker: [atividade][activity-gamemaker]
-- IA: [Agentes Inteligentes](attachments/IA 01 - Agentes.pptx) (15/09/2015)
-- Prática Robocode: [atividade][activity-robocode]
---->
 
 ---
-# Bibliografia Básica
+<!-- {"layout": "regular"} -->
+# Bibliografia Básica (1/2)
+
+- <!-- {li:.horizontal-list-flex.no-bullet} -->
+  <figure class="book">
+    <ul class="hardcover_front" class="no-bullet">
+      <li class="no-bullet"><img src="images/book-game-development-essentials-intro.jpg" width="100%" height="100%"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="page no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"><a class="book-btn" href="https://books.google.com.br/books/about/Game_Development_Essentials_An_Introduct.html?id=r36qpCjBIuMC&redir_esc=y" target="blank">Sobre</a></li>
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="hardcover_back no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="book_spine no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+  </figure>  
+
+  **Título** <!-- {dl:style="flex: 1"} -->
+    ~ Game Development Essentials: An Introduction, Third Edition
+
+  **Autora**
+    ~ Jeannie Novak
+
+  **Editora**
+    ~ Delmar Cengage Learning, 2011
+
+- <!-- {li:.horizontal-list-flex.no-bullet} -->
+   <figure class="book" style="order: 2;">
+     <ul class="hardcover_front" class="no-bullet">
+       <li class="no-bullet"><img src="images/book-rtr3.jpg" width="100%" height="100%"></li>
+       <li class="no-bullet"></li>
+     </ul>
+     <ul class="page no-bullet">
+       <li class="no-bullet"></li>
+       <li class="no-bullet"><a class="book-btn" href="http://www.realtimerendering.com/book.html" target="blank">Sobre</a></li>
+       <li class="no-bullet"></li>
+       <li class="no-bullet"></li>
+       <li class="no-bullet"></li>
+     </ul>
+     <ul class="hardcover_back no-bullet">
+       <li class="no-bullet"></li>
+       <li class="no-bullet"></li>
+     </ul>
+     <ul class="book_spine no-bullet">
+       <li class="no-bullet"></li>
+       <li class="no-bullet"></li>
+     </ul>
+   </figure>  
+
+  **Título** <!-- {dl:style="flex: 1"} -->
+    ~ Real-Time Rendering, Third Edition
+
+  **Autores**
+    ~ Tomas Akenine-Möller, Eric Haines, Naty Hoffman
+
+  **Editora**
+    ~ Taylor & Francis, 2008
 
 ---
-## _Game Development Essentials: An Introduction_ Third Edition
+<!-- {"layout": "regular"} -->
+# Bibliografia Básica (2/2)
 
-<div class="book-cover-container">
-  <img class="book-cover" src="images/book-game-development-essentials-intro.jpg">
-  <div class="book-left"></div>
-</div>
+- <!-- {li:.horizontal-list-flex.no-bullet} -->
+  <figure class="book">
+    <ul class="hardcover_front" class="no-bullet">
+      <li class="no-bullet"><img src="images/book-ai-for-games.jpg" width="100%" height="100%"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="page no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"><a class="book-btn" href="https://www.amazon.com.br/Artificial-Intelligence-Games-Ian-Millington/dp/0123747317" target="blank">Sobre</a></li>
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="hardcover_back no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="book_spine no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+  </figure>
 
-- **Título**	_Game Development Essentials: An Introduction Third Edition_
-- **Autora**	Jeannie Novak
-- **Editora**	Delmar Cengage Learning, 2011
+  **Título** <!-- {dl:style="flex: 1"} -->
+    ~ Artificial Intelligence for Games, 2nd Edition
+
+  **Autores**
+    ~ Ian Millington, John Funge
+
+  **Editora**
+    ~ CRC Press, 2009
+
+- <!-- {li:.horizontal-list-flex.no-bullet} -->
+  <figure class="book" style="order: 2;">
+    <ul class="hardcover_front" class="no-bullet">
+      <li class="no-bullet"><img src="images/book-game-engine-architecture.jpg" width="100%" height="100%"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="page no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"><a class="book-btn" href="https://www.amazon.com.br/Engine-Architecture-Second-Jason-Gregory/dp/1466560010" target="blank">Sobre</a></li>
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="hardcover_back no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+    <ul class="book_spine no-bullet">
+      <li class="no-bullet"></li>
+      <li class="no-bullet"></li>
+    </ul>
+  </figure>
+
+  **Título** <!-- {dl:style="flex: 1"} -->
+    ~ Game Engine Architecture
+
+  **Autores**
+    ~ Jason Gregory
+
+  **Editora**
+    ~ Taylor & Francis, 2009
 
 ---
-## _Real-Time Rendering_
-
-<div class="book-cover-container">
-  <img class="book-cover" src="images/book-rtr3.jpg">
-  <div class="book-left"></div>
-</div>
-
-- **Título**	Real-Time Rendering, Third Edition
-- **Autores**	Tomas Akenine-Möller, Eric Haines, Naty Hoffman
-- **Editora**	Taylor &amp; Francis, 2008
-
----
-## _Artificial Intelligence for Games_
-
-<div class="book-cover-container">
-  <img class="book-cover" src="images/book-ai-for-games.jpg">
-  <div class="book-left book-light"></div>
-</div>
-
-- **Título**	_Artificial Intelligence for Games, 2nd Edition_
-- **Autores**	Ian Millington, John Funge
-- **Editora**	CRC Press, 2009
-
----
-## _Game Engine Architecture_
-
-<div class="book-cover-container">
-  <img class="book-cover" src="images/book-game-engine-architecture.jpg">
-  <div class="book-left book-light"></div>
-</div>
-
-- **Título**	_Game Engine Architecture_
-- **Autores**	Jason Gregory
-- **Editora**	Taylor &amp Francis, 2009
-
----
+<!-- {"layout": "regular"} -->
 # Bibliografia Complementar
 
----
-## _LibGDX Game Development Essentials_
+- <!-- {li:.horizontal-list-flex.no-bullet} -->
+  <div class="book-cover-container">
+    <img class="book-cover" src="images/book-libgdx.jpg">
+    <div class="book-left"></div>
+  </div>
 
-<div class="book-cover-container">
-  <img class="book-cover" src="images/book-libgdx.jpg">
-  <div class="book-left"></div>
-</div>
+  **Título** <!-- {dl:style="flex: 1"} -->
+    ~ LibGDX Game Development Essentials
 
-- **Autor** Juwal Bose
-- **Editora** Packt Publishing, 2014
+  **Autor**
+    ~ Juwal Bose
 
----
-## _Unity Game Development Essentials_
+  **Editora**
+    ~ Packt Publishing, 2014
 
-<div class="book-cover-container">
-  <img class="book-cover" src="images/book-unity.jpg">
-  <div class="book-left"></div>
-</div>
+- <!-- {li:.horizontal-list-flex.no-bullet} -->
+  <div class="book-cover-container" style="order: 2;">
+    <img class="book-cover" src="images/book-unity.jpg">
+    <div class="book-left"></div>
+  </div>
 
-- **Autor** Will Goldstone
-- **Editora** Packt Publishing, 2011
+  **Título** <!-- {dl:style="flex: 1"} -->
+    ~ Unity Game Development Essentials
+
+  **Autor**
+    ~ Will Goldstone
+
+  **Editora**
+    ~ Packt Publishing, 2011
