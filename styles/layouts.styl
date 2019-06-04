@@ -1,0 +1,88 @@
+/// theme: slide layouts
+$checkpoint-slide-main-colors = #4a488e #cc7a09 #ff1530 #20aa12 #949416 #ccbd0d
+$checkpoint-slide-sencodary-colors = #d496a2 #dfadee #93ef9a #e87777 #b6a7e4 #e4aef5
+
+.bespoke-parent.checkpoint
+  background-color #B08FE8
+
+for color, i in $checkpoint-slide-main-colors
+
+  .bespoke-slide[data-bespoke-state="checkpoint"]:nth-of-type({length($checkpoint-slide-main-colors)}n+{i})
+    $secondary-bg = $checkpoint-slide-sencodary-colors[i]
+    $secondary-color = darken($secondary-bg, 50)
+    background-color #f1ecec
+    display block
+    background-image linear-gradient(90deg, color 30%, rgba(148,148,148,0) 31%), linear-gradient(to bottom, $secondary-bg 15%, transparent 15%)
+    box-shadow 4px 4px 4px rgba(60,60,60,.5), -4px 4px 4px rgba(60,60,60,.5)
+
+    & > h1
+      width 30%
+      color white
+      float left
+      box-sizing border-box
+      padding 0.2em
+      font-size 32px
+      word-wrap break-word
+      word-break break-word
+
+      // vertically center
+      position relative
+      top 50%
+      transform translateY(-50%)
+
+    & > h2
+      margin-left 30%
+      color $secondary-color
+    & > ul, & > ol
+      margin-left 34%
+      margin-top 10%
+      & > li
+        margin-bottom 1em
+
+
+// default stylish images
+.layout-title h1
+  &::before
+    background-image url(../images/sky-stellar.jpg)
+
+.layout-section-header::after
+  background-image url(../images/constellation.jpg)
+
+.layout-stripe .stripe
+  background-image url(../images/stripe-forest.jpg)
+
+
+// stylish images by class
+.syllabus
+  .layout-title
+    background-color white
+    h1::before
+      background-image url(../images/forest-mountain.jpg)
+
+.intro
+  .layout-title h1::before
+    background-image url(../images/cg-area-art.jpg)
+
+  .conceitos-basicos.layout-section-header::after
+    background-image url(../images/cg-area-games.jpg)
+    animation movingbg-x 60s linear 0s infinite alternate-reverse
+
+  .pixels-gradient.layout-section-header::after
+    background-image url(../images/pixels-gradient.jpg)
+    background-repeat repeat
+    animation movingbg-x 20s ease-in-out 0s infinite alternate-reverse
+
+  .rainbow-picture.layout-section-header::after
+    background-image url(../images/rainbow-picture.jpg)
+    animation movingbg-x 20s ease-in-out 0s infinite alternate-reverse
+
+
+
+
+
+// animations
+@keyframes movingbg-x
+  from
+    background-position 0 100%
+  to
+    background-position 100% 100%

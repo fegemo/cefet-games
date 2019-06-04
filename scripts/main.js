@@ -1,102 +1,56 @@
-var bespoke = require('bespoke'),
-  isMobile = require('ismobilejs'),
-  fancy = require('bespoke-theme-fancy'),
+// bespoke and its plugins
+const bespoke = require('bespoke'),
+  vis = require('bespoke-vis'),
   keys = require('bespoke-keys'),
-  touch = require('bespoke-touch'),
-  bullets = require('bespoke-bullets'),
-  scale = require('bespoke-scale'),
   hash = require('bespoke-hash'),
-  progress = require('bespoke-progress'),
-  state = require('bespoke-state'),
   math = require('bespoke-math'),
-  markdown = require('bespoke-meta-markdown'),
-  // search = require('bespoke-search'),
+  touch = require('bespoke-touch'),
+  scale = require('bespoke-scale'),
+  state = require('bespoke-state'),
+  qrcode = require('bespoke-qrcode'),
+  bullets = require('bespoke-bullets'),
+  sandy = require('bespoke-theme-sandy'),
+  progress = require('bespoke-progress'),
   backdrop = require('bespoke-backdrop'),
-  overview = require('bespoke-simple-overview'),
-  tutorial = require('./tutorial'),
-  easter = require('./easter'),
-  sleek = require('./sleek-menu');
+  markdown = require('bespoke-markdownit'),
+  overview = require('bespoke-simple-overview');
 
-// Bespoke.js
-window.deck = bespoke.from('article', [
-  fancy(),
-  markdown({
-    backdrop: function(slide, value) {
-      slide.setAttribute('data-bespoke-backdrop', value);
-    },
-    scripts: function(slide, url) {
-      var placeToPutScripts = document.body;
-      url = !Array.isArray(url) ? [url] : url;
+// utilities
+const tutorial = require('./tutorial'),
+  easter = require('./easter.js'),
+  markdownItConfig = require('./markdown-config');
 
-      function loadScriptChain(i) {
-        var s = document.createElement('script');
-        s.src = url[i];
-        if (i < url.length - 1) {
-          s.addEventListener('load', function () {
-            loadScriptChain(i+1);
-          });
-        }
-        placeToPutScripts.appendChild(s);
-      }
-      loadScriptChain(0);
-    },
-    styles: function(slide, value) {
-      var placeToPutStyles= document.head;
-      value = !Array.isArray(value) ? [value] : value;
-      value.forEach(function (url) {
-        var l = document.createElement('link');
-        l.rel = 'stylesheet';
-        l.href = url;
-        placeToPutStyles.appendChild(l);
-      });
-    },
-    bespokeEvent: function(slide, events) {
-      setTimeout(function() {
-        events.split(' ').forEach(function(event) {
-          if (!!window.deck) {
-            window.deck.fire(event);
-          }
-        });
-      },1000);
-    },
-    bespokeState: function(slide, classNames) {
-      slide.setAttribute('data-bespoke-state', classNames);
-    },
-    classes: function(slide, names) {
-      names.split(' ').forEach((n) => slide.classList.add(n));
-    }
-  }),
+bespoke.from('article', [
+  markdown(markdownItConfig.config, markdownItConfig.extensions),
+  sandy({ insertFonts: false }),
+  scale('transform'),
   keys(),
-  function() {
-    var deck = arguments[0];
-    document.addEventListener('keydown', function(e) {
-      if ((e.which == 40) || // DOWN
-          (e.which == 38)) { // UP
-        deck.fire('bullets.disable');
-        if (e.which == 40) deck.next();
-        else deck.prev();
-        deck.fire('bullets.enable');
-      }
-    });
-  },
   touch(),
-  bullets('.bullet, .bulleted > *'),
-  hash(),
+  overview({ insertStyles: false }),
+  bullets(
+    '.bullet, .bulleted li, .bulleted dd, .bulleted-dt dt, .bulleted-dt dd'
+  ),
   progress(),
+  hash(),
   math(),
+  vis(),
   state(),
   backdrop(),
-  // search(),
-  overview(),
-  tutorial(document.getElementsByClassName('tutorial')[0]),
+  //search()
+  qrcode(),
+  tutorial(document.querySelector('.tutorial')),
   easter(),
-  function() {
-    var deck = arguments[0],
-      delayedScale = function() {
-        return scale(isMobile.any ? 'transform' : 'zoom')(deck);
-      };
-    if (isMobile.phone) setTimeout(delayedScale, 700);
+  deck => {
+    // waits 200ms to avoid FoUC
+    setTimeout(() => deck.parent.closest('#presentation-container').style.visibility = 'visible', 200);
+  },
+  deck => {
+    // adds a class to the presentation parent with the name of the class, from
+    // the URL
+    const path = location.pathname;
+    const startOfClassName = path.indexOf('/classes/') === -1 ? 0 : path.indexOf('/classes/') + '/classes/'.length;
+    const className = path.substring(startOfClassName, path.indexOf('/', startOfClassName));
+
+    deck.parent.classList.add(className || 'syllabus');
   }
 ]);
-
-sleek();

@@ -1,221 +1,58 @@
-// Import CSS from "node_modules" and "bower_components"
-// thanks to Stylus' "import css" and "paths" options
-@import 'highlight.js/styles/monokai_sublime.css'
+@import 'highlight.js/styles/vs.css'
 
-///
-/// Variables
-$page-header-height = 12vh
+// variables
+$page-header-height = 0.75vw
+$page-header-height-portrait = 1.25vh
+$page-header-height-expanded = 4vw
+$page-header-height-expanded-portrait = 12vh
+$header-background = #dcd6f3
+$accent-color = #3507a3
 
-
-///
-/// General tags
+// general tags
 html, body
   height 100%
   overflow hidden
 
+
+// header and presentation-container layout
 body
-
-.bespoke-slide
-  img.full-width
-    width 100%
-  img.large-width
-    width 600px
-  img.medium-width
-    width 400px
-  img.small-width
-    width 200px
-  img.full-height
-    height 100%
-  img.large-height
-    height 400px
-  img.medium-height
-    height 300px
-  img.small-height
-    height 200px
-
-del
-  color gray
-
-h1, h2, h3, h4, h5, h6
-  text-align center
-h1, h2
-  font-family 'Share Tech Mono', Verdana;
-
-p
-  margin 0
-
-.note
-  padding 1em
-  margin 0
-  position relative
-  background-color #fe6
-  background-image linear-gradient(#fe6, #f5da41, #f6ef97)
-  font-family 'Mate', serif
-
-// message bubbles (like chat messages)
-$bubble-tip-size = 8px
-.bubble-chat
-  display block
-  box-sizing border-box
-  width 100%
-  padding 0 (2 * $bubble-tip-size)
-  clearfix()
-.narration
-  clear both
-  display block
-.bubble
-  position relative
-  display block
-  width 85%
-  margin 10px 0
-  padding 4px 7px 7px 7px
-  background-color white
-  border-radius 5px
-  &.bubble-left
-    float left
-    text-align left
-  &.bubble-right
-    float right
-    text-align right
-    &:before
-      left inherit
-      right - (2 * $bubble-tip-size)
-      border-color transparent transparent transparent white
-  &:before
-    content ""
-    position absolute
-    border-width $bubble-tip-size
-    border-style solid
-    border-color transparent white transparent transparent
-    left - (2 * $bubble-tip-size)
-    top "calc(50% - %s)" % ($bubble-tip-size)
-    width 0
-    height 0
-.bubble-author
-  display block
-  text-transform uppercase
-  font-weight bold
-  font-size 75%
-  for author-color, i in blueviolet brown cornflowerblue crimson darkmagenta forrestgreen limegreen darkgray
-    &.bubble-author-{i}
-      color author-color
-
-/// theme: slide layouts
-$checkpoint-slide-main-colors = #4a488e #cc7a09 #ff1530 #20aa12 #949416 #ccbd0d
-$checkpoint-slide-sencodary-colors = #d496a2 #dfadee #93ef9a #e87777 #b6a7e4 #e4aef5
-
-.bespoke-parent.checkpoint
-  background-color #B08FE8
-
-for color, i in $checkpoint-slide-main-colors
-
-  .bespoke-slide[data-bespoke-state="checkpoint"]:nth-of-type({length($checkpoint-slide-main-colors)}n+{i})
-    $secondary-bg = $checkpoint-slide-sencodary-colors[i]
-    $secondary-color = darken($secondary-bg, 50)
-    background-color #f1ecec
-    display block
-    background-image linear-gradient(90deg, color 30%, rgba(148,148,148,0) 31%), linear-gradient(to bottom, $secondary-bg 15%, transparent 15%)
-    box-shadow 4px 4px 4px rgba(60,60,60,.5), -4px 4px 4px rgba(60,60,60,.5)
-
-    & > h1
-      width 30%
-      color white
-      float left
-      box-sizing border-box
-      padding 0.2em
-      font-size 32px
-      word-wrap break-word
-      word-break break-word
-
-      // vertically center
-      position relative
-      top 50%
-      transform translateY(-50%)
-
-    & > h2
-      margin-left 30%
-      color $secondary-color
-    & > ul, & > ol
-      margin-left 34%
-      margin-top 10%
-      & > li
-        margin-bottom 1em
-
-
-/// Header and content layout
-$meny-offset-top = 10px
-
-body
-  perspective 800px
-  perspective-origin 50% 0
-  &.menu-open
-    &> #page-header
-      transform translate3d(0,0,0)
-      transition transform 200ms ease-out
-
-    &> #presentation-container
-      transform-origin 50% 0%
-      transform translateY($page-header-height) rotateX(-15deg)
-      transform-style preserve-3d
-
-      &:before
-        background-image linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.65) 100%)
-
-    .bespoke-progress-parent
-      transform translateY(0)
+  background $header-background
 
 #page-header
-  position fixed
-  width 100%
-  height $page-header-height
   padding 0
-  transition transform 400ms ease-out
-  transform-origin 50% 0% 0px
-  transform rotateX(30deg) translateY(-100%) translateY($meny-offset-top)
-  z-index 1
-  overflow hidden
-  background-color rgb(255, 213, 213)
+  font-size $page-header-height
+  transition height 200ms ease-out, transform 200ms ease-out
+  transform translate3d(0, -($page-header-height / 2), 0)
+  &:hover,
+  &.showing
+    transform translate3d(0, 0, 0)
+    + #presentation-container
+      transform translate3d(0, $page-header-height-expanded, 0)
+      box-shadow -16px 0 24px #0006
+    #page-title
+      padding-top 2vh
+      padding-bottom 2vh
+      opacity 1
+    .page-author-picture
+      transform translate3d(0,0,0) rotateZ(0deg)
+      opacity 1
 
+@media screen and (orientation: portrait)
+  #page-header
+    font-size $page-header-height-portrait
+    &:hover + #presentation-container
+      transform translate3d(0, $page-header-height-expanded-portrait, 0)
 
 #page-title
-  display inline-block
-  height 10vh
-  margin 0
-  font-size 7vh
+  margin 0 0.25em
   vertical-align top
-
-  &> a
-    &:hover
-      text-decoration none
-
-    position relative
-    color rgba(0,0,0,0.2)
-
-    &:before
-      color #b66c7e
-      content attr(data-hover)
-      position absolute
-      transition transform 0.3s, opacity 0.3s
-
-    &:hover:before
-      opacity 0
-      transform scale(0.98)
-
-.bespoke-progress-parent
-  transform translateY($meny-offset-top - 1)
-  transition transform 200ms ease-out
-
-.floating-right-code pre
-  float right
-  width auto
-  margin-left 1em
-.floating-left-code pre
-  float left
-  width auto
-  margin-right 1em
-.smaller-code
-  code
-    font-size 70%
+  padding-bottom "calc(%s - %s)" % ($page-header-height-expanded $page-header-height)
+  font-weight bold
+  text-shadow 0.015em 0.015em black
+  opacity 0.25
+  transition all 200ms ease
+  a:link
+    color $accent-color !important
 
 #page-author
   display inline-block
@@ -227,657 +64,57 @@ body
 
 .page-author-picture
   width 60px
-  height 60px
-  border-radius 30px
+  height @width
+  border-radius 50%
+  opacity .3
+  transform translate3d(-200%,0,0) rotateZ(-270deg)
+  transition transform 700ms cubic-bezier(0.18, 0.89, 0.32, 1.28)  0s, opacity 700ms ease-out 0s
 
 #presentation-container
-  position relative
-  height 100%
-  transition all 400ms ease-out
+  position absolute
+  top 0
+  height "calc(100vh - %s)" % $page-header-height
+  width 100%
+  transform translate3d(0, $page-header-height, 0)
+  transition transform 300ms ease, box-shadow 300ms ease
+  box-shadow -4px 0 8px #000a
 
-  &:before
-    content ''
-    position absolute
-    display: block
-    left 0
-    top 0
-    bottom 0
-    right 0
-    z-index 1000
-    pointer-events none
-    -webkit-transition all 400ms ease-out
-    transition transform 400ms ease-out
-    background-image none
-    will-change background-image
-
-// background of the body
-@media screen and (min-device-width: 640px)
-  body
-    background-image linear-gradient(328deg, #fff, #e8e8e8, #fff, #fcfcfc, #e1e1e1, #f4f4f4)
-    background-size 800% 800%
-
-
-// bringing this from the theme, because with the use of markdown,
-// bespoke-scale can't calculate the sizes of slides properly
-.bespoke-slide
-  width 800px
-  height 600px
-
-// only render the necessary slides: current, immediately after, immed. before (to improve performance)
-.bespoke-slide.bespoke-inactive.bespoke-after:not(.bespoke-after-1):not(.bespoke-after-2)
-  display none
-.bespoke-slide.bespoke-inactive.bespoke-before:not(.bespoke-before-1):not(.bespoke-before-2)
-  display none
-
-.bullet.bullet.bullet-no-anim.bespoke-bullet-inactive
-  transform none
-  transition none
 
 .zelda-transition .bespoke-slide
   transition-duration 250ms
 
-/// Presentation
-$book-gutter-width = 30px
-$book-height = 250px
 
-.book-cover-container
-  position relative
-  perspective 400px
-  transform-style preserve-3d
-  transform rotateY(0)
-  transform-origin center center
-  transition transform 300ms ease-out
 
-  &:hover
-    transform rotateY(40deg)
 
 
-.book-cover
-  height $book-height
 
-.book-left
-  position absolute
-  top 0
-  left - $book-gutter-width
-  width $book-gutter-width
-  height $book-height
-  transform rotateY(-90deg)
-  background-color black
-  transform-origin right center 0
-  &.book-light
-    background-color beige
 
 
-.layered-paragraph
-  background-color rgba(215, 215, 250, 0.5);
 
-.pure-red
-  color #ff0000
-.pure-green
-  color #00ff00
-.pure-blue
-  color #0000ff
+// // TODO: put this on the theme
+// table
+//   max-width 760px
+//
+// td:not(:last-child), th:not(:last-child)
+//   border-right 1px solid rgba(0,0,0,.2)
+//
+// td
+//   padding 6px
+//
+// th
+//   padding 10px
+//
+// tr
+//   border 1px solid rgba(0,0,0,.4)
+//
+// tr:nth-of-type(2n) > td
+//   background-color rgba(255,255,255,.4)
+//
+// thead > tr
+//   background-color #555
+//   color white
 
-.color-portrait
-  display inline-block
-  width 20px
-  height 20px
-  border 1px solid black
 
-  &.ffd5d5
-    background-color #ffd5d5
-
-.picture-steps
-  position relative
-  img:not(:first-child)
-    position absolute
-    top 0
-    left 0
-  img
-    &:not(.bespoke-bullet-active)
-      transform initial
-  &.clean
-    img:not(:last-child):not(.bespoke-bullet-current)
-      opacity 0
-
-$portrait-size = 100px
-.portrait,
-.portrait img
-  display inline-block
-  width $portrait-size
-  height $portrait-size
-  border-radius ($portrait-size / 2)
-  figcaption
-    background-color transparent
-
-.portrait.right
-  float right
-
-img[alt$="right"],
-figure.right
-  float right
-  display inline-block
-img[alt$="left"],
-figure.left
-  float left
-  display inline-block
-img[alt$="cright"]
-  clear right
-
-.item-grid
-  display flex
-  flex-direction row
-.item-grid-col
-  display flex
-  flex-wrap wrap
-  align-items flex-start
-  justify-content space-around
-  figure
-    margin-top 20px
-
-.item-180w,
-.item-180w > img
-  width 180px
-.item-200w,
-.item-200w > img
-  width 200px
-.item-250w,
-.item-250w > img
-  width 250px
-.item-300w,
-.item-300w > img
-  width 300px
-.item-200h > img
-  height 200px
-
-
-
-
-
-// stylizes images like a polaroid photo
-.polaroid
-  margin 0
-  border 18px solid white
-  box-shadow 3px 3px 2px gray
-  background-color lighten(black, 7)
-  color white
-  font-size small
-  line-height 1.5em
-  text-align center
-  &.light
-    background-color darken(white, 20)
-  figcaption
-    margin 0
-    padding-top 5px
-    background-color white
-    color black
-
-/// Tutorial
-$tutorial-right = 20px
-.tutorial
-  position absolute
-  right $tutorial-right
-  bottom 80px
-  padding .5em .75em
-  border-radius 20px
-  background-color rgba(255, 255, 255, .7)
-  font-family 'Cookie', cursive
-  font-size 2em
-  transition opacity 300ms ease-out
-  opacity 0
-  &.tutorial-on
-    opacity 1
-    animation bounce 1s ease-out 0s infinite alternate
-
-@keyframes bounce
-  from
-    right: $tutorial-right;
-
-  to
-    right: $tutorial-right * 2;
-
-/// Easter egg
-#easter-egg-panel
-  position absolute
-  right 1vw
-  bottom 4vh
-  color black
-  padding 5px
-  font-size 11px
-  background-color white
-  border-radius 5px
-  transition opacity 100ms ease-out
-  pointer-events none
-  opacity 0
-  &.active
-    opacity 0.5
-
-.easter-egg-key
-  transition all 100ms ease-out
-  opacity 0
-  transform translate3d(1em, 0, 0)
-  &.active
-    opacity 1
-    transform translate3d(0, 0, 0)
-
-
-.full-height-right
-  float right
-  max-height 80%
-
-ul.bt-tasks > li
-  line-height 1em
-  padding 0.15em .3em
-  border-radius .2em
-  border 1px solid silver
-  background-color rgba(white, .3)
-  font-family consolas, monospace
-  font-size 75%
-
-ul.gob-goals > li,
-.gob-goal
-  line-height 1em
-  border-radius .2em
-  border 1px solid silver
-  background-color rgba(white, .3)
-  & > span
-    padding 0.15em .3em
-    font-family consolas, monospace
-    font-size 75%
-    &:last-child
-      border-left 1px solid silver
-  &.blue
-    background-color cornflowerblue
-  &.green
-    background-color #06D006
-  &.yellow
-    background-color gold
-  &.pink
-    background-color pink
-
-.gob-goal
-  display inline-block
-
-ul.horizontal > li
-  display inline-block
-  list-style-type none
-  margin-right 0.8em
-
-// TODO: put this on the theme
-table
-  max-width 760px
-
-td:not(:last-child), th:not(:last-child)
-  border-right 1px solid rgba(0,0,0,.2)
-
-td
-  padding 6px
-
-th
-  padding 10px
-
-tr
-  border 1px solid rgba(0,0,0,.4)
-
-tr:nth-of-type(2n) > td
-  background-color rgba(255,255,255,.4)
-
-thead > tr
-  background-color #555
-  color white
-
-
-// utility slide classes
-.right-aligned
-  float right
-.left-aligned
-  float left
-
-for num in (2..5)
-  .multi-column-list-{num}
-    column-count num
-
-$multi-column-margin = 3%
-for num in (2..5)
-  .multi-column-inline-list-{num}
-    & > li
-      display inline-block
-      width (100/ num - (num - 1) * $multi-column-margin)%
-      float left
-      margin-right $multi-column-margin
-    & > :nth-child({num}n)
-      margin-right 0
-    & > :nth-child({num}n+1)
-      clear left
-
-.side-by-side-children
-  display flex
-  flex-direction row
-  align-items flex-start
-
-
-for num in (2..5)
-  .layout-split-{num}
-    flex-direction row
-    display flex
-    justify-content center
-    align-items stretch
-    height 100%
-    width 100%
-    & > section
-      width 100%  * (1/num)
-      flex-grow 1
-      text-align center
-
-.appear-right
-  position absolute
-  left inherit
-  bottom 100%
-  transition bottom 200ms ease-out
-  &.bespoke-bullet-active
-    bottom 0
-    left inherit
-    right 0
-
-.phong-vectors
-  .reveal-on-complete
-    opacity 0
-    transition opacity 100ms ease-out
-  &.complete
-    .reveal-on-complete
-      opacity 1
-
-
-// ------------------------------------------------------------
-// Slide backdrops
-
-// Each backdrop background fades in/out
-.bespoke-backdrop
-  opacity 0
-  will-change opacity
-  transition opacity 200ms ease-out 0ms
-  pointer-events none
-  &.bespoke-backdrop-active
-    opacity 1
-    transition-delay 800ms
-
-// backdrop + bespoke-overview: should be less visible (low opacity)
-.bespoke-overview
-  .bespoke-backdrop
-    transition-delay 0ms
-    opacity .1
-
-.bespoke-slide[data-bespoke-backdrop]
-  z-index 2
-
-// Common properties for background backdrops
-full-dimension-backdrop(repeat)
-  if repeat
-    background-size initial
-    background-repeat repeat
-  else
-    background-size cover
-    background-repeat no-repeat
-  width 100%
-  height 100%
-
-.zelda-wii-u.bespoke-backdrop
-  background-image url(../images/screenshot-zelda-wii-u.jpg)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="zelda-wii-u"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  h2
-    color white
-
-.collision.bespoke-backdrop
-  background-image url(../images/sat.jpg)
-  background-color white
-  background-position center center
-  background-size auto
-  background-repeat no-repeat
-  width 100%
-  height 100%
-.bespoke-slide[data-bespoke-backdrop="collision"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  h2
-    color white
-
-.unity-vikings.bespoke-backdrop-active
-  background-image url(../images/unity-viking-village.jpg)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="unity-vikings"]
-  h1
-    background-color rgba(black, .6)
-    border-radius .25em
-    padding .5em 1em
-    text-shadow 7px 7px rgba(black,0.25), 2px 2px rgba(black,0.5), 1px 1px rgba(black,0.75)
-    color #DC0B00
-    transition opacity 200ms ease-out
-    &:hover
-      opacity 0
-.orc-progress-3ds.bespoke-backdrop-active
-  background-image url(../images/orc-progress-3ds.jpg)
-  full-dimension-backdrop(false)
-  background-position-x 50%
-  opacity .7
-.bespoke-slide[data-bespoke-backdrop="orc-progress-3ds"]
-    text-shadow 2px 2px white
-
-.rpgmaker-sand.bespoke-backdrop
-  background-image url(../images/rpgmaker-sand-map.jpg)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="rpgmaker-sand"] h1
-  padding .5em 1em
-  border-radius .2em
-  box-sizing border-box
-  text-shadow 2px 2px white
-  background-color rgba(black, .4)
-
-
-.beyond-two-souls.bespoke-backdrop-active
-  background-image url(../images/beyond-two-souls.jpg)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="beyond-two-souls"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  color white
-.lol-final-seoul.bespoke-backdrop-active
-  background-image url(../images/lol-finals-2014-seoul.jpg)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="lol-final-seoul"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  color white
-  background rgba(white, .35)
-  padding .5em 1.5em
-  box-sizing border-box
-.heroes.bespoke-backdrop-active
-  background-image url(../images/heroes.png)
-  full-dimension-backdrop(false)
-
-.super-mario-3d-world.bespoke-backdrop-active
-  background-image url(../images/super-mario-3d-world.jpg)
-  full-dimension-backdrop(false)
-.bespoke-slide[data-bespoke-backdrop="super-mario-3d-world"]
-  background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  color darken(darkgray, 30)
-.jobs-blizzard.bespoke-backdrop-active
-  background-image url(../images/jobs-blizzard.jpg)
-  full-dimension-backdrop(false)
-.movement.bespoke-backdrop-active
-  background-image url(../images/movement.gif)
-  full-dimension-backdrop(false)
-  background-position-x 50%
-  background-size contain
-.pathfinder.bespoke-backdrop-active
-  background-image url(../images/pathfinder.jpg)
-  full-dimension-backdrop(false)
-  background-position-x 50%
-.world-representation.bespoke-backdrop-active
-  background-image url(../images/nav-mesh-big.png)
-  full-dimension-backdrop(false)
-  background-position-x 50%
-.white.bespoke-backdrop-active
-  background-color white
-  full-dimension-backdrop(false)
-
-.bespoke-slide[data-bespoke-backdrop="movement"],
-.bespoke-slide[data-bespoke-backdrop="pathfinder"],
-.bespoke-slide[data-bespoke-backdrop="world-representation"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-.bespoke-slide[data-bespoke-backdrop="jobs-blizzard"]
-  a
-    position relative
-    background-color rgba(white, .5)
-    border-radius .5em
-    padding .15em .5em
-    color black
-    text-decoration underline
-    box-shadow 0 0 0 rgba(black, .7)
-    top 0
-    transition top 200ms ease-out, box-shadow 200ms ease-out
-    &:hover
-      top -.2em
-      box-shadow .2em .2em .2em rgba(black, .3)
-
-.mgs-quiet.bespoke-backdrop-active
-  background-image url(../images/mgs-quiet.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.decision-tree-sample.bespoke-backdrop-active
-  // background-color white
-  background-image url(../images/decision-tree-sample.png)
-  full-dimension-backdrop(false)
-  background-position 50% 80%
-  background-size initial
-.fsm-sample.bespoke-backdrop-active
-  background-color white
-  background-image url(../images/fsm-sample.png)
-  full-dimension-backdrop(false)
-  background-position 50% 50%
-  background-size initial
-.halo2.bespoke-backdrop-active
-  background-image url(../images/halo2.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.the-sims4.bespoke-backdrop-active
-  background-image url(../images/the-sims4.png)
-  full-dimension-backdrop(false)
-  background-size cover
-.bespoke-slide[data-bespoke-backdrop="mgs-quiet"],
-.bespoke-slide[data-bespoke-backdrop="decision-tree-sample"],
-.bespoke-slide[data-bespoke-backdrop="fsm-sample"],
-.bespoke-slide[data-bespoke-backdrop="halo2"],
-.bespoke-slide[data-bespoke-backdrop="the-sims4"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-.bespoke-slide[data-bespoke-backdrop="decision-tree-sample"],
-.bespoke-slide[data-bespoke-backdrop="fsm-sample"]
-  background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
-
-.unity-ssao.bespoke-backdrop-active
-  background-image url(../images/unity-ssao.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.scene-graph-sample.bespoke-backdrop-active
-  background-color white
-  background-image url(../images/scene-graph-sample.png)
-  full-dimension-backdrop(false)
-  background-size initial
-  background-position 50% 5%
-.lod-tank.bespoke-backdrop-active
-  background-color white
-  background-image url(../images/lod-tank.png)
-  full-dimension-backdrop(false)
-  background-size contain
-  background-position 50% 50%
-.the-witcher-2-shadows.bespoke-backdrop-active
-  background-image url(../images/the-witcher-2-shadows.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.ssao-farcry4.bespoke-backdrop-active
-  background-image url(../images/ssao-farcry4.png)
-  full-dimension-backdrop(false)
-  background-size cover
-.little-big-planet-3.bespoke-backdrop-active
-  background-image url(../images/little-big-planet-3.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.deferred-lighting.bespoke-backdrop-active
-  background-image url(../images/deferred-lighting.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.crysis3-foliage.bespoke-backdrop-active
-  background-image url(../images/crysis3-foliage.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.bespoke-slide[data-bespoke-backdrop="ssao-farcry4"],
-.bespoke-slide[data-bespoke-backdrop="scene-graph-sample"],
-.bespoke-slide[data-bespoke-backdrop="lod-tank"],
-.bespoke-slide[data-bespoke-backdrop="the-witcher-2-shadows"],
-.bespoke-slide[data-bespoke-backdrop="little-big-planet-3"],
-.bespoke-slide[data-bespoke-backdrop="unity-ssao"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-.bespoke-slide[data-bespoke-backdrop="lod-tank"] > h1
-  color #60FF00
-
-.max-payne3.bespoke-backdrop-active
-  background-image url(../images/max-payne3.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.bespoke-slide[data-bespoke-backdrop="max-payne3"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  &> h1
-    color #FF4900
-
-.the-incredible-machine.bespoke-backdrop-active
-  background-image url(../images/the-incredible-machine.gif)
-  full-dimension-backdrop(false)
-  background-size cover
-.bespoke-slide[data-bespoke-backdrop="the-incredible-machine"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  &> h1
-    color #8E8E8E
-    background-color rgba(white, .75)
-    padding .5em .25em
-    border-radius .25em
-
-.redinha.bespoke-backdrop-active
-  background-image url(../images/redinha2.jpg)
-  full-dimension-backdrop(false)
-  background-size cover
-.bespoke-slide[data-bespoke-backdrop="redinha"]
-  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
-  &> h1
-    color #8E8E8E
-    background-color rgba(white, .75)
-    padding .5em .25em
-    border-radius .25em
-
-.oldtimes.bespoke-backdrop-active
-  background-image url(../images/old-movie-texture.gif)
-  background-size cover
-  opacity 0.40
-  width 100%
-  height 100%
-
-
-
-// --- class specific styles
-#megaman
-  float right
-  width 60px
-  height 60px
-  margin 0
-.sprite
-  position relative
-  overflow hidden
-  > img
-    position absolute
-    animation sprite-sequence 250ms steps(3) infinite alternate-reverse
-    &:hover
-      animation-duration 100ms
-  // arrow to the right, pointing to megaman
-  + [alt$=right]
-    margin-top 15px
 
 
 @keyframes sprite-sequence
@@ -914,3 +151,21 @@ $floating-shadow-color = rgba(black, .3)
     box-shadow 0 0 0 $floating-shadow-color
   to
     box-shadow 0 $floating-max-height $floating-max-height $floating-shadow-color *0.5
+
+
+.hljs
+  padding 1em
+
+@import utilities
+@import book
+@import tutorial
+@import easter
+@import backdrops
+@import layouts
+
+// Print styles
+@media print
+  #page-header
+    display none !important
+  .book-cover
+    height 150px !important

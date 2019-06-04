@@ -1,0 +1,268 @@
+// each backdrop background fades in/out
+.bespoke-backdrop
+  opacity 0
+  will-change opacity
+  transition opacity 200ms ease-out 0ms
+  pointer-events none
+  &.bespoke-backdrop-active
+    opacity 1
+    transition-delay 200ms
+
+// backdrop + bespoke-overview: should be less visible (low opacity)
+.bespoke-overview
+  .bespoke-backdrop
+    transition-delay 0ms
+    opacity .1
+
+.bespoke-slide[data-bespoke-backdrop]
+  z-index 2
+
+// common properties for background backdrops
+full-dimension-backdrop(repeat)
+  if repeat
+    background-size initial
+    background-repeat repeat
+  else
+    background-size cover
+    background-repeat no-repeat
+  width 100%
+  height 100%
+
+
+.zelda-wii-u.bespoke-backdrop
+  background-image url(../images/screenshot-zelda-wii-u.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="zelda-wii-u"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  h2
+    color white
+
+.collision.bespoke-backdrop
+  background-image url(../images/sat.jpg)
+  background-color white
+  background-position center center
+  background-size auto
+  background-repeat no-repeat
+  width 100%
+  height 100%
+.bespoke-slide[data-bespoke-backdrop="collision"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  h2
+    color white
+
+.unity-vikings.bespoke-backdrop-active
+  background-image url(../images/unity-viking-village.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="unity-vikings"]
+  h1
+    background-color rgba(black, .6)
+    border-radius .25em
+    padding .5em 1em
+    text-shadow 7px 7px rgba(black,0.25), 2px 2px rgba(black,0.5), 1px 1px rgba(black,0.75)
+    color #DC0B00
+    transition opacity 200ms ease-out
+    &:hover
+      opacity 0
+.orc-progress-3ds.bespoke-backdrop-active
+  background-image url(../images/orc-progress-3ds.jpg)
+  full-dimension-backdrop(false)
+  background-position-x 50%
+  opacity .7
+.bespoke-slide[data-bespoke-backdrop="orc-progress-3ds"]
+    text-shadow 2px 2px white
+
+.rpgmaker-sand.bespoke-backdrop
+  background-image url(../images/rpgmaker-sand-map.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="rpgmaker-sand"] h1
+  padding .5em 1em
+  border-radius .2em
+  box-sizing border-box
+  text-shadow 2px 2px white
+  background-color rgba(black, .4)
+
+
+.beyond-two-souls.bespoke-backdrop-active
+  background-image url(../images/beyond-two-souls.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="beyond-two-souls"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  color white
+.lol-final-seoul.bespoke-backdrop-active
+  background-image url(../images/lol-finals-2014-seoul.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="lol-final-seoul"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  color white
+  background rgba(white, .35)
+  padding .5em 1.5em
+  box-sizing border-box
+.heroes.bespoke-backdrop-active
+  background-image url(../images/heroes.png)
+  full-dimension-backdrop(false)
+
+.super-mario-3d-world.bespoke-backdrop-active
+  background-image url(../images/super-mario-3d-world.jpg)
+  full-dimension-backdrop(false)
+.bespoke-slide[data-bespoke-backdrop="super-mario-3d-world"]
+  background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  color darken(darkgray, 30)
+.jobs-blizzard.bespoke-backdrop-active
+  background-image url(../images/jobs-blizzard.jpg)
+  full-dimension-backdrop(false)
+.movement.bespoke-backdrop-active
+  background-image url(../images/movement.gif)
+  full-dimension-backdrop(false)
+  background-position-x 50%
+  background-size contain
+.pathfinder.bespoke-backdrop-active
+  background-image url(../images/pathfinder.jpg)
+  full-dimension-backdrop(false)
+  background-position-x 50%
+.world-representation.bespoke-backdrop-active
+  background-image url(../images/nav-mesh-big.png)
+  full-dimension-backdrop(false)
+  background-position-x 50%
+.white.bespoke-backdrop-active
+  background-color white
+  full-dimension-backdrop(false)
+
+.bespoke-slide[data-bespoke-backdrop="movement"],
+.bespoke-slide[data-bespoke-backdrop="pathfinder"],
+.bespoke-slide[data-bespoke-backdrop="world-representation"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+.bespoke-slide[data-bespoke-backdrop="jobs-blizzard"]
+  a
+    position relative
+    background-color rgba(white, .5)
+    border-radius .5em
+    padding .15em .5em
+    color black
+    text-decoration underline
+    box-shadow 0 0 0 rgba(black, .7)
+    top 0
+    transition top 200ms ease-out, box-shadow 200ms ease-out
+    &:hover
+      top -.2em
+      box-shadow .2em .2em .2em rgba(black, .3)
+
+.mgs-quiet.bespoke-backdrop-active
+  background-image url(../images/mgs-quiet.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.decision-tree-sample.bespoke-backdrop-active
+  // background-color white
+  background-image url(../images/decision-tree-sample.png)
+  full-dimension-backdrop(false)
+  background-position 50% 80%
+  background-size initial
+.fsm-sample.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/fsm-sample.png)
+  full-dimension-backdrop(false)
+  background-position 50% 50%
+  background-size initial
+.halo2.bespoke-backdrop-active
+  background-image url(../images/halo2.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.the-sims4.bespoke-backdrop-active
+  background-image url(../images/the-sims4.png)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="mgs-quiet"],
+.bespoke-slide[data-bespoke-backdrop="decision-tree-sample"],
+.bespoke-slide[data-bespoke-backdrop="fsm-sample"],
+.bespoke-slide[data-bespoke-backdrop="halo2"],
+.bespoke-slide[data-bespoke-backdrop="the-sims4"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+.bespoke-slide[data-bespoke-backdrop="decision-tree-sample"],
+.bespoke-slide[data-bespoke-backdrop="fsm-sample"]
+  background-image linear-gradient(to bottom, rgba(white, .7) 40%, rgba(white, .15) 100%)
+
+.unity-ssao.bespoke-backdrop-active
+  background-image url(../images/unity-ssao.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.scene-graph-sample.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/scene-graph-sample.png)
+  full-dimension-backdrop(false)
+  background-size initial
+  background-position 50% 5%
+.lod-tank.bespoke-backdrop-active
+  background-color white
+  background-image url(../images/lod-tank.png)
+  full-dimension-backdrop(false)
+  background-size contain
+  background-position 50% 50%
+.the-witcher-2-shadows.bespoke-backdrop-active
+  background-image url(../images/the-witcher-2-shadows.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.ssao-farcry4.bespoke-backdrop-active
+  background-image url(../images/ssao-farcry4.png)
+  full-dimension-backdrop(false)
+  background-size cover
+.little-big-planet-3.bespoke-backdrop-active
+  background-image url(../images/little-big-planet-3.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.deferred-lighting.bespoke-backdrop-active
+  background-image url(../images/deferred-lighting.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.crysis3-foliage.bespoke-backdrop-active
+  background-image url(../images/crysis3-foliage.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="ssao-farcry4"],
+.bespoke-slide[data-bespoke-backdrop="scene-graph-sample"],
+.bespoke-slide[data-bespoke-backdrop="lod-tank"],
+.bespoke-slide[data-bespoke-backdrop="the-witcher-2-shadows"],
+.bespoke-slide[data-bespoke-backdrop="little-big-planet-3"],
+.bespoke-slide[data-bespoke-backdrop="unity-ssao"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+.bespoke-slide[data-bespoke-backdrop="lod-tank"] > h1
+  color #60FF00
+
+.max-payne3.bespoke-backdrop-active
+  background-image url(../images/max-payne3.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="max-payne3"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  &> h1
+    color #FF4900
+
+.the-incredible-machine.bespoke-backdrop-active
+  background-image url(../images/the-incredible-machine.gif)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="the-incredible-machine"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  &> h1
+    color #8E8E8E
+    background-color rgba(white, .75)
+    padding .5em .25em
+    border-radius .25em
+
+.redinha.bespoke-backdrop-active
+  background-image url(../images/redinha2.jpg)
+  full-dimension-backdrop(false)
+  background-size cover
+.bespoke-slide[data-bespoke-backdrop="redinha"]
+  text-shadow 3px 3px rgba(black, .25), 2px 2px rgba(black, .5), 1px 1px rgba(black, .75)
+  &> h1
+    color #8E8E8E
+    background-color rgba(white, .75)
+    padding .5em .25em
+    border-radius .25em
+
+.oldtimes.bespoke-backdrop-active
+  background-image url(../images/old-movie-texture.gif)
+  background-size cover
+  opacity 0.40
+  width 100%
+  height 100%

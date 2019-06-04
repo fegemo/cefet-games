@@ -1,0 +1,22 @@
+#easter-egg-panel
+  position absolute
+  right 1vw
+  bottom 4vh
+  color black
+  padding 5px
+  font-size 11px
+  background-color white
+  border-radius 5px
+  transition opacity 100ms ease-out
+  pointer-events none
+  opacity 0
+  &.active
+    opacity 0.5
+
+.easter-egg-key
+  transition all 100ms ease-out
+  opacity 0
+  transform translate3d(1em, 0, 0)
+  &.active
+    opacity 1
+    transform translate3d(0, 0, 0)
