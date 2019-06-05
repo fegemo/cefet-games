@@ -544,14 +544,18 @@ Redes
   - [sfxr][tool-sfxr]: gerador automático de efeitos sonoros
   - [Audacity][tool-audacity]: editor de arquivos de audio
 - Criadores de Jogos
-  - [RPG Maker VX Ace Lite][tool-rpgmaker]
+  - [RPG Maker MV][tool-rpgmaker]
   - [Game Maker](http://www.yoyogames.com/studio)
   - [M.U.G.E.N](http://www.elecbyte.com/)
-
 
 [article-indie]: http://makegames.tumblr.com/post/44181247500/making-it-in-indie-games-starter-guide
 [article-many-tools]: http://gamedevelopment.tutsplus.com/articles/the-many-types-of-tools-for-game-developers--gamedev-451
 [article-best-2d-engines]: http://www.slant.co/topics/341/~what-are-the-best-2d-game-engines
 [tool-sfxr]: http://www.drpetter.se/project_sfxr.html
 [tool-audacity]: http://audacityteam.org/
-[tool-rpgmaker]: http://www.rpgmakerweb.com/download/free-programs/rpg-maker-vx-ace-lite
+[tool-rpgmaker]: http://www.rpgmakerweb.com/
+
+---
+<!-- {"fullPageElement": "#qr"} -->
+
+![](../../images/qrcode-tools.png) <!-- {#qr style="image-rendering: pixelated; object-fit: contain"} -->

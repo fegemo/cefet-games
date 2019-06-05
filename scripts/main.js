@@ -7,7 +7,6 @@ const bespoke = require('bespoke'),
   touch = require('bespoke-touch'),
   scale = require('bespoke-scale'),
   state = require('bespoke-state'),
-  qrcode = require('bespoke-qrcode'),
   bullets = require('bespoke-bullets'),
   sandy = require('bespoke-theme-sandy'),
   progress = require('bespoke-progress'),
@@ -37,7 +36,7 @@ bespoke.from('article', [
   state(),
   backdrop(),
   //search()
-  qrcode(),
+  // qrcode(),
   tutorial(document.querySelector('.tutorial')),
   easter(),
   deck => {
