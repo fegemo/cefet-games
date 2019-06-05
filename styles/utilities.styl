@@ -95,13 +95,48 @@ $portrait-size = 100px
     right 0
 
 .note
-  padding 1em
+  padding .3em .5em
+  list-style-type none
+  border-radius 5px
   margin 0
+  box-shadow 3px 3px 3px rgba(0,0,0,.2)
   position relative
-  background-color #fe6
-  background-image linear-gradient(#fe6, #f5da41, #f6ef97)
-  font-family 'Mate', serif
+  border 1px solid transparent
+  &.info
+    border-color #0ba8b8
+    background linear-gradient(to right bottom,#ffffe0,#a9dbe0)
+  &::before
+    content ""
+    margin-right 1rem
+    color currentColor
+    width 1em
+    height 1em
+    display inline-block
+    float left
+    shape-outside circle(50%)
+    text-align center
+    line-height 1em
+    font-size 1em
+    box-sizing border-box
 
+
+$multi-column-margin = 3%
+for num in (2..5)
+  .multi-column-inline-list-{num}
+    padding-left 0
+    display flex
+    flex-direction row
+    align-items stretch
+    & > li
+      width (100/ num - (num - 1) * $multi-column-margin)%
+      margin-right $multi-column-margin
+      & figure
+        display flex
+        flex-direction column
+        justify-content space-between
+        height 100%
+    & > :nth-child({num}n)
+      margin-right 0
 
 img[alt$="max"]
   max-width 100%
@@ -170,6 +205,11 @@ img[alt$="max"]
     transform scale(1.1) rotateZ(1turn)
 
 
+.dl-8
+  & > dt
+    width 8em
+  & > dd
+    margin-left 8em
 .dl-6
   & > dt
     width 6em
@@ -289,14 +329,14 @@ ul.horizontal > li
 .sprite
   position relative
   overflow hidden
-  > img
+  img
     position absolute
     animation sprite-sequence 250ms steps(3) infinite alternate-reverse
     &:hover
       animation-duration 100ms
   // arrow to the right, pointing to megaman
   + [alt$=right]
-    margin-top 15px
+    margin-top 47px
 
 @keyframes sprite-sequence
   from
@@ -308,8 +348,12 @@ ul.horizontal > li
 .floating
   display block
   animation floating 3s ease-in-out 0ms infinite alternate, floating-shadow 3s ease-in-out 0ms infinite alternate
-  &:nth-of-type(2n)
+  &:nth-of-type(2n),
+  &:nth-child(2n)
     animation-delay 1s
+  &:nth-of-type(3n),
+  &:nth-child(3n)
+    animation-delay 0.5s
 
 
 $floating-max-height = 1em

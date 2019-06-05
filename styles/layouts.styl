@@ -40,6 +40,36 @@ for color, i in $checkpoint-slide-main-colors
         margin-bottom 1em
 
 
+// layout de 2 lados (com 2 títulos e tal)
+.layout-grid-2-column-with-title
+  display grid
+  grid-template-rows auto auto
+  grid-template-columns 1fr 1fr
+  grid-template-areas "t1 t2" "c1 c2"
+  .c1
+    grid-area c1
+  .c2
+    grid-area c2
+  .t1
+    grid-area t1
+  .t2
+    grid-area t2
+
+.layout-grid-2x2-1x3-1x1
+  display grid
+  grid-template-rows auto auto
+  grid-template-columns 1fr 1fr
+  grid-template-areas "c1x1 c1x2" "c2x1 c2x2"
+  .c1x1
+    grid-area c1x1
+  .c1x2
+    grid-area c1x2
+  .c2x1
+    grid-area c2x1
+  .c2x2
+    grid-area c2x2
+
+
 // default stylish images
 .layout-title h1
   &::before
@@ -68,6 +98,19 @@ for color, i in $checkpoint-slide-main-colors
       &:before
         background-image url(../images/unity-viking-village.jpg)
         background-position-y 40%
+  .makers.layout-section-header::after
+    background-image url(../images/rpgmaker-editor.jpg)
+    animation movingbg-x 20s linear 0s infinite alternate
+  .apis-graficas.layout-section-header::after
+    background-image url(../images/codigo-opengl.png)
+  .frameworks.layout-section-header::after
+    background-image url(../images/incomplete-puzzle.jpg)
+  .engines.layout-section-header::after
+    background-image url(../images/unity-editor-hex.png)
+    animation movingbg-x 20s linear 0s infinite alternate
+
+
+
 
 .intro
   .layout-title h1::before

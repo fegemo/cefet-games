@@ -1,46 +1,104 @@
-<!--
-backdrop: unity-vikings
--->
-
-# Ferramentas para Desenvolvimento de Jogos
+<!-- {"layout": "title"} -->
+# Ferramentas para<br>Desenvolvimento de Jogos
+## Por onde começar...
 
 ---
-![](../../images/philosoraptor-o-que-jogos-comem.jpg)
+<!-- {"state": "emphatic"} -->
+![Um velocirraptor filosofando: gosto de criar jogos, mas não sei o que eles comem](../../images/philosoraptor-o-que-jogos-comem.jpg)
 
 ---
-## Em 2008...
+<!-- {"layout": "regular"} -->
+# Como faziam...
 
-### _"Xbox's **'Braid'** A **Surprise Hit**, For Surprising Reasons"_
+- Jogos eram desenvolvidos por empresas: <!-- {ul:.full-width} -->
+  **grandes**, **sólidas**, com **bom histórico**
+- ![](../../images/diablo2.jpg) <!-- {.polaroid.push-right style="width: 300px"} -->
+  Exemplo: ![Blizzard](../../images/blizzard.svg) criando o Diablo II (2000) <!-- {style="height: 1em;"} -->
 
-![](../../images/braid.jpg)
+  Desenvolvimento
+    ~ 3 anos (🌐 [fonte][diablo2-postmortem])
 
-Notícia em [npr.org](http://www.npr.org/templates/story/story.php?storyId=94025221)
+  Equipe
+    ~ 40 pessoas na produção
 
-<img src="../../images/avatar-jonathan-blow.jpg" class="portrait floating">
+- As empresas criavam todas as ferramentas ou adquiriam licenças:
+
+  Unreal Engine, 98
+    ~ USD 350,000 + 5% (🌐 [fonte][nytimes-unreal]), por jogo!
+
+  id Tech 3, 99
+    ~ USD 500,000 (idem)
+
+
+[diablo2-postmortem]: https://www.gamasutra.com/view/feature/131533/postmortem_blizzards_diablo_ii.php
+[nytimes-unreal]: https://www.nytimes.com/1999/12/02/technology/game-theory-for-game-maker-there-s-gold-in-the-code.html
 
 ---
-## Em 2010...
+<!-- {"layout": "2-column-highlight-and-list"} -->
+# Até que em 2008...
 
-### _"Games review - **Super Meat Boy** is a **prime cut**"_
+::: figure . align-self: center;
+<iframe width="100%" src="https://www.youtube.com/embed/iBjBJRjRBn4?start=169&rel=0&showinfo=0&autoplay=1&cc_load_policy=0&controls=0&disablekb=1&enablejsapi=1&fs=0&iv_load_policy=3&loop=1&modestbranding=1&origin=https%3A%2F%2Funity.com&playlist=ICONNciFCvg&playsinline=1&rel=0&start=5&mute=1&widgetid=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+:::
 
-<img src="../../images/avatar-edmund-mcmillen.jpg" class="portrait floating" style="float: left;">
-<img src="../../images/avatar-tommy-refenes.jpg" class="portrait floating" style="float: right;">
-<img src="../../images/super-meat-boy.png" style="margin: 0 2em;">
+- ![](../../images/avatar-jonathan-blow.jpg) <!-- {.push-right.portrait.floating} --> <!-- {ul:.no-bullet.no-margin style="width: 64%;"} -->
+  ### _"Xbox's **'Braid'** A **Surprise Hit**, For Surprising Reasons"_ <small>(🌐 [fonte][braid-news])</small>
 
-<!-- ![](../../images/super-meat-boy.png) -->
+  Equipe <!-- {dl:.dl-6 style="margin-bottom: 0;"} -->
+    ~ Jonathan Blow + David Hellman
 
+  _Plot_
+    ~ Tim deve resgatar a princesa 🎵
 
-Notícia em [Metro.co.uk](http://metro.co.uk/2010/10/21/games-review-super-meat-boy-555869/)
+  Mecânica
+    ~ Controle do tempo, múltiplas realidades
+
+  Arte
+    ~ Estilo impressionista lindão
+
+  Finanças
+    ~ Custos: USD 200,000 // Receita: USD 6 mi
+
+1. **Como ele fez isso?** Em 2004, a Microsoft... <!-- {ol:.no-bullet.no-margin style="width: 100%;"} -->
+   - Criou o XNA e abriu uma loja virtual de jogos
+   - XNA: ferramenta para criar jogos para Xbox 360 e Windows
+
+[braid-news]: http://www.npr.org/templates/story/story.php?storyId=94025221
+*[XNA]: XNA's Not Acronymed*
 
 ---
-## Mais tarde em 2010...
+<!-- {"layout": "centered-horizontal"} -->
+# Em 2010...
 
-_"Unity Technologies has launched version 2.6 of its cross-platform games
-engine and with it also **dropped the license fee of $199 previously required**
-to use it."_
+### _"Games review - **Super Meat Boy** is a **prime cut**"_ <small>(🌐 [fonte][smb-news])</small>
 
-_"By effectively making Unity free to use **anyone can now download it** and
-start developing games for **PC, Mac, and the web**"_
+::: gallery
+![](../../images/avatar-edmund-mcmillen.jpg) <!-- {.push-left.portrait.floating} --> <!-- {p:style="align-items:center;"} -->
+![](../../images/super-meat-boy.png)
+![](../../images/avatar-tommy-refenes.jpg) <!-- {.push-left.portrait.floating style="margin-left: 12px;"} -->
+:::
+
+- ::: div .note.info.push-right width: 240px; margin-left: 1em; margin-right: 1em; font-size: 80%
+  #### Dica para o FDS
+  Assistam [_Indie Game - The Movie_][indie-game-movie] <!-- {p:.no-margin.center-aligned} -->
+  :::
+  Jogos criados por equipes pequenas - **indie** - ganharam a moda
+- **As ferramentas** e a **forma de vender** <!-- {.alternate-color} --> se
+  tornaram mais acessíveis
+
+[smb-news]: http://metro.co.uk/2010/10/21/games-review-super-meat-boy-555869/
+[indie-game-movie]: https://www.youtube.com/watch?v=g8SEDVJOpqY
+
+*[FDS]: fim de semana*
+
+---
+# Mais tarde em 2010...
+
+_"A **Unity Technologies** lançou a versão 2.6 do seu motor de jogos
+multiplataforma e tornou o seu uso gratuito para desenvolvedores indie."_
+
+_"**Qualquer pessoa pode instalar** e começar a desenvolver jogos
+imediatamente para **PC, Mac e na web**"_
 
 Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-and-is-now-free-to-use-955771/)
 
@@ -48,162 +106,190 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
 ![](../../images/yay-indie.png)
 
 ---
+<!-- {"layout": "regular"} -->
 # Do que precisamos?
 
-- Gráficos
-  - Imagens, Animação, Modelos 3D, Efeitos visuais
-- Lógica
-  - Mecânica de jogo, Linguagem de _scripting_
-- Inteligência artificial
-  - Movimentação, Tomada de decisão, Estratégia
-- Física
-  - Colisão, Cinemática, Dinâmica, Simulações
-- Redes
-  - Arquitetura, Protocolos
+Gráficos <!-- {dl:.bulleted} -->
+  ~ Imagens, Animação, Modelos 3D, Efeitos visuais
+
+Lógica
+  ~ Mecânica de jogo, Linguagem de _scripting_
+
+Intel. artificial
+  ~ Movimentação, Tomada de decisão, Estratégia
+
+Física
+  ~ Colisão, Cinemática, Dinâmica, Simulações
+
+Redes
+  ~ Arquitetura, Protocolos
+
+...são várias coisas diferentes! Imagina se um **pedreiro** precisasse
+**construir seu martelo** e outras ferramentas antes de construir uma casa? <!-- {p:.bullet} -->
 
 ---
 ## O que estes jogos têm **em comum**? E de **diferente**?
 
-<ul class="multi-column-inline-list-2">
+<ul class="multi-column-inline-list-2 no-bullet">
   <li>
     <figure class="polaroid light item-250w">
-      <img src="../../images/hotline-miami-gamemaker.png" style="width: 100%">
-      <figcaption>Hotline Miami</figcaption>
+      <img src="../../images/animal-run.png" style="width: 100%">
+      <figcaption>Animal Run</figcaption>
     </figure>
   </li>
   <li>
     <figure class="polaroid light item-250w">
-      <img src="../../images/breakout-opengl.png" style="width: 100%">
-      <figcaption>Breakout</figcaption>
-    </figure>
-  </li>
-</ul>
-<ul class="multi-column-inline-list-2">
-  <li>
-    <figure class="polaroid light item-250w">
-      <img src="../../images/sword-coast-unity.jpg" style="width: 100%">
-      <figcaption>Sword Coast</figcaption>
-    </figure>
-  </li>
-  <li>
-    <figure class="polaroid light item-250w">
-      <img src="../../images/wesnoth-sdl.jpg" style="width: 100%">
-      <figcaption>Wesnoth</figcaption>
+      <img src="../../images/dino-run.jpg" style="width: 100%">
+      <figcaption>dino-run</figcaption>
     </figure>
   </li>
 </ul>
+<ul class="multi-column-inline-list-2 no-bullet">
+  <li>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/super-mario-run.jpg" style="width: 100%">
+      <figcaption>Super Mario Run</figcaption>
+    </figure>
+  </li>
+  <li>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/zombie-rush.png" style="width: 100%">
+      <figcaption>Zombie Rush</figcaption>
+    </figure>
+  </li>
+</ul>
+
+---
+<!-- {"layout": "grid-2x2-1x3-1x1"} -->
+
+## Pontos comuns <!-- {.c1x1 style="align-self: flex-end; justify-self: center;"} -->
+
+- Todos precisaram de **muito trabalho** <!-- {ul:.c2x1 style="align-self: flex-start;"} -->
+- Equipes **multidisciplinares**
+- Um _workflow_ que vai da concepção de **ideias até a criação da arte**
+- Levaram **o mesmo tempo** para serem feitos (5 meses)
+
+## Divergências <!-- {.c1x2 style="align-self: flex-end; justify-self: center;"} -->
+
+- Ferramentas **de níveis diferentes** foram usadas para fazer cada um <!-- {ul:.bullet.c2x2 style="align-self: flex-start;"} -->
+- Em alguns jogos, pôde-se focar **mais tempo em criar conteúdo**
+  do que em programar
+- **Programadores tiveram mais liberdade** para criar **alguns dos jogos**
+  do que outros
+
+## Basicamente, cada jogo desses foi desenvolvido<br>**começando-se de pontos de partida diferentes** <!-- {h2:.bullet.center-aligned style="grid-row: 3 / 4; grid-column: 1 / 3;"} -->
 
 ---
 
-<div class="layout-split-2" style="height: auto;">
-  <section style="border-right: 4px dotted silver;">
-    <h2>Pontos comuns</h2>
-    <ul style="text-align: left">
-      <li>Todos precisaram de **muito trabalho**</li>
-      <li>Equipes **multidisciplinares** os desenvolveram</li>
-      <li>Um _workflow_ que vai da criação das **idéias até a criação da arte**</li>
-      <li>Exceto pelo _breakout_, os **gêneros são bem parecidos**</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Divergências</h2>
-    <ul style="text-align: left">
-      <li>Ferramentas **de níveis diferentes** foram usadas para fazer cada um</li>
-      <li>Em alguns jogos, pôde-se focar **mais tempo em criar conteúdo** do que em programar</li>
-      <li>**Programadores tiveram mais liberdade** para criar **alguns dos jogos** do que outros</li>
-    </ul>
-  </section>
-</div>
+<iframe width="1066" height="600" frameborder="0" src="https://www.mindmeister.com/maps/public_map_shell/573906250/por-onde-quero-come-ar?width=1066&height=600&z=1.1&presentation=1" scrolling="no" style="overflow: hidden; margin-bottom: 5px;"></iframe>
 
 ---
-## Basicamente, cada jogo desses foi desenvolvido **começando-se de pontos diferentes**
-
----
-
-<iframe width="800" height="600" frameborder="0" src="https://www.mindmeister.com/maps/public_map_shell/573906250/por-onde-quero-come-ar?width=800&height=600&z=1.1" scrolling="no"></iframe>
-
----
-## Comparando os tipos de ferramentas
+<!-- {"layout": "centered"} -->
+# Comparando os tipos de ferramentas
 
 ![](../../images/comparacao-ferramentas-criacao.png)
 
 ---
-# Ferramentas do tipo **"Maker"**
+<!-- {"layout": "section-header", "slideClass": "makers"} -->
+# Ferramentas do tipo **_Maker_**
+
+1. ![](../../images/rpgmaker-content.png) <!-- {.small-width.push-right} -->
+   O que são
+1. Exemplos famosos
+1. Dia a dia
+1. Veredito
+
+
+
 ---
+<!-- {"layout": "regular"} -->
 ## _Makers_: **O que são?**
 
 - O nível mais alto na escala de abstração
-- Ferramentas de criação **específicas para jogos ou mesmo para um único gênero
-  (_e.g._, RPG) de jogo**
+- Ferramentas **específicas para um único gênero (eg, RPG)
+  ou estilo (eg, 2D) de jogo**
 - Alta produtividade na produção do jogo
-  - Já que é possível focar no conteúdo em vez de no código do jogo
-- Em algumas ferramentas, **não é necessário programar** usando uma linguagem
-  de programação
-- Costumam auxiliar na **criação de mapas/fases/cenários, eventos, interação,
-  sons e gráficos**
+  - Já que é possível **focar no conteúdo** <!-- {.alternate-color} -->
+    em vez de no código
+  - Auxiliam na **criação de mapas/fases/cenários, eventos, interação,
+    sons e gráficos** <!-- {.alternate-color} -->
+- Muitas vezes **não é necessário programar**
 - Baixa flexibilidade e pouco controle sobre o que se pode ser feito
+  1. ### RPG Maker MV<br>(RPG tipo Snes) <!-- {ol:.card-list.cover} -->
+     ![](../../images/rpgmaker-editor.jpg) <!-- {style="height: 120px"} -->
+  1. ### EF-12 ou Mugen<br>(jogos de luta)
+     ![](../../images/mugen.jpg) <!-- {style="height: 120px"} -->
+  1. ### Game Maker<br>(2D em geral)
+     ![](../../images/gamemaker.jpg) <!-- {style="height: 120px"} -->
+  1. ### Editor de Mapas<br>do Dota 2 (RTS)
+     ![](../../images/dota2-editor.jpg) <!-- {style="height: 120px"} -->
+
+
+*[RTS]: Real-time Strategy*
 
 ---
-## _Makers_: **Exemplos**
-
-- **RPG Maker VX Ace** (demonstração)
-  - Para criar... RPGs ;)
-- Mugen
-  - Para jogos de luta
-- Game Maker
-  - Para jogos 2D em geral
-- Editor de Mapas do Warcraft
-  - Para jogos que se baseiem na mecânica <abbr title="Real-time Strategy">RTS</abbr>
+<!-- {"fullPageElement": "#rpg-maker-speed-mapping", "playMediaOnActivation": "#rpg-maker-speed-mapping"} -->
+<video src="https://fegemo.github.io/cefet-front-end-large-assets/videos/rpgmaker-speed.mp4" id="rpg-maker-speed-mapping"></video>
 
 ---
+<!-- {"layout": "regular"} -->
 ## _Makers_: **Atividades/Desafios típicos(as)**
 
-1. Como criar uma narrativa interessante e envolvente?
-1. Como criar um sistema de batalhas personalizado?
-1. Como manter um estilo visual consistente e convincente?
-1. Como criar uma <abbr title="Head-up display">HUD</abbr> com boa usabilidade?
-1. Como criar um ambiente imersivo?
+1. Como criar uma **narrativa interessante** e envolvente? <!-- {ol:.bulleted} -->
+1. Como criar um **sistema de batalhas personalizado**?
+1. Como manter um estilo **visual consistente** e convincente?
+1. Como criar uma HUD com **boa usabilidade**?
+1. Como criar um **ambiente imersivo**?
 
----
+*[HUD]: Head-up Display*
+
 ## _Makers_: **Veredito**
 ### Perfeito para quem quer **focar em conteúdo** ou **começar a desenvolver**
 
 ---
-# Programando **APIs Gráficas** diretamente
+<!-- {"layout": "section-header", "slideClass": "apis-graficas"} -->
+# Programando<br>**APIs Gráficas**<br>diretamente
+
+1. O que são
+1. Exemplos
+1. Dia a dia
+1. Como usar?
 
 ---
-## APIs Gráficas: **O que são?**
+<!-- {"layout": "regular"} -->
+# APIs Gráficas: **O que são?**
 
 - O nível mais baixo - onde se está mais próximo do _hardware_
 - **Menor produtividade**, maior conhecimento sobre todo o funcionamento do jogo
 - **Maior flexibilidade e controle** sobre o que pode ser feito
 - Precisa-se ter "preocupações de baixo nível", como por exemplo gerenciamento
   de memória
-- Possibilita ao programador compreender tudo o que está acontecendo
+- Possibilita ao programador compreender tudo o que está acontecendo <!-- {li:.bullet} -->
+  1. ### Aberto, multiplataforma <!-- {ol:.bullet.card-list.cover style="margin-top: 1em;"} -->
+     ![](../../images/opengl-logo.png) <!-- {style="height: 80px"} -->
+  1. ### Proprietário, Windows
+     ![](../../images/directx-logo.png) <!-- {style="height: 80px"} -->
+  1. ### Aberto, web
+     ![](../../images/canvas-logo.png) <!-- {style="height: 80px"} -->
+
 
 ---
-## APIs Gráficas: **Atividades/Desafios típicos(as)**
+<!-- {"layout": "regular"} -->
+# APIs Gráficas: **Atividades/Desafios típicos(as)**
 
-1. Como fazer um personagem mexer as pernas ao andar?
-1. Como gerenciar diversos tipos de imagens para fazer animações de personagens,
-  efeitos visuais (_e.g._, explosões), cenário?
-1. Como desenhar o mesmo personagem várias vezes, mas ocupando espaço de RAM
-  para apenas um?
-1. Como fazer com que o jogo execute na mesma velocidade em todos computadores?
-1. Como saber se um tiro acertou um inimigo?
-1. Como gerenciar o uso da memória (_e.g._, alocação e desalocação)?
-
----
-## APIs Gráficas: **Exemplos**
-
-- **OpenGL** (demonstração)
-  - Padrão aberto, multiplataforma
-- DirectX
-  - Proprietário, Microsoft
-- Java2D
+1. Como fazer um **personagem mexer as pernas** ao andar? <!-- {ol:.bulleted} -->
+1. Como gerenciar diversos tipos de imagens para fazer **animações
+   de personagens**, **efeitos visuais** (_e.g._, explosões), cenário?
+1. Como desenhar o mesmo personagem várias vezes, mas ocupando **espaço de RAM**
+   para apenas um?
+1. Como fazer com que o jogo **execute na mesma velocidade** em todos computadores?
+1. Como saber se um **tiro acertou** um inimigo?
+1. Como **gerenciar o uso da memória** (_e.g._, alocação e desalocação) da
+   maneira mais eficiente?
 
 ---
-## APIs Gráficas: **Como usar?**
+<!-- {"layout": "regular"} -->
+# APIs Gráficas: **Como usar?**
 
 - A API gráfica fornece apenas meios para se **desenhar primitivas geométricas
   na tela**
@@ -221,24 +307,32 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
   ```
 
 ---
+<!-- {"state": "emphatic"} -->
 ## APIs Gráficas: **Veredito**
 ### Perfeito para **programador** que não quer "usar a cueca de **terceiros**"
 ... e quer deter conhecimento e controle sobre todo o processo
 
 ---
+<!-- {"layout": "section-header", "slideClass": "frameworks"} -->
 # Usando **_frameworks_** (bibliotecas)
 
+1. O que são
+1. Dia a dia
+1. Exemplos
+1. Veredito
+
 ---
-## _Frameworks_: **O que são?**
+<!-- {"layout": "regular"} -->
+# _Frameworks_: **O que são?**
 
 - Nível mais alto que APIs gráficas, **proveem facilidades** não encontradas
   nelas, como:
   - Carregar imagens e áudio em vários formatos
   - Multiplataforma (em algum nível)
   - Comandos de interação
-  - <figure class="sprite" id="megaman">
-      <img src="../../images/sprite-megaman.png">
-    </figure>
+  - ::: figure .sprite.push-right width: 60px; height: 60px;
+    ![](../../images/sprite-megaman.png) <!-- {p:.no-margin} -->
+    :::
     ![right](../../images/seta-direita.png)
     ![right](../../images/sprite-megaman.png)
     Animações de **_sprites_**
@@ -247,20 +341,22 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
   - Classes para mapas, fases, entidades
 
 ---
-## _Frameworks_: **Atividades/Desafios típicos(as)**
+<!-- {"layout": "regular"} -->
+# _Frameworks_: **Atividades/Desafios típicos(as)**
 
-1. Como modelar minhas classes (_e.g._, em Java) de forma que os personagens
-  possam ter diferentes profissões ao longo do jogo?
-1. Como estabelecer uma hierarquia dos objetos de uma cena de jogo (_e.g._,
-  ao mexer a mão, a espada acompanha)
-1. Como posso determinar quais as imagens e sons para pré-carregar antes de
-  cada fase?
-1. Como posso usar arquivos .txt para descrever as fases do jogo (_e.g._,
-  `fase1.txt`, `fase2.txt` etc.)?
-1. Como carregar modelos 3D em diferentes formatos?
-1. Como possibilitar que não-programadores possam criar conteúdo também?
+1. Como **modelar classes** (_e.g._, em Java) de forma que os personagens <!-- {ol:.bulleted} -->
+   possam ter diferentes profissões ao longo do jogo?
+1. Como estabelecer uma **hierarquia dos objetos** de uma cena de jogo (_e.g._,
+   ao mexer a mão, a espada acompanha)
+1. Como posso determinar quais as **imagens e sons para pré-carregar** antes de
+   cada fase?
+1. Como posso usar arquivos .txt para **descrever as fases** do jogo (_e.g._,
+   `fase1.txt`, `fase2.txt` etc.)?
+1. Como carregar **modelos 3D** em diferentes formatos?
+1. Como possibilitar que **não-programadores possam criar** conteúdo também?
 
 ---
+<!-- {"layout": "regular"} -->
 ## _Frameworks_: **Exemplos**
 
 - Phaser ([site](http://phaser.io/))
@@ -268,25 +364,37 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
 - LibGDX ([site](https://libgdx.badlogicgames.com/index.html))
   - Java, multiplataforma, 2D/3D, Audio, física simples, gráficos, animações
 - Pygame ([site](http://www.pygame.org/hifi.html))
-  - Python, multios, 2D/3D, ~~Audio?, física?~~, gráficos, animações
-- <abbr title="Lightweight Java Game Library 3">LWJGL3</abbr> ([site](http://www.lwjgl.org/))
-  - Java, multios, 2D/3D, Audio, ~~física~~, gráficos, ~~animações~~
+  - Python, multios, 2D/3D, Audio, gráficos, animações
+- LWJGL3 ([site](http://www.lwjgl.org/))
+  - Java, multios, 2D/3D, Audio, gráficos
+- MonoGame ([site](http://www.monogame.org/))
+  - C#, multios, 2D/3D, Audio, gráficos
+
+*[LWJGL3]: Lightweight Java Game Library 3*
 
 ---
+<!-- {"state": "emphatic"} -->
 ## _Frameworks_: **Veredito**
 ### Perfeito para **programadores** que querem se **manter no controle**, mas **não querem reinventar a roda**
 
 ---
-# Dominando **_game engines_** (motores)
+<!-- {"layout": "section-header", "slideClass": "engines"} -->
+# Dominando<br>**_game engines_** (motores)
+
+1. O que são
+1. Dia a dia
+1. Exemplos
+1. Veredito
 
 ---
-## _Game Engines_: **O que são?**
+<!-- {"layout": "regular"} -->
+# _Game Engines_: **O que são?**
 
 - Ferramentas poderosas de criação de jogos, contando com muitas
   funcionalidades
 - Objetivo: oferecer a implementação de rotinas sempre presentes, como:
   - **Grafo de cena**
-  - **Importação** de imagens, audio, modelos 3d, animações
+  - **Importação** de imagens, audio, modelos 3D, animações
   - **Movimentação e animação** de personagens
   - Arquitetura de **redes**
   - Motor de **física** completo
@@ -296,43 +404,49 @@ Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-a
   - Linguagem de **_scripting_**
 
 ---
-## _Game Engines_: **Atividades/Desafios típicos(as)**
+<!-- {"layout": "regular"} -->
+# _Game Engines_: **Atividades/Desafios típicos(as)**
 
-1. Como programar o comportamento dos <abbr title="Non-player characters">NPCs</abbr>
-  de forma que eles usem seus sentidos (visão, audição)?
-1. Como fazer com que um personagem possa atirar e saltar ao mesmo tempo?
-1. Como animar um personagem para fazer algo que ele não estava "preparado"?
+1. Como programar o **comportamento dos NPCs**
+   de forma que eles **usem seus sentidos** (visão, audição)?
+1. Como fazer com que um personagem possa **atirar e saltar ao mesmo tempo**?
+1. Como **animar** um personagem para fazer **algo que ele não estava "preparado"**?
 1. Como tirar proveito dos recursos da placa de vídeo para deixar o
-  jogo super fotorrealista?
-1. Como estabelecer um protocolo de rede para jogos multi-jogador?
-1. Como fazer um inimigo perseguir o personagem do jogador?
+   jogo **super fotorrealista**?
+1. Como estabelecer um **protocolo de rede** para jogos multi-jogador?
+1. Como fazer um inimigo **planejar um ataque** inteligente ao personagem?
 
+*[NPCs]: Non-playable characters*
 ---
-## _Game Engines_: **Exemplos**
+<!-- {"layout": "regular"} -->
+# _Game Engines_: **Exemplos**
 
-- Unity3D ([site](http://unity3d.com/))
-  - C# e JavaScript, multiplataforma, versão gratuita
-- Unreal Engine ([site](https://www.unrealengine.com/what-is-unreal-engine-4))
-  - C++, multiplataforma, versão gratuita
+- ![](../../images/unity-editor-hex.png) <!-- {.push-right style="width: 300px;"} --> <!-- {ul:.full-width} -->
+  Unity3D ([site](http://unity3d.com/)) *➡️* <!-- {.push-right} -->
+  - C#, multiplataforma, versão gratuita
 - jMonkeyEngine ([site](http://jmonkeyengine.org/))
   - Java, multios, gratuita
-- Starling ([site](http://gamua.com/starling/))
-  - ActionScript, multiplataforma, gratuita
+- PlayCanvas ([site](https://playcanvas.com/))
+  - JavaScript, web, versão gratuita
+- ![](../../images/unreal-engine-editor.jpg) <!-- {.push-right style="width: 300px;"} -->
+  Unreal Engine ([site](https://www.unrealengine.com/what-is-unreal-engine-4)) *➡️* <!-- {.push-right} -->
+  - C++, multiplataforma, versão gratuita
+- Lumberyard ([site](http://gamua.com/starling/))
+  - C++ ou Lua, multiplataforma, gratuita
 
 ---
-## _Game Engines_: **Veredito**
+<!-- {"state": "emphatic"} -->
+# _Game Engines_: **Veredito**
 ### Perfeito para **equipes experientes** em busca de **resultados profissionais**
 
 ---
-<!--
-backdrop: orc-progress-3ds
--->
-
+<!-- {"backdrop": "orc-progress-3ds"} -->
 # Ferramentas Acessórias
 ## Que **não são exclusivas** para desenvolver jogos
 
 ---
-## Ferramentas Acessórias
+<!-- {"layout": "regular"} -->
+# Ferramentas Acessórias
 
 - São aquelas que **auxiliam** e são muitas vezes necessárias para desenvolver
   jogos
