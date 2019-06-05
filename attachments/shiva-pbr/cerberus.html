@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.shiva-engine.com/webdemo/Cerberus/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    
+    <meta name="description" content="">
+    <title>Cerberus</title>
+    <style>
+      body 
+      {
+          overflow-x:hidden;
+      }    
+      .shiva 
+      { 
+        padding-right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        display: block; 
+      }
+      div.shiva 
+      { 
+        margin-left: auto;
+        margin-right: auto;        
+        text-align: center; 
+        font-family: arial; 
+        color: #646464; 
+      }
+      /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+      canvas.shiva 
+      { 
+        border: 0px none; 
+      }
+
+      .shiva-progress-outer
+      {  
+        text-align: left; 
+        height: 4px;
+        background: #202020; 
+        border: 1px solid #202020;
+      }
+      .shiva-progress-inner
+      {
+        height: 100%;
+        background: #606060; 
+      }
+
+      .error
+      {
+          position: absolute; top: 500px; width: 100%;
+          font-family: Helvetica, Arial, Sans;
+          color: #f11;
+          line-height:18px;
+          font-size:15px;
+          text-align:center;
+      }
+      .error a, .error a:hover, .error a:active
+      {
+          color: #f99;
+          line-height:18px;
+          font-size:15px;
+          text-align:center;
+          text-decoration:none;
+      }      
+
+    </style>
+  </head>
+  <body bgcolor="0x000000">
+
+    <div class="shiva">
+      <div style="position: absolute; top: 10px; width: 100%; height: 720px;">
+        <table style="width: 100%; height: 100%;">
+          <tbody><tr height="40%"><td></td></tr>
+          <tr>
+            <td align="center">
+              <img id="picture" src="./cerberus_files/Cerberus.png" hidden="">
+              <br>
+              <div class="shiva-progress-outer" id="progress.outer" style="width: 128px;" hidden="">
+                <div class="shiva-progress-inner" id="progress.inner" style="width: 128px;" hidden="">
+              </div>
+            </div></td>
+          </tr>
+          <tr height="40%"><td></td></tr>
+        </tbody></table>
+      </div>    
+    </div>
+
+    <div class="shiva">
+      <div style="position: absolute; top: 10px; width: 100%;">
+        <canvas class="shiva" id="canvas" width="1280" height="720" style="width: 1280px; height: 720px; background-color: black;" oncontextmenu="event.preventDefault()"></canvas>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      // connect to canvas
+      if ( false && window.devicePixelRatio ) {
+        canvas.width = canvas.width*window.devicePixelRatio;
+        canvas.height = canvas.height*window.devicePixelRatio;
+      }
+      var Module = 
+      {
+        preRun: [],
+        postRun: [],
+        printErr: function(text) 
+        {
+          text = Array.prototype.slice.call(arguments).join(' ');
+          if (0) { // XXX disabled for safety typeof dump == 'function') {
+            dump(text + '\n'); // fast, straight to the real console
+          } else {
+            console.log(text);
+          }
+        },
+
+        canvas: document.getElementById('canvas'),
+
+        downloadStarted: false,
+
+        TOTAL_MEMORY: 134217728,
+        
+        setStatus: function(text) 
+        {
+          if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+          if (text === Module.setStatus.text) return;
+          var pictureElement       = document.getElementById('picture');
+          var progressOuterElement = document.getElementById('progress.outer');
+          var progressInnerElement = document.getElementById('progress.inner');
+          if (pictureElement &&
+              progressOuterElement &&
+              progressInnerElement )
+          {
+            var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+            if (m)
+            {
+              text = m[1];
+              progressInnerElement.style.width  = parseInt(m[2]) / parseInt(m[4]) * parseInt(progressOuterElement.style.width) + 'px';
+              progressInnerElement.hidden       = false;
+              progressOuterElement.hidden       = false;
+              pictureElement.hidden             = false;
+              Module.downloadStarted            = true;
+            } 
+            else 
+            {
+              progressInnerElement.hidden = true;
+              progressOuterElement.hidden = true;
+              pictureElement.hidden       = Module.downloadStarted;
+            }
+          }
+        },
+
+        checkGL: function () 
+        {
+            gl = null;
+            if (!window.WebGLRenderingContext) 
+            {
+                document.write ('<div class="error">Your browser does not HTML5/WebGL<br>More information under <a href="http://get.webgl.org">get.webgl.org</a></div>');
+                return 1;
+            }
+            try { gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl"); }
+            catch(e) {}
+            if (!gl) 
+            {
+                document.write ('<div class="error">WebGL could not be initialized, but is required for this 3D content<br>More information under <a href="http://get.webgl.org/troubleshooting">get.webgl.org/troubleshooting</a></div>');
+                gl = null;
+                return 2;
+            }
+        }
+      };
+      if (!Module.checkGL()) { Module.setStatus('Downloading...'); }
+    </script>
+    <script async="" type="text/javascript" src="./cerberus_files/Cerberus.js"></script>
+
+    <!-- js detection -->
+    <noscript>
+      &lt;div class="error"&gt;
+        Your browser either does not support Javascript or it has been deactivated&lt;br&gt;Javascript is required and must be enabled to view this content
+      &lt;/div&gt;
+    </noscript>
+    <!-- js detection end --> 
+
+  
+
+</body><object id="589ac88a-6978-a390-7948-d8821ab2bca2" width="0" height="0" type="application/gas-events-uni"></object></html>

@@ -453,7 +453,7 @@ class GuardinhaFSM:
   - bit 1: kit HP pegado
   - bit 2: arma pegada
   - bit 3: inimigo morto
-- Podemos usar busca em grafo (Dijkstra, A* etc.)
+- Podemos usar busca em grafo (Dijkstra)
 ---
 # Referências
 
