@@ -4,7 +4,7 @@
 
 ---
 <!-- {"state": "emphatic"} -->
-![Um velocirraptor filosofando: gosto de criar jogos, mas não sei o que eles comem](../../images/philosoraptor-o-que-jogos-comem.jpg)
+![Um velocirraptor filosofando: gosto de criar jogos, mas não sei o que eles comem](../../images/philosoraptor-o-que-jogos-comem.jpg) <!-- {style="max-height: 600px;"} -->
 
 ---
 <!-- {"layout": "regular"} -->
@@ -94,11 +94,11 @@
 ---
 # Mais tarde em 2010...
 
-_"A **Unity Technologies** lançou a versão 2.6 do seu motor de jogos
-multiplataforma e tornou o seu uso gratuito para desenvolvedores indie."_
-
-_"**Qualquer pessoa pode instalar** e começar a desenvolver jogos
-imediatamente para **PC, Mac e na web**"_
+> A **Unity Technologies** lançou a versão 2.6 do seu motor de jogos
+> multiplataforma e tornou o seu uso gratuito para desenvolvedores indie.
+>
+> **Qualquer pessoa pode instalar** e começar a desenvolver jogos
+> imediatamente para **PC, Mac e na web**
 
 Notícia histórica em [geek.com](http://www.geek.com/games/unity-2-6-released-and-is-now-free-to-use-955771/)
 
@@ -181,7 +181,7 @@ Redes
 
 ---
 
-<iframe width="1066" height="600" frameborder="0" src="https://www.mindmeister.com/maps/public_map_shell/573906250/por-onde-quero-come-ar?width=1066&height=600&z=1.1&presentation=1" scrolling="no" style="overflow: hidden; margin-bottom: 5px;"></iframe>
+<iframe width="1000" height="580" frameborder="0" src="https://www.mindmeister.com/maps/public_map_shell/573906250/por-onde-quero-come-ar?width=1066&height=600&z=1.1&presentation=1" scrolling="no" style="overflow: hidden; margin-bottom: 5px;"></iframe>
 
 ---
 <!-- {"layout": "centered"} -->
@@ -228,8 +228,8 @@ Redes
 *[RTS]: Real-time Strategy*
 
 ---
-<!-- {"fullPageElement": "#rpg-maker-speed-mapping", "playMediaOnActivation": "#rpg-maker-speed-mapping"} -->
-<video src="https://fegemo.github.io/cefet-front-end-large-assets/videos/rpgmaker-speed.mp4" id="rpg-maker-speed-mapping"></video>
+<!-- {"fullPageElement": "#rpg-maker-speed-mapping", "playMediaOnActivation": {"selector": "#rpg-maker-speed-mapping", "delay": 0 }} -->
+<video src="https://fegemo.github.io/cefet-front-end-large-assets/videos/rpgmaker-speed.mp4" id="rpg-maker-speed-mapping" muted></video>
 
 ---
 <!-- {"layout": "regular"} -->
@@ -243,8 +243,8 @@ Redes
 
 *[HUD]: Head-up Display*
 
-## _Makers_: **Veredito**
-### Perfeito para quem quer **focar em conteúdo** ou **começar a desenvolver**
+## _Makers_: **Veredito** <!-- {h2:.bullet} -->
+### Perfeito para quem quer **focar em conteúdo** ou **começar a desenvolver** <!-- {h3:.bullet} -->
 
 ---
 <!-- {"layout": "section-header", "slideClass": "apis-graficas"} -->
