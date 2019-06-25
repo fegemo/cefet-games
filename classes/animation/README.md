@@ -1,84 +1,78 @@
-<!--
-backdrop: max-payne3
--->
-
+<!-- {"layout": "title"} -->
 # Animação de Personagens
+
 ---
+<!-- {"layout": "centered-horizontal"} -->
 # Roteiro
 
 1. Tipos de Animação
-  - Animação em Células
-  - Animação Hierárquica Rígida (_skeletal_)
-  - Animação por Vértice (/_morph targets_)
-  - Animação de Pele
+   - Animação em Células
+   - Animação Hierárquica Rígida (_skeletal_)
+   - Animação por Vértice (/_morph targets_)
+   - Animação de Pele
 2. Animação de Pele (_skinning_)
-  - Mesclagem de Clipes
-  - Redirecionamento de Animação (_retargeting_)
-  - Animação Procedural
+   - Mesclagem de Clipes
+   - Redirecionamento de Animação (_retargeting_)
+   - Animação Procedural
 
 ---
-## Animação
+<!-- {"layout": "regular"} -->
+# Animação
 
 - Animação não é a mesma coisa que movimento
+
+  **Movimento** <!-- {.alternate-color} -->
+  ~ Alterar posição <span class="math">(x,y,z)</span> do centro de gravidade de um objeto ao longo do tempo
+
+  **Animação**
+  ~ Alterar representação interna do objeto ao longo do tempo
 - A maior parte dos jogos centra nos personagens
   - Tipicamente, humanos, humanóides às vezes animais ou aliens
   - Esses personagens precisam se mover de forma **fluida, orgânica, verossímel**
   - Isso é mais difícil do que animar objetos rígidos (_e.g._, uma bola rolando)
-- Mesmo os objetos rígidos podem fazer uso do sistema de animação de personagens (_e.g._, um tanque de guerra)
 
 ---
-# Tipos de Animação de Personagens
+<!-- {"layout": "regular"} -->
+# Tipo: **Animação por Células**
 
----
-## Tipos de Animação de Personagens
-
-- Animação por Células (ou de _sprites_)
-- Animações Hieráquicas Rígidas (_skeletal animation_)
-- Animações por Vértice/_Morph Targets_
-- Animações de Pele (_skinned animation_)
-
----
-## Tipo: **Animação por Células**
-
-[![](../../images/sprite-toejam.png)](http://www.spriters-resource.com/fullview/25009/)
-- Ilusão de movimento produzida pela **alternância de imagens pré-renderizadas**, tipicamente desenhadas por artistas **quadro a quadro**
+![](../../images/sprite-toejam.png) <!-- {p:.centered} -->
+- Ilusão de movimento produzida pela **alternância de imagens
+  pré-renderizadas**, tipicamente desenhadas por artistas **quadro a quadro**
 - Um personagem pode ter vários **clipes de animação**:
   - À toa (_idle_), andando, correndo, saltando etc.
-  - Alguns **clipes fazem _loop_** (_e.g._, andando), outros não (_e.g._, morrendo)
+  - Alguns **clipes fazem _loop_** (_e.g._, andando), outros não
+    (_e.g._, morrendo)
 
 ---
-## Tipo: **Animação Hierárquica Rígida** (_Skeletal_)
+<!-- {"layout": "regular"} -->
+# Tipo: **Animação Hierárquica Rígida** (_Skeletal_)
 
-- ![right](../../images/animation-hierarchical-rigid.png)
+- ![right](../../images/animation-hierarchical-rigid.png) <!-- {ul:.bullet} -->
   Personagens são modelados como um conjunto de partes rígidas
   - Quando começamos com jogos 3D, esta foi a "primeira" técnica (Doom ainda usava _sprites_)
 - **Partes dispostas em hierarquia** (partindo da pelvis)
-  - ![cright](../../images/animation-joint-crack.png)
+  - ![cright](../../images/animation-joint-crack.png) <!-- {ul^0:.bulleted} -->
     Problema: "rachaduras" nas juntas
   - Funciona bem para robôs e maquinário, construídos de partes rígidas
 
 ---
-## Animação _Skeletal_
+<!-- {"layout": "regular"} -->
+# Animação _Skeletal_
 
 - Apesar de falarmos em ossos, **o que importa mesmo são as juntas (_joints_)**
 - Inicialmente proposto para personagens 3D, mas hoje em dia estamos fazendo também em 2D!
-  <ul class="multi-column-inline-list-2">
-    <li>
-      <figure class="polaroid item-200h">
-        <img src="../../images/2d-bones-animation.gif">
-        <figcaption>Avengers: Age Of Ultron – Global Chaos (2D)</figcaption>
-      </figure>
-    </li>
-    <li>
-      <figure class="polaroid item-200h">
-        <img src="../../images/3d-bones-animation-mario.gif">
-        <figcaption>Super Mario 64 (3D)</figcaption>
-      </figure>
-    </li>
-  </ul>
+  - ::: figure .polaroid.item-300w
+    ![](../../images/2d-bones-animation.gif) <!-- {ul^0:.multi-column-inline-list-2.no-bullet} --> <!-- {.full-width} -->
+    <figcaption>Avengers: Age Of Ultron – Global Chaos (2D)</figcaption>
+    :::
+  - ::: figure .polaroid.item-300w
+    ![](../../images/3d-bones-animation-mario.gif) <!-- {style="width: 140px;"} -->
+    <figcaption>Super Mario 64 (3D)</figcaption>
+    :::
 
 ---
-## **Poses** do Esqueleto
+<!-- {"layout": "regular"} -->
+# **Poses** do Esqueleto
 
 - A **pose de uma junta** é definida com relação à junta pai por:
   - Posição
@@ -88,27 +82,30 @@ backdrop: max-payne3
 - **Uma pose de um modelo** é formada pelo **conjunto das poses** relativas **de cada osso** (junta)
 
 ---
-## **Poses Chave** e **Clipes** de Animação
+<!-- {"layout": "regular"} -->
+# **Poses Chave** e **Clipes** de Animação
 
 - ![right](../../images/assassins-creed-keypose.jpg)
   Uma **pose chave** é uma pose que representa um extremo de um movimento
 - Um **clipe** de animação é formado por uma **sequência de poses chave que são interpoladas**
 
 ---
-## Interpolação de Pose
+<!-- {"layout": "regular"} -->
+# Interpolação de Pose
 
 - **Clipe**: sequência de poses nos tempos <span class="math">t_1, t_2, ..., t_n</span>
 - Para cada tempo <span class="math">t</span> tal que <span class="math">t_i < t < t_j</span>:
   - O motor de animação pode interpolar entre poses definidas em <span class="math">t_i < t < t_j</span>
   - A interpolação gera as poses intermediárias
-- <figure class="polaroid item-250w right">
-    <img src="../../images/2d-bones-robot-dragonbones.png">
-    <figcaption>[Exemplo](http://dragonbones.github.io/demo.html) usando motor de animação DragonBones</figcaption>
-  </figure>
+- ::: figure .polaroid.item-250w.push-right
+    ![](../../images/2d-bones-robot-dragonbones.png) <!-- {.full-width} -->
+    <figcaption><a href="http://dragonbones.github.io/demo.html">Exemplo</a> usando motor de animação DragonBones</figcaption>
+  :::
   Já que podemos interpolar poses, podemos executar animações em qualquer velocidade, ou mesmo ao contrário
 
 ---
-## Tipo: **Animação por Vértice/_Morph Targets_**
+<!-- {"layout": "regular"} -->
+# Tipo: **Animação por Vértice/_Morph Targets_**
 
 - Possibilidade para deformar a malha poligonal
   - Impossível com a animação rígida
@@ -119,7 +116,8 @@ backdrop: max-payne3
   - Consegue-se muitas possibilidades usando-se variação de pesos da face neutra + (peso x _blendshape_)
 
 ---
-## Como funcionam _Morph Targets_/_Blendshapes_
+<!-- {"layout": "regular"} -->
+# Como funcionam _Morph Targets_/_Blendshapes_
 
 - ![right](../../images/blendshape-face.png)
   Dadas duas poses (neutra + outra), computa-se os vetores diferença
@@ -129,7 +127,8 @@ backdrop: max-payne3
     negativos em um rosto triste
 
 ---
-## Tipo: **Animação de Pele (_skinned animation_)**
+<!-- {"layout": "regular"} -->
+# Tipo: **Animação de Pele (_skinned animation_)**
 
 - Método **híbrido entre animação por vértice e por ossos**
   - Existe um esqueleto, mas a malha (pele) deforma para acompanhá-lo
@@ -137,7 +136,8 @@ backdrop: max-payne3
 - É a técnica mais usada tanto em jogos (tempo real) quanto em animações
 
 ---
-## _Skinning_
+<!-- {"layout": "regular"} -->
+# _Skinning_
 
 - A pele é apenas uma malha de triângulos associada ao esqueleto
 - Cada malha possui:
@@ -145,19 +145,21 @@ backdrop: max-payne3
   - Para cada vértice na malha:
     - Um peso para cada osso: quanta influência ele tem neste vértice
 
-![](../../images/skinning1.png)
+![](../../images/skinning1.png) <!-- {p:.centered} -->
 
 ---
-## _Skinning_ (2)
+<!-- {"layout": "regular"} -->
+# _Skinning_ (2)
 
 - Coordenadas dos vértices da pele são **definidas em relação ao osso**
   - Primeiramente, obtém-se a matriz de transformação do osso
   - Essa matriz é, então, usada em cada um dos vértices da malha da pele
 
-![](../../images/skinning2.png)
+![](../../images/skinning2.png) <!-- {p:.centered} -->
 
 ---
-## _Skinning_ (3)
+<!-- {"layout": "regular"} -->
+# _Skinning_ (3)
 
 - Em geral, vértices da pele podem estar associados a mais de um osso
 
@@ -170,21 +172,22 @@ backdrop: max-payne3
 </figure>
 
 ---
-## Uso de _skinning_ **em 2D**
+<!-- {"layout": "regular"} -->
+# Uso de _skinning_ **em 2D**
 
-<video width="800" height="308" controls>
+<video width="800" height="308" controls style="margin: 0 auto;">
   <source src="../../videos/creature-kestrelmoon-raptor.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
   Seu navegador não suporta o elemento <code>video</code>.
 </video>
 
-- Feito no [Creature do Kestrelmoon](http://creature.kestrelmoon.com/index.html)
-- Outros:
+- Programas famosos:
   - [Spriter](https://brashmonkey.com/) (originalmente _"kickstarted"_)
   - [Spine](http://esotericsoftware.com/) (dos caras que revoltaram com Spriter)
   - [DragonBones](http://esotericsoftware.com/)
 
 ---
-## **Mesclagem de Clipes**
+<!-- {"layout": "regular"} -->
+# **Mesclagem de Clipes**
 
 - Dados dois clipes de animação, podemos mesclá-los em um novo clipe
 - Usado par **combinar duas ou mais animações** (_e.g._, pulando e atirando) para não precisar fazer as animações combinadas (_e.g._, atirando ao pular)
@@ -194,16 +197,18 @@ backdrop: max-payne3
   - Mirando para esquerda + Mirando para direita = mirando em qualquer ponto entre esses extremos
 
 ---
-## Mesclagem de Clipes
+<!-- {"layout": "regular"} -->
+# Mesclagem de Clipes
 
 - Método mais comum é a interpolação linear
   - Computa-se as poses para cada animação no tempo corrente e interpola entre elas
   - Apenas precisamos de um peso que vai de 0 a 1 (de uma animação a outra)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-ec82SKcjkE?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-ec82SKcjkE?rel=0" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
 
 ---
-## Redirecionamento de Animação (_retargeting_)
+<!-- {"layout": "regular"} -->
+# Redirecionamento de Animação (_retargeting_)
 
 - Tipicamente, um clipe é feito para um único esqueleto
 - Contudo, se 2 esqueletos forem suficientemente parecidos, animação feita para um pode ser aproveitada pelo outro
@@ -212,12 +217,14 @@ backdrop: max-payne3
 - Este é um _hot topic_ da animação de personagens!
 
 ---
-## _Animation Retarging_ no **Mecanim da Unity**
+<!-- {"layout": "regular"} -->
+# _Animation Retarging_ no **Mecanim da Unity**
 
-<iframe width="480" height="360" src="https://www.youtube.com/embed/A9BikRKRG0I?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/A9BikRKRG0I?rel=0" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
 
 ---
-## Animações Procedurais
+<!-- {"layout": "regular"} -->
+# Animações Procedurais
 
 - Gerada em tempo de execução em vez de ditada por dados capturados ou exportados de uma ferramenta
   - Exemplo: **árvores e vegetação** podem conter ossos, mas serem animadas conforme o vento
@@ -227,16 +234,18 @@ backdrop: max-payne3
   - Comportamental (simulação de sistema nervoso)
 
 ---
-## Max Payne 3
+# Max Payne 3
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/bgGcsjCoPSI?rel=0" frameborder="0" allowfullscreen></iframe>
-
----
-## Motor de Animação Procedural Euphoria
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/HauN98naZ9U?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/bgGcsjCoPSI?rel=0" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
 
 ---
+<!-- {"layout": "regular"} -->
+# Motor de Animação Procedural Euphoria
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/HauN98naZ9U?rel=0" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
+
+---
+<!-- {"layout": "centered"} -->
 # Referências
 
 - Livro _Game Engine Architecture, Second Edition_
