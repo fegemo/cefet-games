@@ -618,6 +618,9 @@ img[alt$="max"] {
 .item-grid-col figure {
   margin-top: 20px;
 }
+figure p {
+  margin: 0;
+}
 .item-180w,
 .item-180w > img {
   width: 180px;
@@ -1702,20 +1705,6 @@ ul.horizontal > li {
 .bespoke-slide[data-bespoke-backdrop="lod-tank"] > h1 {
   color: #60ff00;
 }
-.max-payne3.bespoke-backdrop-active {
-  background-image: url("../images/max-payne3.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-.bespoke-slide[data-bespoke-backdrop="max-payne3"] {
-  text-shadow: 3px 3px rgba(0,0,0,0.25), 2px 2px rgba(0,0,0,0.5), 1px 1px rgba(0,0,0,0.75);
-}
-.bespoke-slide[data-bespoke-backdrop="max-payne3"]> h1 {
-  color: #ff4900;
-}
 .the-incredible-machine.bespoke-backdrop-active {
   background-image: url("../images/the-incredible-machine.gif");
   background-size: cover;
@@ -2068,6 +2057,10 @@ ul.horizontal > li {
 .intro .rainbow-picture.layout-section-header::after {
   background-image: url("../images/rainbow-picture.jpg");
   animation: movingbg-x 20s ease-in-out 0s infinite alternate-reverse;
+}
+.animation .layout-title h1::before {
+  background-image: url("../images/max-payne3.jpg");
+  background-position: top center;
 }
 @-webkit-keyframes movingbg-x {
   from {
