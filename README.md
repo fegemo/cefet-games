@@ -8,15 +8,14 @@
 # Atividades Avaliativas
 
 - ~~Prova e Listas~~ (0 pontos!!!)
-- Aulas Práticas (24 pontos)
-- Trabalhos Práticos (76 pontos)
-  - [TP0][tp0] (3 pontos)
-  - [TP1][tp1] - Autogame (25 pontos)
-  - Projeto - Jogo Completo (35 pontos)
-  - Seminário sobre PCG (13 pontos)
+- Aulas Práticas (30 pontos)
+- Trabalhos Práticos (70 pontos)
+  - [TP0][tp0] - Aprendendo Git (3 pontos)
+  - [TP1][tp1] - RA 14,4 (27 pontos)
+  - Projeto - Jogo completo (40 pontos)
 
 [tp0]: http://fegemo.github.io/cefet-web/assignments/tp0/
-[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-autogame
+[tp1]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp1-ra-14-4/README.md
 [tp1-repo]: https://github.com/fegemo/cefet-games-meow-au
 [tp2]: https://github.com/fegemo/cefet-games/tree/master/assignments/tp2-meow-au-again
 [final]: https://github.com/fegemo/cefet-games/blob/master/assignments/final/README.md
