@@ -1,24 +1,17 @@
-<!--
-backdrop: zelda-wii-u
-bespokeEvent: bullets.disable
--->
-
+<!-- {"layout": "title"} -->
 # Introdução: História, Plataformas e Gêneros
-
 ## Baseadão nos slides do Prof. (Luiz) Chaimo(wicz) da UFMG
 
 ---
+<!-- {"layout": "centered"} -->
 # Roteiro
 
-1. História
+1. [História](#historia)
 1. Plataformas
 1. Gêneros
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- {"layout": "section-header", "slideHash": "historia", "slideClass": "historia"} -->
 # História
 
 ## O que precisamos saber?
@@ -28,9 +21,10 @@ bespokeState: checkpoint
 1. Por que algumas **empresas** tiveram **muito sucesso** e outras **fracassaram**?
 
 ---
-## Ancestrais dos Jogos Digitais
+<!-- {"layout": "regular"} -->
+# Ancestrais dos Jogos Digitais (1/2)
 
-- ![right](../../images/ancient-pinballs.png)
+- ![](../../images/ancient-pinballs.png) <!-- {.push-right} --> <!-- {ul:.full-width} -->
   Versões primitivas do **Pinball**
   - _Bagattelle_ (1800s)
   - _Whiffle_ (1931)
@@ -41,41 +35,53 @@ bespokeState: checkpoint
 - Eram jogos de azar: chegaram a ser proibido nos EUA
 
 ---
-## Ancestrais dos Jogos Digitais (2)
+<!-- {"layout": "regular"} -->
+# Ancestrais dos Jogos Digitais (2/2)
 
 - ![right](../../images/pinball-humpty-dumpty.png)
   _Humpty Dumpty_ (1947)
   - Uso de _flippers_, contagem de pontos
 - Jogos passam a exigir habilidade ao invés de simplesmente sorte
-- Apesar de ainda vista com maus olhos a indústria cresceu, com o aparecimento de vários pioneiros
+- Apesar de ainda vista com maus olhos a indústria cresceu, com o aparecimento
+  de vários pioneiros
   - _Gottleib, Williams, Bally, Midway_...
 
 ---
-## Os Primeiros Computadores
+<!-- {"layout": "regular"} -->
+# Os Primeiros Computadores (1/2)
 
 - Nas décadas 50 e 60, surgiram os primeiros computadores e
   eles estavam concentrados em **universidades** e **instalações militares**
 - Alguns estudantes, programadores, professores e pesquisadores "sangue-nos-olhos"
   tornavam seus **_mainframes_ em _video games_** nas horas vagas
-  <ul class="multi-column-inline-list-2">
-    <li>Tic Tac Toe (1952)
-        <figure class="polaroid">
-          <img src="../../images/tic-tac-toe.png" style="height: 180px;">
-          <figcaption>A. S. Douglas em um computador EDSAC (tubo de vácuo)</figcaption>
-        </figure>
-    </li>
-    <li>Tennis for two (1958)
-        <figure class="polaroid">
-          <img src="../../images/tennis-for-two.png" style="height: 180px;">
-          <figcaption>Willy Higginbotham em um osciloscópio conectado a um computador analógico</figcaption>
-        </figure>
-    </li>
-  </ul>
+  - Tic Tac Toe (1952) <!-- {ul^0:.multi-column-inline-list-2.no-bullet.center-aligned} -->
+    ::: figure .polaroid.light.item-200w margin: 0 auto; height: calc(100% - 34px);
+      ![](../../images/tic-tac-toe.png) <!-- {.full-width} -->
+      <figcaption>A. S. Douglas em um computador EDSAC (tubo de vácuo)</figcaption>
+    :::
+  - Tennis for two (1958)
+    ::: figure .polaroid.light.item-200w margin: 0 auto; height: calc(100% - 34px);
+      ![](../../images/tennis-for-two.png) <!-- {.full-width} -->
+      <figcaption>Willy Higginbotham em um osciloscópio conectado a um computador analógico</figcaption>
+    :::
+
 
 ---
-## Os Primeiros Computadores (2)
+<!-- {"layout": "regular"} -->
+# Os Primeiros Computadores (2/2)
 
-<ul class="multi-column-inline-list-2">
+- SpaceWar (1961 - 1962) <!-- {ul^0:.multi-column-inline-list-2.no-bullet.center-aligned.full-width} -->
+  ::: figure .polaroid.light.item-300w margin: 0 auto; height: calc(100% - 34px);
+    ![](../../images/spacewar.png) <!-- {.full-width} -->
+    <figcaption>Jogo <strong>SpaceWar</strong> contando com controles, torpedos e teletransporte</figcaption>
+  :::
+- Equipe do SpaceWar
+  ::: figure .polaroid.light.item-300w margin: 0 auto; height: calc(100% - 34px);
+    ![](../../images/spacewar-creators.png) <!-- {.full-width} -->
+    <figcaption>Feito para o PDP-11, em 6 meses, <strong>com 200 horas de programação</strong></figcaption>
+  :::
+
+<!-- <ul class="multi-column-inline-list-2">
   <li>SpaceWar (1961 - 1962)
       <figure class="polaroid">
         <img src="../../images/spacewar.png" style="height: 180px;">
@@ -88,7 +94,7 @@ bespokeState: checkpoint
         <figcaption>Feito para o PDP-11, em 6 meses, **com 200 horas de programação**</figcaption>
       </figure>
   </li>
-</ul>
+</ul> -->
 
 ---
 ## Linha do Tempo
