@@ -247,20 +247,42 @@ img[alt$="max"]
   align-items flex-start
   justify-content space-around
   figure
-    margin-top 20px
+    margin-top 5px
+
+// .grid-3x2
+//   grid-template-columns 1fr 1fr 1fr
+//   grid-template-rows 1fr 1fr
+//
+// .grid-item-1-1
+//   grid-row 1/2
+//   grid-column 1/2
+// .grid-item-2-1
+//   grid-row
 
 figure p
   margin 0
 
+.item-160w,
+.item-160w > img
+  width 160px
 .item-180w,
 .item-180w > img
   width 180px
 .item-200w,
 .item-200w > img
   width 200px
+.item-230w,
+.item-230w > img
+  width 230px
 .item-250w,
 .item-250w > img
   width 250px
+.item-260w,
+.item-260w > img
+  width 260px
+.item-270w,
+.item-270w > img
+  width 270px
 .item-300w,
 .item-300w > img
   width 300px
@@ -270,7 +292,8 @@ figure p
 // stylizes images like a polaroid photo
 .polaroid
   margin 0
-  border 18px solid white
+  border 18px solid #fff
+  outline 1px solid #eee
   box-shadow 3px 3px 2px gray
   background-color lighten(black, 7)
   color white
@@ -279,6 +302,8 @@ figure p
   text-align center
   &.light
     background-color darken(white, 20)
+  &.thinner
+    border-width 10px
   figcaption
     margin 0
     padding-top 5px
