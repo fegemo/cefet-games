@@ -7,8 +7,8 @@
 # Roteiro
 
 1. [História](#historia)
-1. ![Plataformas](#plataformas-e-generos)
-1. ![Gêneros de jogos](#plataformas-e-generos)
+1. [Plataformas](#plataformas-e-generos)
+1. [Gêneros de jogos](#plataformas-e-generos)
 
 ---
 <!-- {"layout": "section-header", "slideHash": "historia", "slideClass": "historia"} -->

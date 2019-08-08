@@ -112,23 +112,6 @@ for color, i in $checkpoint-slide-main-colors
 
 
 
-.intro
-  .layout-title h1::before
-    background-image url(../images/cg-area-art.jpg)
-
-  .conceitos-basicos.layout-section-header::after
-    background-image url(../images/cg-area-games.jpg)
-    animation movingbg-x 60s linear 0s infinite alternate-reverse
-
-  .pixels-gradient.layout-section-header::after
-    background-image url(../images/pixels-gradient.jpg)
-    background-repeat repeat
-    animation movingbg-x 20s ease-in-out 0s infinite alternate-reverse
-
-  .rainbow-picture.layout-section-header::after
-    background-image url(../images/rainbow-picture.jpg)
-    animation movingbg-x 20s ease-in-out 0s infinite alternate-reverse
-
 
 .intro
   .layout-title h1
@@ -139,6 +122,29 @@ for color, i in $checkpoint-slide-main-colors
     background-image url(../images/fliperama.jpg)
     background-size cover
     background-position right
+
+.d-graphics
+  .layout-title.bespoke-slide h1
+    color #ef7a02
+    background-color #ffffffaa
+    font-size 4em;
+    &::before
+      background-image url(../images/paper-mario-spritesheet.png)
+      background-position center center
+
+  .pratica-do-goomba.layout-section-header::after
+    background-image url(https://github.com/fegemo/cefet-games-goomba/raw/master/core/assets/result.gif)
+    background-size cover
+    image-rendering pixelated
+  .libgdx.layout-section-header::after
+    background-image url(../images/codigo-opengl.png)
+    background-size cover
+  .representacao-de-imagens.layout-section-header::after
+    background-image url(../images/vector-vs-raster.jpg)
+    background-size contain
+    background-position center center
+    background-repeat no-repeat
+
 
 .animation
   .layout-title h1
