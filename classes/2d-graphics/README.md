@@ -10,9 +10,9 @@ bespokeEvent: bullets.disable
 1. LibGDX: introdução
 1. Imagens discretas _vs._ contínuas
 1. Desenho de objetos 2D
-  - Texturas e atlas
-  - _Sprite Batching_
-  - _Sprites_ e _spritesheets_
+   - Texturas e atlas
+   - _Sprite Batching_
+   - _Sprites_ e _spritesheets_
 1. Prática Goombas
 <!--1. Desenho de cenários 2D
   - _Tiles_ e _tilesets_
@@ -21,8 +21,11 @@ bespokeEvent: bullets.disable
 -->
 
 ---
+<!-- { "layout": "section-header" } -->
 ![LibGDX](../../images/logo-libgdx.png)
+
 ---
+<!-- { "layout": "regular" } -->
 ## ![LibGDX](../../images/logo-libgdx.png)
 
 - Um _framework_ para desenvolvimento de jogos 2D/3D
@@ -33,50 +36,46 @@ bespokeEvent: bullets.disable
 - [Site oficial](https://libgdx.badlogicgames.com/)
 
 ---
-<!--
-  classes: floating-right-code
--->
+<!-- { "layout": "regular" } -->
+# Funcionamento da LibGDX
 
-## Funcionamento da LibGDX
-
-- Gameloop
-  - Já está devidamente implementado pelo _framework_
 - ```java
   public class MeuJogo implements
     ApplicationListener {
     public void create() { }
-    public void resize(int w,
-      int h) { }
+    public void resize(int w, int h) { }
     public void render() { }
     public void pause() { }
     public void resume() { }
     public void dispose() { }
   }
   ```
-  Basta **implementar `ApplicationListener`** ou herdar `ApplicationAdapter`:
+  <!-- {li:.push-right.no-bullet style="width: 530px;"} -->
+- Gameloop
+  - Já está devidamente implementado pelo _framework_ <!-- {ul^1:.full-width} -->
+- Basta **implementar `ApplicationListener`** ou herdar `ApplicationAdapter`:
   - `create()` é chamada 1x
   - `resize(w,h)` é chamada quando a tela muda de tamanho
   - `render()` é chamada sempre
 
-
 ---
-<!--
-classes: floating-left-code smaller-code
--->
+<!-- { "layout": "centered-horizontal" } -->
+# Ciclo de vida de uma aplicação LigGDX
 
-## Ciclo de vida de uma aplicação LigGDX
-
-![right](../../images/libgdx-life-cycle.png)
+![](../../images/libgdx-life-cycle.png)
 
 - [Documentação][docs-lifecycle]
 
 [docs-lifecycle]: https://github.com/libgdx/libgdx/wiki/The-life-cycle
 
 ---
-# Imagens Discretas _vs._ Contínuas
+<!-- { "layout": "section-header" } -->
+# Representação de imagens
+## Imagens discretas _vs._ contínuas
 
 ---
-## Tipos de Representação
+<!-- { "layout": "centered-horizontal" } -->
+# Tipos de Representação
 
 <figure style="position: relative; display: block; margin: auto;">
   <img src="../../images/graphics-representation-types-1.png" style="visibility: hidden;">
@@ -89,7 +88,8 @@ classes: floating-left-code smaller-code
 </figure>
 
 ---
-## **Renderização**
+<!-- { "layout": "regular" } -->
+# **Renderização**
 
 - Independente da representação interna dos gráficos do jogo (2D, 3D, bitmaps,
   vetorial), **renderizar significa definir as cores do _frame buffer_**
@@ -100,14 +100,13 @@ classes: floating-left-code smaller-code
 - Hoje vamos focar em 2D + _bitmaps_
 
 ---
-# Desenhos de objetos 2D
----
-## Texturas
+<!-- { "layout": "regular" } -->
+# Texturas
 
-- <figure class="polaroid" class="right" style="width: 180px; float:right; background: transparent;">
-    <img src="../../images/treasure-chest-texture.png" style="background: transparent;">
+- ::: figure .polaroid.push-right width: 180px;background: transparent;
+    ![](../../images/treasure-chest-texture.png)
     <figcaption>bau.png</figcaption>
-  </figure>
+  :::
   Quando usamos 2D + _bitmaps_:
   - Usamos imagens previamente criadas por artistas gráficos
     - A essas imagens damos o nome de **texturas**
@@ -115,7 +114,8 @@ classes: floating-left-code smaller-code
     e eventualmente usada para ser <u>aplicada a um retângulo</u>
 
 ---
-## [Texture][docs-texture] na LibGDX
+<!-- { "layout": "regular" } -->
+# Classe [`Texture`][docs-texture] na LibGDX
 
 ```java
 // na função "create":
@@ -132,16 +132,13 @@ batch.draw(fundo, fundoX, fundoY);
 [docs-texture]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/Texture.html
 
 ---
-<!--
-  classes: floating-right-code
--->
-
-## SpriteBatch ([documentação][docs-spritebatch])
+<!-- { "layout": "regular" } -->
+## Classe `SpriteBatch` ([documentação][docs-spritebatch] - 1/2)
 
 - Cada vez que se desenha algo, há um **processo de comunicação** com a
   placa de vídeo que é **dispendioso**
   - Para evitar fazer várias pequenas comunicações, <u>optamos por fazer
-    uma menor quantidade de comunicações maiores</u>
+    uma menor quantidade de comunicações maiores</u> <!-- {li:.push-left style="max-width: 60%;"} -->
     ```java
     batch.begin();
     batch.draw(texturaFundo, 0, 0);
@@ -150,13 +147,15 @@ batch.draw(fundo, fundoX, fundoY);
     // ...outros desenhos...
     batch.end(); // apenas 1 chamada à GPU
     ```
-    Para tal, usamos uma [`SpriteBatch`][docs-spritebatch]
+  - Para tal, usamos uma `SpriteBatch`
     - Acumulamos vários desenhos (texturas) e mandamos desenhar apenas 1 vez
+    - Veja a documentação da [`SpriteBatch`][docs-spritebatch]
 
 [docs-spritebatch]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/SpriteBatch.html
 
 ---
-## SpriteBatch (continuação)
+<!-- { "layout": "centered-horizontal" } -->
+## Classe `SpriteBatch` (2/2)
 
 ```java
 public class MeuJogo extends ApplicationAdapter {
@@ -179,12 +178,8 @@ public class MeuJogo extends ApplicationAdapter {
 ```
 
 ---
-<!--
-  classes: floating-right-code
--->
-
-## **Sprite**
-
+<!-- { "layout": "regular" } -->
+# Classe `Sprite`
 
 - ```java
   // na função "create":
@@ -200,22 +195,24 @@ public class MeuJogo extends ApplicationAdapter {
   jogador.draw(batch);  // ela se desenha,
   batch.end();          // com o "batch"
   ```
-  Uma [_Sprite_][docs-sprite] é um objeto gráfico (possui uma textura)
+  <!-- {li:.no-bullet.push-right.compact-code style="max-width: 64%;"} -->
+- Uma [_Sprite_][docs-sprite] é um objeto gráfico (possui uma textura) <!-- {li:style="margin-right: 20px;"} -->
   posicionado na tela do jogo:
-  1. textura +
-  1. dimensão (largura, altura) +
-  1. posição (x, y)
+  - textura
+  - dimensão (largura, altura)
+  - posição (x, y)
 
 
 [docs-sprite]: https://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/graphics/g2d/Sprite.html
 
 ---
-## _Spritesheet_
+<!-- { "layout": "2-column-highlight-and-list" } -->
+# _Spritesheet_
 
-<figure class="polaroid" class="right" style="width: 180px; float:right; background: transparent;">
-    <img src="../../images/goomba-spritesheet.png" style="background: transparent;">
-    <figcaption>`goomba-spritesheet.png`</figcaption>
-</figure>
+::: figure .polaroid.light.push-right width: 180px;
+  ![](../../images/goomba-spritesheet.png)
+  <figcaption>goomba-spritesheet.png`</figcaption>
+:::
 
 - É muito comum termos **animações** de _sprites_
 - Nesse caso, criamos uma **_spritesheet_** contendo **todos os quadros
@@ -224,8 +221,10 @@ public class MeuJogo extends ApplicationAdapter {
     desempenho muito melhor
 - Na LibGDX, não há `AnimatedSprite`¹, então usamos `Texture` e `Animation`
   - ¹mas dá pra criar!
+
 ---
-## **Animações** em LibGDX (1/3)
+<!-- { "layout": "centered-horizontal" } -->
+# **Animações** em LibGDX (1/3)
 
 ```java
 Texture spriteSheet;
@@ -254,7 +253,8 @@ batch.draw((TextureRegion)
 ```
 
 ---
-## Animações na LibGDX (2/3)
+<!-- { "layout": "regular" } -->
+# Animações na LibGDX (2/3)
 
 - Classe `Animation` ([documentação][docs-animation],
   [informações][guide-animation])
@@ -279,7 +279,8 @@ batch.draw((TextureRegion)
 [guide-textureregion]: https://github.com/libgdx/libgdx/wiki/Textures,-textureregion-and-spritebatch#textureregion
 
 ---
-## Animações na LibGDX (3/3)
+<!-- { "layout": "regular" } -->
+# Animações na LibGDX (3/3)
 
 - Método estático
   `TextureRegion.split(textura, larguraDoQuadro, alturaDoQuadro)`:
@@ -296,8 +297,11 @@ batch.draw((TextureRegion)
   - Desenhamos apenas o **"quadro corrente"**
 
 ---
-# Prática Goombas
+<!-- { "layout": "section-header" } -->
+# Goomba Transdimensional
+
 ---
+<!-- { "layout": "regular" } -->
 ## Prática Goombas
 
 1. Faça um _fork_ do
@@ -311,6 +315,7 @@ batch.draw((TextureRegion)
 [activity-sprites]: https://github.com/fegemo/cefet-games-goomba
 
 ---
+<!-- { "layout": "centered" } -->
 # Referências
 
 - Livro _LibGDX Game Development Essentials_

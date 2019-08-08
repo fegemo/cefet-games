@@ -1,24 +1,17 @@
-<!--
-backdrop: zelda-wii-u
-bespokeEvent: bullets.disable
--->
-
+<!-- {"layout": "title"} -->
 # Introdução: História, Plataformas e Gêneros
-
 ## Baseadão nos slides do Prof. (Luiz) Chaimo(wicz) da UFMG
 
 ---
+<!-- {"layout": "centered"} -->
 # Roteiro
 
-1. História
-1. Plataformas
-1. Gêneros
+1. [História](#historia)
+1. ![Plataformas](#plataformas-e-generos)
+1. ![Gêneros de jogos](#plataformas-e-generos)
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- {"layout": "section-header", "slideHash": "historia", "slideClass": "historia"} -->
 # História
 
 ## O que precisamos saber?
@@ -28,9 +21,10 @@ bespokeState: checkpoint
 1. Por que algumas **empresas** tiveram **muito sucesso** e outras **fracassaram**?
 
 ---
-## Ancestrais dos Jogos Digitais
+<!-- {"layout": "regular"} -->
+# Ancestrais dos jogos digitais (1/2)
 
-- ![right](../../images/ancient-pinballs.png)
+- ![](../../images/ancient-pinballs.png) <!-- {.push-right} --> <!-- {ul:.full-width} -->
   Versões primitivas do **Pinball**
   - _Bagattelle_ (1800s)
   - _Whiffle_ (1931)
@@ -41,120 +35,119 @@ bespokeState: checkpoint
 - Eram jogos de azar: chegaram a ser proibido nos EUA
 
 ---
-## Ancestrais dos Jogos Digitais (2)
+<!-- {"layout": "regular"} -->
+# Ancestrais dos jogos digitais (2/2)
 
 - ![right](../../images/pinball-humpty-dumpty.png)
   _Humpty Dumpty_ (1947)
   - Uso de _flippers_, contagem de pontos
 - Jogos passam a exigir habilidade ao invés de simplesmente sorte
-- Apesar de ainda vista com maus olhos a indústria cresceu, com o aparecimento de vários pioneiros
+- Apesar de ainda vista com maus olhos a indústria cresceu, com o aparecimento
+  de vários pioneiros
   - _Gottleib, Williams, Bally, Midway_...
 
 ---
-## Os Primeiros Computadores
+<!-- {"layout": "regular"} -->
+# Os primeiros computadores (1/2)
 
 - Nas décadas 50 e 60, surgiram os primeiros computadores e
   eles estavam concentrados em **universidades** e **instalações militares**
 - Alguns estudantes, programadores, professores e pesquisadores "sangue-nos-olhos"
   tornavam seus **_mainframes_ em _video games_** nas horas vagas
-  <ul class="multi-column-inline-list-2">
-    <li>Tic Tac Toe (1952)
-        <figure class="polaroid">
-          <img src="../../images/tic-tac-toe.png" style="height: 180px;">
-          <figcaption>A. S. Douglas em um computador EDSAC (tubo de vácuo)</figcaption>
-        </figure>
-    </li>
-    <li>Tennis for two (1958)
-        <figure class="polaroid">
-          <img src="../../images/tennis-for-two.png" style="height: 180px;">
-          <figcaption>Willy Higginbotham em um osciloscópio conectado a um computador analógico</figcaption>
-        </figure>
-    </li>
-  </ul>
+  - Tic Tac Toe (1952) <!-- {ul^0:.multi-column-inline-list-2.no-bullet.center-aligned} -->
+    ::: figure .polaroid.light.item-200w margin: 0 auto; height: calc(100% - 34px);
+      ![](../../images/tic-tac-toe.png) <!-- {.full-width} -->
+      <figcaption>A. S. Douglas em um computador EDSAC (tubo de vácuo)</figcaption>
+    :::
+  - Tennis for two (1958)
+    ::: figure .polaroid.light.item-200w margin: 0 auto; height: calc(100% - 34px);
+      ![](../../images/tennis-for-two.png) <!-- {.full-width} -->
+      <figcaption>Willy Higginbotham em um osciloscópio conectado a um computador analógico</figcaption>
+    :::
+
 
 ---
-## Os Primeiros Computadores (2)
+<!-- {"layout": "regular"} -->
+# Os primeiros computadores (2/2)
 
-<ul class="multi-column-inline-list-2">
-  <li>SpaceWar (1961 - 1962)
-      <figure class="polaroid">
-        <img src="../../images/spacewar.png" style="height: 180px;">
-        <figcaption>Jogo **SpaceWar** contando com controles, torpedos e teletransporte</figcaption>
-      </figure>
-  </li>
-  <li>Equipe do SpaceWar
-      <figure class="polaroid">
-        <img src="../../images/spacewar-creators.png" style="height: 180px;">
-        <figcaption>Feito para o PDP-11, em 6 meses, **com 200 horas de programação**</figcaption>
-      </figure>
-  </li>
-</ul>
+- SpaceWar (1961 - 1962) <!-- {ul^0:.multi-column-inline-list-2.no-bullet.center-aligned.full-width} -->
+  ::: figure .polaroid.light.item-300w margin: 0 auto; height: calc(100% - 34px);
+    ![](../../images/spacewar.png) <!-- {.full-width} -->
+    <figcaption>Jogo <strong>SpaceWar</strong> contando com controles, torpedos e teletransporte</figcaption>
+  :::
+- Equipe do SpaceWar
+  ::: figure .polaroid.light.item-300w margin: 0 auto; height: calc(100% - 34px);
+    ![](../../images/spacewar-creators.png) <!-- {.full-width} -->
+    <figcaption>Feito para o PDP-11, em 6 meses, <strong>com 200 horas de programação</strong></figcaption>
+  :::
+
 
 ---
-## Linha do Tempo
+<!-- { "layout": "regular" } -->
+# Linha do tempo
 
-![Linha do tempo da história dos jogos digitais](../../images/history-timeline.png)
+![Linha do tempo da história dos jogos digitais](../../images/history-timeline.png) <!-- {p:.centered} -->
 
-- Consoles: 8 gerações, chegando à 9ª
-- PCs: a tecnologia das placas gráficas têm determinado os "saltos" entre gerações
-- Portáteis
-- Celulares/Tablets
+- Consoles: 8 gerações
+  - Wii U (2012)
+  - PS4 (2013)
+  - Xbox One (2013)
+  - Switch (2017) <!-- {ul^0:.multi-column-list-4} -->
+- PCs: a tecnologia das placas gráficas têm determinado os "saltos" entre
+  gerações
+- Celulares/tablets
 
 ---
-## Fenômeno **Arcade**
+<!-- { "layout": "regular" } -->
+# Fenômeno **Arcade**
 
-- <figure class="polaroid right" style="width: 180px">
-    <img src="../../images/nolan-bushnell.jpg" style="width: 100%">
-    <figcaption>Nolan Bushnell</figcaption>
-  </figure>
-  Década de 70 - **Nolan Bushnell**
+- ::: figure .polaroid.push-right.small-width
+  ![](../../images/nolan-bushnell.jpg) <!-- {style="width: 190px"} -->
+  <figcaption>Nolan Bushnell</figcaption>
+  :::
+  Década de 70 - **Nolan Bushnell** <!-- {ul:.full-width} -->
   - Adaptação do Spacewar: Computer Space
     - Hardware customizado + TV + operação por moedas
   - Não fez muito sucesso, mas marcou o início
-  - Em 1972 **Nolan Bushnell fundou a Atari** e lançou o Pong
+  - ![](../../images/pong-arcade-open.jpg) <!-- {.push-right} -->
+    Em 1972 **Nolan Bushnell fundou a Atari** e lançou o Pong
 
 ---
-## **Pong** da Atari (1972)
-
-![](../../images/pong-arcade-open.jpg)
-
-- Primeiro arcade de sucesso – da Atari
-- Baseado no Tennis for Two
-
----
-## Mais **Arcades**
+<!-- { "layout": "regular" } -->
+# Mais **arcades**
 
 <div class="item-grid">
   <div class="item-grid-col">
-    <figure class="polaroid item-180w">
+    <figure class="polaroid item-270w" style="border-width: 10px">
       <img src="../../images/atari-lunar-lander.png" style="width: 100%">
-      <figcaption>**1978** Atari - Lunar Lander</figcaption>
+      <figcaption><strong>1978</strong> Atari - Lunar Lander</figcaption>
     </figure>
-    <figure class="polaroid item-180w">
+    <figure class="polaroid item-270w" style="border-width: 10px">
       <img src="../../images/atari-asteroids.png" style="width: 100%">
-      <figcaption>**1978** Atari - Asteroids</figcaption>
+      <figcaption><strong>1978</strong> Atari - Asteroids</figcaption>
     </figure>
-    <figure class="polaroid item-180w">
+    <figure class="polaroid item-270w" style="border-width: 10px">
       <img src="../../images/midway-space-invaders.png" style="width: 155px">
-      <figcaption>**1978** Midway - Space Invaders</figcaption>
+      <figcaption><strong>1978</strong> Midway - Space Invaders</figcaption>
     </figure>
-    <figure class="polaroid item-180w">
-      <img src="../../images/namco-pacman.png" style="width: 180px">
-      <figcaption>**1980** Namco - PacMan</figcaption>
+    <figure class="polaroid item-270w" style="border-width: 10px">
+      <img src="../../images/namco-pacman.png" style="width: 140px">
+      <figcaption><strong>1980</strong> Namco - PacMan</figcaption>
     </figure>
   </div>
   <div class="item-grid-col">
-    <figure class="polaroid light item-180w">
+    <figure class="polaroid light item-230w">
       <img src="../../images/nintendo-donkey-kong.png" style="width: 100%">
-      <figcaption>**1981** Nintendo - Donkey Kong</figcaption>
+      <figcaption><strong>1981</strong> Nintendo - Donkey Kong</figcaption>
     </figure>
   </div>
 </div>
 
 ---
-## Consoles
+<!-- { "layout": "regular" } -->
+# Consoles
 
-- ![right](../../images/atari-2600.png)
+- ![](../../images/atari-2600.png) <!-- {.push-right} -->
   Os primeiros consoles **surgiram em paralelo aos arcades**
   - 1972 Magnavox Odissey
   - 1975 Atari Pong
@@ -163,7 +156,8 @@ bespokeState: checkpoint
   - 1978 Magnavox Odissey 2
 
 ---
-## Atari 2600
+<!-- { "layout": "regular" } -->
+# Atari 2600
 
 - Console era vendido barato
   - O **lucro da Atari** era grande com os **cartuchos**
@@ -171,43 +165,44 @@ bespokeState: checkpoint
 
 <div class="item-grid" style="width: 100%;">
   <div class="item-grid-col" style="width: inherit;">
-    <figure class="polaroid item-200w">
-      <img src="../../images/atari-pitfall.png" >
-      <figcaption>1982 - Jogo **Pitfall**</figcaption>
+    <figure class="polaroid item-270w">
+      <img src="../../images/atari-pitfall.png" style="width: 100%">
+      <figcaption>1982 - Jogo <strong>Pitfall</strong></figcaption>
     </figure>
-    <figure class="polaroid item-200w">
-      <img src="../../images/atari-river-raid.png">
-      <figcaption>1982 - Jogo **River Raid**</figcaption>
+    <figure class="polaroid item-270w">
+      <img src="../../images/atari-river-raid.png" style="width: 100%">
+      <figcaption>1982 - Jogo <strong>River Raid</strong></figcaption>
     </figure>
-    <figure class="polaroid item-200w">
-      <img src="../../images/atari-frogger.png">
-      <figcaption>1981 - Jogo **Frogger**</figcaption>
+    <figure class="polaroid item-270w">
+      <img src="../../images/atari-frogger.png" style="width: 100%">
+      <figcaption>1981 - Jogo <strong>Frogger</strong></figcaption>
     </figure>
   </div>
 </div>
 
 ---
-## Consoles
+<!-- { "layout": "regular" } -->
+# Consoles
 
 - Vários outros consoles e novas versões foram lançados no final dos 70 início dos 80
-- Vários **jogos foram portados** do arcade para o console, alguns fracassaram (_e.g._, PacMan)
+- Vários **jogos foram portados** do arcade para o console, alguns fracassaram (PacMan)
 - Em 1982, ex-funcionários da Atari **criam a Activision**, primeira _"third part developer"_
 
----
-## **Crash** de 1983 - 1984
+### **Crash** de 1983 - 1984
 
 - Depois de um grande sucesso até 1982, a indústria de jogos começou a ter
   problemas e **várias empresas entraram em colapso**
   - Não havia grandes avanços tecnológicos
   - Excesso de jogos e cartuchos (mais de 50 empresas)
   - **Jogos de baixa qualidade** e consoles que não fizeram sucesso
-    (Exemplo: ET, Atari 5200)
+    (ET, Atari 5200)
   - Série de dúvidas quanto ao futuro da indústria.
     O público se questionava os jogos digitais seriam uma
-    moda passageira como o banbolê
+    moda passageira como o bambolê
 
 ---
-## **Computadores Pessoais** e Jogos
+<!-- { "layout": "regular" } -->
+# **Computadores pessoais** e jogos
 
 - Década de 80: **surgimento dos PCs**
   - Ameaça ou salvação da indústria?
@@ -219,7 +214,8 @@ bespokeState: checkpoint
   "jogos eletrônicos" ou "jogos digitais" indistintamente
 
 ---
-## Computadores Pessoais e Jogos
+<!-- { "layout": "regular" } -->
+# Computadores pessoais e jogos
 
 - Várias **empresas** passaram a **desenvolver para essa nova plataforma**
   - ![right](../../images/logo-sierra.png)
@@ -237,65 +233,80 @@ bespokeState: checkpoint
   - …
 
 ---
-## Alguns Marcos nos **"Jogos p/ PC"**
+<!-- { "layout": "regular" } -->
+# Alguns marcos nos **jogos para PC**
 
 <div class="item-grid">
   <div class="item-grid-col">
-    <figure class="polaroid item-200w">
+    <figure class="polaroid item-260w">
       <img src="../../images/tetris.png" style="width: 100%">
-      <figcaption>**1984** Tetris (Alexey Pajitnov)</figcaption>
+      <figcaption><strong>1984</strong> Tetris (Alexey Pajitnov)</figcaption>
     </figure>
-    <figure class="polaroid item-200w">
+    <figure class="polaroid item-260w">
       <img src="../../images/simcity.png" style="width: 100%">
-      <figcaption>**1989** SimCity - Maxis (Will Wright)</figcaption>
+      <figcaption><strong>1989</strong> SimCity - Maxis (Will Wright)</figcaption>
     </figure>
-    <figure class="polaroid item-200w">
-      <img src="../../images/doom.jpg" style="width: 100%">
-      <figcaption>**1993** Doom - id Software</figcaption>
+    <figure class="polaroid item-260w">
+      <img src="../../images/doom.jpg" style="width: 90%">
+      <figcaption><strong>1993</strong> Doom - id Software</figcaption>
     </figure>
-    <figure class="polaroid item-200w">
+    <figure class="polaroid item-260w">
       <img src="../../images/warcraft.jpg" style="width: 100%">
-      <figcaption>**1995** Warcraft - Blizzard</figcaption>
+      <figcaption><strong>1995</strong> Warcraft - Blizzard</figcaption>
     </figure>
-    <figure class="polaroid item-200w">
+    <figure class="polaroid item-260w">
       <img src="../../images/ultima-online.jpg" style="width: 100%">
-      <figcaption>**1997** Ultima Online - Origin Systems</figcaption>
+      <figcaption><strong>1997</strong> Ultima Online - Origin Systems</figcaption>
     </figure>
-    <figure class="polaroid item-200w">
+    <figure class="polaroid item-260w">
       <img src="../../images/everquest.jpg" style="width: 100%">
-      <figcaption>**1999** EverQuest - Daybreak Game Company</figcaption>
+      <figcaption><strong>1999</strong> EverQuest - Daybreak Game Company</figcaption>
     </figure>
   </div>
 </div>
 
 ---
-## Guerra dos Consoles
+<!-- { "layout": "regular" } -->
+# Guerra dos consoles
 
-- Em paralelo ao desenvolvimento dos jogos para PC, os **consoles ganharam nova vida**
-  <ul class="multi-column-inline-list-2">
-    <li>Nintendo NES (1984)
-      <figure class="polaroid light">
-        <img src="../../images/nintendo-nes.png" style="height: 150px;">
-        <figcaption>Nintendo Electronic System</figcaption>
-      </figure>
-    </li>
-    <li>Sega Master System (1986)
-      <figure class="polaroid light">
-        <img src="../../images/sega-master.png" style="height: 150px;">
-        <figcaption>Master System</figcaption>
-      </figure>
-    </li>
-  </ul>
-
-
+- Em paralelo ao desenvolvimento dos jogos para PC, os **consoles ganharam
+  nova vida**
+  - Nintendo NES (1984)
+  - Sega Master System (1986)
   - Nintendo Super NES (1990), Sega Genesis (1989)
   - Sega Saturn (1994), Sony Playstation (1994), Nintendo 64 (1995)
+1. ::: figure .polaroid.light
+   ![](../../images/nintendo-nes.png) <!-- {.item-200h} -->
+   <figcaption>Nintendo Electronic System</figcaption>
+   :::
+1. ::: figure .polaroid.light
+   ![](../../images/sega-master.png) <!-- {.item-200h} -->
+   <figcaption>Master System</figcaption>
+   :::
+   <!-- {ol:.item-grid.no-bullet.full-width style="justify-content: space-around"} -->
 
 ---
-## Guerra dos Consoles
+<!-- { "layout": "regular" } -->
+# Guerra dos consoles
 
-- 1999: Sega Dreamcast
-- 2000: Sony Playstation 2
+- <div class="item-grid push-right" style="width: 540px; justify-content: space-between">
+    <div class="item-grid-col" style="width: inherit;">
+      <figure class="polaroid thinner light item-160w">
+        <img src="../../images/xbox-360.png" style="width: 100%;">
+        <figcaption><strong>Xbox 360</strong> (Novembro <strong>2005</strong>)</figcaption>
+      </figure>
+      <figure class="polaroid thinner  light item-160w">
+        <img src="../../images/playstation-3.png" style="width: 100%;">
+        <figcaption><strong>Playstation 3</strong> (Novembro <strong>2006</strong>)</figcaption>
+      </figure>
+      <figure class="polaroid thinner  light item-160w">
+        <img src="../../images/nintendo-wii.png" style="width: 100%;">
+        <figcaption>Nintendo <strong>Wii</strong> (Dezembro <strong>2006</strong>)</figcaption>
+      </figure>
+    </div>
+  </div>
+  1999: Sega Dreamcast
+- 2000: Sony Playstation 2 <!-- {ul:.full-width} -->
 - 2000: **Sega** introduz **acesso à Internet** no Dreamcast
 - 2001: Nintendo Gamecube
 - 2001: Microsoft Xbox
@@ -303,98 +314,82 @@ bespokeState: checkpoint
 - 2002: Sony e Microsoft colocam acesso à Internet nos consoles
 
 ---
-## Guerra dos consoles, **ontem**
+<!-- { "layout": "regular" } -->
+# Guerra dos consoles, **hoje**
 
 <div class="item-grid" style="width: 100%;">
   <div class="item-grid-col" style="width: inherit;">
-    <figure class="polaroid light item-200w">
-      <img src="../../images/xbox-360.png" >
-      <figcaption>**Xbox 360** (Novembro **2005**)</figcaption>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/playstation-4.png" style="width: 100%;">
+      <figcaption><strong>Playstation 4</strong> (Novembro 2013)</figcaption>
     </figure>
-    <figure class="polaroid light item-200w">
-      <img src="../../images/playstation-3.png">
-      <figcaption>**Playstation 3** (Novembro **2006**)</figcaption>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/xbox-one.png" style="width: 100%;">
+      <figcaption><strong>Xbox One</strong> (Novembro 2013)</figcaption>
     </figure>
-    <figure class="polaroid light item-200w">
-      <img src="../../images/nintendo-wii.png">
-      <figcaption>Nintendo **Wii** (Dezembro **2006**)</figcaption>
+  </div>
+</div>
+<div class="item-grid" style="width: 100%;">
+  <div class="item-grid-col" style="width: inherit;">
+    <figure class="polaroid light item-250w">
+      <img src="../../images/nintendo-switch.png" style="width: 100%;">
+      <figcaption>Nintendo <strong>Switch</strong> (2017)</figcaption>
     </figure>
   </div>
 </div>
 
 ---
-## Guerra dos consoles, **hoje**
-
-<div class="item-grid" style="width: 100%;">
-  <div class="item-grid-col" style="width: inherit;">
-    <figure class="polaroid light item-250w">
-      <img src="../../images/nintendo-wii-u.png">
-      <figcaption>Nintendo **Wii U** (Novembro 2012)</figcaption>
-    </figure>
-    <figure class="polaroid light item-250w">
-      <img src="../../images/playstation-4.png">
-      <figcaption>**Playstation 4** (Novembro 2013)</figcaption>
-    </figure>
-  </div>
-</div>
-<div class="item-grid" style="width: 100%;">
-  <div class="item-grid-col" style="width: inherit;">
-    <figure class="polaroid light item-250w">
-      <img src="../../images/xbox-one.png" >
-      <figcaption>**Xbox One** (Novembro 2013)</figcaption>
-    </figure>
-  </div>
-</div>
-
----
-## **Portáteis**
+<!-- { "layout": "regular" } -->
+# **Portáteis**
 
 - Surgiram junto aos consoles
 - Sempre houve mercado para os jogos portáteis
 
 <div class="item-grid" style="width: 100%;">
   <div class="item-grid-col" style="width: inherit;">
-    <figure class="polaroid light item-200w">
-      <img src="../../images/nintendo-game-watch.png" >
-      <figcaption>**Game &amp; Watch** (**1980**)</figcaption>
-    </figure>
-    <figure class="polaroid light item-200w">
-      <img src="../../images/nintendo-game-watch-dk.png">
-      <figcaption>**Game &amp; Watch** Donkey Kong (Novembro **1990**)</figcaption>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/nintendo-game-watch.png" style="width: 100%;">
+      <figcaption><strong>Game &amp; Watch</strong> (<strong>1980</strong>)</figcaption>
     </figure>
     <figure class="polaroid light item-250w">
-      <img src="../../images/sega-game-gear.jpg">
-      <figcaption>Sega **Game Gear** (**1991**). Créditos: [fly_5](http://www.segasaturno.com/portal/sega-game-gear-con-nueva-lcd-vt5946.html)</figcaption>
+      <img src="../../images/nintendo-game-watch-dk.png" style="width: 100%;">
+      <figcaption><strong>Game &amp; Watch</strong> Donkey Kong (Novembro <strong>1990</strong>)</figcaption>
+    </figure>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/sega-game-gear.jpg" style="width: 100%;">
+      <figcaption>Sega <strong>Game Gear</strong> (<strong>1991</strong>)</figcaption>
     </figure>
   </div>
 </div>
 
 ---
-## Portáteis, **hoje**
+<!-- { "layout": "regular" } -->
+# Portáteis, **hoje**
 
-- New Nintendo 3DS, PS Vita
-
+- New Nintendo 3DS, PS Vita, Switch
 
 <div class="item-grid" style="width: 100%;">
   <div class="item-grid-col" style="width: inherit;">
-    <figure class="polaroid light item-200w">
-      <img src="../../images/nintendo-new-3ds.png" >
-      <figcaption>**New Nintendo 3DS** (**2014**)</figcaption>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/nintendo-new-3ds.png" style="width: 100%;">
+      <figcaption><strong>New Nintendo 3DS</strong> (<strong>2014</strong>)</figcaption>
     </figure>
-    <figure class="polaroid light item-200w">
-      <img src="../../images/sony-ps-vita.png">
-      <figcaption>Sony **PS Vita** (Novembro **2012**)</figcaption>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/sony-ps-vita.png" style="width: 100%;">
+      <figcaption>Sony <strong>PS Vita</strong> (Novembro <strong>2012</strong>)</figcaption>
+    </figure>
+    <figure class="polaroid light item-250w">
+      <img src="../../images/nintendo-switch.png" style="width: 100%;">
+      <figcaption>Nintendo <strong>Switch</strong> (<strong>2017</strong>)</figcaption>
     </figure>
   </div>
 </div>
+
 - Celulares, Tablets
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
-# Platafor-mas e Gêneros
+<!-- { "layout": "section-header", "slideClass": "plataformas-e-generos", "bespokeHash": "plataformas-e-generos" } -->
+# Plataformas e Gêneros
 
 ## O que precisamos saber?
 
@@ -403,36 +398,37 @@ bespokeState: checkpoint
 - Quais são as principais **características classificatórias** de jogos?
 - **Além de entreter**, jogos podem ter **outros objetivos**?
 - Quais são os **gêneros de jogos** mais comuns?
-- [Questionário Maroto](https://moodle.cefetmg.br/mod/quiz/view.php?id=19524)
 
 ---
-## **Características** dos Jogos
+<!-- { "layout": "regular" } -->
+# **Características** dos jogos
 
 - Existem várias características que devem ser consideradas na hora
   desenvolver um jogo
-  <ul class="multi-column-list-2">
-- Plataforma
-- Tempo do jogo
-- Número de jogadores
-- Gênero
-- Objetivo do jogo
-- Público/Mercado alvo
-  </ul>
+  - Plataforma <!-- {ul^0:.multi-column-list-2} -->
+  - Tempo do jogo
+  - Número de jogadores
+  - Gênero
+  - Objetivo do jogo
+  - Público/Mercado alvo
 - As decisões corretas com relação a essas várias características são
   fundamentais para o sucesso do jogo
 
 ---
-## Característica: **Plataforma**
+<!-- { "layout": "main-point" } -->
+# <small>Característica:</small><br>Plataforma de execução
+
+---
+<!-- { "layout": "regular" } -->
+# Característica: **Plataforma**
 
 - A plataforma (ou _game system_) pode ser:
-  <ul class="multi-column-list-3">
-- Arcade
-- Console
-- Computador
-- Portátil
-- Phone/Tablet
-- Smartwatch
-  </ul>
+  - Arcade <!-- {ul^0:.multi-column-list-3} -->
+  - Console
+  - Computador
+  - Portátil
+  - Phone/tablet
+  - Smartwatch
 - Principais diferenças entre plataformas:
   - **Input**
     - _e.g._, _Joystick_, Mouse+Teclado, _Touch_, _Gesture_...
@@ -444,14 +440,13 @@ bespokeState: checkpoint
   - Tipo de **licenciamento** dos jogos
 
 ---
-## Arcade
+<!-- { "layout": "regular" } -->
+# Arcade
 
-- <figure class="polaroid right item-200w">
-    <img src="../../images/arcade-mach3.jpg">
-    <figcaption>Jogo **Mach 3** sendo jogado na E3</figcaption>
-  </figure>
-  Sistemas de jogos independentes, normalmente encontrados em locais
-  públicos
+- ::: figure .polaroid.push-right.item-200w
+    ![](../../images/arcade-mach3.jpg) <!-- {style="width: 100%;"} -->
+  :::
+  Sistemas de jogos independentes, normalmente em locais públicos
 - **Tipicamente "alugados"** a jogadores por um tempo breve (5-10 min)
   - Compra-se "fichas" para jogar
 - Jogador normalmente **joga em pé**
@@ -461,10 +456,12 @@ bespokeState: checkpoint
   ação**, com **pouca história/narrativa**
 
 ---
-## Desenvolvimento para Arcades
+<!-- { "layout": "2-column-highlight-and-list" } -->
+# Desenvolvimento para arcades
 
-- ![right](../../images/arcade-jet-ski.png)
-  É uma oportunidade para jogos com **interfaces exóticas**
+![](../../images/arcade-jet-ski.png) <!-- {.push-right} -->
+
+- É uma oportunidade para jogos com **interfaces exóticas**
 - Modelo:
   1. **Fabricante do _hardware_**: detém o direito sobre o _hardware_ e
      controle sobre o conteúdo jogado
@@ -474,9 +471,11 @@ bespokeState: checkpoint
      dos jogadores para jogarem
 
 ---
-## Consoles
+<!-- { "layout": "regular" } -->
+# Consoles
 
-- Sistemas de jogo dedicados (pelo menos eram!) a apenas jogos
+- ![](../../images/playstation-4.png) <!-- {.push-right} -->
+  Sistemas de jogo dedicados (pelo menos eram!) a apenas jogos
   - Hoje em dia têm Internet, _media players_, **_video streaming_** etc.
 - Normalmente jogados em casa, usando-se a **TV como saída**
 - A **entrada** é normalmente feita por **controles com direcionais
@@ -487,9 +486,11 @@ bespokeState: checkpoint
   - Desvantagem: precisa-se comprar licenças e kits de desenvolvimento ($$)
 
 ---
-## Computadores
+<!-- { "layout": "regular" } -->
+# Computadores
 
-- **Plataforma aberta**
+- ![](../../images/gaming-pc.webp) <!-- {.push-right} -->
+  **Plataforma aberta**
   - Qualquer um pode produzir e vender um jogo que
     possa ser jogado em um "Dell" rodando "Windows" sem ter que pedir nem
     pagar nada para as fabricantes de _hardware_ e _software_
@@ -501,30 +502,39 @@ bespokeState: checkpoint
     frequência de renderização**
 
 ---
-## Portáteis
+<!-- { "layout": "regular" } -->
+# Portáteis
 
-- De **tamanho reduzido**, são convenientemente **levados pelo o jogador a qualquer lugar**
+- ![](../../images/nintendo-switch.png) <!-- {.push-right .item-200w} -->
+  De **tamanho reduzido**, são convenientemente **levados pelo o jogador
+  a qualquer lugar**
 - Plataformas proprietárias, assim como os consoles (Sony e Nintendo)
 - Controle via direcionais, botões, telas sensíveis a toque
   - E também: acelerômetro, giroscópio, microfone, GPS
 - Jogos precisam sempre poder ser **pausados a qualquer momento**, devido
-  ao fato que as sessões de jogo podem ser interrompidas (saindo do õnibus, etc.)
+  ao fato que as sessões de jogo podem ser interrompidas (saindo do ônibus, etc.)
 - Jogos distribuídos como **"cartuchos" (_flash card_) ou digitalmente**
 
 ---
-## _Smartphones_ e _Tablets_
+<!-- { "layout": "regular" } -->
+# _Smartphones_ e _Tablets_
 
-![](../../images/phones-tablets.png)
+![](../../images/phones-tablets.png) <!-- {p:.centered} -->
 
-- Bem mais recentes (iOS: 2007, Android: 2008, <abbr title="Windows Phone">WinPho</abbr>: 2010)
-- Plataformas **proprietárias** (Apple, Google, Microsoft)
+- Bem mais recentes (iOS: 2007, Android: 2008)
+- Plataformas **proprietárias** (Apple, Google)
 - **Distribuição** de jogos (e aplicativos) **por meio das lojas virtuais**
   das fabricantes dos sistemas operacionais
-  - Licenciamento no **modelo ganha-ganha: 70%/30%**
+  - Licenciamento no **modelo ganha-ganha: 70/30%**
     - 70% da receita do jogo é do desenvolvedor, 30% da fabricante
 
 ---
-## Característica: **Intervalo de Tempo**
+<!-- { "layout": "main-point" } -->
+# <small>Característica:</small><br>Intervalo de tempo
+
+---
+<!-- { "layout": "regular" } -->
+# Característica: **Intervalo de Tempo**
 
 - Cada tipo de jogo configura como o **tempo passa dentro do jogo**
 - Isso define se o jogo é jogado **por reflexo** ou **refletivamente**:
@@ -537,17 +547,43 @@ bespokeState: checkpoint
     cada jogador tome sua ação em seu turno
 
 ---
+<!-- { "layout": "main-point" } -->
+# <small>Característica:</small><br>Número de Jogadores
+
+---
+<!-- { "layout": "regular" } -->
 ## Característica: **Número de Jogadores**
 
-- O número de jogadores define:
+<!-- - O número de jogadores define:
   - A infra-estrutura de redes que pode ser necessária
   - A necessidade de equipe de suporte técnico 24/7
   - O uso de divisão da tela de jogo em mútliplas câmeras virtais
 - Varia de **jogador único** (_single-player_) a multi-massivo
-  online (<abbr title="multi-massive online">MMO</abbr>)
+  online (<abbr title="multi-massive online">MMO</abbr>) -->
 
----
-<div class="layout-split-3" style="height: auto;">
+1. <!-- {ol:.layout-split-2.no-bullet.center-aligned} -->
+   ### _Single-player_
+   ::: figure .light.item-300w.polaroid.light margin: auto;
+   ![](../../images/hardwood-solitaire-iv.jpg) <!-- {style="width: 100%;"} -->
+   <figcaption>Paciência, <em>single-player</em> clássico</figcaption>
+   :::
+   - Apenas **um jogador** por vez  <!-- {ul:.left-aligned} -->
+   - **Oponentes**, quando existem, são **controlados por IA**
+     - Personagens não jogáveis (NPCs)
+1. ### _Two-player_
+   ::: figure .light.item-300w.polaroid.light margin: auto;
+   ![](../../images/streets-of-rage-2.jpg) <!-- {style="width: 100%;"} -->
+   <figcaption>Streets of Rage 2, <em>two-player</em> cooperativo</figcaption>
+   :::
+   - Até **dois jogadores** juntos <!-- {ul:.left-aligned} -->
+   - Herdado dos arcades antigos
+     - Em alguns jogos, **a tela se divide** para mostrar os dois jogadores
+
+
+*[IA]: Inteligência Artificial*
+*[NPCs]: Non-playable characters*
+
+<!-- <div class="layout-split-3" style="height: auto;">
   <section style="border-right: 4px dotted silver;">
     <h3>_Single-player_</h3>
     <figure class="polaroid light item-200w" style="margin:auto;">
@@ -578,7 +614,7 @@ bespokeState: checkpoint
       </li>
     </ul>
   </section>
-</div>
+</div> -->
 
 ---
 <div class="layout-split-3" style="height: auto;">

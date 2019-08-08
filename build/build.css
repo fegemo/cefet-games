@@ -616,10 +616,14 @@ img[alt$="max"] {
       justify-content: space-around;
 }
 .item-grid-col figure {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 figure p {
   margin: 0;
+}
+.item-160w,
+.item-160w > img {
+  width: 160px;
 }
 .item-180w,
 .item-180w > img {
@@ -629,9 +633,21 @@ figure p {
 .item-200w > img {
   width: 200px;
 }
+.item-230w,
+.item-230w > img {
+  width: 230px;
+}
 .item-250w,
 .item-250w > img {
   width: 250px;
+}
+.item-260w,
+.item-260w > img {
+  width: 260px;
+}
+.item-270w,
+.item-270w > img {
+  width: 270px;
 }
 .item-300w,
 .item-300w > img {
@@ -643,6 +659,7 @@ figure p {
 .polaroid {
   margin: 0;
   border: 18px solid #fff;
+  outline: 1px solid #eee;
   -webkit-box-shadow: 3px 3px 2px #808080;
           box-shadow: 3px 3px 2px #808080;
   background-color: #121212;
@@ -653,6 +670,9 @@ figure p {
 }
 .polaroid.light {
   background-color: #ccc;
+}
+.polaroid.thinner {
+  border-width: 10px;
 }
 .polaroid figcaption {
   margin: 0;
@@ -1387,19 +1407,6 @@ ul.horizontal > li {
 .bespoke-slide[data-bespoke-backdrop] {
   z-index: 2;
 }
-.zelda-wii-u.bespoke-backdrop {
-  background-image: url("../images/screenshot-zelda-wii-u.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-}
-.bespoke-slide[data-bespoke-backdrop="zelda-wii-u"] {
-  text-shadow: 3px 3px rgba(0,0,0,0.25), 2px 2px rgba(0,0,0,0.5), 1px 1px rgba(0,0,0,0.75);
-}
-.bespoke-slide[data-bespoke-backdrop="zelda-wii-u"] h2 {
-  color: #fff;
-}
 .collision.bespoke-backdrop {
   background-image: url("../images/sat.jpg");
   background-color: #fff;
@@ -2057,6 +2064,15 @@ ul.horizontal > li {
 .intro .rainbow-picture.layout-section-header::after {
   background-image: url("../images/rainbow-picture.jpg");
   animation: movingbg-x 20s ease-in-out 0s infinite alternate-reverse;
+}
+.intro .layout-title h1::before {
+  background-image: url("../images/screenshot-zelda-wii-u.jpg");
+  background-position: center center;
+}
+.intro .historia.layout-section-header::after {
+  background-image: url("../images/fliperama.jpg");
+  background-size: cover;
+  background-position: right;
 }
 .animation .layout-title h1::before {
   background-image: url("../images/max-payne3.jpg");
