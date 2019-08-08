@@ -15223,8 +15223,12 @@ bespoke.from('article', [
     // the URL
     const path = location.pathname;
     const startOfClassName = path.indexOf('/classes/') === -1 ? 0 : path.indexOf('/classes/') + '/classes/'.length;
-    const className = path.substring(startOfClassName, path.indexOf('/', startOfClassName));
-
+    let className = path.substring(startOfClassName, path.indexOf('/', startOfClassName));
+    // in case the class name starts with a number, we remove all numbers from the start
+    // this was necessary because CSS doesnt like classes which start with numbers
+    if (/^\d/.test(className)) {
+      className = className.replace(/^\d+/g, '');
+    }
     deck.parent.classList.add(className || 'syllabus');
   }
 ]);

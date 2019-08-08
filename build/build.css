@@ -2050,22 +2050,6 @@ ul.horizontal > li {
           animation: movingbg-x 20s linear 0s infinite alternate;
 }
 .intro .layout-title h1::before {
-  background-image: url("../images/cg-area-art.jpg");
-}
-.intro .conceitos-basicos.layout-section-header::after {
-  background-image: url("../images/cg-area-games.jpg");
-  animation: movingbg-x 60s linear 0s infinite alternate-reverse;
-}
-.intro .pixels-gradient.layout-section-header::after {
-  background-image: url("../images/pixels-gradient.jpg");
-  background-repeat: repeat;
-  animation: movingbg-x 20s ease-in-out 0s infinite alternate-reverse;
-}
-.intro .rainbow-picture.layout-section-header::after {
-  background-image: url("../images/rainbow-picture.jpg");
-  animation: movingbg-x 20s ease-in-out 0s infinite alternate-reverse;
-}
-.intro .layout-title h1::before {
   background-image: url("../images/screenshot-zelda-wii-u.jpg");
   background-position: center center;
 }
@@ -2073,6 +2057,34 @@ ul.horizontal > li {
   background-image: url("../images/fliperama.jpg");
   background-size: cover;
   background-position: right;
+}
+.d-graphics .layout-title.bespoke-slide h1 {
+  color: #ef7a02;
+  background-color: rgba(255,255,255,0.667);
+  font-size: 4em;
+}
+.d-graphics .layout-title.bespoke-slide h1::before {
+  background-image: url("../images/paper-mario-spritesheet.png");
+  background-position: center center;
+}
+.d-graphics .pratica-do-goomba.layout-section-header::after {
+  background-image: url("https://github.com/fegemo/cefet-games-goomba/raw/master/core/assets/result.gif");
+  background-size: cover;
+  -ms-interpolation-mode: nearest-neighbor;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -o-pixelated;
+      image-rendering: pixelated;
+}
+.d-graphics .libgdx.layout-section-header::after {
+  background-image: url("../images/codigo-opengl.png");
+  background-size: cover;
+}
+.d-graphics .representacao-de-imagens.layout-section-header::after {
+  background-image: url("../images/vector-vs-raster.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .animation .layout-title h1::before {
   background-image: url("../images/max-payne3.jpg");

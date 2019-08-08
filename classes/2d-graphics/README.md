@@ -1,19 +1,19 @@
-<!--
-backdrop: 2d-graphics
-bespokeEvent: bullets.disable
--->
+<!-- { "layout": "title" } -->
+# Gráficos em 2D
+## Texturas e Sprites
 
-# Gráficos em 2D - Texturas e Sprites
 ---
 # Roteiro
 
-1. LibGDX: introdução
-1. Imagens discretas _vs._ contínuas
+1. [LibGDX: introdução](#libgdx)
+1. [Representação de imagens](#representacao-de-imagens)
+   - Imagens discretas _vs._ contínuas
 1. Desenho de objetos 2D
-   - Texturas e atlas
+   - Texturas e regiões
    - _Sprite Batching_
    - _Sprites_ e _spritesheets_
-1. Prática Goombas
+   - Animações
+1. [Prática do Goomba](#pratica-do-goomba)
 <!--1. Desenho de cenários 2D
   - _Tiles_ e _tilesets_
   - _Scrolling_
@@ -21,8 +21,12 @@ bespokeEvent: bullets.disable
 -->
 
 ---
-<!-- { "layout": "section-header" } -->
+<!-- { "layout": "section-header", "slideClass": "libgdx", "slideHash": "libgdx" } -->
 ![LibGDX](../../images/logo-libgdx.png)
+
+- Sobre o _framework_
+- Ciclo de vida de um jogo
+- Documentação
 
 ---
 <!-- { "layout": "regular" } -->
@@ -69,7 +73,7 @@ bespokeEvent: bullets.disable
 [docs-lifecycle]: https://github.com/libgdx/libgdx/wiki/The-life-cycle
 
 ---
-<!-- { "layout": "section-header" } -->
+<!-- { "layout": "section-header", "slideClass": "representacao-de-imagens", "slideHash": "representacao-de-imagens" } -->
 # Representação de imagens
 ## Imagens discretas _vs._ contínuas
 
@@ -133,7 +137,7 @@ batch.draw(fundo, fundoX, fundoY);
 
 ---
 <!-- { "layout": "regular" } -->
-## Classe `SpriteBatch` ([documentação][docs-spritebatch] - 1/2)
+# Classe `SpriteBatch` ([documentação][docs-spritebatch] - 1/2)
 
 - Cada vez que se desenha algo, há um **processo de comunicação** com a
   placa de vídeo que é **dispendioso**
@@ -155,7 +159,7 @@ batch.draw(fundo, fundoX, fundoY);
 
 ---
 <!-- { "layout": "centered-horizontal" } -->
-## Classe `SpriteBatch` (2/2)
+# Classe `SpriteBatch` (2/2)
 
 ```java
 public class MeuJogo extends ApplicationAdapter {
@@ -297,12 +301,15 @@ batch.draw((TextureRegion)
   - Desenhamos apenas o **"quadro corrente"**
 
 ---
-<!-- { "layout": "section-header" } -->
-# Goomba Transdimensional
+<!-- { "layout": "section-header", "slideClass": "pratica-do-goomba", "slideHash": "pratica-do-goomba" } -->
+# Prática do Goomba
+## Goomba Transdimensional
+
+...acabou parando em outro universo
 
 ---
 <!-- { "layout": "regular" } -->
-## Prática Goombas
+# Prática do Goomba
 
 1. Faça um _fork_ do
   [repositório com o código seminal][activity-sprites] no GitHub
