@@ -388,7 +388,7 @@
 - Celulares, Tablets
 
 ---
-<!-- { "layout": "section-header", "slideClass": "plataformas-e-generos", "bespokeHash": "plataformas-e-generos" } -->
+<!-- { "layout": "section-header", "slideClass": "plataformas-e-generos", "slideHash": "plataformas-e-generos" } -->
 # Plataformas e Gêneros
 
 ## O que precisamos saber?
@@ -568,7 +568,7 @@
    <figcaption>Paciência, <em>single-player</em> clássico</figcaption>
    :::
    - Apenas **um jogador** por vez  <!-- {ul:.left-aligned} -->
-   - **Oponentes**, quando existem, são **controlados por IA**
+   - Oponen. **controlados por IA**
      - Personagens não jogáveis (NPCs)
 1. ### _Two-player_
    ::: figure .light.item-300w.polaroid.light margin: auto;
@@ -577,76 +577,42 @@
    :::
    - Até **dois jogadores** juntos <!-- {ul:.left-aligned} -->
    - Herdado dos arcades antigos
-     - Em alguns jogos, **a tela se divide** para mostrar os dois jogadores
+     - Em alguns jogos, **a tela se divide**<br>para mostrar os dois jogadores
 
 
 *[IA]: Inteligência Artificial*
 *[NPCs]: Non-playable characters*
 
-<!-- <div class="layout-split-3" style="height: auto;">
-  <section style="border-right: 4px dotted silver;">
-    <h3>_Single-player_</h3>
-    <figure class="polaroid light item-200w" style="margin:auto;">
-      <img src="../../images/hardwood-solitaire-iv.jpg">
-      <figcaption>Paciência (_Hardwood Solitaire IV_), _single-player_ clássico</figcaption>
-    </figure>
-    <ul style="text-align: left">
-      <li>Apenas **um jogador** por vez</li>
-      <li>**Oponentes**, quando existem, são **controlados por <abbr title="inteligência artificial">IA</abbr>**
-        <ul>
-          <li>São chamados de personagens não-jogáveis ou **<abbr title="non-player character">NPCs</abbr>**</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-  <section style="">
-    <h3>_Two-player_</h3>
-    <figure class="polaroid light item-200w" style="margin:auto;">
-      <img src="../../images/streets-of-rage-2.jpg">
-      <figcaption>Streets of Rage 2, _two-player_ cooperativo</figcaption>
-    </figure>
-    <ul style="text-align: left">
-      <li>Até **dois jogadores** juntos</li>
-      <li>Herdado dos arcades antigos
-        <ul>
-          <li>Em alguns jogos, **a tela se divide** para mostrar os dois jogadores</li>
-        </ul>
-      </li>
-    </ul>
-  </section>
-</div> -->
-
 ---
-<div class="layout-split-3" style="height: auto;">
-  <section style="border-right: 4px dotted silver;">
-    <h3>_Local Multiplayer_</h3>
-    <figure class="polaroid light item-200w" style="margin:auto;">
-      <img src="../../images/people-playing-wii.jpg">
-      <figcaption>Pessoas jogando Wii juntas</figcaption>
-    </figure>
-  </section>
-  <section style="border-right: 4px dotted silver;">
-    <h3>_LAN-Based Multiplayer_</h3>
-    <figure class="polaroid light item-200w" style="margin:auto;">
-      <img src="../../images/redinha.jpg">
-      <figcaption>Foto do professor fazendo **redinha** ;)</figcaption>
-    </figure>
-  </section>
-  <section>
-    <h3>_Online Multiplayer_</h3>
-    <figure class="polaroid light item-200w" style="margin:auto;">
-      <img src="../../images/wow.jpg">
-      <figcaption>World of Warcraft</figcaption>
-    </figure>
-  </section>
-</div>
-<hr>
+<!-- { "layout": "regular" } -->
+1. <!-- {ol:.layout-split-3.no-bullet.center-aligned.full-width.no-margin style="height: auto; justify-content: space-between"} -->
+   ### _Local Multiplayer_
+   ::: figure .light.item-230w.polaroid.light margin: auto;
+   ![](../../images/people-playing-wii.jpg) <!-- {style="width: 100%;"} -->
+   <figcaption>Pessoas jogando Wii juntas</figcaption>
+   :::
+1. ### _LAN-Based Multiplayer_
+   ::: figure .light.item-230w.polaroid.light margin: auto;
+   ![](../../images/redinha.jpg) <!-- {style="width: 100%;"} -->
+   <figcaption>Professor fazendo <strong>redinha</strong></figcaption>
+   :::
+1. ### _Online Multiplayer_
+   ::: figure .light.item-230w.polaroid.light margin: auto;
+   ![](../../images/wow.jpg) <!-- {style="width: 100%;"} -->
+   <figcaption>World of Warcraft</figcaption>
+   :::
 
 - Outros aspectos:
   - Coop _vs._ <abbr title="Player versus player">PvP</abbr>
+  - Assimetria de jogabilidade (eg, Twitch Games)
 
 ---
-## Característica: **Propósito do Jogo**
+<!-- { "layout": "main-point" } -->
+# <small>Característica:</small><br>Propósito do Jogo
+
+---
+<!-- { "layout": "regular" } -->
+# Característica: **Propósito do Jogo**
 
 - Jogos podem (e costumam) ter **propósitos** que vão **além do "simplesmente entreter"**:
   - Entretenimento
@@ -659,12 +625,14 @@
   - Estética / Criatividade (_art/concept games_)
 
 ---
-## Propósitos mais raros: _Advergame_
+<!-- { "layout": "centered-horizontal" } -->
+# Propósitos mais raros: _Advergame_
 
 <iframe width="640" height="360" src="https://www.youtube.com/embed/PmnAxS7mc-s?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ---
-## Propósitos mais raros: _Concept game_
+<!-- { "layout": "centered-horizontal" } -->
+# Propósitos mais raros: _Concept game_
 
 <iframe width="800" height="480" src="http://www.molleindustria.org/everydaythesamedream/everydaythesamedream.html"></iframe>
 
@@ -672,7 +640,8 @@
 - Conceito: monotonia, tédio e alienação
 
 ---
-## Propósitos mais raros: _Art game_
+<!-- { "layout": "regular-horizontal" } -->
+# Propósitos mais raros: _Art game_
 
 - ![right](../../images/aether.jpg)
   [Aether](http://cache.armorgames.com/misc/downloads/aether.zip) (criadores do Super Meat Boy)
@@ -684,7 +653,12 @@
     _that evolves by consuming other microorganisms"_
 
 ---
-## Característica: **Gêneros**
+<!-- { "layout": "main-point", "slideHash": "generos" } -->
+# <small>Característica:</small><br>Gêneros
+
+---
+<!-- { "layout": "regular" } -->
+# Característica: **Gêneros**
 
 - São categorias nas quais os jogos são classificados levando em consideração o
   estilo, a narrativa, a perspectiva dos jogadores, _gameplay_, etc
@@ -695,7 +669,8 @@
 - Novak (2011) considera 10 gêneros, alguns contendo sub-gêneros
 
 ---
-## Gênero: **Ação**
+<!-- { "layout": "regular" } -->
+# Gênero: **Ação**
 
 - Normalmente acontecem em tempo real e exigem coordenação motora e reações rápidas
 - Maioria dos Arcades eram/são jogos de ação
@@ -704,40 +679,39 @@
   - Plataforma (Donkey kong, Sonic, ...)
   - Luta
   - Corrida
-  - “Outros”: Pac-Man, Guitar Hero...
+  - "Outros": Pac-Man, Guitar Hero...
+
+*[FPSs]: First-person shooters*
 
 ---
-## Gênero: **Ação**
+<!-- { "layout": "regular" } -->
+# Gênero: **Ação**
 
-<ul class="multi-column-inline-list-2">
-  <li>Plataforma
-      <figure class="polaroid light">
-        <img src="../../images/super-mario-galaxy-2.jpg" style="height: 142px;">
-        <figcaption>Super Mario Galaxy 2 (Wii)</figcaption>
-      </figure>
-  </li>
-  <li>_Shooters_ (de tiro)
-      <figure class="polaroid light">
-        <img src="../../images/gears-of-war-judgement.jpg" style="height: 142px;">
-        <figcaption>Gears of War: Judgement (Xbox 360)</figcaption>
-      </figure>
-  </li>
-  <li>Corrida
-      <figure class="polaroid light">
-        <img src="../../images/project-cars.jpg" style="height: 142px;">
-        <figcaption>Project Cars (multi)</figcaption>
-      </figure>
-  </li>
-  <li>Luta
-      <figure class="polaroid light">
-        <img src="../../images/xenoverse.jpg" style="height: 142px;">
-        <figcaption>Dragon Ball: Xenoverse (multi)</figcaption>
-      </figure>
-  </li>
-</ul>
+- Plataforma <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-230w margin-right: 0;
+  ![](../../images/super-mario-odyssey.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Super Mario Odyssey (Switch)</figcaption>
+  :::
+- _Shooters_
+  ::: figure .polaroid.light.item-230w margin-right: 0;
+  ![](../../images/gears-of-war-4.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Gears of War 4 (PC/Xbox One)</figcaption>
+  :::
+- Corrida
+  ::: figure .polaroid.light.item-230w margin-right: 0;
+  ![](../../images/project-cars.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Project Cars (multi)</figcaption>
+  :::
+- Luta
+  ::: figure .polaroid.light.item-230w margin-right: 0;
+  ![](../../images/xenoverse.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Dragon Ball: Xenoverse (multi)</figcaption>
+  :::
+
 
 ---
-## Gênero: **Aventura**
+<!-- { "layout": "regular" } -->
+# Gênero: **Aventura**
 
 - Normalmente envolvem uma história, onde o jogador deve percorrer cenários,
   coletar itens, interagir com personagens de forma a cumprir alguma missão
@@ -745,52 +719,49 @@
 - Gênero híbrido: Ação-Aventura tem se tornado muito mais comuns que jogos de aventura puros
 
 ---
-## Gêneros: **Aventura**, **Ação-Aventura**
+<!-- { "layout": "regular" } -->
+# Gêneros: **Aventura**, **Ação-Aventura**
 
-<ul class="multi-column-inline-list-2">
-  <li>Aventura
-      <figure class="polaroid light item-300w">
-        <img src="../../images/monkey-island.jpg">
-        <figcaption>The Secret of Monkey Island (PC)</figcaption>
-      </figure>
-  </li>
-  <li>Ação-Aventura
-      <figure class="polaroid light item-300w">
-        <img src="../../images/zelda-skyward.jpg">
-        <figcaption>Zelda Skyward Sword (Wii)</figcaption>
-      </figure>
-  </li>
-</ul>
+- Aventura <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/monkey-island.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>The Secret of Monkey Island (PC)</figcaption>
+  :::
+- Ação-Aventura
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/zelda-skyward.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Zelda Skyward Sword (Wii)</figcaption>
+  :::
 
 ---
-## Gêneros: **Cassino**, _**Puzzle**_
+<!-- { "layout": "regular" } -->
+# Gêneros: **Cassino**, _**Puzzle**_
 
-<ul class="multi-column-inline-list-2">
-  <li>Cassino
-      <figure class="polaroid light item-300w">
-        <img src="../../images/microsoft-casino.jpg">
-        <figcaption>Microsoft Casino (PC)</figcaption>
-      </figure>
-  </li>
-  <li>_Puzzle_
-      <figure class="polaroid light item-300w">
-        <img src="../../images/portal-2.jpg">
-        <figcaption>Portal 2 (PC)</figcaption>
-      </figure>
-  </li>
-</ul>
+- Cassino <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/microsoft-casino.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Microsoft Casino (PC)</figcaption>
+  :::
+- _Puzzle_
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/portal-2.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Portal 2 (PC)</figcaption>
+  :::
 
 ---
-## Gênero: **RPG**
+<!-- { "layout": "regular" } -->
+# Gênero: **RPG**
 
-- Jogadores assumem papéis como personagens dentro do jogo (cavaleiros, mágicos, ladrões, etc),
+- Jogadores assumem papéis como personagens dentro do jogo
+  (cavaleiros, mágicos, ladrões, etc),
   e evoluem o personagem ao longo do jogo
 - Normalmente possuem uma narrativa longa, grandes cenários e
   os jogadores tem que cumprir desafios (_quests_) ao longo do jogo
 - Originários dos tradicionais RPG de papel e cartas (_Dungeons and Dragons_)
 
 ---
-## Gênero: **Simulação**
+<!-- { "layout": "regular" } -->
+# Gênero: **Simulação**
 
 - Tentam replicar máquinas, sistemas, experiências do mundo real
 - Variados graus de realismo
@@ -802,25 +773,23 @@
   - Esportes (Fifa, "WingElev", NBA, ...)
 
 ---
-## Gêneros: **RPG**, **Simulação**
+<!-- { "layout": "regular" } -->
+# Gêneros: **RPG**, **Simulação**
 
-<ul class="multi-column-inline-list-2">
-  <li>RPG
-    <figure class="polaroid light item-300w">
-      <img src="../../images/the-witcher-3.jpg">
-      <figcaption>The Witcher 3 (multi)</figcaption>
-    </figure>
-  </li>
-  <li>Simulação
-    <figure class="polaroid light item-300w">
-      <img src="../../images/simcity-new.jpg">
-      <figcaption>SimCity (PC)</figcaption>
-    </figure>
-  </li>
-</ul>
+- RPG <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/the-witcher-3.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>The Witcher 3 (multi)</figcaption>
+  :::
+- Simulação
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/simcity-new.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>SimCity (PC)</figcaption>
+  :::
 
 ---
-## Gênero: **Estratégia**
+<!-- { "layout": "regular" } -->
+# Gênero: **Estratégia**
 
 - Origem em jogos como Xadrez, Diplomacia,...
 - Jogadores devem gerenciar recursos e conquistar objetivos
@@ -832,25 +801,23 @@
   - _Micromanagement_ de poucas unidades
 
 ---
-## Gênero: **Estratégia**
+<!-- { "layout": "regular" } -->
+# Gênero: **Estratégia**
 
-<ul class="multi-column-inline-list-2">
-  <li>Baseada em turnos (TBS)
-      <figure class="polaroid light item-300w">
-        <img src="../../images/civilization-v.jpg">
-        <figcaption>Civilization V (PC)</figcaption>
-      </figure>
-  </li>
-  <li>Em tempo real (RTS)
-      <figure class="polaroid light item-300w">
-        <img src="../../images/starcraft-2.jpg">
-        <figcaption>Starcraft 2 (PC)</figcaption>
-      </figure>
-  </li>
-</ul>
+- Baseada em turnos (TBS) <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/civilization-v.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Civilization V (PC)</figcaption>
+  :::
+- Em tempo real (RTS)
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/starcraft-2.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Starcraft 2 (PC)</figcaption>
+  :::
 
 ---
-## Gênero: **MMOG**
+<!-- { "layout": "regular" } -->
+# Gênero: **MMOG**
 
 - Apesar de derivado de outros gêneros, acabou se tornando
   um gênero próprio por suas características
@@ -861,25 +828,23 @@
   - Fazer as pessoas “se comportarem” de acordo
 
 ---
-## Gênero: **MMOG**
+<!-- { "layout": "regular" } -->
+# Gênero: **MMOG**
 
-<ul class="multi-column-inline-list-2">
-  <li>MMORPG
-      <figure class="polaroid light item-300w">
-        <img src="../../images/wow.jpg">
-        <figcaption>World of Warcraft (PC)</figcaption>
-      </figure>
-  </li>
-  <li>MMOSimulation
-      <figure class="polaroid light item-300w">
-        <img src="../../images/eve-online.jpg">
-        <figcaption>Eve Online (PC)</figcaption>
-      </figure>
-  </li>
-</ul>
+- MMORPG <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/wow.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>World of Warcraft (PC)</figcaption>
+  :::
+- MMOSimulation
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/eve-online.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Eve Online (PC)</figcaption>
+  :::
 
 ---
-## Gênero: **Social**
+<!-- { "layout": "regular" } -->
+# Gênero: **Social**
 
 - Surgiram com o advento das redes sociais
 - Características:
@@ -890,24 +855,21 @@
     - Pagamento por assinaturas / itens especiais (2 a 5% do público pagante)
 
 ---
-## Gênero: **Social**
+<!-- { "layout": "regular" } -->
+# Gênero: **Social**
 
-<ul class="multi-column-inline-list-2">
-  <li>
-      <figure class="polaroid light item-300w">
-        <img src="../../images/candy-crush-saga.jpg">
-        <figcaption>Candy Crush Saga (Facebook)</figcaption>
-      </figure>
-  </li>
-  <li>
-      <figure class="polaroid light item-300w">
-        <img src="../../images/farmville-2.jpg">
-        <figcaption>Farmville 2 (Facebook)</figcaption>
-      </figure>
-  </li>
-</ul>
+- <!-- {ul:.horizontal-list.no-bullet.full-width} -->
+  ::: figure .polaroid.light.item-300w
+  ![](../../images/candy-crush-saga.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Candy Crush Saga (Facebook)</figcaption>
+  :::
+- ::: figure .polaroid.light.item-300w
+  ![](../../images/farmville-2.jpg) <!-- {style="width: 100%;"} -->
+  <figcaption>Farmville 2 (Facebook)</figcaption>
+  :::
 
 ---
+<!-- { "layout": "centered-horizontal" } -->
 # Referências
 
 - Livro _Game Development Essentials: An Introduction, Third Edition_
