@@ -725,6 +725,25 @@ ul.gob-goals > li.pink,
 .gob-goal {
   display: inline-block;
 }
+.horizontal-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.horizontal-list > li {
+  display: initial;
+  width: auto;
+  margin: initial;
+}
 ul.horizontal > li {
   display: inline-block;
   list-style-type: none;
