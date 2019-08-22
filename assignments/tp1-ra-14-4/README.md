@@ -43,7 +43,7 @@ progressão de dificuldade.
 É objetivo deste trabalho exercitar o projeto de jogos (_game design_),
 computação gráfica e inteligência artificial para (a) fazer uma simulação
 (como no caso de bichinho virtual) ou para (b) controlar os personagens que
-jogam por conta própria (como no La Brutte). Portanto, pensem em uma
+jogam por conta própria (como no PiTSi). Portanto, pensem em uma
 mecânica simples.
 
 O jogo pode ser criado em qualquer tipo de ferramenta (_maker_, motor,
