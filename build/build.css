@@ -1344,7 +1344,7 @@ ul.horizontal > li {
   background-color: #f5f5dc;
 }
 .tutorial {
-  position: absolute;
+  position: fixed;
   right: 20px;
   bottom: 80px;
   padding: 0.5em 0.75em;
@@ -2076,6 +2076,16 @@ ul.horizontal > li {
   background-image: url("../images/fliperama.jpg");
   background-size: cover;
   background-position: right;
+}
+.intro .plataformas.layout-section-header::after {
+  background-image: url("../images/platforms.jpg");
+  background-size: cover;
+  background-position: right;
+}
+.intro .generos.layout-section-header::after {
+  background-image: url("../images/game-genres.jpg");
+  background-size: contain;
+  background-position: center;
 }
 .d-graphics .layout-title.bespoke-slide h1 {
   color: #ef7a02;
