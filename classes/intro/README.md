@@ -7,8 +7,8 @@
 # Roteiro
 
 1. [História](#historia)
-1. [Plataformas](#plataformas-e-generos)
-1. [Gêneros de jogos](#plataformas-e-generos)
+1. [Plataformas](#plataformas)
+1. [Gêneros de jogos](#generos)
 
 ---
 <!-- {"layout": "section-header", "slideHash": "historia", "slideClass": "historia"} -->
@@ -109,7 +109,7 @@
   - Adaptação do Spacewar: Computer Space
     - Hardware customizado + TV + operação por moedas
   - Não fez muito sucesso, mas marcou o início
-  - ![](../../images/pong-arcade-open.jpg) <!-- {.push-right} -->
+  - ![](../../images/pong-arcade-open.jpg) <!-- {.push-right style="width: 280px"} -->
     Em 1972 **Nolan Bushnell fundou a Atari** e lançou o Pong
 
 ---
@@ -190,7 +190,7 @@
 
 ### **Crash** de 1983 - 1984
 
-- Depois de um grande sucesso até 1982, a indústria de jogos começou a ter
+- Depois de um grande sucesso até 1982, a indústria de jogos começou a ter <!-- {ul:.no-margin} -->
   problemas e **várias empresas entraram em colapso**
   - Não havia grandes avanços tecnológicos
   - Excesso de jogos e cartuchos (mais de 50 empresas)
@@ -388,8 +388,8 @@
 - Celulares, Tablets
 
 ---
-<!-- { "layout": "section-header", "slideClass": "plataformas-e-generos", "slideHash": "plataformas-e-generos" } -->
-# Plataformas e Gêneros
+<!-- { "layout": "section-header", "slideClass": "plataformas", "slideHash": "plataformas" } -->
+# Plataformas
 
 ## O que precisamos saber?
 
@@ -554,13 +554,6 @@
 <!-- { "layout": "regular" } -->
 ## Característica: **Número de Jogadores**
 
-<!-- - O número de jogadores define:
-  - A infra-estrutura de redes que pode ser necessária
-  - A necessidade de equipe de suporte técnico 24/7
-  - O uso de divisão da tela de jogo em mútliplas câmeras virtais
-- Varia de **jogador único** (_single-player_) a multi-massivo
-  online (<abbr title="multi-massive online">MMO</abbr>) -->
-
 1. <!-- {ol:.layout-split-2.no-bullet.center-aligned} -->
    ### _Single-player_
    ::: figure .light.item-300w.polaroid.light margin: auto;
@@ -628,7 +621,7 @@
 <!-- { "layout": "centered-horizontal" } -->
 # Propósitos mais raros: _Advergame_
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/PmnAxS7mc-s?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="480" src="https://www.youtube.com/embed/PmnAxS7mc-s?rel=0" frameborder="0" allowfullscreen></iframe>
 
 ---
 <!-- { "layout": "centered-horizontal" } -->
@@ -662,11 +655,14 @@
 
 - São categorias nas quais os jogos são classificados levando em consideração o
   estilo, a narrativa, a perspectiva dos jogadores, _gameplay_, etc
-  - Ex.: Ação, Aventura, <abbr title="Role-playing game">RPG</abbr>, <abbr title="Real-time strategy">RTS</abbr>...
+  - Ex.: Ação, Aventura, RPG, RTS...
 - Novos gêneros são criados continuamente
   - Ex: jogos sociais, _music games_
 - Normalmente são considerados em conjunto com as características estudadas até aqui
 - Novak (2011) considera 10 gêneros, alguns contendo sub-gêneros
+
+*[RPG]: Role-playing game
+*[RTS]: Real-time strategy
 
 ---
 <!-- { "layout": "regular" } -->
@@ -679,7 +675,7 @@
   - Plataforma (Donkey kong, Sonic, ...)
   - Luta
   - Corrida
-  - "Outros": Pac-Man, Guitar Hero...
+  - Outros: Pac-Man, Guitar Hero...
 
 *[FPSs]: First-person shooters*
 
@@ -800,6 +796,10 @@
   - Action RTS: combates do jogo RTS
   - _Micromanagement_ de poucas unidades
 
+*[TBS]: Turn-based strategy*
+*[RTS]: Real-time strategy*
+*[MOBA]: Multiplayer online battle arena*
+
 ---
 <!-- { "layout": "regular" } -->
 # Gênero: **Estratégia**
@@ -815,6 +815,10 @@
   <figcaption>Starcraft 2 (PC)</figcaption>
   :::
 
+
+*[TBS]: Turn-based strategy*
+*[RTS]: Real-time strategy*
+
 ---
 <!-- { "layout": "regular" } -->
 # Gênero: **MMOG**
@@ -826,6 +830,10 @@
 - Desafios
   - Balanceamento entre socialização e imersão
   - Fazer as pessoas “se comportarem” de acordo
+
+*[MMOG]: Multi-massive online game*
+*[MMORPG]: Multi-massive online role-playing game*
+*[MMOFPS]: Multi-massive online first-person shooter*
 
 ---
 <!-- { "layout": "regular" } -->
@@ -841,6 +849,9 @@
   ![](../../images/eve-online.jpg) <!-- {style="width: 100%;"} -->
   <figcaption>Eve Online (PC)</figcaption>
   :::
+
+*[MMOG]: Multi-massive online game*
+*[MMORPG]: Multi-massive online role-playing game*
 
 ---
 <!-- { "layout": "regular" } -->
@@ -869,7 +880,7 @@
   :::
 
 ---
-<!-- { "layout": "centered-horizontal" } -->
+<!-- { "layout": "centered" } -->
 # Referências
 
 - Livro _Game Development Essentials: An Introduction, Third Edition_
