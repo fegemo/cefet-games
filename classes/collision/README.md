@@ -35,7 +35,17 @@
 
 ---
 <!-- { "layout": "regular" } -->
-## Entidades colidíveis
+# Para quê determinar colisão?
+
+- Motivos:
+  1. Determinar objetos se intersectando
+  1. Para lançar eventos (eg, jogador chegou no final da fase)
+  1. Determinar todos objetos dentro de um volume
+  1. Planejamento de caminhos sem colisão
+
+---
+<!-- { "layout": "regular" } -->
+# Entidades colidíveis
 
 - Além da **representação visual** dos objetos, atribuímos a eles uma
   **representação de colisão** - como ele se comporta no mundo físico
@@ -157,6 +167,46 @@ Mas como achar o ponto do retângulo mais próximo do círculo?? <!-- {.bullet.c
 :::
 
 [sat-video]: https://www.youtube.com/watch?v=Ap5eBYKlGDo
+
+---
+<!-- { "layout": "section-header" } -->
+# _Broad vs Narrow Phase_
+## Dividindo o esforço em fases
+
+
+---
+# _Broad vs Narrow Phase_
+
+- Suponha uma cena de jogo com o jogador, 19 inimigos e 10 tiros pra cada
+  Total de entidades
+    ~ 200
+
+  Testes de colisão:
+    ~ <span class="math">199 + 198 + 197 ... + 1 = 20.100</span>
+
+  Complexidade
+    ~ <span class="math">O(n^2)</span>
+
+- Para reduzir o número de operações, dividimos o problema nas fases:
+  1. **_Broad phase_**: determina pares de entidades potencialmente colidindo
+  1. **_Narrow phase_**: confirma apenas os pares indicados na _broad phase_
+     - É o que já vimos como fazer
+
+---
+# _Broad Phase_
+
+- Baseado nos 4 princípios:
+  Aproximação:
+    ~ Usar geometria mais simples
+
+  Localidade:
+    ~ Verificar apenas objetos próximos
+
+  Coerência
+    ~ Objetos tendem a se manter ou mover pouco
+
+  Cinemática
+    ~ Usar informação da trajetória dos objetos
 
 ---
 # Referências
