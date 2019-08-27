@@ -11,17 +11,14 @@
    1. Círculo (2D) e esfera (3D)
    1. Retângulo (2D) e AABB (3D)
    1. OBB
+1. Otimizações
+   1. Sweep and prune
+   1. ~~Particionamento do espaço~~
+   1. ~~Hierarquia de objetos~~
+1. ~~Colisão com raios (_raycasting_)~~
 
 *[AABB]: Axis-aligned bounding box*
 *[OBB]: Oriented bounding box*
-
-<!--
-1. Colisão com raios
-1. Otimizações
-   1. Sweep and prune
-   1. Hierarquia de objetos
-   1. Divisão do espaço
--->
 
 ---
 <!-- { "layout": "regular" } -->
@@ -213,7 +210,8 @@ Mas como achar o ponto do retângulo mais próximo do círculo?? <!-- {.bullet.c
 - Algoritmos:
   - Busca exaustiva usando AABB (<span class="math">O(n^2)</span>)
   - _Sweep and prune_
-  - Particionamento do espaço 
+  - Particionamento do espaço
+  - _Bounding volume hierarchy_
 
 ---
 <!-- { "layout": "regular" } -->
@@ -250,7 +248,8 @@ Mas como achar o ponto do retângulo mais próximo do círculo?? <!-- {.bullet.c
   - Capítulo 12: _Collision and Rigid Body Dynamics_
 
 
-  <!-- 1. Game Eng. Arch: 666
-  2. Maxim: 07-collisions (slides 41+)
-  3. Sushil: Physics.pdf (14-29)
-  4. Dave Mount: chapt11-physics.pdf (slides 13,14) -->
+<!--
+1. Game Eng. Arch: 666
+2. Maxim: 07-collisions (slides 41+)
+5. Imagens e explicações boas: (a) https://www.toptal.com/game/video-game-physics-part-ii-collision-detection-for-solid-objects e (b) https://treadgaming.blogspot.com/2016/06/
+-->
