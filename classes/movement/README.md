@@ -1,17 +1,15 @@
-<!--
-backdrop: movement
--->
+<!-- { "layout": "title" } -->
+# Movimentação de Objetos
+## Módulo IA
 
-# IA: Movimentação
+*[IA]: Inteligência Artificial*
 
 ---
-<!--
-backdrop: white
--->
-
+<!-- { "layout": "centered", "backdrop": "white" } -->
 ![](../../images/ai-model.png)
 
 ---
+<!-- { "layout": "centered" } -->
 # Roteiro
 
 1. Introdução à movimentação de entidades
@@ -20,12 +18,8 @@ backdrop: white
 
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # Movimentação de Personagens
-
 ## O que precisamos saber?
 
 - Como dar comportamentos de movimentação para inimigos
@@ -33,20 +27,18 @@ bespokeState: checkpoint
 - Como evitar obstáculos no caminho
 
 ---
-<!--
-backdrop: white
--->
-
-## **Movimentação** como um **Algoritmo**
+<!-- { "layout": "regular", "backdrop": "white" } -->
+# **Movimentação** como um **Algoritmo** (1/2)
 
 ![](../../images/movement-algorithm-structure.png)
 
 - Exemplos de algoritmos: buscar, fugir, vagar, interceptar
 
 ---
-## **Movimentação** como um **Algoritmo** (cont.)
+<!-- { "layout": "regular" } -->
+# **Movimentação** como um **Algoritmo** (2/2)
 
-- ![right](../../images/movement-algorithm-structure-small.png)
+- ![](../../images/movement-algorithm-structure-small.png) <!-- {.push-right} -->
   Exemplos de algoritmos: buscar, fugir, vagar, interceptar
   - **_Input_**: posição atual
     - Opcionais:
@@ -56,7 +48,8 @@ backdrop: white
   - **_Output_**: a nova velocidade/orientação da entidade
 
 ---
-## Movimento Cinemático _vs_ Dinâmico
+<!-- { "layout": "regular" } -->
+# Movimento Cinemático _vs_ Dinâmico
 
 - Em alguns jogos, supomos aceleração perfeita:
   - A entidade assume a velocidade desejada instantaneamente, sem aceleração
@@ -69,9 +62,10 @@ backdrop: white
     - _Steering behaviors_ ➡️ "formas de condução"
 
 ---
-## A **pose** do objeto
+<!-- { "layout": "regular" } -->
+# A **pose** do objeto (1/2)
 
-![](../../images/movement-pose.png)
+![](../../images/movement-pose.png) <!-- {p:.centered} -->
 
 - **Pose** do objeto: posição e orientação (para onde está olhando)
 - Em jogos 2D:
@@ -79,9 +73,10 @@ backdrop: white
   - Orientação: ângulo
 
 ---
-## A **pose** do objeto (cont.)
+<!-- { "layout": "regular" } -->
+# A **pose** do objeto (2/2)
 
-- ![right](../../images/movement-pose-small.png)
+- ![](../../images/movement-pose-small.png) <!-- {.push-right} -->
   Em jogos 2D:
   - Posição: vetor2d (x, y)
   - Orientação: ângulo
@@ -93,29 +88,31 @@ backdrop: white
 
 
 ---
-## A **pose** do objeto: cinemática _vs_ dinâmica
+<!-- { "layout": "regular" } -->
+# A **pose** do objeto: cinemática _vs_ dinâmica
 
 - Na **movimentação cinemática**, a configuração do objeto
   como uma **pose**: (a) sua posição e (b) para onde ele está
   "olhando"
   ```ruby
   struct Pose:
-    position      # (a) um vetor 2D, mesmo quando em 3D
-    orientation   # (b) um escalar com um ângulo
+      position      # (a) um vetor 2D, mesmo quando em 3D
+      orientation   # (b) um escalar com um ângulo
   ```
 - Na **movimentação dinâmica**, a pose também possui a (c) velocidade linear
   e a (d) angular
   ```ruby
   struct Pose:
-    #...
-    velocity      # (c) um vetor 2D com velocidade linear
-    rotation      # (d) um escalar rad/s
+      #...
+      velocity      # (c) um vetor 2D com velocidade linear
+      rotation      # (d) um escalar rad/s
   ```
 
 ---
-## Orientação como um vetor
+<!-- { "layout": "regular" } -->
+# Orientação como um vetor
 
-- ![right](../../images/orientation-as-vector.png)
+- ![](../../images/orientation-as-vector.png) <!-- {.push-right} -->
   Pode ser útil representar uma orientação como um vetor em vez de um escalar
   - Por exemplo, para movimentar "para a frente"
 - Orientação <span class="math">\omega_{s}</span> em radianos pode ser
@@ -124,15 +121,16 @@ backdrop: white
 
 
 ---
-## Orientação independente do movimento
+<!-- { "layout": "regular" } -->
+# Orientação independente do movimento
 
 - Muitos algoritmos de movimentação ignoram a orientação
   - (2D) Personagem pode andar para a direita, olhando para cima
 - Nesse caso, atualizamos a orientação de acordo com a velocidade
   ```ruby
   def lookTowardsVelocity(speed):
-    if velocidade.length() > 0:
-      orientation = atan2(speed.y, speed.x)
+      if velocidade.length() > 0:
+          orientation = atan2(speed.y, speed.x)
   ```
   - Mas isso não é natural...
   - ![right](../../images/interpolating-facing.png)
@@ -140,56 +138,54 @@ backdrop: white
 
 
 ---
-## Integrando velocidade e aceleração (1ª forma)
+<!-- { "layout": "regular" } -->
+# Integrando velocidade e aceleração (1ª forma)
 
 ```ruby
 struct Pose:
-  # membros aqui...
-  # ...
+    # membros aqui...
+    # ...
 
-  # atualiza a pose, de acordo com o direcionamento
-  #  (steering) dado pelo algoritmo e o Δt
-  def update(steering, time)
-    # atualiza a posição e a orientação
-    position += velocity * time
-                + 0.5 * steering.linear * time * time  
-    orientation += rotation * time
-                + 0.5 * steering.angular * time * time
+    # atualiza a pose, de acordo com o direcionamento
+    #  (steering) dado pelo algoritmo e o Δt
+    def update(steering, time)
+        # atualiza a posição e a orientação
+        position += velocity * time
+                    + 0.5 * steering.linear * time * time  
+        orientation += rotation * time
+                    + 0.5 * steering.angular * time * time
 
-    # e as velocidades linear e angular
-    velocity += steering.linear * time
-    orientation += steering.angular * time
+        # e as velocidades linear e angular
+        velocity += steering.linear * time
+        orientation += steering.angular * time
 ```
 
 ---
-## Integrando velocidade e aceleração (Newton-Euler)
+<!-- { "layout": "regular" } -->
+# Integrando velocidade e aceleração (Newton-Euler)
 
 ```ruby
 struct Pose:
-  # membros aqui...
-  # ...
+    # membros aqui...
+    # ...
 
-  # atualiza a pose, de acordo com o direcionamento
-  #   (steering) dado pelo algoritmo e o Δt
-  def update(steering, time)
-    # atualiza a posição e a orientação
-    position += velocity * time     # :)
-    orientation += rotation * time  # :)
-    # Δt é muito pequeno, Δt² menor ainda
+    # atualiza a pose, de acordo com o direcionamento
+    #   (steering) dado pelo algoritmo e o Δt
+    def update(steering, time)
+        # atualiza a posição e a orientação
+        position += velocity * time     # :)
+        orientation += rotation * time  # :)
+        # Δt é muito pequeno, Δt² menor ainda
 
 
-    # e as velocidades linear e angular
-    velocity += steering.linear * time
-    orientation += steering.angular * time
+        # e as velocidades linear e angular
+        velocity += steering.linear * time
+        orientation += steering.angular * time
 ```
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # Movimentação Cinemática
-
 ## O que precisamos saber?
 
 - Como fazer uma entidade ir até um ponto
@@ -197,38 +193,40 @@ bespokeState: checkpoint
 - Como fazê-la vagar aleatoriamente
 
 ---
-## Algoritmo: **Buscar** (_seek_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Buscar** (_seek_)
 
 ```ruby
 class KinematicSeek:
-  # a pose do objeto que está movimentando e do seu alvo
-  character
-  target
-  # velocidade máxima do objeto
-  maxSpeed
+    # a pose do objeto que está movimentando e do seu alvo
+    character
+    target
+    # velocidade máxima do objeto
+    maxSpeed
 
-  def getSteering()
-    # cria uma estrutura que representa o output do algoritmo
-    steering = new KinematicSteeringOutput()
+    def getSteering()
+        # cria uma estrutura que representa o output do algoritmo
+        steering = new KinematicSteeringOutput()
 
-    # determina a direção da velocidade
-    steering.velocity = target.position - character.position
+        # determina a direção da velocidade
+        steering.velocity = target.position - character.position
 
-    # ajusta a velocidade para ter a magnitude da
-    #   velocidade máxima
-    steering.velocity.normalize()
-    steering.velocity *= maxSpeed
+        # ajusta a velocidade para ter a magnitude da
+        #   velocidade máxima
+        steering.velocity.normalize()
+        steering.velocity *= maxSpeed
 
-    # ajusta a orientação para olhar na direção da velocidade
-    character.orientation.lookTowardsVelocity(steering.velocity)
+        # ajusta a orientação para olhar na direção da velocidade
+        character.orientation.lookTowardsVelocity(steering.velocity)
 
-    # retorna o direcionamento dado pelo algoritmo
-    steering.rotation = 0
-    return steering
+        # retorna o direcionamento dado pelo algoritmo
+        steering.rotation = 0
+        return steering
 ```
 
 ---
-## Algoritmo: **Fugir** (_flee_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Fugir** (_flee_)
 
 - É possível adaptar o **Buscar** para **Fugir**:
   ```ruby
@@ -240,7 +238,8 @@ class KinematicSeek:
   ```
 
 ---
-## Algoritmo: Chegar (_arrive_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: Chegar (_arrive_)
 
 - O **Buscar** tem problemas quando o objeto precisa parar
   - Ele vai _full speed_ e pode ir além do ponto objetivo (_overshoot_)
@@ -251,51 +250,54 @@ class KinematicSeek:
 
 
 ---
+<!-- { "layout": "regular" } -->
 ## Algoritmo: Chegar - código
+
 ```ruby
 class KinematicArrive:
-  # a pose do objeto que está movimentando e do seu alvo
-  character
-  target
-  # velocidade máxima do objeto
-  maxSpeed
-  # raio de satisifação para se atingir o objetivo
-  radius
-  # tempo para atingir o objetivo
-  timeToTarget = 0.25
+    # a pose do objeto que está movimentando e do seu alvo
+    character
+    target
+    # velocidade máxima do objeto
+    maxSpeed
+    # raio de satisifação para se atingir o objetivo
+    radius
+    # tempo para atingir o objetivo
+    timeToTarget = 0.25
 
-  def getSteering()
-    # (igual) cria uma estrutura que representa o output
-    #   do algoritmo
-    steering = new KinematicSteeringOutput()
-    # (igual) determina a direção da velocidade
-    steering.velocity = target.position - character.position
+    def getSteering()
+        # (igual) cria uma estrutura que representa o output
+        #   do algoritmo
+        steering = new KinematicSteeringOutput()
+        # (igual) determina a direção da velocidade
+        steering.velocity = target.position - character.position
 
-    # verifica se está no raio de satisfação
-    if steering.velocity.length() < radius:
-      # já está dentro do raio...
-      return None
-    # queremos ir até o objetivo em timeToTarget segundos
-    steering.velocity /= timeToTarget
-    # se estiver rápido demais, limita à maxSpeed
-    if steering.velocity.length() > maxSpeed:
-      # ajusta a velocidade para ter a magnitude da
-      #   velocidade máxima
-      steering.velocity.normalize()
-      steering.velocity *= maxSpeed
+        # verifica se está no raio de satisfação
+        if steering.velocity.length() < radius:
+            # já está dentro do raio...
+            return None
+        # queremos ir até o objetivo em timeToTarget segundos
+        steering.velocity /= timeToTarget
+        # se estiver rápido demais, limita à maxSpeed
+        if steering.velocity.length() > maxSpeed:
+            # ajusta a velocidade para ter a magnitude da
+            #   velocidade máxima
+            steering.velocity.normalize()
+            steering.velocity *= maxSpeed
 
-    # (igual) ajusta a orientação para olhar na direção
-    #   da velocidade
-    character.orientation.lookTowardsVelocity(steering.velocity)
-    # (igual) retorna o direcionamento dado pelo algoritmo
-    steering.rotation = 0
-    return steering
+        # (igual) ajusta a orientação para olhar na direção
+        #   da velocidade
+        character.orientation.lookTowardsVelocity(steering.velocity)
+        # (igual) retorna o direcionamento dado pelo algoritmo
+        steering.rotation = 0
+        return steering
 ```
 
 ---
-## Algoritmo: Vagar (_wander_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: Vagar (_wander_)
 
-- ![right](../../images/wander-example.png)
+- ![](../../images/wander-example.png) <!-- {.push-right} -->
   Faz a entidade vagar, em direções "aleatórias"
 - Temos que ter cuidado para sortear a nova direção
 - Precisamos ajustar gentilmente a orientação corrente
@@ -307,39 +309,36 @@ class KinematicArrive:
     - [Veja o desenho da distribuição](http://jsfiddle.net/fegemo/o4r3nu78/2/)
 
 ---
-## Algoritmo: Vagar - código
+<!-- { "layout": "regular" } -->
+# Algoritmo: Vagar - código
 
 ```ruby
 class KinematicWander:
-  # a pose do objeto que está movimentando
-  character
-  # velocidade máxima
-  maxSpeed
-  # velocidade angular máxima
-  maxRotation
+    # a pose do objeto que está movimentando
+    character
+    # velocidade máxima
+    maxSpeed
+    # velocidade angular máxima
+    maxRotation
 
-  def getSteering():
-    # cria uma estrutura que representa o output do algoritmo
-    steering = new KinematicSteeringOutput()
+    def getSteering():
+        # cria uma estrutura que representa o output do algoritmo
+        steering = new KinematicSteeringOutput()
 
-    # velocidade na direção da orientação
-    steering.velocity = maxSpeed
-                        * character.getOrientationAsVector()
+        # velocidade na direção da orientação
+        steering.velocity = maxSpeed
+                            * character.getOrientationAsVector()
 
-    # altera a orientação, bem pouquinho, aleatoriamente
-    steering.rotation = randomBinomial() * maxRotation
+        # altera a orientação, bem pouquinho, aleatoriamente
+        steering.rotation = randomBinomial() * maxRotation
 
-    # retorna o direcionamento
-    return steering
+        # retorna o direcionamento
+        return steering
 ```
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # Movimentação Dinâmica (_Steering Behaviors_)
-
 ## O que precisamos saber?
 
 - Como movimentar a entidade sem alterar sua velocidade diretamente
@@ -348,7 +347,8 @@ bespokeState: checkpoint
 - Como compor algoritmos
 
 ---
-## Princípios da Movimentação Dinâmica
+<!-- { "layout": "regular" } -->
+# Princípios da Movimentação Dinâmica
 
 - É o que usamos para jogos de corrida (sempre), e em outros gêneros
 - Têm como:
@@ -359,54 +359,57 @@ bespokeState: checkpoint
   - Cada algoritmo faz apenas 1 coisa, mas é possível combiná-los
 
 ---
-## Algoritmo: **Buscar/Fugir** Dinâmico
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Buscar/Fugir** Dinâmico
 
 ```ruby
 class Seek:
-  # pose do objeto e do alvo
-  character
-  target
-  # aceleração máxima do objeto
-  maxAcceleration
+    # pose do objeto e do alvo
+    character
+    target
+    # aceleração máxima do objeto
+    maxAcceleration
 
-  def getSteering():
-    # saída do algoritmo
-    steering = new DynamicSteeringOutput()
+    def getSteering():
+        # saída do algoritmo
+        steering = new DynamicSteeringOutput()
 
-    # determina a direção/sentido até o alvo
-    steering.linear = target.position - character.position
-    # para Fugir Dinâmico, inverter o sentido ⬆️
+        # determina a direção/sentido até o alvo
+        steering.linear = target.position - character.position
+        # para Fugir Dinâmico, inverter o sentido ⬆️
 
-    # aceleração máxima nesse sentido
-    steering.linear.normalize()
-    steering.linear *= maxAcceleration
+        # aceleração máxima nesse sentido
+        steering.linear.normalize()
+        steering.linear *= maxAcceleration
 
-    # retorna o direcionamento
-    steering.angular = 0
-    return steering
+        # retorna o direcionamento
+        steering.angular = 0
+        return steering
 ```
 
 ---
-## Limitando a velocidade
+<!-- { "layout": "regular" } -->
+# Limitando a velocidade
 
 - Para evitar _overshooting_, limitamos a velociade (simulando atrito)
   - Isso é feito na `struct Pose`, no `def update(steering, time)`:
     ```ruby
     def update(steering, maxSpeed, time):
-      # acha a nova posição...
-      # ...
-      # e as novas velocidade e orientação
-      velocity += steering.linear * time
-      orientation += steering.angular * time
+        # acha a nova posição...
+        # ...
+        # e as novas velocidade e orientação
+        velocity += steering.linear * time
+        orientation += steering.angular * time
 
-      # (novo) verifica se a velocidade excedeu o máximo
-      if velocity.length() > maxSpeed:
-        velocity.normalize()
-        velocity *= maxSpeed
+        # (novo) verifica se a velocidade excedeu o máximo
+        if velocity.length() > maxSpeed:
+            velocity.normalize()
+            velocity *= maxSpeed
     ```
 
 ---
-## Buscar _vs_ **Chegar**
+<!-- { "layout": "regular" } -->
+# Buscar _vs_ **Chegar**
 
 ![](../../images/dynamic-seek-vs-arrive.png)
 - O **Buscar Dinâmico** tem o mesmo problema que o cinemático para alvos
@@ -414,7 +417,8 @@ class Seek:
   - Precisamos definir um **Chegar Dinâmico**
 
 ---
-## Algoritmo: **Chegar Dinâmico** (_arrive_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Chegar Dinâmico** (_arrive_)
 
 - Similar ao Chegar Cinemático, mas agora precisamos desacelerar sem controlar
   a velocidade diretamente
