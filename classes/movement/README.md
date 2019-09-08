@@ -30,7 +30,7 @@
 <!-- { "layout": "regular", "backdrop": "white" } -->
 # **Movimentação** como um **Algoritmo** (1/2)
 
-![](../../images/movement-algorithm-structure.png)
+![](../../images/movement-algorithm-structure.png) <!-- {p:.centered} -->
 
 - Exemplos de algoritmos: buscar, fugir, vagar, interceptar
 
@@ -42,8 +42,8 @@
   Exemplos de algoritmos: buscar, fugir, vagar, interceptar
   - **_Input_**: posição atual
     - Opcionais:
-      1. Posição do jogador (para buscar)
-      1. Posição do tiro do jogador e sua velocidade (interceptar)
+      1. Posição do alvo (para buscar)
+      1. Posição do tiro inimigo e sua velocidade (interceptar)
       1. Posição e tamanho dos obstáculos (desvio)
   - **_Output_**: a nova velocidade/orientação da entidade
 
@@ -57,7 +57,7 @@
 - N'outros, temos aceleração
   - O algoritmo de movimentação tem como output uma aceleração (ou uma força)
   - Nesses, usamos o **movimentação dinâmica**
-    - <img src="../../images/craig-reynolds.jpg" alt="right" class="portrait">
+    - ![](../../images/craig-reynolds.jpg) <!-- {.push-right.portrait} -->
       Vários algoritmos formalizados por Craig Reynolds (criador dos _boids_)
     - _Steering behaviors_ ➡️ "formas de condução"
 
@@ -429,6 +429,7 @@ class Seek:
     desacelerar**
 
 ---
+<!-- { "layout": "regular" } -->
 ## Algoritmo: **Chegar Dinâmico** - código
 
 ```ruby
@@ -482,7 +483,8 @@ class Seek:
 ```
 
 ---
-## Outros Algoritmos Dinâmicos
+<!-- { "layout": "regular" } -->
+# Outros Algoritmos Dinâmicos
 
 - **Algoritmo: Alinhar** (_align_)
   - Altera apenas a orientação - vai rotacionando até chegar na
@@ -496,7 +498,8 @@ class Seek:
     até o alvo)
 
 ---
-## Problemas com _Buscar_
+<!-- { "layout": "regular" } -->
+# Problemas com _Buscar_
 
 ![](../../images/seek-inefficiency.png)
 
@@ -505,7 +508,8 @@ class Seek:
   - Precisamos <u>prever a posição do alvo</u>
 
 ---
-## **Algoritmos Delegativos**
+<!-- { "layout": "regular" } -->
+# **Algoritmos Delegativos**
 
 - Vimos os algoritmos básicos: **Buscar**, **Fugir**, **Chegar**, **Alinhar**
 - Outros algoritmos <u>calculam uma posição ou orientação alvo</u> e, então
@@ -514,12 +518,14 @@ class Seek:
     **Evitar obstáculos**
 
 ---
-## Algoritmo: **Perseguir Dinâmico** (_pursue_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Perseguir Dinâmico** (_pursue_)
 
 ![](../../images/dynamic-seek-vs-pursue.png)
 
 ---
-## Algoritmo: **Perseguir Dinâmico** (cont.)
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Perseguir Dinâmico** (cont.)
 
 - Olha para a velocidade do alvo e prevê **onde ele estará daqui a x
   segundos**, **supondo que ele mantém a velocidade**:
@@ -529,7 +535,8 @@ class Seek:
 - Analogamente, **Evadir** delega para **Fugir**
 
 ---
-## Algoritmo: **Vagar Dinâmico** (_wander_)
+<!-- { "layout": "regular" } -->
+# Algoritmo: **Vagar Dinâmico** (_wander_)
 
 ![right](../../images/kinematic-vs-dynamic-wander.png)
 
@@ -539,7 +546,8 @@ class Seek:
   1. Delega para **Buscar**
 
 ---
-## Outros Algoritmos Delegativos
+<!-- { "layout": "regular" } -->
+# Outros Algoritmos Delegativos
 
 - ![right](../../images/avoid-collision-example.png)
   **Algoritmo: Evitar colisões**
@@ -552,7 +560,8 @@ class Seek:
   - Usamos _ray casting_ para detectar colisão futura
 
 ---
-## Combinando algoritmos
+<!-- { "layout": "regular" } -->
+# Combinando algoritmos
 
 - Podemos ter um personagem que quer:
   1. atingir um objetivo
@@ -564,7 +573,8 @@ class Seek:
   1. **Arbitrar** que comportamento terá prioridade
 
 ---
-## Possíveis problemas
+<!-- { "layout": "regular" } -->
+# Possíveis problemas
 
 - Mínimos locais (equilíbrio instável):
 
@@ -575,6 +585,7 @@ class Seek:
 - **Solução**: planejamento de trajetórias (próxima aula!) + movimentação
 
 ---
+<!-- { "layout": "centered" } -->
 # Referências
 
 - Livro _Artificial Intelligence for Games, Second Edition_
