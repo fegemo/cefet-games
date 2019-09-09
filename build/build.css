@@ -2130,6 +2130,26 @@ ul.horizontal > li {
   background-position: center;
   background-size: contain;
 }
+.pathfinding .layout-title.bespoke-slide h1 > * {
+  margin-right: 0.5em;
+}
+.pathfinding .layout-title.bespoke-slide h1::before {
+  background-image: url("../images/pathfinding.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.pathfinding .introducao-a-pathfinding.layout-section-header::after {
+  background-image: url("../images/pathfinding-2.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.pathfinding .algoritmo-de-dijkstra.layout-section-header::after {
+  background-image: url("../images/dijkstra.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .animation .layout-title h1::before {
   background-image: url("../images/max-payne3.jpg");
   background-position: top center;
