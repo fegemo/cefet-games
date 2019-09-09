@@ -1,11 +1,9 @@
-<!--
-backdrop: pathfinder
-bespokeEvent: bullets.disable
--->
-
-# IA: _Pathfinding_ usando Grafos
+<!-- { "layout": "title" } -->
+# _Pathfinding_ usando Grafos
+## Módulo IA
 
 ---
+<!-- { "layout": "centered" } -->
 ## Roteiro
 
 - Introdução a _Pathfinding_
@@ -13,10 +11,7 @@ bespokeEvent: bullets.disable
 - Algoritmo A*
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header", "slideClass": "introducao-a-pathfinding" } -->
 # Introdução a _Pathfinding_
 ## O que precisamos saber?
 
@@ -26,9 +21,10 @@ bespokeState: checkpoint
 - Como que **estrutura de dados** posso **representar grafos**?
 
 ---
-## O Problema do **Mínimo Local**
+<!-- { "layout": "regular" } -->
+# O Problema do **Mínimo Local**
 
-![](../../images/local-minima.png)
+![](../../images/local-minima.png) <!-- {p:.centered} -->
 
 - Somatório de forças é nulo em uma posição que não é o mínimo da função potencial
   - Soluções
@@ -36,9 +32,10 @@ bespokeState: checkpoint
     - **Planejar o caminho**
 
 ---
-## Motivação
+<!-- { "layout": "regular" } -->
+# Motivação (1/2)
 
-- ![right](../../images/pathfinding-ai-architecture.png)
+- ![](../../images/pathfinding-ai-architecture.png) <!-- {.push-right} -->
   Casos de uso:
   - Uma unidade de jogo RTS pode ser ordenada a **ir a qualquer ponto
     do mapa a qualquer momento**
@@ -47,24 +44,24 @@ bespokeState: checkpoint
   - Um jogo de plataforma pode ter oponentes que **perseguem o jogador por um
     abismo usando as plataformas disponíveis**
 
-<p class="note" style="width: 70%;">
-  **_Pathfinding_**: encontrar um caminho até um objetivo, escolhido na fase
-  de tomada de decisão
-</p>
+**_Pathfinding_**: encontrar um caminho até um objetivo, escolhido na fase
+de tomada de decisão <!-- {p:.note.info} -->
 
 ---
-## Motivação (2)
+<!-- { "layout": "regular" } -->
+# Motivação (2/2)
 
 ![](../../images/pathfinding-platform.png)
-![](../../images/pathfinding-3dgame.png)
+![](../../images/pathfinding-3dgame.png) <!-- {p:.centered} -->
 
 - Premissa do _pathfinding_: precisamos **representar o espaço do jogo de uma
   forma mais simples** - em especial, usamos **um grafo**
 
 ---
-## O que é um **grafo**
+<!-- { "layout": "regular" } -->
+# O que é um **grafo**
 
-![](../../images/pathfinding-graph1.png)
+![](../../images/pathfinding-graph1.png) <!-- {p:.centered} -->
 
 - É uma **estrutura matemática** normalmente representada em diagrama
 - Consiste de **nós** (ou vértices) e **conexões** (arestas)
@@ -72,12 +69,12 @@ bespokeState: checkpoint
   Ciência da Computação (_e.g._, **_pathfinding_**)
 
 ---
-## Características de um grafo
-
+<!-- { "layout": "regular" } -->
+# Características de um grafo
 
 - O cenário precisa ser representado por um grafo com **pesos não-negativos**
-  e **direcionado** (<abbr title="Directed non-Negative Weighted Graph">DnNWG</abbr>)
-  - ![right](../../images/pathfinding-graph2.png)
+  e **direcionado** (DnNWG)
+  - ![](../../images/pathfinding-graph2.png) <!-- {.push-right} -->
     **Nó**: representa uma região do cenário como uma sala, um pedaço do
     corredor, uma plataforma etc.
   - **Conexão**: representa que regiões estão conectadas
@@ -85,32 +82,32 @@ bespokeState: checkpoint
       - Pode estar relacionado à **distância, ao tempo, a uma combinação**
         dos dois etc.
 
----
-## Estrutura de dados grafo
+*[DnNWG]: Directed non-Negative Weighted Graph*
 
-```ruby
+---
+<!-- { "layout": "regular" } -->
+# Estrutura de dados grafo
+
+```python
 class Graph:
   # Retorna array de conexões (da classe Connection)
   # que saem de um dado nó
-  def getConnections(fromNode)
+  def getConnections(fromNode):
 
 class Connection:
   # Retorna o custo (não-negativo) da conexão
-  def getCost()
+  def getCost():
 
   # Retorna o nó de onde esta conexão veio
-  def getFromNode()
+  def getFromNode():
 
   # Retorna o nó para onde está conexão leva
-  def getToNode()
+  def getToNode():
 ```
 - Os nós podem ser identificados por simplesmente um número único
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header", "slideClass": "algoritmo-de-dijkstra" } -->
 # O <u>Algoritmo de Dijkstra</u>
 ## O que precisamos saber?
 
@@ -119,9 +116,10 @@ bespokeState: checkpoint
 - Dijkstra **desempenha melhor** quando a **solução está próxima**?
 
 ---
-## Edsger Dijkstra
+<!-- { "layout": "regular" } -->
+# Edsger Dijkstra
 
-- <img class="portrait right" src="../../images/dijkstra.jpg">
+- ![Foto de Edsger Dijkstra](../../images/dijkstra.jpg) <!-- {.push-right.portrait} -->
   Cientista da computação holandês (1930-2002)
 - Propôs um **algoritmo para determinar o menor caminho** de um nó do grafo
   até todos os outros (1959)
@@ -133,19 +131,23 @@ bespokeState: checkpoint
   - Foi ele quem **definiu e cunhou o termo _deadlock_**, por exemplo
 
 ---
-## O problema
+<!-- { "layout": "regular" } -->
+# O problema
 
 - Dado **um grafo** (DnNWG) **e dois nós** (inicial e objetivo), queremos
   **descobrir um caminho entre eles** de forma que o **custo** total é o
   **menor possível**
 
-  ![left](../../images/dijkstra-dnnwg.png)
+  ![](../../images/dijkstra-dnnwg.png) <!-- {.push-left} -->
   - Neste caso, há 10 caminhos diferentes com o mesmo custo
     - Qualquer caminho desses vale
   - **Queremos a lista de conexões** usadas, e não de nós
 
+*[DnNWG]: Directed non-Negative Weighted Graph*
+
 ---
-## O Algoritmo de Dijkstra
+<!-- { "layout": "regular" } -->
+# O Algoritmo de Dijkstra
 
 - É **completo** (se existe um caminho, acha) e **ótimo** (o caminho é o menor)
 - Fornece o menor custo de um nó para todos os outros
@@ -156,13 +158,16 @@ bespokeState: checkpoint
     ele foi encontrado
 
 ---
-## Exemplo de Execução de Dijkstra
+<!-- { "layout": "regular" } -->
+# Exemplo de Execução de Dijkstra
 
-[![](../../images/dijkstra-execution.png)](http://optlab-server.sce.carleton.ca/POAnimations2007/DijkstrasAlgo.html)
-- Fonte: [Carleton University](http://optlab-server.sce.carleton.ca/POAnimations2007/DijkstrasAlgo.html)
+![](../../images/dijkstra-execution.png) <!-- {p:.centered} --> <!-- {.medium-width.centered} -->
+
+- Fonte: [Technischen Universität München](https://www-m9.ma.tum.de/graph-algorithms/spp-dijkstra/index_en.html)
 
 ---
-## O Algoritmo de Dijkstra (2)
+<!-- { "layout": "regular" } -->
+# O Algoritmo de Dijkstra (2)
 
 - Funciona em iterações e trabalha, a cada iteração, em 1 **nó (corrente)**
 - A **cada iteração**:
@@ -174,7 +179,8 @@ bespokeState: checkpoint
 ![](../../images/dijkstra-it2.png)
 
 ---
-## O Algoritmo de Dijkstra (3)
+<!-- { "layout": "regular" } -->
+# O Algoritmo de Dijkstra (3)
 
 - O algoritmo mantém uma lista de nós abertos e outra de nós fechados:
   - **Abertos**: nós que foram vistos, porém ainda não tiveram sua iteração
@@ -189,7 +195,8 @@ bespokeState: checkpoint
   - Mas podemos terminar antes: ao **fecharmos o nó objetivo**
 
 ---
-## Pseudo-código
+<!-- { "layout": "regular" } -->
+# Pseudo-código
 
 ```ruby
 Push inicial em ABERTOS
@@ -312,7 +319,8 @@ def pathfindDijkstra(graph, start, end):
 ```
 
 ---
-##  Algoritmo de Dijkstra
+<!-- { "layout": "regular" } -->
+#  Algoritmo de Dijkstra
 
 - Complexidade: <span class="math">O((V+E)* log(V))</span>
 - Problema:
@@ -323,10 +331,7 @@ def pathfindDijkstra(graph, start, end):
     - Dica = Heurística
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # O <u>Algoritmo A*</u> (estrela)
 ## O que precisamos saber?
 
@@ -335,12 +340,14 @@ bespokeState: checkpoint
 - Há outras **herísticas admissíveis** por aí?
 
 ---
-## Dijkstra _vs_ A*
+<!-- { "layout": "centered-horizontal" } -->
+# Dijkstra _vs_ A*
 
 ![](../../images/dijkstra-vs-astar.png)
 
 ---
-## Algoritmo A*
+<!-- { "layout": "regular" } -->
+# Algoritmo A*
 
 - Um dos **algoritmos <u>mais utilizados</u> em jogos** para fazer o **planejamento
   de trajetórias**
@@ -350,7 +357,8 @@ bespokeState: checkpoint
 - Algoritmo de “busca com informação”: _informed search_
 
 ---
-## Algoritmo A* (2)
+<!-- { "layout": "regular" } -->
+# Algoritmo A* (2)
 
 - A escolha do próximo nó a ser investigado é feita
   considerando-se:
@@ -363,7 +371,8 @@ bespokeState: checkpoint
   da melhor solução que passa por <span class="math">n</span>
 
 ---
-## Exemplo de Execução do A*
+<!-- { "layout": "regular" } -->
+# Exemplo de Execução do A*
 
 - Estamos na Romênia e queremos navegar entre **Arad (inicial) e Bucarest
   (objetivo)**
@@ -373,25 +382,27 @@ bespokeState: checkpoint
   distância Euclidiana) entre qualquer cidade e Bucarest (objetivo)
 
 ---
-## A* - Exemplo
+<!-- { "layout": "regular" } -->
+# A* - Exemplo
 
-<figure class="picture-steps clean right">
-  <img src="../../images/astar-romenia1.png" class="bullet bespoke-bullet-active">
-  <img src="../../images/astar-romenia2.png" class="bullet">
-  <img src="../../images/astar-romenia3.png" class="bullet">
-  <img src="../../images/astar-romenia4.png" class="bullet">
-  <img src="../../images/astar-romenia5.png" class="bullet">
-  <img src="../../images/astar-romenia6.png" class="bullet">
-  <img src="../../images/astar-romenia7.png" class="bullet">
-  <img src="../../images/astar-romenia8.png" class="bullet">
-  <img src="../../images/astar-romenia9.png" class="bullet">
-  <img src="../../images/astar-romenia10.png" class="bullet">
-  <img src="../../images/astar-romenia11.png" class="bullet">
-  <img src="../../images/astar-romenia12.png" class="bullet">
-</figure>
+::: figure .picture-steps max-height: 440px;
+![](../../images/astar-romenia1.png) <!-- {.bullet.bespoke-bullet-active style="max-height: 440px"} -->
+![](../../images/astar-romenia2.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia3.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia4.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia5.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia6.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia7.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia8.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia9.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia10.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia11.png) <!-- {.bullet style="max-height: 440px"} -->
+![](../../images/astar-romenia12.png) <!-- {.bullet style="max-height: 440px"} -->
+:::
 
 ---
-## Algoritmo A*
+<!-- { "layout": "regular" } -->
+# Correção do Algoritmo A*
 
 - Provadamente fornece a solução ótima se a **<u>heurística é admissível</u>**
   - **Custo** indicado pela **heurística** é <u>menor ou igual ao custo real
@@ -402,14 +413,15 @@ bespokeState: checkpoint
   - Pior caso é exponencial no tamanho da solução
 
 ---
-## Heurísticas Admissíveis
+<!-- { "layout": "regular" } -->
+# Heurísticas Admissíveis
 
 - Heurística é admissível se:
-  `h(n)` <= `h*(n)` em que `h*(n)` é o custo real a partir de `n`
+  `h(n)` <= `h*(n)` em que `h*(n)` é o custo real a partir de `n`
 - Exemplos:
   - **Distância Euclidiana** (espaço contínuo)
   - **Distância de Manhattan** (espaço discreto)
-    - ![right](../../images/astar-manhattan.png)
+    - ![](../../images/astar-manhattan.png) <!-- {.push-right} -->
       `h1(n)` = número de quadrados trocados
       `h2(n)` = distância de Manhattan total
         (_i.e._, número de quadrados a partir da posição desejada para cada espaço)
@@ -417,17 +429,19 @@ bespokeState: checkpoint
     - `h2(S) = 4+0+3+3+1+0+2+1 = 14`
 
 ---
-## Outros detalhes
+<!-- { "layout": "regular" } -->
+# Outros detalhes
 
 - O custo (valor da aresta) pode incluir informações como tipo de terreno, etc
   - Estrada x Pântano
   - Essa informação é colocada a priori
 - E para informações dinâmicas?
-  - Ex. Caminho que não passa pelo inimigo
-  - Uso de Mapas de Influência
+  - Ex. caminho que não passa pelo inimigo
+  - Uso de mapas de influência
     - Valor que vai ser dinamicamente somado ao custo
 
 ---
+<!-- { "layout": "centered" } -->
 # Referências
 
 - Livro _Artificial Intelligence for Games, Second Edition_
