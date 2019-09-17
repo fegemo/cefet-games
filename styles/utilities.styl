@@ -10,7 +10,8 @@
     &:not(.bespoke-bullet-active)
       transform initial
   &.clean
-    & > *:not(:last-child):not(.bespoke-bullet-current)
+    & > *:not(:last-child):not(.bespoke-bullet-current),
+    & > p > *:not(:last-child):not(.bespoke-bullet-current)
       opacity 0
 
   .katex-display

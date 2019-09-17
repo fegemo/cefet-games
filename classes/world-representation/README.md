@@ -1,10 +1,9 @@
-<!--
-backdrop: world-representation
--->
-
-# IA: Representações do Mundo para _Pathfinding_
+<!-- { "layout": "title" } -->
+# Representações do Mundo para Pathfinding
+## Módulo IA
 
 ---
+<!-- { "layout": "regular" } -->
 # Relembrando _Pathfinding_
 
 - Usamos um algoritmo de determinação de trajetórias em um grafo
@@ -15,6 +14,7 @@ backdrop: world-representation
       - estimativa com valor igual ao real ou menor
 
 ---
+<!-- { "layout": "regular" } -->
 # Motivação
 
 - Conseguimos resolver o problema de encontrar trajetórias em um grafo, mas
@@ -25,7 +25,8 @@ backdrop: world-representation
   de navegação
 
 ---
-## Roteiro
+<!-- { "layout": "centered" } -->
+# Roteiro
 
 - Grafos de _Tiles_
 - Diagramas de Voronoi (Domínios de Dirichlet)
@@ -33,10 +34,7 @@ backdrop: world-representation
 - Malhas de Navegação (_Navigation Meshes_)
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # Representação do Mundo
 ## O que precisamos saber?
 
@@ -47,6 +45,7 @@ bespokeState: checkpoint
   obstáculos**)?
 
 ---
+<!-- { "layout": "regular" } -->
 # Representação do Mundo
 
 - É necessário representar o mundo do jogo usando um grafo
@@ -59,7 +58,8 @@ bespokeState: checkpoint
     1. Malhas de Navegação (_navigation meshes_)
 
 ---
-## Esquema de Divisão
+<!-- { "layout": "regular" } -->
+# Esquema de Divisão
 
 - Um **esquema de divisão** possui 3 importantes características:
   1. **Quantização e localização**: mudança do espaço do cenário para o espaço do grafo, e vice-versa
@@ -67,7 +67,8 @@ bespokeState: checkpoint
   1. **Validade**: todos os caminhos gerados devem poder se executados
 
 ---
-## Esquema de Divisão: **(1) Quantização e Localização**
+<!-- { "layout": "regular" } -->
+# Esquema de Divisão: **(1) Quantização e Localização**
 
 - <u>**Quantização**</u>: converte uma localização no cenário em um nó do grafo
   - Exemplo: um NPC quer ativar uma alavanca distante:
@@ -78,76 +79,79 @@ bespokeState: checkpoint
     - Precisamos converter cada nó do grafo em coordenadas do cenário do jogo
 
 ---
-## Esquema de Divisão: **(3) Validade**
+<!-- { "layout": "regular" } -->
+# Esquema de Divisão: **(3) Validade**
 
-![](../../images/world-representation-bad-quantization.png)
+![](../../images/world-representation-bad-quantization.png) <!-- {p:.centered} -->
+
 - Se agente indo de um nó A para B, independente de onde esteja em A ele deve
   conseguir chegar em qualquer ponto em B
 - **Esquema de divisão válido**: todos os pontos de duas regiões conectadas
   podem ser atingidos entre si
-  - Exemplo (esquerda): grafo inválido, mas usando _steering_ para evitar muros
-    consegue-se resolver
-  - Exemplo (direita): grafo inválido, agente fica preso
+  - Exemplo (esq.): grafo inválido, mas _steering_ para evitar muros
+    resolve
+  - Exemplo (dir.): grafo inválido, agente fica preso
 
 ---
+<!-- { "layout": "main-point" } -->
 # (1) Grafos de _Tiles_
 
 ---
-## Grafos de _Tiles_
+<!-- { "layout": "regular" } -->
+# Grafos de _Tiles_
 
 - Útil para jogos 2D, mas também para 3D que representam seu mundo usando um
   _grid_ de regiões quadradas (ou hexagonais)
 - O _grid_ pode ser facilmente transformado em um grafo
 
-  ![](../../images/tile-graph-generation.png)
+  ![](../../images/tile-graph-generation.png) <!-- {.centered} -->
 
 ---
-## Grafos de _Tiles_: **Quantização e Localização**
+<!-- { "layout": "regular" } -->
+# Grafos de _Tiles_: **Quantização e Localização**
 
 - **Quantização**: determinar em que _tile_ uma coordenada do mundo está:
-  ```ruby
-  def emQualTile(x, y)  
+  ```python
+  def emQualTile(x, y):  
     tileX = floor(x / ladoDoTile)   # floor: inteiro abaixo
     tileY = floor(y / ladoDoTile)
     return grafo[tileX][tileY]
   ```
 - **Localização**: determinar a posição do cenário onde um nó do grafo se encontra:
-  ```ruby
-  def ondeNoCenario(tile)
+  ```python
+  def ondeNoCenario(tile):
     return (tile.x + tile.largura/2, tile.y + tile.altura/2)
   ```
 
 ---
-## Grafos de _Tiles_: **Geração** e **Validade**
+<!-- { "layout": "regular" } -->
+# Grafos de _Tiles_: **Geração** e **Validade**
 
 - **Geração**:
   - Gerados algoritmicamente
     - Pré-processados
     - Gerados em tempo de inicialização
-    - Pode ser gerado sob demanda, em partes (para cenários muito grandes - <abbr title="Real-Time Strategy">RTS</abbr>)
+    - Pode ser gerado sob demanda, em partes (para cenários muito grandes - RTS)
 - **Validade**:
+    1. <!-- {ol^0:.push-right.multi-column-inline-list-2.no-bullet.center-aligned} -->
+       ::: figure .polaroid.light.item-200w margin: 0 auto;
+         ![](../../images/tile-graph-partially-blocked-ok.png) <!-- {.full-width} -->
+         <figcaption>Parcialmente bloqueado, mas caminho ok</figcaption>
+       :::
+    1. ::: figure .polaroid.light.item-200w margin: 0 auto;
+         ![](../../images/tile-graph-partially-blocked-bad.png) <!-- {.full-width} -->
+         <figcaption>Parcialmente bloqueado, com problema</figcaption>
+       :::
   - Garantidamente válido se não houver _tiles_ parcialmente bloqueados
-    <ul class="multi-column-inline-list-2">
-      <li>
-          <figure class="polaroid">
-            <img src="../../images/tile-graph-partially-blocked-ok.png" style="height: 150px;">
-            <figcaption>Parcialmente bloqueado, mas caminho ok</figcaption>
-          </figure>
-      </li>
-      <li>
-          <figure class="polaroid">
-            <img src="../../images/tile-graph-partially-blocked-bad.png" style="height: 150px;">
-            <figcaption>Parcialmente bloqueado, com problema</figcaption>
-          </figure>
-      </li>
-    </ul>
 
+*[RTS]: Real-Time Strategy*
 
 ---
-## Grafo de _Tiles_: Exemplo ([GraphGenerator.java][graph-generator])
+<!-- { "layout": "regular" } -->
+# Grafo de _Tiles_: Exemplo ([GraphGenerator.java][graph-generator])
 
-```ruby
-def geraGrafo(mapa)
+```python
+def geraGrafo(mapa):
   Grafo g = new Grafo()
 
   # gera um nó do grafo para cada tile,
@@ -177,17 +181,18 @@ def geraGrafo(mapa)
 [graph-generator]: https://github.com/fegemo/cefet-games-pathfinding/blob/exercise-heuristic2/core/src/br/cefetmg/games/pathfinding/GraphGenerator.java#L18
 
 ---
+<!-- { "layout": "main-point" } -->
 # (2) Diagrama de Voronoi
 
 ---
-## Diagrama de Voronoi
+<!-- { "layout": "regular" } -->
+# Diagrama de Voronoi
 
-<p class="note" style="max-width: 80%;">
 Uma **célula de Voronoi** é uma região ao redor
 de um ponto cujo interior consiste de tudo o que está mais próximo
-desse ponto do que de outro ponto de um conjunto</p>
+desse ponto do que de outro ponto de um conjunto <!-- {p:.note.info} -->
 
-- ![right](../../images/voronoi-polygon.png)
+- ![](../../images/voronoi-polygon.png) <!-- {.push-right} -->
   Esquema de divisão: cada nó do grafo é um ponto no espaço chamado
   **ponto característico** (_i.e._, um ponto do domínio)
   - A quantização mapeia cada região do domínio de Dirichlet a um nó
@@ -197,7 +202,8 @@ desse ponto do que de outro ponto de um conjunto</p>
     _Delaunay Triangulation_
 
 ---
-## Diagrama de Voronoi: **Quantização e Localização**
+<!-- { "layout": "regular" } -->
+# Diagrama de Voronoi: **Quantização e Localização**
 
 - [Exemplo online](http://blog.ivank.net/voronoi-diagram-in-javascript.html)
 - **Quantização**: achar em que ponto característico uma coordenada está
@@ -210,7 +216,8 @@ desse ponto do que de outro ponto de um conjunto</p>
   - As coordenadas do ponto característico
 
 ---
-## Diagrama de Voronoi: **Geração** e **Validade**
+<!-- { "layout": "regular" } -->
+# Diagrama de Voronoi: **Geração** e **Validade**
 
 - **Geração** dos pontos característicos: manual
 - **Validade**: não há garantia de que, ao navegar da célula A até a B, não se
@@ -220,23 +227,26 @@ desse ponto do que de outro ponto de um conjunto</p>
     que contém obstáculos
 
 ---
-## Variação: **Diagrama de Voronoi <u>Generalizado</u>**
+<!-- { "layout": "regular" } -->
+# Variação: **Diagrama de Voronoi <u>Generalizado</u>**
 
-1. ![right](../../images/voronoi-generalized.png)
+1. ![](../../images/voronoi-generalized.png) <!-- {.push-right} -->
   Cria-se vários **pontos característicos nas fronteiras dos obstáculos**
 1. **Simplifica-se o diagrama** removendo as células dentro dos obstáculos
-  (ou pega-se os centros dos círculos de Delaunay)
-  - Resultado: curvas equidistantes dos obstáculos da cena
-  - [Exemplo online](http://blog.ivank.net/voronoi-diagram-in-javascript.html)
-  - [Outro exemplo (círculos)](http://bl.ocks.org/zanarmstrong/b1c051113be144570881)
+   (ou pega-se os centros dos círculos de Delaunay)
+   - Resultado: curvas equidistantes dos obstáculos da cena
+   - [Exemplo online](http://blog.ivank.net/voronoi-diagram-in-javascript.html)
+   - [Outro exemplo (círculos)](http://bl.ocks.org/zanarmstrong/b1c051113be144570881)
 
 ---
+<!-- { "layout": "main-point" } -->
 # (3) Pontos de Visibilidade
 
 ---
-## Pontos de Visibilidade
+<!-- { "layout": "regular" } -->
+# Pontos de Visibilidade
 
-- ![right](../../images/points-of-visibility.png)
+- ![](../../images/points-of-visibility.png) <!-- {.push-right} -->
   Arestas são criadas entre pontos entre os quais haja visibilidade
 - Nós podem ser colocados manualmente pelo _level designer_, mas há como
   gerá-los automaticamente
@@ -247,18 +257,20 @@ desse ponto do que de outro ponto de um conjunto</p>
     - Aqueles que não atingem um obstáculo, são arestas válidas
 
 ---
-## Pontos de Visibilidade
+<!-- { "layout": "centered-horizontal" } -->
+# Pontos de Visibilidade
 
-<figure class="picture-steps clean" style="background: white;">
-  <img src="../../images/points-of-visibility-1.png" class="bullet bespoke-bullet-active">
-  <img src="../../images/points-of-visibility-2.png" class="bullet">
-  <img src="../../images/points-of-visibility-3.png" class="bullet">
-  <img src="../../images/points-of-visibility-4.png" class="bullet">
-  <img src="../../images/points-of-visibility-5.png" class="bullet">
-</figure>
+::: figure .picture-steps.clean
+![](../../images/points-of-visibility-1.png) <!-- {.bullet.bespoke-bullet-active} -->
+![](../../images/points-of-visibility-2.png) <!-- {.bullet} -->
+![](../../images/points-of-visibility-3.png) <!-- {.bullet} -->
+![](../../images/points-of-visibility-4.png) <!-- {.bullet} -->
+![](../../images/points-of-visibility-5.png) <!-- {.bullet} -->
+:::
 
 ---
-## Pontos de Visibilidade: **Quantização, Localização** e **Validade**
+<!-- { "layout": "regular" } -->
+# Pontos de Visibilidade: **Quantização, Localização** e **Validade**
 
 - Características iguais às do diagrama de Voronoi
   - **Validade**: pode ser inválido
@@ -270,32 +282,31 @@ desse ponto do que de outro ponto de um conjunto</p>
   - Mover do nó mais próximo de B para B propriamente dito
 
 ---
-## Diagramas de Voronoi: Exemplo
-
-![](../../images/wow-points-of-visibility.png)
-
----
+<!-- { "layout": "main-point" } -->
 # (4) Malhas de Navegação
 
 ---
-## Malhas de Navegação (_nav meshes_)
+<!-- { "layout": "regular" } -->
+# Malhas de Navegação (_nav meshes_)
 
-- ![right](../../images/wow-nav-mesh.png)
+- ![](../../images/wow-nav-mesh.png) <!-- {.push-right} -->
   Comum nos jogos 3D mais recentes
 - Usa a própria **geometria <u>gráfica</u>** do cenário como base
   - _Level designer_ marca que polígonos formam o "chão"
 
 ---
-## Malhas de Navegação: **Esquema de Divisão**
+<!-- { "layout": "regular" } -->
+# Malhas de Navegação: **Esquema de Divisão**
 
-- ![right](../../images/nav-mesh-geometry.png)
+- ![](../../images/nav-mesh-geometry.png) <!-- {.push-right} -->
   Cada polígono que forma o "chão" atua como um (ou mais) nó(s) do grafo
 - Nós são conectados por arestas se suas regiões são adjacentes
   - Polígonos são triângulos ou quadriláteros
     - Cada polígono tem 3 ou 4 conexões
 
 ---
-## Malhas de Navegação: **Quantização e Localização**
+<!-- { "layout": "regular" } -->
+# Malhas de Navegação: **Quantização e Localização**
 
 - **Quantização**: achar em que nó uma coordenada do cenário está
   - Verifica-se qual dos polígonos contém o ponto desejado
@@ -303,52 +314,48 @@ desse ponto do que de outro ponto de um conjunto</p>
   - Usa-se o <u>princípio da coerência</u>: é possível que o personagem continue
     no mesmo polígono nos quadros seguintes, ou em um adjacente
     - Começa-se a busca por eles
-- **Localização**: achar a coordenada do mundo de um nó do grafo
+- ![](../../images/nav-mesh-validity.png) <!-- {.push-right} -->
+  **Localização**: achar a coordenada do mundo de um nó do grafo
   - Usa-se o centro dos polígonos (posição média de seus vértices)
-
----
-## Malhas de Navegação: **Validade**
-
-- ![right](../../images/nav-mesh-validity.png)
-  **Validade**: Não há garantia de validade
+- **Validade**: Não há garantia de validade
   - A forma como a triangulação do terreno é feita e a sua granularidade podem
     gerar geometrias problemáticas
 
 ---
-## Malhas de Navegação: **Exemplo** na Unity
+<!-- { "layout": "regular" } -->
+# Malhas de Navegação: **Exemplo** na Unity
 
-![](../../images/nav-mesh-unity.png)
+![](../../images/nav-mesh-unity.png) <!-- {p:.centered} -->
+
 - [Como criar um _navmesh Agent_](https://docs.unity3d.com/Manual/nav-CreateNavMeshAgent.html)
 
 ---
-## **Variação** das Malhas de Navegação
+<!-- { "layout": "regular" } -->
+# **Variação** das Malhas de Navegação
 
 - Meio das **arestas** da geometria **sendo os nós** do grafo
 
-  ![](../../images/nav-mesh-edge-as-node.png)
-- Qualquer ponto das **arestas** da geometria **sendo os nós** do grafo
+  ![](../../images/nav-mesh-edge-as-node.png) <!-- {.centered} -->
+- ![](../../images/nav-mesh-edge-anywhere-as-node.png) <!-- {.push-right} -->
+  Qualquer ponto das **arestas** da geometria **sendo os nós** do grafo
 
-  ![](../../images/nav-mesh-edge-anywhere-as-node.png)
+  
+---
+<!-- { "layout": "regular" } -->
+# Comparação: Diagrama de Voronoi vs _NavMesh_
+
+- <!-- {ul:.multi-column-inline-list-2.no-bullet.full-width} -->
+  ::: figure .polaroid height: 370px  
+  ![](../../images/wow-points-of-visibility-route.jpg) <!-- {style="max-height: 300px"} -->
+  <figcaption>Caminho em zig-zag</figcaption>
+  :::
+- ::: figure .polaroid height: 370px
+  ![](../../images/wow-nav-mesh-route.jpg) <!-- {style="max-height: 300px"} -->
+  <figcaption>Linha reta</figcaption>
+  :::
 
 ---
-## Comparação: Diagrama de Voronoi vs _NavMesh_
-
-<ul class="multi-column-inline-list-2">
-  <li>Diagrama de Voronoi
-      <figure class="polaroid">
-        <img src="../../images/wow-points-of-visibility-route.jpg" style="height: 220px;">
-        <figcaption>Caminho em zig-zag</figcaption>
-      </figure>
-  </li>
-  <li>_NavMesh_
-      <figure class="polaroid">
-        <img src="../../images/wow-nav-mesh-route.jpg" style="height: 220px;">
-        <figcaption>Linha reta</figcaption>
-      </figure>
-  </li>
-</ul>
-
----
+<!-- { "layout": "centered" } -->
 # Referências
 
 - Livro _Artificial Intelligence for Games, Second Edition_
