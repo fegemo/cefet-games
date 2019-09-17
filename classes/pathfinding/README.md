@@ -198,7 +198,7 @@ class Connection:
 <!-- { "layout": "regular" } -->
 # Pseudo-código
 
-```ruby
+```python
 Push inicial em ABERTOS
 While (ABERTOS != [])
   Pop melhor nó n from ABERTOS # expandindo n
@@ -208,19 +208,19 @@ While (ABERTOS != [])
   Push n in FECHADOS
 return SEM CAMINHO
 ```
-```ruby
-If child on ABERTOS, and new cost is less
+```python
+If child on ABERTOS, and new cost is less:
   Update cost and parent pointer
-If child on FECHADOS, and new cost is less
+If child on FECHADOS, and new cost is less:
   Update cost and parent pointer, move
     node to ABERTOS
-Otherwise
+Otherwise:
   Push to ABERTOS list
 ```
 
 ---
 
-```ruby
+```python
 def pathfindDijkstra(graph, start, end):
 
   # This structure is used to keep track of the

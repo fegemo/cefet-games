@@ -199,7 +199,9 @@ body {
           transform: initial;
 }
 .picture-steps.clean > *:not(:last-child):not(.bespoke-bullet-current),
-.picture-steps > p.clean > *:not(:last-child):not(.bespoke-bullet-current) {
+.picture-steps > p.clean > *:not(:last-child):not(.bespoke-bullet-current),
+.picture-steps.clean > p > *:not(:last-child):not(.bespoke-bullet-current),
+.picture-steps > p.clean > p > *:not(:last-child):not(.bespoke-bullet-current) {
   opacity: 0;
 }
 .picture-steps .katex-display,
@@ -2145,6 +2147,26 @@ ul.horizontal > li {
   background-repeat: no-repeat;
 }
 .pathfinding .algoritmo-de-dijkstra.layout-section-header::after {
+  background-image: url("../images/dijkstra.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.world-representation .layout-title.bespoke-slide h1 > * {
+  margin-right: 0.5em;
+}
+.world-representation .layout-title.bespoke-slide h1::before {
+  background-image: url("../images/nav-mesh-big.png");
+  background-position: center;
+  background-size: cover;
+}
+.world-representation .introducao-a-pathfinding.layout-section-header::after {
+  background-image: url("../images/pathfinding-2.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.world-representation .algoritmo-de-dijkstra.layout-section-header::after {
   background-image: url("../images/dijkstra.jpg");
   background-size: contain;
   background-position: center center;
