@@ -126,5 +126,5 @@ As entregas e suas respectivas datas são:
 Qualquer dúvida, entre em contato com o professor.
 
 
-[cod]: ../attachments/sgdd-curse-of-dreams.pdf
-[syn]: ../attachments/sgdd-synthesis.pdf
+[cod]: ../../attachments/sgdd-curse-of-dreams.pdf
+[syn]: ../../attachments/sgdd-synthesis.pdf
