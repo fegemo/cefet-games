@@ -1,17 +1,9 @@
-<!--
-backdrop: super-mario-3d-world
-bespokeEvent: bullets.disable
--->
-
-# Introdução: _Level Design_, Equipes e Produção
-
+<!-- {"layout": "title"} -->
+# **Introdução:** Level Design, Equipes e Produção
 ## Baseadão nos slides do Prof. (Luiz) Chaimo(wicz) da UFMG
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # _Level Design_ (Projeto de Níveis/Fases)
 
 ## O que precisamos saber?
@@ -22,6 +14,7 @@ bespokeState: checkpoint
 - Como apresentar o desafio do jogo?
 
 ---
+<!-- { "layout": "regular" } -->
 # _Level Design_
 
 - É a **criação de ambientes, cenários ou missões** em um jogo digital
@@ -33,80 +26,97 @@ bespokeState: checkpoint
     - Tiled
 
 ---
-# Estrutura
+<!-- { "layout": "regular" } -->
+# Estrutura (1/3)
 
-- Níveis, fases ou cenários podem ser usados para dar estrutura, organizar progressão e melhorar o _gameplay_
-- Ao criar um nível, deve-se considerar seu fluxo, duração, disponibilidade, relacionamento e dificuldade
-  - **Objetivos:** cada nível deve ter um conjunto de objetivos conhecido pelo jogador
+- Níveis, fases ou cenários podem ser usados para dar estrutura, organizar
+  progressão e melhorar o _gameplay_
+- Ao criar um nível, deve-se considerar seu fluxo, duração,
+  disponibilidade, relacionamento e dificuldade
+  - **Objetivos:** cada nível deve ter um conjunto de objetivos
+    conhecidos pelo jogador
     - Introduzir ao objetivo _e.g._ via tutorial interativo
   - **Fluxo (_flow_):** explicitar o progresso do jogador
     - Apenas passa de fase quando os objetivos se cumprirem
     - (_e.g._) Não permitir que volte pela porta que entrou
 
 ---
-## Estrutura (2)
+<!-- { "layout": "regular" } -->
+# Estrutura (2/3)
 
 - **Duração:** quanto tempo passar em cada nível
-  - Uma boa ideia é fazer com que seja possível "passar uma fase" em uma única sessão de jogo
+  - Uma boa ideia é fazer com que seja possível "passar uma fase" em uma
+    única sessão de jogo
     - Crianças: 15 minutos
     - Jogadores _hardcore_: 2+ horas
-  - Em jogos com sessões gigantes (_e.g._, Civilization, Age of Mythology), crie marcos (_milestones_) para comunicar progresso
-- **Disponibilidade:** quantos níveis devem estar "abertos" para o jogador primariamente e simultaneamente
+  - Em jogos com sessões gigantes (_e.g._, Civilization, Age of Mythology),
+    crie marcos (_milestones_) para comunicar progresso
+- **Disponibilidade:** quantos níveis devem estar "abertos" para o jogador
+  primariamente e simultaneamente
   - Apenas um nível: bom para jogos FPS (imersão, _e.g._, Half-Life 2)
   - Alguns níveis/_quests_: bom para RPGs
   - Muitos níveis: bom para RTS e simuladores
 
 ---
-## Estrutura (3)
+<!-- { "layout": "regular" } -->
+# Estrutura (3/3)
 
 - **Relacionamento:** qual é o relacionamento entre os níveis, _e.g._:
   - Sucessivos (Sonic)
   - Progressão de dificuldade (Bejeweled)
   - Episódico - auto-contidos (Warcraft 3)
-- ![right](../../images/progressao-dificuldade.png)
+- ![](../../images/progressao-dificuldade.png) <!-- {.push-right} -->
   **Progressão:** como aumentar a dificuldade ao longo dos níveis
   - _flat, linear, s-curve_
-  - Ameaças devem ser comunicadas ao jogador, idealmente de formas sutis porém perceptíveis e "aprendíveis"
+  - Ameaças devem ser comunicadas ao jogador, idealmente de formas sutis
+    porém perceptíveis e "aprendíveis"
 
 ---
-# Tempo
+<!-- { "layout": "regular" } -->
+# Tempo (1/2)
 
-- **Autêntico:** jogos que usam a passagem de tempo real como recurso que afeta _gameplay_
-  - Exemplo: Jogo Boktai do Game Boy Advance, que usa um sensor de luz para saber se vampiros estão fortes (noite) ou fracos (dia)
+- **Autêntico:** jogos que usam a passagem de tempo real como recurso que
+  afeta _gameplay_
+  - Exemplo: Jogo Boktai do Game Boy Advance, que usa um sensor de luz para
+    saber se vampiros estão fortes (noite) ou fracos (dia)
 
-  ![](../../images/boktai.png)
-
+![](../../images/boktai.png) <!-- {p:.centered} -->
 
 ---
-## Tempo (2)
+<!-- { "layout": "regular" } -->
+# Tempo (2/2)
 
 - **Limitado:** parte da ambientação do jogo, mas não do _gameplay_
   - Uso de tarefas cronometradas
-- **Variável:** jogos cujo tempo virtual podem variar sua velocidade - noites menores que dias, ou mesmo noites inexistentes
+- **Variável:** jogos cujo tempo virtual podem variar sua
+  velocidade - noites menores que dias, ou mesmo noites inexistentes
   - Exemplo: jogos de guerra
-
----
-## Tempo (3)
-
-- **Ajustado pelo jogador:** jogadores podem modificar o tempo associado aos níveis
+- **Ajustado pelo jogador:** jogadores podem modificar o tempo associado
+  aos níveis
   - Exemplo: jogos de esportes
-- **Alterado:** tempo alterado (pausa, mais devagar, veloz, viagem no tempo) como um efeito de _gameplay_
+- **Alterado:** tempo alterado (pausa, mais devagar, veloz, viagem no tempo)
+  como um efeito de _gameplay_
   - Exemplo: Max Payne com _bullet time_
 
 ---
-# Espaço
+<!-- { "layout": "regular" } -->
+# Espaço (1/6)
 
 - Incorpora o ambiente físico do jogo (perpectiva, tamanho, limites,
   estruturas, terreno, objetos e estilo)
-  - **Perspectiva e Câmera:** o ponto de vista em que o jogador é colocado em referência ao mundo de jogo
-    - ![right](../../images/halo-wars.png)
-      **Onipresente:** habilidade de ver diferentes partes do mundo e tomar ações em qualquer lugar
-    - **Aérea (_top-down_):** mostra o mundo de jogo como visto "por cima" do personagem. Exemplos: Pac-Man, Legend of Zelda
+  - **Perspectiva e Câmera:** o ponto de vista em que o jogador é colocado
+    em referência ao mundo de jogo
+    - ![](../../images/halo-wars.png) <!-- {.push-right} -->
+      **Onipresente:** habilidade de ver diferentes partes do mundo e
+      tomar ações em qualquer lugar
+    - **Aérea (_top-down_):** mostra o mundo de jogo como visto "por cima"
+      do personagem. Exemplos: Pac-Man, Legend of Zelda
 
 ---
-## Espaço (2)
+<!-- { "layout": "regular" } -->
+# Espaço (2/6)
 
-![](../../images/railroad-and-anno1404.jpg)
+![](../../images/railroad-and-anno1404.jpg) <!-- {p:.centered} -->
 
 - **Perspectiva e Câmera:**
   - **Isométrico:** o jogador vê o mundo por um ângulo de 30 a 45°
@@ -114,52 +124,63 @@ bespokeState: checkpoint
     - Artisticamente caro, se rotação é permitida (_e.g._, Sim City 2000)
 
 ---
-## Espaço (3)
+<!-- { "layout": "regular" } -->
+# Espaço (3/6)
 
 - **Perspectiva e Câmera:**
-  - **Rolagem lateral (_side-scrollling_):** no espaço 2D, personagens se movem da esquerda para direita ou pulam para cima e caem
-    - Costuma haver rolagem quando o cenário é maior do que o que pode ser visto em uma tela
-    - Para dar sensação de profundidade (projeção perspectiva), foi criada a técnica de _parallax-scrolling_
-    <iframe height='268' scrolling='no' src='//codepen.io/danbhala/embed/GJGQad/?height=268&theme-id=9685&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/danbhala/pen/GJGQad/'>8-Bit CSS3 Horizontal Parallax</a> by Dan Stuart (<a href='http://codepen.io/danbhala'>@danbhala</a>) on <a href='http://codepen.io'>CodePen</a>.
-    </iframe>
+  - **Rolagem lateral (_side-scrollling_):** no espaço 2D, personagens
+    se movem da esquerda para direita ou pulam para cima e caem
+    - Costuma haver rolagem quando o cenário é maior do que o que pode
+      ser visto em uma tela
+    - Para dar sensação de profundidade (projeção perspectiva), foi
+      criada a técnica de _parallax-scrolling_
+
+<iframe height='268' scrolling='no' src='//codepen.io/danbhala/embed/GJGQad/?height=268&theme-id=9685&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/danbhala/pen/GJGQad/'>8-Bit CSS3 Horizontal Parallax</a> by Dan Stuart (<a href='http://codepen.io/danbhala'>@danbhala</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
 
 ---
-## Espaço (4)
+<!-- { "layout": "regular" } -->
+# Espaço (4/6)
 
-![](../../images/killzone2-and-zeldaskyward.jpg)
+![](../../images/killzone2-and-zeldaskyward.jpg) <!-- {p:.centered} -->
 
 - **Terreno e Materiais:** os materiais influenciam o _look and feel_ do jogo
-  - O modelo de sombreamento, as características dos materiais e a direção de arte definem os visuais
+  - O modelo de sombreamento, as características dos materiais e a
+    direção de arte definem os visuais
 
 ---
-## Espaço (5)
+<!-- { "layout": "regular" } -->
+# Espaço (5/6)
 
-- **Radiosidade e Efeitos:** radiosidade ou iluminação e outros efeitos visuais também compõem o espaço
-  - ![right](../../images/terraria-lighting.png)
-    Mesmo jogos 2D têm incorporado modelos de iluminação, tipicamente usados em jogos 3D
+- **Radiosidade e Efeitos:** radiosidade ou iluminação e outros efeitos
+  visuais também compõem o espaço
+  - ![](../../images/terraria-lighting.gif) <!-- {.push-right} -->
+    Mesmo jogos 2D têm incorporado modelos de iluminação, tipicamente
+    usados em jogos 3D
     - Exemplo: Terraria
-- **Escala:** o tamanho do cenário e dos objetos no mundo de jogo pode não necessariamente ser realista
+- **Escala:** o tamanho do cenário e dos objetos no mundo de jogo pode
+  não necessariamente ser realista
   - Exemplo: chaves e itens em jogos FPS
-  - Pode-se distorcer o tamanho do mundo para que o jogador chegue mais rapidamente de um ponto ao outro do mundo
+  - Pode-se distorcer o tamanho do mundo para que o jogador chegue mais
+    rapidamente de um ponto ao outro do mundo
     - Exemplo: Final Fantasy VII
 
 ---
-## Espaço (6)
+<!-- { "layout": "regular" } -->
+# Espaço (6/6)
 
 - **Limites:** até onde é possível ir dentro do mundo
   - Em jogos RTS, tipicamente o mundo termina onde começa um vácuo negro :)
 - **Realismo:** uso de dados e imagens do mundo real
   - Exemplo: Pokémon Go
-- **Estilo:** comunica o sentimento geral do mundo de jogo, tentando evocar certos sentimentos ou sensações nos jogadores
+- **Estilo:** comunica o sentimento geral do mundo de jogo, tentando evocar
+  certos sentimentos ou sensações nos jogadores
 
-  ![](../../images/flowers-and-residentevil5.jpg)
+![](../../images/flowers-and-residentevil5.jpg) <!-- {p:.centered} -->
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
-# Cargos e Responsabi- lidades
+<!-- { "layout": "section-header" } -->
+# Cargos e Responsabilidades
 
 ## O que precisamos saber?
 
@@ -168,31 +189,31 @@ bespokeState: checkpoint
 - Que tipos de **técnicas e ferramentas** são usadas por cada membro da equipe?
 
 ---
-<!--
-  backdrop: jobs-blizzard
--->
-
+<!-- { "layout": "centered", "backdrop": "jobs-blizzard" } -->
 [Vagas abertas na **Blizzard**](http://us.blizzard.com/en-us/company/careers/index.html) (!!)
 
 ---
+<!-- { "layout": "regular" } -->
 # Papéis de Empresas
 
 - **_Publisher_:** quem financia o jogo, faz o _marketing_ e distribui (vende)
   - _e.g._, Atari, Activision, EA, Ubisoft...
-  - Várias tem o seu próprio time de desenvolvimento (_in-house development studio_)
-- **_Developer (development studio)_:** quem desenvolve o jogo, desde a idéia, protótipo e produto final
+  - Várias tem o seu próprio time de desenvolvimento
+    (_in-house development studio_)
+- **_Developer (development studio)_:** quem desenvolve o jogo, desde a idéia,
+  protótipo e produto final
   - _Third Party Developer_
     - _e.g._, Konami, Eidos, Liquid, ...
     - Estúdio _Indie_ (independente)
-
----
-## Papéis de Empresas (2)
-
 - Outros envolvidos:
-  - **_Manufacturers_:** empresas que desenvolvem o console ou _hardware_ específico. Normalmente tem que aprovar o jogo e dar uma licença de desenvolvimento
-  - **_Licensor_:** caso o jogo seja adaptado de alguma fonte (cinema, livro, etc) é necessário obter uma licença de direitos do autor
+  - **_Manufacturers_:** empresas que desenvolvem o console ou _hardware_
+    específico. Normalmente tem que aprovar o jogo e dar uma licença
+    de desenvolvimento
+  - **_Licensor_:** caso o jogo seja adaptado de alguma fonte
+    (cinema, livro, etc) é necessário obter uma licença de direitos do autor
 
 ---
+<!-- { "layout": "regular" } -->
 # Organização da Equipe
 
 - Varia dependendo do tamanho da empresa, e de características próprias
@@ -206,23 +227,25 @@ bespokeState: checkpoint
   - _Marketing_
 
 ---
-## Equipe - Produção
+<!-- { "layout": "regular" } -->
+# Equipe - Produção
 
-- Produtor
-  - <img class="portrait right" src="../../images/jade-raymond.jpg">
-    “makes things happen”
+- Produtor <!-- {ul:.full-width} -->
+  - ![](../../images/jade-raymond.jpg) <!-- {.push-right.portrait.double-size} -->
+    "makes things happen"
   - Gerencia todo o processo, cronograma, orçamento, equipe, etc
   - Níveis:
     - Produtor Executivo, Produtor, Produtor Associado, ...
   - Externo x Interno
 
 ---
-## Equipe - _Design_
+<!-- { "layout": "regular" } -->
+# Equipe - _Design_
 
-- <img class="portrait right" src="../../images/will-wright.jpg">
-  <img class="portrait right" src="../../images/sid-meier.jpg">
-  <img class="portrait right" src="../../images/shigeru-miyamoto.jpg">
-  _Game Designer_
+- ![](../../images/will-wright.jpg) <!-- {.push-right.portrait} -->
+  ![](../../images/sid-meier.jpg) <!-- {.push-right.portrait} -->
+  ![](../../images/shigeru-miyamoto.jpg) <!-- {.push-right.portrait} -->
+  _Game Designer_ <!-- {ul:.full-width} -->
   - Normalmente a mente criativa por trás do jogo
   - Definição do _gameplay_, enredo, níveis, interfaces, etc
 - Posições relacionadas
@@ -233,12 +256,13 @@ bespokeState: checkpoint
   - _Level Designer_
 
 ---
-## Equipe - Arte
+<!-- { "layout": "regular" } -->
+# Equipe - Arte
 
-- ![right](../../images/rw-donkey-animated.gif)
-  ![right](../../images/rw-donkey-modeled.png)
-  ![right](../../images/rw-donkey-concept.png)
-  Diretor de Arte
+- ![](../../images/rw-donkey-animated.gif) <!-- {.push-right} -->
+  ![](../../images/rw-donkey-modeled.png) <!-- {.push-right} -->
+  ![](../../images/rw-donkey-concept.png) <!-- {.push-right} -->
+  Diretor de Arte <!-- {ul:.full-width} -->
 - _Lead Artist_
 - Artista Conceitual
 - Artista Técnico
@@ -247,28 +271,54 @@ bespokeState: checkpoint
 - Animador
 
 ---
-## Equipe - Programação
+<!-- { "layout": "regular" } -->
+# Equipe - Programação
 
-<img src="../../images/john-carmack.jpg" class="portrait">
-<img src="../../images/tim-schafer.jpg" class="portrait">
-<img src="../../images/markus-persson.jpg" class="portrait">
+::: figure .centered
+![](../../images/john-carmack.jpg) <!-- {.portrait} -->
+![](../../images/tim-schafer.jpg) <!-- {.portrait} -->
+![](../../images/markus-persson.jpg) <!-- {.portrait} -->
+:::
 
 - Diretor Técnico
 - _Lead Programmer_
-- <ul class="multi-column-list-2">
-    <li>_Engine Programmer_</li>
-    <li>_Graphics Programmer_</li>
-    <li>_Tools Programmer_</li>
-    <li>_Network Programmer_</li>
-    <li>_AI Programmer_</li>
-    <li>_Audio Programmer_</li>
-    <li>_Physics Programmer_</li>
-    <li>_Interface Programmer_</li>
-    <li>_Associate Programmer_</li>
-    <li>_Gameplay Programmer_</li>
-  </ul>
+  - _Engine Programmer_ <!-- {ul^0:.multi-column-list-3} -->
+  - _Graphics Programmer_
+  - _Tools Programmer_
+  - _Network Programmer_
+  - _AI Programmer_
+  - _Audio Programmer_
+  - _Physics Programmer_
+  - _Interface Programmer_
+  - _Associate Programmer_
+  - _Gameplay Programmer_
 
 ---
+<!-- { "layout": "2-column-content" } -->
+## Equipe - Áudio / Equipe - QA
+
+::: figure . margin: auto;
+![](../../images/yasunori-mitsuda.jpeg) <!-- {.portrait.double-size.centered} -->
+**Yasunori Mitsuda** (Chrono Trigger, Xenogears/saga)
+- Diretor de Áudio
+- Compositor
+- _Sound Designer_
+- Dublador (_voiceover artist_)
+:::
+
+
+::: figure . margin: auto;
+![](../../images/tommy-tallarico.jpg) <!-- {.portrait.double-size.centered} -->
+**Tommy Tallarico** (Video Games Live)
+- _Testing Manager_
+- _Lead Tester_
+- _Gameplay Testers_
+- _Compatibilidade / Formato_
+:::
+
+*[QA]: Quality Assurance*
+
+<!--
 <div class="layout-split-2" style="height: auto;">
   <section style="border-right: 4px dotted silver;">
     <h2>Equipe - Áudio</h2>
@@ -296,13 +346,10 @@ bespokeState: checkpoint
       <li>_Compatibilidade / Formato_</li>
     </ul>
   </section>
-</div>
+</div> -->
 
 ---
-<!--
-bespokeState: checkpoint
--->
-
+<!-- { "layout": "section-header" } -->
 # Produção
 
 ## O que precisamos saber?
@@ -311,9 +358,7 @@ bespokeState: checkpoint
 - Que **tipos de documentação** podemos/devemos usar?
 
 ---
-<!--
-  backdrop: oldtimes
--->
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
 # Processo **Tradicional** (em cascata)
 
 - O processo de desenvolvimento pode variar, mas é geralmente dividido
@@ -326,10 +371,8 @@ bespokeState: checkpoint
   1. Pós-Produção
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## Fases: Conceito
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# Fases: Conceito
 
 - Essa fase começa com a **idéia do jogo** e termina quando decide-se
   realmente partir para o **planejamento do projeto**
@@ -338,10 +381,8 @@ bespokeState: checkpoint
 - Nessa fase a equipe pode ser bem pequena
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## Fases: Pré-Produção e Protótipo
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# Fases: Pré-Produção e Protótipo
 
 - Na **Pré-Produção se elabora a proposta e se planeja o desenvolvimento
   do jogo**
@@ -356,23 +397,20 @@ bespokeState: checkpoint
   - Fundamental para verificar viabilidade e vender a idéia
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## Fases: Produção
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# Fases: Produção
 
 - Fase na qual **o jogo é realmente desenvolvido**
 - Duração
   - Na média: 6 meses a 2 anos
-  - “Crunch Time”  (ver [_EA spouse letter_](http://ea-spouse.livejournal.com/274.html))
+  - "Crunch Time"
+    (ver [_EA spouse letter_](http://ea-spouse.livejournal.com/274.html))
 - Necessidade de uma boa gerência e da constante interação entre as equipes
 - Documentação técnica é constantemente consultada e modificada
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## _Releases_
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# _Releases_
 
 - **Alpha**
   - **Versão jogável do início ao fim**, talvez faltando ainda alguns aspectos
@@ -387,10 +425,8 @@ bespokeState: checkpoint
   - Versão **liberada para o mercado**
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## Pós-Produção
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# Pós-Produção
 
 - Dois focos: _Marketing_ e Manutenção
 - _Marketing_
@@ -404,7 +440,8 @@ bespokeState: checkpoint
   - (depois de tudo: fazer o _post mortem_)
 
 ---
-## Processo **Moderno**
+<!-- { "layout": "regular" } -->
+# Processo **Moderno**
 
 1. Conceito, pré-produção e **protótipo** produzidos e colocados "à prova"
    em _play testing_
@@ -420,25 +457,21 @@ bespokeState: checkpoint
      - Construção de comunidade
 
 ---
-<!--
-  backdrop: oldtimes
--->
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
 # Documentação **Tradicional**
 
 - Não há padronização, mas vamos citar alguns:
   1. _Pitch Document_ (sumário executivo)
-    - Até 5 páginas, mas deve ser o menor possível
+     - Até 5 páginas, mas deve ser o menor possível
   1. _Game Design Document_
   1. _Technical Design Document_
 
 ---
-<!--
-  backdrop: oldtimes
--->
-# Sumário executivo
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# Sumário executivo (1/2)
 
 - Título
-- _“The big idea”_
+- _"The big idea"_
   - Um ou dois parágrafos com uma descrição geral do seu jogo (estória,
     personagens, mundos)
 - Gênero &amp; Categoria
@@ -448,10 +481,8 @@ bespokeState: checkpoint
   - _Gameplay_, controles, desafios
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## Sumário executivo (2)
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# Sumário executivo (2/2)
 
 - Tecnologia
   - _Engines_, _middlewares_, etc
@@ -463,10 +494,8 @@ bespokeState: checkpoint
   - Porque o jogo vai vender bem?
 
 ---
-<!--
-  backdrop: oldtimes
--->
-# _Game Design Document_
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# _Game Design Document_ (1/3)
 
 - Objetivos:
   - **Descrever o jogo em detalhes**, aprofundando e esclarecendo as idéias
@@ -474,30 +503,22 @@ bespokeState: checkpoint
 - Visão geral
   - Descrição do jogo, expansão da sinopse
   - Narrativa
-  - História do jogo contada de maneira criativa e intrigante, descrevendo porque certos elementos existem e como se relacionam no mundo do jogo
-
----
-<!--
-  backdrop: oldtimes
--->
-## _Game Design Document_ (2)
-
+  - História do jogo contada de maneira criativa e intrigante, descrevendo
+    porque certos elementos existem e como se relacionam no mundo do jogo
 - Mecânica do jogo
   - _Core gameplay_ (experiência de interação)
   - Modos de jogo (regras)
   - Ações possíveis do jogador
   - Inteligência artificial proposta
+
+---
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# _Game Design Document_ (2/3)
+
 - Personagens
   - Descrição detalhada dos personagens (perfil, comportamento,
     habilidades, papel na trama, esboço de sua aparência, controlável ou
     não, etc)
-
----
-<!--
-  backdrop: oldtimes
--->
-## _Game Design Document_ (3)
-
 - Objetos de cena
   - Elementos interativos: armas, veículos, poderes, itens
     - Características, esboços, funções, efeitos visuais e sonoros
@@ -510,10 +531,8 @@ bespokeState: checkpoint
   - Posicionamento de objetos e desafios (esboços)
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## _Game Design Document_ (4)
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# _Game Design Document_ (3/3)
 
 - Interface com o usuário
   - Diagrama de menus
@@ -521,28 +540,17 @@ bespokeState: checkpoint
     - Mini mapa, pontuação, energia, etc (posição na tela)
   - Mapeamento de teclas / botões
   - Configurações (volume, resolução, etc)
-
----
-<!--
-  backdrop: oldtimes
--->
-## _Game Design Document_ (5)
-
 - Arte
   - Estilo visual do jogo (_toon_, realista, futurista, etc)
-    - Indicar referências para inspiração
   - Estilo sonoro do jogo
-    - Indicar referências para inspiração
   - Lista de elementos a serem produzidos/coletados
     - Cenários, personagens, objetos interativos e decorativos, músicas,
       efeitos sonoros, texturas, sprites, HUD
     - Descrição dos efeitos especiais (opcional)
 
 ---
-<!--
-  backdrop: oldtimes
--->
-# _Technical Design Document_
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# _Technical Design Document_ (1/2)
 
 - Objetivos:
   - Descrever a estrutura interna do código do jogo a nível de classes
@@ -558,10 +566,8 @@ bespokeState: checkpoint
   - Sistemas (colisão, iluminação, partículas)
 
 ---
-<!--
-  backdrop: oldtimes
--->
-## _Technical Design Document_ (2)
+<!-- { "layout": "regular", "backdrop": "oldtimes" } -->
+# _Technical Design Document_ (2/2)
 
 - Diagramas de sequência:
   - _Loop_ principal - métodos
@@ -574,10 +580,12 @@ bespokeState: checkpoint
   - Persistência do mundo do jogo
 
 ---
+<!-- { "layout": "2-column-highlight-and-list" } -->
 # Documentação **Moderna** (1/2)
 
-- [![right](../../images/sgdd-motta-trigueiro.png)][motta-trigueiro-large]
-  [_Short Game Design Document_][motta-trigueiro] (Motta e Trigueiro, 2013)
+![](../../images/sgdd-motta-trigueiro-large.png) <!-- {.centered style="max-width: 260px;"} -->
+
+- [_Short Game Design Document_][motta-trigueiro] (Motta e Trigueiro, 2013)
   - Proposto para _advergames_ ou jogos de pequeno porte
   - Descrição (01 página)
 - Passos:
@@ -592,10 +600,12 @@ bespokeState: checkpoint
 [motta-trigueiro-large]: ../../images/sgdd-motta-trigueiro-large.png
 
 ---
+<!-- { "layout": "2-column-highlight-and-list" } -->
 # Documentação **Moderna** (2/2)
 
-- [![right](../../images/sgdd-carvalho-gomes.png)][carvalho-gomes-large]
-  [_Simple Game Design Document_][carvalho-gomes] (Carvalho e Gomes, 2016)
+![](../../images/sgdd-carvalho-gomes-large.png) <!-- {.centered style="max-width: 260px;"} -->
+
+- [_Simple Game Design Document_][carvalho-gomes] (Carvalho e Gomes, 2016)
   - Baseado em Motta e Trigueiro (2013)
   - Contempla ilustrações e foco em _game play_
 
@@ -603,6 +613,7 @@ bespokeState: checkpoint
 [carvalho-gomes-large]: ../../images/sgdd-carvalho-gomes-large.png
 
 ---
+<!-- { "layout": "centered-horizontal" } -->
 # Referências
 
 - Livro _Game Development Essentials: An Introduction, Third Edition_

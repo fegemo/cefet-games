@@ -284,11 +284,16 @@ body {
   display: inline-block;
   width: 100px;
   height: 100px;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 .portrait figcaption,
 .portrait img figcaption {
   background-color: transparent;
+}
+.portrait.double-size,
+.portrait img.double-size {
+  width: 200px;
+  height: 200px;
 }
 .portrait.right {
   float: right;
@@ -2167,6 +2172,29 @@ ul.horizontal > li {
   background-repeat: no-repeat;
 }
 .world-representation .algoritmo-de-dijkstra.layout-section-header::after {
+  background-image: url("../images/dijkstra.jpg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.intro3 .layout-title.bespoke-slide h1 {
+  font-weight: bold;
+}
+.intro3 .layout-title.bespoke-slide h1 > * {
+  margin-right: 0.5em;
+}
+.intro3 .layout-title.bespoke-slide h1::before {
+  background-image: url("../images/super-mario-3d-world.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.intro3 .introducao-a-pathfinding.layout-section-header::after {
+  background-image: url("../images/pathfinding-2.png");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.intro3 .algoritmo-de-dijkstra.layout-section-header::after {
   background-image: url("../images/dijkstra.jpg");
   background-size: contain;
   background-position: center center;
