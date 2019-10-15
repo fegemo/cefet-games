@@ -318,36 +318,6 @@
 
 *[QA]: Quality Assurance*
 
-<!--
-<div class="layout-split-2" style="height: auto;">
-  <section style="border-right: 4px dotted silver;">
-    <h2>Equipe - Áudio</h2>
-    <figure  style="margin:auto;">
-      <img src="../../images/yasunori-mitsuda.jpg" class="portrait">
-      <figcaption>**Yasunori Mitsuda**<br>(Chrono Trigger, Xenogears/saga)</figcaption>
-    </figure>
-    <ul style="text-align: left">
-      <li>Diretor de Áudio</li>
-      <li>Compositor</li>
-      <li>_Sound Designer_</li>
-      <li>Dublador (_voiceover artist_)</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Equipe - <abbr title="Quality Assurance">QA</abbr></h2>
-    <figure style="margin:auto;">
-      <img src="../../images/tommy-tallarico.jpg" class="portrait">
-      <figcaption>**Tommy Tallarico**<br>(Video Games Live)</figcaption>
-    </figure>
-    <ul style="text-align: left">
-      <li>_Testing Manager_</li>
-      <li>_Lead Tester_</li>
-      <li>_Gameplay Testers_</li>
-      <li>_Compatibilidade / Formato_</li>
-    </ul>
-  </section>
-</div> -->
-
 ---
 <!-- { "layout": "section-header" } -->
 # Produção

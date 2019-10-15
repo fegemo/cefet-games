@@ -1,9 +1,8 @@
-<!--
-  backdrop: unity-ssao
--->
-
+<!-- { "layout": "title" } -->
 # Renderização em Tempo Real (parte 1)
+
 ---
+<!-- { "layout": "centered" } -->
 ## Roteiro
 
 1. Grafo de Cena
@@ -12,23 +11,24 @@
 1. _Ambient Occlusion_
 
 ---
-<!--
-  backdrop: scene-graph-sample
--->
-
+<!-- { "layout": "section-header", "slideClass": "grafo-de-cena", "slideHash": "grafo-de-cena" } -->
 # Grafo de Cena
 
 ---
-## Uma cena de jogo
+<!-- { "layout": "regular" } -->
+# Uma cena de jogo (1/2)
 
+::: figure .centered
 ![](../../images/culling1.jpg)
 ![](../../images/culling2.jpg)
+:::
 
 - **Mundos** de jogo podem ser **bem grandes**
 - A **maior parte da cena** tipicamente está **fora do _frustum_** da câmera
 
 ---
-## Uma cena de jogo (2)
+<!-- { "layout": "regular" } -->
+# Uma cena de jogo (2/2)
 
 - Deixar que a **GPU recorte** a cena <u>toda</u> pode ser **custoso**
   - Devemos tentar **enviar para renderização** apenas os objetos que podem
@@ -41,43 +41,57 @@
   **descartar partes da cena** que estejam **fora do _frustum_**
 
 ---
-## Grafo de Cena
+<!-- { "layout": "regular" } -->
+# Grafo de Cena
 
-- ![right](../../images/scene-graph.png)
+- ![](../../images/scene-graph.png) <!-- {.push-right} -->
   Segundo Akenine-Müller, é uma:
-  <p class="note" style="width: 40%;">Estrutura em árvore, "orientada ao usuário", que armazena
+
+  Estrutura em árvore, "orientada ao usuário", que armazena
   a geometria da cena, mas também texturas, transformações, níveis de
-  detalhamento, fontes de luz etc.</p>
+  detalhamento, fontes de luz etc. <!-- {.note.info style="max-width: 50%"} -->
 - Para desenhar a cena, basta percorrer a árvore chamando `this.renderiza()` em
   cada nó.
 
 ---
-## Grafo de Cena **na Unity**
+<!-- { "layout": "regular" } -->
+# Grafo de Cena **na Unity**
 
-![right](../../images/unity-transform-component.png)
-![](../../images/scene-graph-unity.png)
+::: figure .centered
+![](../../images/scene-graph.png) <!-- {.push-left} -->
+![](../../images/unity-transform-component.png) <!-- {.push-right} -->
+![](../../images/scene-graph-unity.png) <!-- {.push-right} -->
+:::
 
 ---
-## <u>Otimização</u>: **_Frustum Culling_**
+<!-- { "layout": "regular" } -->
+# <u>Otimização</u>: **_Frustum Culling_**
 
-![](../../images/frustum-culling.png)
+![](../../images/frustum-culling.png) <!-- {p:.centered} -->
 
 - Particiona-se o espaço (_e.g._, _grid_, _octree_,
-  <abbr title="Binary Space Partitioning">BSP</abbr> _tree_) ou a cena
-  (_e.g._, <abbr title="Bounding Volume Hierarchy">BVH</abbr>) de forma amostral
+  BSP _tree_) ou a cena
+  (_e.g._, BVH) de forma amostral
 - Testa-se cada partição contra o _frustum_ (de forma barata)
 - É possível podar a árvore usando a informação espacial
 
----
-## Exemplo de **_Frustum Culling_**
-
-<iframe width="640" height="480" src="https://www.youtube.com/embed/fNa_Gh5gFWY" frameborder="0" allowfullscreen></iframe>
+*[BSP]: Binary Space Partitioning*
+*[BVH]: Bounding Volume Hierarchy*
 
 ---
-## <u>Otimização</u>: **_Occlusion Culling_**
+<!-- { "layout": "regular" } -->
+# Exemplo de **_Frustum Culling_**
 
+<iframe width="640" height="480" src="https://www.youtube.com/embed/fNa_Gh5gFWY" frameborder="0" allowfullscreen class="centered"></iframe>
+
+---
+<!-- { "layout": "regular" } -->
+# <u>Otimização</u>: **_Occlusion Culling_**
+
+::: figure .centered
 ![](../../images/occlusion-culling1.png)
 ![](../../images/occlusion-culling2.png)
+:::
 
 - Ideia: **não desenhar** objetos que estão **atrás de outros** (que são opacos)
 - Implementação no espaço: (a) de imagem (projeção), (b) de objeto, (c) de raio
@@ -85,7 +99,8 @@
   - Rasteriza objeto _off-screen_ e compara com o _z-buffer_
 
 ---
-## Escolhendo Grafo de Cena + Otimização
+<!-- { "layout": "regular" } -->
+# Escolhendo Grafo de Cena + Otimização
 
 - A escolha da estrutura de dados e técnica(s) de otimização dependem
   do "problema" (normalmente, do estilo de jogo). Por exemplo:
@@ -100,15 +115,14 @@
     - Grafo de cena com _octree_, fazendo _frustum culling_ apenas
 
 ---
-<!--
-  backdrop: lod-tank
--->
-
+<!-- { "layout": "section-header", "slideClass": "level-of-detail" } -->
 # _Level of Detail_ (LOD)
----
-## Nível de Detalhamento (LOD)
 
-- ![right](../../images/lod-perspective-bunnies.png)
+---
+<!-- { "layout": "regular" } -->
+# Nível de Detalhamento (LOD)
+
+- ![](../../images/lod-perspective-bunnies.png) <!-- {.push-right} -->
   _Level of detail_ involve reduzir a complexidade de um objeto a ser
   renderizado ao passo que ele se distancia da câmera ou outra métrica:
   - importância,
@@ -120,9 +134,10 @@
   o efeito é reduzido pela distância ou velocidade
 
 ---
-## Tipos de LOD
+<!-- { "layout": "regular" } -->
+# Tipos de LOD
 
-- ![right](../../images/lod-car.png)
+- ![](../../images/lod-car.png) <!-- {.push-right} -->
   **Discreto**:
   - Construir um número finito de modelos com número de polígonos
   variando
@@ -132,7 +147,8 @@
   - Ajustar detalhes do modelo de acordo com o _viewpoint_
 
 ---
-## LOD **Discreto**
+<!-- { "layout": "regular" } -->
+# LOD **Discreto**
 
 - Abordagem mais simples:
   - Em tempo de execução, apenas o modelo adequado é selecionado e renderizado
@@ -141,17 +157,20 @@
   - Mais rápido que LOD contínuo (modo imediatista)
 - Cons:
   - Possibilidade de _popping_ durante a troca de nível
-![](../../images/lod-bunnies.png)
+
+![](../../images/lod-bunnies.png) <!-- {p:.centered} -->
 
 ---
-## Problema: _popping_
+<!-- { "layout": "regular" } -->
+# Problema: _popping_
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/KfeFcZDjCRg?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/KfeFcZDjCRg?rel=0" frameborder="0" allowfullscreen class="centered"></iframe>
 
 - Exemplo do jogo Arma 2 (2009)
 
 ---
-## LOD **Contínuo**
+<!-- { "layout": "regular" } -->
+# LOD **Contínuo**
 
 - O LOD discreto constrói um número finito de visões
   estáticas do objeto
@@ -165,48 +184,48 @@
   - Mais caro
 
 ---
-## LOD Contínuo: Exemplo
+<!-- { "layout": "regular" } -->
+# LOD Contínuo: Exemplo
 
-<iframe width="480" height="360" src="https://www.youtube.com/embed/2IMyQUTv9Vk?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="480" height="360" src="https://www.youtube.com/embed/2IMyQUTv9Vk?rel=0" frameborder="0" allowfullscreen class="centered"></iframe>
 
 ---
-## LOD **Dependente da Visualização**
+<!-- { "layout": "regular" } -->
+# LOD **Dependente da Visualização**
 
-- ![right](../../images/lod-bunny-viewdependent.png)
+- ![](../../images/lod-bunny-viewdependent.png) <!-- {.push-right} -->
   É um tipo especial de LOD contínuo que considera o ângulo de visualização
 - O algoritmo aloca polígonos onde são mais necessários baseado na câmera
 - Pros:
   - Objetos grandes são bem melhor amostrados onde estão sendo visualizados
 
 ---
-## LOD **Dependente da Visualização**: Exemplo
+<!-- { "layout": "regular" } -->
+# LOD **Dependente da Visualização**: Exemplo
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/Gmp-WbfF8b8?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/embed/Gmp-WbfF8b8?rel=0" frameborder="0" allowfullscreen class="centered"></iframe>
 
 - Liktor et al (2014): [_Fractional Reyes-Style Adaptive Tessellation for Continuous Level of Detail_](http://cg.ivd.kit.edu/FracSplit.php)
 
 ---
-## LOD de **Texturas: _Mipmapping_**
+<!-- { "layout": "regular" } -->
+# LOD de **Texturas: _Mipmapping_**
 
-- A técnica de _mipmapping_ de texturas também é LOD
+- ![](../../images/lod-lenna.png) <!-- {.push-right} -->
+  A técnica de _mipmapping_ de texturas também é LOD
   - **Reduz _aliasing_** causado por filtragem de redução pobre quando
     **uma textura grande é aplicada a uma região pequena da tela**
-
-![](../../images/lod-lenna.png)
-
 - [Exemplo de CG](http://fegemo.github.io/cefet-cg/classes/textures/#33)
 
 ---
-<!--
-  backdrop: the-witcher-2-shadows
--->
-
+<!-- { "layout": "section-header", "slideClass": "sombras-em-tempo-real" } -->
 # Sombras em Tempo Real
 
 ---
-## **Sombras**
+<!-- { "layout": "regular" } -->
+# **Sombras**
 
-- ![right](../../images/shadow-mapping.png)
+- ![](../../images/shadow-mapping.png) <!-- {.push-right} -->
   O uso de sombras a uma cena aumenta o realismo e fornece dicas visuais
   para a profundidade e posição de objetos
 - As técnicas mais comuns em _real-time_:
@@ -215,9 +234,10 @@
   1. _Shadow maps_
 
 ---
-## Sombras (1): **_Hack_ simplão**
+<!-- { "layout": "regular" } -->
+# Sombras (1): **_Hack_ simplão**
 
-- ![right](../../images/shadow-hack.png)
+- ![](../../images/shadow-hack.png) <!-- {.push-right} -->
   Renderizar cada objeto duas vezes:
   - Primeiro passo: renderizar normalmente
   - Segundo passo: projetar no plano do chão e renderizar totalmente preto
@@ -229,11 +249,12 @@
     - Mas e numa escada? Morro?
 
 ---
-## Sombras (2): **_Shadow Volumes_**
+<!-- { "layout": "regular" } -->
+# Sombras (2): **_Shadow Volumes_**
 
 - A técnica foi proposta em 1977 (Frank Crow), mas popularizada com o jogo
   Doom 3
-- ![right](../../images/shadow-volume1.png)
+- ![](../../images/shadow-volume1.png) <!-- {.push-right} -->
   Para cada par <luz, objeto>, computar a região da malha que obstrui a luz
   1. Encontrar a silhueta sob a perspectiva da luz
   2. Projetar a silhueta ao longo dos raios da luz (fazer uma extrusão)
@@ -245,9 +266,10 @@
 - Tipicamente, usa-se o _stencil buffer_ ([Everitt e Kilgard, 2002](http://arxiv.org/ftp/cs/papers/0301/0301002.pdf))
 
 ---
-## Sombras (2): **_Shadow Volumes_** (1)
+<!-- { "layout": "regular" } -->
+# Sombras (2): **_Shadow Volumes_** (1)
 
-- ![right](../../images/shadow-volume2.png)
+- ![](../../images/shadow-volume2.png) <!-- {.push-right} -->
   Pros:
   - A sombra é super precisa (a nível de pixel) e não sofre problemas de
     _aliasing_
@@ -255,33 +277,36 @@
   - Computacionalmente mais cara que _shadow maps_
 
 ---
-## Sombras (3): **_Shadow Maps_** (1)
+<!-- { "layout": "regular" } -->
+# Sombras (3): **_Shadow Maps_** (1)
 
-- ![right](../../images/shadow-map1.png)
+- ![](../../images/shadow-map1.png) <!-- {.push-right} -->
   Renderiza a cena usando **cada fonte de luz como centro de projeção**,
   salvando apenas o _z-buffer_
   - Imagens 2D resultantes são os **mapas de sombras** (uma por fonte de luz)
 - Em seguida, renderiza a cena do ponto de vista da câmera
 
 ---
-## Sombras (3): **_Shadow Maps_** (2)
+<!-- { "layout": "regular" } -->
+# Sombras (3): **_Shadow Maps_** (2)
 
-- ![right](../../images/shadow-map2.png)
+- ![](../../images/shadow-map2.png) <!-- {.push-right} -->
   Para determinar se ponto <span class="math">P</span> de um objeto está
   na sombra:
   1. Computar a distância <span class="math">d_P</span> de
-    <span class="math">P</span> até a fonte de luz
+     <span class="math">P</span> até a fonte de luz
   1. Converter <span class="math">P</span> das coordenadas do mundo para
-    coordenadas do _shadow map_ (usando matrizes <span class="math">projection * view</span> usada para gerar o mapa)
+     coordenadas do _shadow map_ (usando matrizes <span class="math">projection * view</span> usada para gerar o mapa)
   1. Recuperar a distância <span class="math">d_{min}</span> no mapa
   1. <span class="math">P</span> está na sombra se
-    <span class="math">d_P > d_{min}</span>, _i.e._, se estiver atrás de um
-    objeto mais próximo da fonte
+     <span class="math">d_P > d_{min}</span>, _i.e._, se estiver atrás de um
+     objeto mais próximo da fonte
 
 ---
-## Sombras (3): **_Shadow Maps_** (3)
+<!-- { "layout": "regular" } -->
+# Sombras (3): **_Shadow Maps_** (3)
 
-- ![right](../../images/shadow-map3.png)
+- ![](../../images/shadow-map3.png) <!-- {.push-right} -->
   Pros:
   - Pode ser extendida para ter _soft shadows_
   - Mais barata que _shadow volumes_
@@ -292,7 +317,8 @@
 - Há várias técnicas para resolver o problema de _aliasing_...
 
 ---
-## Sombras (3): **_Shadow Maps_** (4)
+<!-- { "layout": "regular" } -->
+# Sombras (3): **_Shadow Maps_** (4)
 
 - **_Screen Space Blurred Shadow Mapping_**:
   - Sombras renderizadas em uma textura e ela é borrada e então aplicada na tela
@@ -300,33 +326,32 @@
   - Usa mais de um "texel" do _shadow map_ para determinar se ponto está na
     sombra
 
-![](../../images/shadow-map4.png)
+![](../../images/shadow-map4.png) <!-- {p:.centered} -->
 
 ---
-## Sombras **em 2D**
+<!-- { "layout": "regular" } -->
+# Sombras **em 2D**
 
-
-- ![right](../../images/shadow-mario64.png)
+- ![](../../images/shadow-mario64.png) <!-- {.push-right} -->
   Em jogos 2D (e até 3D), normalmente simplificamos as sombras a apenas um
   **_shadow blob_**
   - Simplesmente um gradiente circular desenhado nos pés dos objetos
   - Quando o personagem pula, a [figura é aumentada/esmaecida](https://youtu.be/31m02lH46S0?t=38s)
-- ![right](../../images/shadow-2d-raycast.png)
+- ![](../../images/shadow-2d-raycast.png) <!-- {.push-right} -->
   Recentemente alguns jogos 2D passaram a usar **sombras dinâmicas** usando
   **_raycasting_**
   - Veja um [excelente passo-a-passo](http://ncase.me/sight-and-light/) de
     como fazer
 
 ---
-<!--
-  backdrop: ssao-farcry4
--->
-
+<!-- { "layout": "section-header", "slideClass": "ambient-occlusion" } -->
 # **_Ambient Occlusion_**
----
-## **_Ambient Occlusion_**
 
-![](../../images/ambient-occlusion1.png)
+---
+<!-- { "layout": "regular" } -->
+# **_Ambient Occlusion_**
+
+![](../../images/ambient-occlusion1.png) <!-- {p:.centered} -->
 
 - A **obstrução ambiente** aprimora o realismo ao considerar a atenuação da luz
   devido a sua obstrução (_occlusion_)
@@ -335,21 +360,23 @@
   em um ponto dada em função da geometria da cena
 
 ---
-## **_Ambient Occlusion_** (2)
+<!-- { "layout": "regular" } -->
+# **_Ambient Occlusion_** (2)
 
 - _Ambient Occlusion_ é normalmente calculada lançando raios em
   várias direções a partir da superfície
   - Raios que chegam ao "vazio" ou "céu" aumentam o brilho da superfície
   - Raios que acertam outros objetos não contribuem para iluminação
-- ![right](../../images/ambient-occlusion2.png)
+- ![](../../images/ambient-occlusion2.png) <!-- {.push-right} -->
   Resultado: **pontos rodeados por outros objetos ficam mais escuros** do que
   pontos com pouca geometria próxima
 
 ---
-## **_Screen Space Ambient Occlusion_** (SSAO)
+<!-- { "layout": "regular" } -->
+# **_Screen Space Ambient Occlusion_** (SSAO)
 
-- Em tempo real, podemos apenas tentar aproximar o _ambient Occlusion_
-- <abbr title="Screen Space Ambient Occlusion">SSAO</abbr> é uma técnica
+- Em tempo real, podemos apenas tentar aproximar o _ambient occlusion_
+- SSAO é uma técnica
   de aproximação (introduzida pelo Crysis) que faz uso da profundidade
   (_z-buffer_) da cena renderizada
   - Compara a profundidade do fragmento corrente com a profundidade de alguns
@@ -358,8 +385,11 @@
     do que os fragmentos vizinhos
 - Exemplo de [SSAO no Skyrim](https://www.youtube.com/watch?v=aStBEcs38TQ)
 
+*[SSAO]: Screen Space Ambient Occlusion*
+
 ---
-<figure style="position: relative; width: 100%; height: 600px;">
+<!-- { "layout": "centered" } -->
+<figure style="position: relative; width: 800px; height: 600px;" class="centered">
   <img src="../../images/skyrim-ssao-off.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; width: 800px;">
   <img src="../../images/skyrim-ssao-on.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0; width: 800px;">
 </figure>
@@ -367,6 +397,7 @@
 - [Comparação lado a lado](http://international.download.nvidia.com/geforce-com/international/comparisons/the-elder-scrolls-v-skyrim-tweak-guide/Skyrim-Tweak-Guide-AO-Comparison.html)
 
 ---
+<!-- { "layout": "centered" } -->
 # Referências
 
 - Livro _Game Engine Architecture, Second Edition_
