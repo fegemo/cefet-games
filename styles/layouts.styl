@@ -202,8 +202,6 @@ for color, i in $checkpoint-slide-main-colors
 
 .intro3
   .layout-title.bespoke-slide h1
-    // color black
-    // text-shadow white 2px 2px
     font-weight bold
     & > *
       margin-right: 0.5em;
@@ -212,6 +210,35 @@ for color, i in $checkpoint-slide-main-colors
       background-position center
       background-size cover
 
+.realtime-rendering-pt1
+  .layout-title.bespoke-slide h1
+    & > *
+      margin-right: 0.5em;
+    &::before
+      background-image url(../images/unity-ssao.jpg)
+      background-position center
+      background-size cover
+  .grafo-de-cena.layout-section-header::after
+    background-image url(../images/scene-graph-sample.png)
+    background-size contain
+    background-position center
+    background-repeat no-repeat
+  .level-of-detail.layout-section-header::after
+    background-image url(../images/lod-tank.png)
+    background-size contain
+    background-position center
+    background-repeat no-repeat
+  .sombras-em-tempo-real.layout-section-header::after
+    background-image url(../images/the-witcher-2-shadows.jpg)
+    background-color black
+    background-size contain
+    background-position center
+    background-repeat no-repeat
+  .ambient-occlusion.layout-section-header::after
+    background-image url(../images/ssao-farcry4.png)
+    background-size contain
+    background-position center
+    background-repeat no-repeat
 
 .animation
   .layout-title h1
