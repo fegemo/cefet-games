@@ -1710,29 +1710,14 @@ ul.horizontal > li {
   height: 100%;
   background-size: cover;
 }
-.little-big-planet-3.bespoke-backdrop-active {
-  background-image: url("../images/little-big-planet-3.jpg");
+.trine-2-deferred-shading.bespoke-backdrop-active {
+  background-image: url("../images/trine-2-deferred-shading.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   background-size: cover;
-}
-.deferred-lighting.bespoke-backdrop-active {
-  background-image: url("../images/deferred-lighting.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-}
-.crysis3-foliage.bespoke-backdrop-active {
-  background-image: url("../images/crysis3-foliage.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
+  background-position: center center;
 }
 .bespoke-slide[data-bespoke-backdrop="ssao-farcry4"],
 .bespoke-slide[data-bespoke-backdrop="scene-graph-sample"],
@@ -2188,38 +2173,17 @@ ul.horizontal > li {
   background-position: center;
   background-size: cover;
 }
-.realtime-rendering-pt1 .layout-title.bespoke-slide h1 > * {
-  margin-right: 0.5em;
-}
-.realtime-rendering-pt1 .layout-title.bespoke-slide h1::before {
-  background-image: url("../images/unity-ssao.jpg");
-  background-position: center;
+.realtime-rendering-pt2 .layout-title.bespoke-slide h1::before {
+  background-image: url("../images/little-big-planet-3.jpg");
   background-size: cover;
 }
-.realtime-rendering-pt1 .grafo-de-cena.layout-section-header::after {
-  background-image: url("../images/scene-graph-sample.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.realtime-rendering-pt2 .arvores-e-vegetacao.layout-section-header::after {
+  background-image: url("../images/crysis3-foliage.jpg");
+  background-size: cover;
 }
-.realtime-rendering-pt1 .level-of-detail.layout-section-header::after {
-  background-image: url("../images/lod-tank.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.realtime-rendering-pt1 .sombras-em-tempo-real.layout-section-header::after {
-  background-image: url("../images/the-witcher-2-shadows.jpg");
-  background-color: #000;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.realtime-rendering-pt1 .ambient-occlusion.layout-section-header::after {
-  background-image: url("../images/ssao-farcry4.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+.realtime-rendering-pt2 .sombreamento-tardio.layout-section-header::after {
+  background-image: url("../images/deferred-lighting.jpg");
+  background-size: cover;
 }
 .animation .layout-title h1::before {
   background-image: url("../images/max-payne3.jpg");
