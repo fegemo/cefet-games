@@ -1,26 +1,22 @@
-<!--
-  backdrop: little-big-planet-3
--->
-
+<!-- { "layout": "title" } -->
 # Renderização em Tempo Real (parte 2)
+
 ---
 ## Roteiro
 
 1. [Efeitos Visuais](http://fegemo.github.io/cefet-cg/classes/visual-effects/) (aula de CG)
-1. Árvores e Vegetação
-1. _Forward vs Deferred Rendering_
+1. [Árvores e Vegetação](#arvores-e-vegetacao)
+1. [Sombreamento Tardio](#sombreamento-tardio) (_deferred shading_)
 
 ---
-<!--
-  backdrop: crysis3-foliage
--->
-
+<!-- { "layout": "section-header", "slideClass": "arvores-e-vegetacao", "slideHash": "arvores-e-vegetacao" } -->
 # Árvores e Vegetação
 
 ---
-## Árvores e Vegetação
+<!-- { "layout": "regular" } -->
+# Árvores e Vegetação
 
-- ![right](../../images/trees1.png)
+- ![](../../images/trees1.png) <!-- {.push-right} -->
   A complexidade visual de grama, arbustos, árvores etc. é frequentemente
   renderizada usando um ou mais _billboards_ ou _sprites_
 
@@ -28,10 +24,11 @@
 - [Renderização de grama no Crysis 3](https://www.youtube.com/watch?v=Uh2Lv97OhMg)
 
 ---
-## **Grama**
+<!-- { "layout": "regular" } -->
+# Grama (1/3)
 
-- ![right](../../images/grass-alpha-texture.png)
-  ![cright](../../images/grass-scheme1.png)
+- ![](../../images/grass-alpha-texture.png) <!-- {.push-right style="width: 280px"} -->
+  ![](../../images/grass-scheme1.png) <!-- {.push-right style="clear:both"} -->
   Grama é normalmente renderizada usando _sprites_ intersectantes, renderizados
   usando transparência
 - As _sprites_ são cruzadas para que haja qualidade visual independente do
@@ -40,32 +37,57 @@
   - _Backface culling_ deve ser desabilitado
 
 ---
-## Grama (2)
+<!-- { "layout": "regular" } -->
+# Grama (2/3)
 
-- ![right](../../images/grass-scheme2.png)
+- ![](../../images/grass-scheme2.png) <!-- {.push-right} -->
   Para dar sensação de alta densidade, as "moitinhas" devem ser colocadas
   próximas umas às outras
 - Para renderizar, os testes alfa e de profundidade devem ser ativados
 
-![](../../images/grass-dense.jpg)
+![](../../images/grass-dense.jpg) <!-- {p:.centered} -->
 
 ---
-## Grama: respondendo ao **vento**
+<!-- { "layout": "regular" } -->
+# Grama (3/4): respondendo ao **vento**
 
-- ![right](../../images/grass-scheme3.png)
-  ![cright](../../images/grass-scheme4.png)
-  Uma transformação (_shearing_) pode ser feita nas moitas, cuja intensidade
+- ![](../../images/grass-scheme4.png) <!-- {.push-right style="max-height: 200px" } -->
+  ![](../../images/grass-scheme3.png) <!-- {.push-right} -->
+  Uma transformação pode ser feita nas moitas, cuja intensidade
   é determinada pela quantidade de vento e o momento (tempo) corrente
-- Pode ser feito em um _vertex shader_, usando funções envolvendo `sin`/`cos`
+- O _vertex shader_ pode usar funções envolvendo `sin`/`cos`
   para dar efeito de movimento ondular
+  <iframe src="https://codepen.io/al-ro/full/jJJygQ" width="100%" height="240px" seamless frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
 
 ---
-## **Árvores**
+<!-- { "layout": "2-column-content" } -->
+# Grama (4/4): com geometria
 
-- ![right](../../images/tree-distant.jpg)
-  ![cright](../../images/tree-near.jpg)
+- ::: figure
+  <video src="../../videos/grass-geometric.webm" width="100%" loop="0" autoplay muted></video>
+  [Tutorial](https://roystan.net/articles/grass-shader.html) de Roystan (2018)
+  :::
+  <!-- {li:.no-bullet} -->
+- Uma malha é enviada ao pipeline e cada vértice é substituído por um fiapo
+
+1. ::: figure
+   <video src="../../videos/grass-geometric-blade-vertices.mp4" height="160px" loop="0" autoplay muted class="push-right"></video>
+   :::
+   O _geometry shader_ transforma 1 vértice dessa malha em 7
+1. Fiapo tem tamanho e orientação aleatória
+1. Para controlar densidade, _tesselation shader_ subdivide a malha inicial 
+   com mais ou menos intensidade:
+   ![](../../images/grass-geometric-tesselation.gif) <!-- {style="max-height: 200px"} -->
+
+---
+<!-- { "layout": "regular" } -->
+# Árvores
+
+- ![](../../images/tree-distant.jpg) <!-- {.push-right} -->
+  ![](../../images/tree-near.jpg) <!-- {.push-right style="clear:both"} -->
   Quando **distante**, uma árvore pode ser **renderizada como _billboard_
   ou _impostor_**
+  - Por exemplo, árvores em locais distantes e inalcançáveis
 - Quando **próxima**, separamos em:
   1. Região sólida usando malha poligonal (tronco e galhos mais grossos)
   2. Folhagem usando _sprites_
@@ -74,70 +96,88 @@
 ![](../../images/tree-wire.png)
 
 ---
+<!-- { "layout": "centered", "state": "show-active-slide-and-previous" } -->
 ![](../../images/tree-wire-bold.png)
 
 ---
-<!--
-  deferred-lighting
--->
+<!-- { "layout": "section-header", "slideClass": "sombreamento-tardio", "slideHash": "sombreamento-tardio" } -->
+# Sombreamento Tardio
 
-# Renderização Tardia (_Deferred_)
+- Ou _Deferred Shading_, _Deferred Rendering_
+- É uma forma diferente de usar o _pipeline_ gráfico para gerar imagens
 
 ---
-## Um problema com a Renderização "tradicional"
+<!-- { "layout": "regular" } -->
+# Um problema com o _pipeline_ tradicional
 
-- Na renderização tradicional (_"forward"_), a geometria é enviada
+- Na renderização tradicional (_forward rendering_), a geometria é enviada
   ao _pipeline_, que (a) calcula suas posições e (b) a colore
 - Um potencial problema é o **alto custo**
-  (<span class="math">O(geometria * luzes)</span>) associado à porção
-  relacionada à **iluminação (b)**, combinado à possibilidade
-  de se **desenhar geometria** que será **posteriormente sobrescrita**
-  por outra mais próxima da câmera
+  <span class="math">O(geometria + fragmentos \times luzes)</span> associado à porção
+  relacionada à **iluminação (b)**
 
-![](../../images/deferred-rendering-overdraw.png)
+::: figure .layout-split-2
+![](../../images/deferred-rendering-overdraw.png) <!-- {p:.centered} -->
+- Um pixel pode conter muitos fragmentos (de um objeto atrás do outro)
+- A iluminação é feita para todos os fragmentos da cena
+  - Mesmo aqueles que não contribuirão para o pixel
+:::
 
 ---
-## Renderização Tardia (_Deferred Rendering_)
+<!-- { "layout": "regular" } -->
+# Sombreamento Tardio (_Deferred Shading_)
 
-- Renderização (ou Iluminação, ou Sombreamento) Tardia é a ideia de **separar
-  a renderização da geometria de sua colorização** (iluminação)
+- Renderização (ou Iluminação, ou Sombreamento) Tardia é a ideia de 
+  **separar a renderização da geometria de sua colorização** (iluminação)
   - É um _hack_ inteligentão do _pipeline_
 - Acontece em 2 passos:
-  - Renderização (sem cálculo de iluminação) da cena "em texturas"
-  - Colorização da textura e combinação para gerar a imagem final
+  1. Renderização (sem cálculo de iluminação) da cena em 4+ texturas
+  1. Combinação dessas texturas com as fontes de luz para gerar a imagem final
 - Exemplo de cena com 1000 vértices:
   - (1) 1000 vértices vão para o _pipeline_ e a geometria é rasterizada,
-    cálculo de iluminação, para uma textura (na verdade, umas 4+)
-    - Esse _frame buffer_ profundo se chama _g-buffer_
-  - (2) as texturas são enviadas ao _pipeline_ e o _fragment shader_
-    as combina, gerando a imagem final
+    cálculo de iluminação, para texturas
+    - Esse _frame buffer_ "profundo" se chama _g-buffer_
+  - (2) as texturas são enviadas ao _pipeline_ em um segundo passo de
+    renderização e o _fragment shader_ as combina, gerando a imagem final
 
 ---
-## Exemplo: _Engine_ [Leadwerks](http://www.leadwerks.com/werkspace/page/home?shownav=0)
+<!-- { "layout": "centered-horizontal" } -->
+# 1º passo: geração do _g-buffer_ <!-- {h1:style="transform: scale(0.8)"} -->
 
-<figure style="position: relative; width: 100%; height: 585px;">
-  <img src="../../images/deferred-rendering-leadwerks1.png" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/deferred-rendering-leadwerks2.jpg" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/deferred-rendering-leadwerks3.jpg" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/deferred-rendering-leadwerks4.jpg" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/deferred-rendering-leadwerks5.jpg" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/deferred-rendering-leadwerks6.jpg" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-  <img src="../../images/deferred-rendering-leadwerks7.jpg" class="bullet bullet-no-anim" style="position: absolute; top: 0; left: 0;">
-</figure>
+::: figure
+![](../../images/deferred-render-targets.png) <!-- {style="height: 445px"} -->
+<figcaption>Killzone 2 (Guerrilla Games, 2009)</figcaption>
+:::
 
 ---
-## Vantagens e Desvantagens
+<!-- { "layout": "centered-horizontal", "state": "show-active-slide-and-previous" } -->
+# 2º passo: combinação _g-buffer_ e iluminação <!-- {h1:style="transform: scale(0.8)"} -->
+ 
+::: figure
+![](../../images/deferred-result.png) <!-- {style="height: 445px"} -->
+:::
 
-- ![right](../../images/deferred-rendering-multiple-lights.jpg)
+---
+<!-- { "layout": "regular" } -->
+# Vantagens e Desvantagens
+
+- ![](../../images/deferred-rendering-multiple-lights.jpg) <!-- {.push-right} -->
   Uma grande vantagem é a possibilidade de usar um **número muito maior de
   fontes de luz**
-  - A complexidade é <span class="math">O(geometria + luzes)</span>
-  - Apenas os pixels afetadas por uma fonte de luz precisam ter sua iluminação
+  - A complexidade é<br><span class="math">O(geometria + pixels \times luzes)</span>
+  - Apenas os pixels afetados por uma fonte de luz precisam ter sua iluminação
     calculada para ela
 - Desvantagens:
   - Difícil lidar com objetos transparentes
+    - Nesse caso, usa-se abordagem híbrida (_forward + deferred_)
+---
+<!-- { "layout": "centered", "backdrop": "trine-2-deferred-shading", "fullPageElement": "#trine-2-video", "playMediaOnActivation": {"selector": "#trine-2-video", "delay": "400" } } -->
+<!-- # Trine 2 {style="color: white"} -->
+  
+<video src="../../videos/trine-2.webm" width="100%" loop="0" id="trine-2-video"></video>
 
 ---
+<!-- { "layout": "centered-horizontal" } -->
 # Referências
 
 - Livro _Game Engine Architecture, Second Edition_
