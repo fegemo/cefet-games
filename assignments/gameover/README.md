@@ -11,7 +11,7 @@ Pré-requisitos:
   1. Mais que 10 dedos nas mãos (você entenderá)
 
 [dl-gameover]: http://ua-games.gr/game-over/downloads.html
-[dl-alt]: http://fegemo.github.io/cefet-games/attachments/GameOver.7z
+[dl-alt]: https://github.com/fegemo/cefet-games/blob/v2/attachments/game-accessibility/GameOver.7z
 
 Objetivos:
 
