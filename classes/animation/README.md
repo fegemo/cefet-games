@@ -5,15 +5,15 @@
 <!-- {"layout": "centered-horizontal"} -->
 # Roteiro
 
-1. Tipos de Animação
-   - Animação em Células
-   - Animação Hierárquica Rígida (_skeletal_)
-   - Animação por Vértice (/_morph targets_)
-   - Animação de Pele
-2. Animação de Pele (_skinning_)
-   - Mesclagem de Clipes
-   - Redirecionamento de Animação (_retargeting_)
-   - Animação Procedural
+1. [Tipos de animação](#tipos-de-animacao)
+   - Animação em células
+   - Animação hierárquica rígida (_skeletal_)
+   - Animação por vértice (/_morph targets_)
+   - Animação de pele (_skinning_)
+1. [Técnicas avançadas](#tecnicas-avancadas)
+   - Mesclagem de clipes
+   - Redirecionamento de animação (_retargeting_)
+1. [Animação procedural](#animacao-procedural)
 
 ---
 <!-- {"layout": "regular"} -->
@@ -30,12 +30,30 @@
   - Tipicamente, humanos, humanóides às vezes animais ou aliens
   - Esses personagens precisam se mover de forma **fluida, orgânica, verossímel**
   - Isso é mais difícil do que animar objetos rígidos (_e.g._, uma bola rolando)
+- Tipos de animação definem como elas são produzidas e como são executadas
+
+---
+<!-- { "layout": "section-header", "slideClass": "tipos-de-animacao", "slideHash": "tipos-de-animacao" } -->
+# Tipos de Animação
+
+1. Por célula
+1. Hierárquica rígida
+1. _Morph target_
+1. _Skinning_
 
 ---
 <!-- {"layout": "regular"} -->
 # Tipo: **Animação por Células**
 
-![](../../images/sprite-toejam.png) <!-- {p:.centered} -->
+1. <!-- {.layout-split-3.full-width style="align-items: center; justify-content: center"} -->
+   <!-- {ol:.no-bullet.full-width.no-margin} -->
+   ![](../../images/sprite-megaman.png)
+   ![](../../images/seta-direita.png)
+   ::: figure .sprite.push-right width: 60px; height: 60px; margin: 0
+   ![](../../images/sprite-megaman.png) <!-- {p:.no-margin} -->
+   :::
+
+
 - Ilusão de movimento produzida pela **alternância de imagens
   pré-renderizadas**, tipicamente desenhadas por artistas **quadro a quadro**
 - Um personagem pode ter vários **clipes de animação**:
@@ -60,7 +78,7 @@
 # Animação _Skeletal_
 
 - Apesar de falarmos em ossos, **o que importa mesmo são as juntas (_joints_)**
-- Inicialmente proposto para personagens 3D, mas hoje em dia estamos fazendo também em 2D!
+- Inicialmente proposto para personagens 3D, mas hoje em dia fazemos também em 2D!
   - ::: figure .polaroid.item-300w
     ![](../../images/2d-bones-animation.gif) <!-- {ul^0:.multi-column-inline-list-2.no-bullet} --> <!-- {.full-width} -->
     <figcaption>Avengers: Age Of Ultron – Global Chaos (2D)</figcaption>
@@ -72,36 +90,39 @@
 
 ---
 <!-- {"layout": "regular"} -->
-# **Poses** do Esqueleto
+# **Pose** do esqueleto e **clipes** de animação
 
 - A **pose de uma junta** é definida com relação à junta pai por:
   - Posição
   - Orientação
-  - Escala
+  - Escala <!-- {ul^0:.multi-column-list-3} -->
 - Tipicamente representada por uma estrutura SQT (_**S**cale, Rotation **Q**uaternion, **T**ranslation_)
-- **Uma pose de um modelo** é formada pelo **conjunto das poses** relativas **de cada osso** (junta)
-
----
-<!-- {"layout": "regular"} -->
-# **Poses Chave** e **Clipes** de Animação
-
-- ![right](../../images/assassins-creed-keypose.jpg)
-  Uma **pose chave** é uma pose que representa um extremo de um movimento
+  - Quatérnio: uma ferramenta matemática que consegue expressar uma rotação
+    melhor que uma matriz
+- ![](../../images/character-bones.png) <!-- {.push-right style="max-width: 350px;"} -->
+  **Uma pose de um esqueleto** é formada pelo **conjunto das poses de cada junta**
+- Uma **pose chave** é uma pose que representa um extremo de um movimento
 - Um **clipe** de animação é formado por uma **sequência de poses chave que são interpoladas**
+
+*[SQT]: scale, quaternion, translation*
 
 ---
 <!-- {"layout": "regular"} -->
 # Interpolação de Pose
 
-- **Clipe**: sequência de poses nos tempos <span class="math">t_1, t_2, ..., t_n</span>
+- **Clipe**: sequência de poses nos tempos
+  <span class="math">t_1, t_2, ..., t_n</span>
 - Para cada tempo <span class="math">t</span> tal que <span class="math">t_i < t < t_j</span>:
   - O motor de animação pode interpolar entre poses definidas em <span class="math">t_i < t < t_j</span>
   - A interpolação gera as poses intermediárias
 - ::: figure .polaroid.item-250w.push-right
     ![](../../images/2d-bones-robot-dragonbones.png) <!-- {.full-width} -->
-    <figcaption><a href="http://dragonbones.github.io/demo.html">Exemplo</a> usando motor de animação DragonBones</figcaption>
+    <figcaption><a href="https://dragonbones.github.io/demo/DragonBonesEvent/index.html">Exemplo</a> usando motor de animação DragonBones</figcaption>
   :::
   Já que podemos interpolar poses, podemos executar animações em qualquer velocidade, ou mesmo ao contrário
+  - [Exemplo da Spine][exemplo-spine]
+
+[exemplo-spine]: http://pt.esotericsoftware.com/spine-demos
 
 ---
 <!-- {"layout": "regular"} -->
@@ -109,8 +130,8 @@
 
 - Possibilidade para deformar a malha poligonal
   - Impossível com a animação rígida
-  - Muito usado para **representar o rosto do personagem**
-    ![](../../images/morph-target-ellie.jpg)
+  - ![](../../images/morph-target-ellie.jpg) <!-- {.push-right} -->
+    Muito usado para **representar o rosto do personagem**
 - Artista cria objeto em **pose neutra** (_poker face_), depois o deforma em vários extremos (sorrindo, gargalhando, super triste, chorando etc.)
   - Também conhecido como _blendshape_
   - Consegue-se muitas possibilidades usando-se variação de pesos da face neutra + (peso x _blendshape_)
@@ -137,7 +158,7 @@
 
 ---
 <!-- {"layout": "regular"} -->
-# _Skinning_
+# _Skinning_ (1/3)
 
 - A pele é apenas uma malha de triângulos associada ao esqueleto
 - Cada malha possui:
@@ -149,7 +170,7 @@
 
 ---
 <!-- {"layout": "regular"} -->
-# _Skinning_ (2)
+# _Skinning_ (2/3)
 
 - Coordenadas dos vértices da pele são **definidas em relação ao osso**
   - Primeiramente, obtém-se a matriz de transformação do osso
@@ -159,7 +180,7 @@
 
 ---
 <!-- {"layout": "regular"} -->
-# _Skinning_ (3)
+# _Skinning_ (3/3)
 
 - Em geral, vértices da pele podem estar associados a mais de um osso
 
@@ -186,19 +207,30 @@
   - [DragonBones](http://esotericsoftware.com/)
 
 ---
-<!-- {"layout": "regular"} -->
-# **Mesclagem de Clipes**
+<!-- { "layout": "section-header", "slideClass": "tecnicas-avancadas", "slideHash": "tecnicas-avancadas" } -->
+# Técnicas avançadas
 
-- Dados dois clipes de animação, podemos mesclá-los em um novo clipe
-- Usado par **combinar duas ou mais animações** (_e.g._, pulando e atirando) para não precisar fazer as animações combinadas (_e.g._, atirando ao pular)
-- Exemplos:
-  - **Transição** entre andar e correr
-  - Personagem andando + personagem machucado andando = **vários níveis intermediários** de machucado
-  - Mirando para esquerda + Mirando para direita = mirando em qualquer ponto entre esses extremos
+- Mesclagem de clipes
+  - Temporal
+  - Espacial
+  - Situacional
+- Redirecionamento
 
 ---
 <!-- {"layout": "regular"} -->
-# Mesclagem de Clipes
+# Mesclagem de clipes (1/3)
+
+- Dados dois clipes de animação, podemos mesclá-los em um novo clipe
+- Usado par **combinar duas ou mais animações** (_e.g._, pulando e atirando)
+  para não precisar fazer as animações combinadas (_e.g._, atirando ao pular)
+- Exemplos:
+  - [Temporal] transição entre andar e correr
+  - [Espacial] personagem andando + personagem machucado
+  - [Situacional] mirando para esquerda + mirando para direita
+
+---
+<!-- {"layout": "regular"} -->
+# Mesclagem de clipes (2/3)
 
 - Método mais comum é a interpolação linear
   - Computa-se as poses para cada animação no tempo corrente e interpola entre elas
@@ -207,8 +239,19 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-ec82SKcjkE?rel=0" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
 
 ---
+<!-- { "layout": "regular" } -->
+# Mesclagem de clipes (3/3)
+
+- Situacional: cada <span class="math">t</span> do clipe representa uma situação
+  do personagem
+  - Por exemplo, apontando para diferentes direções
+
+<iframe width="560" height="315" src="https://dragonbones.github.io/demo/CoreElement/index.html" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
+
+
+---
 <!-- {"layout": "regular"} -->
-# Redirecionamento de Animação (_retargeting_)
+# Redirecionamento de animação (_retargeting_)
 
 - Tipicamente, um clipe é feito para um único esqueleto
 - Contudo, se 2 esqueletos forem suficientemente parecidos, animação feita para um pode ser aproveitada pelo outro
@@ -218,7 +261,7 @@
 
 ---
 <!-- {"layout": "regular"} -->
-# _Animation Retarging_ no **Mecanim da Unity**
+# _Animation retarging_ na Unity
 
 <iframe width="480" height="360" src="https://www.youtube.com/embed/A9BikRKRG0I?rel=0" frameborder="0" allowfullscreen style="margin: 0 auto;"></iframe>
 
@@ -226,8 +269,10 @@
 <!-- {"layout": "regular"} -->
 # Animações Procedurais
 
-- Gerada em tempo de execução em vez de ditada por dados capturados ou exportados de uma ferramenta
-  - Exemplo: **árvores e vegetação** podem conter ossos, mas serem animadas conforme o vento
+- Gerada em tempo de execução em vez de ditada por dados capturados ou
+  exportados de uma ferramenta
+  - Exemplo: **árvores e vegetação** podem conter ossos, mas serem animadas
+    conforme o vento
 - Tipos:
   - Cinemática Inversa
   - _Rag Dolls_ (simulação de molas)

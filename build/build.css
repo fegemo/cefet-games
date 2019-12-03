@@ -2173,6 +2173,39 @@ ul.horizontal > li {
   background-position: center;
   background-size: cover;
 }
+.realtime-rendering-pt1 .layout-title.bespoke-slide h1 > * {
+  margin-right: 0.5em;
+}
+.realtime-rendering-pt1 .layout-title.bespoke-slide h1::before {
+  background-image: url("../images/unity-ssao.jpg");
+  background-position: center;
+  background-size: cover;
+}
+.realtime-rendering-pt1 .grafo-de-cena.layout-section-header::after {
+  background-image: url("../images/scene-graph-sample.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.realtime-rendering-pt1 .level-of-detail.layout-section-header::after {
+  background-image: url("../images/lod-tank.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.realtime-rendering-pt1 .sombras-em-tempo-real.layout-section-header::after {
+  background-image: url("../images/the-witcher-2-shadows.jpg");
+  background-color: #000;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.realtime-rendering-pt1 .ambient-occlusion.layout-section-header::after {
+  background-image: url("../images/ssao-farcry4.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .realtime-rendering-pt2 .layout-title.bespoke-slide h1::before {
   background-image: url("../images/little-big-planet-3.jpg");
   background-size: cover;
@@ -2188,6 +2221,13 @@ ul.horizontal > li {
 .animation .layout-title h1::before {
   background-image: url("../images/max-payne3.jpg");
   background-position: top center;
+}
+.animation .tipos-de-animacao.layout-section-header::after {
+  background-image: url("../images/characters-animation.gif"), -webkit-gradient(linear, left top, right top, color-stop(33.33333%, #f3b21c), color-stop(33.33333%, #f34538), color-stop(66.666667%, #f34538), color-stop(66.666667%, #7d8acf));
+  background-image: url("../images/characters-animation.gif"), linear-gradient(to right, #f3b21c 33.33333%, #f34538 33.33333%, #f34538 66.666667%, #7d8acf 66.666667%);
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 @-webkit-keyframes movingbg-x {
   from {
