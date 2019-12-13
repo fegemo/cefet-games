@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="559.73969"
+   height="130.5"
+   viewBox="-0.5 -0.5 559.73969 130.5"
+   id="svg2665"
+   sodipodi:docname="post-processing-2nd-pass.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata2669">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1850"
+     inkscape:window-height="1009"
+     id="namedview2667"
+     showgrid="false"
+     inkscape:zoom="2.1699115"
+     inkscape:cx="253.78639"
+     inkscape:cy="82.68332"
+     inkscape:window-x="70"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2663" />
+  <defs
+     id="defs2499" />
+  <g
+     id="g2663"
+     transform="translate(-3.2194961,-0.5)">
+    <rect
+       x="480"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2501"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="490"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2503"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="500"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2505"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="510"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2507"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="520"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2509"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="530"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2511"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="540"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2513"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="540"
+       y="60"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect2515"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="480"
+       y="60"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect2517"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="480"
+       y="70"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect2519"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="480"
+       y="80"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect2521"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="480"
+       y="90"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect2523"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="480"
+       y="100"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect2525"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="480"
+       y="110"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect2527"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="510"
+       y="100"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2529"
+       style="fill:#001933;stroke:none" />
+    <rect
+       x="510"
+       y="90"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2531"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="520"
+       y="90"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2533"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="530"
+       y="80"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2535"
+       style="fill:#003366;stroke:none" />
+    <rect
+       x="520"
+       y="70"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2537"
+       style="fill:#003366;stroke:none" />
+    <rect
+       x="520"
+       y="80"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2539"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="510"
+       y="80"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2541"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="530"
+       y="90"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2543"
+       style="fill:#001933;stroke:none" />
+    <rect
+       x="520"
+       y="100"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2545"
+       style="fill:#001933;stroke:none" />
+    <rect
+       x="510"
+       y="70"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2547"
+       style="fill:#001933;stroke:none" />
+    <rect
+       x="500"
+       y="80"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2549"
+       style="fill:#001933;stroke:none" />
+    <rect
+       x="500"
+       y="90"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect2551"
+       style="fill:#001933;stroke:none" />
+    <rect
+       x="120"
+       y="40"
+       width="120"
+       height="60"
+       pointer-events="all"
+       id="rect2553"
+       style="fill:#ffffff;stroke:#000000" />
+    <g
+       transform="translate(142.5,61.5)"
+       id="g2559">
+      <switch
+         id="switch2557">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="75"
+           height="16"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 76px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Geometria</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="38"
+           y="16"
+           font-size="16px"
+           id="text2555"
+           style="font-size:16px;font-family:Helvetica;text-anchor:middle;fill:#000000">Geometria</text>
+      </switch>
+    </g>
+    <rect
+       x="300"
+       y="40"
+       width="120"
+       height="60"
+       pointer-events="all"
+       id="rect2561"
+       style="fill:#ffffff;stroke:#000000" />
+    <g
+       transform="translate(312.5,61.5)"
+       id="g2567">
+      <switch
+         id="switch2565">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="94"
+           height="16"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 94px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Rasterização</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="47"
+           y="16"
+           font-size="16px"
+           id="text2563"
+           style="font-size:16px;font-family:Helvetica;text-anchor:middle;fill:#000000">Rasterização</text>
+      </switch>
+    </g>
+    <circle
+       cx="17.5"
+       cy="111"
+       pointer-events="all"
+       id="ellipse2569"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="61"
+       cy="81"
+       pointer-events="all"
+       id="ellipse2571"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="17.5"
+       cy="81"
+       pointer-events="all"
+       id="ellipse2573"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="61"
+       cy="111"
+       pointer-events="all"
+       id="ellipse2575"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <path
+       d="m 80,90 h 23.63"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path2577"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 108.88,90 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path2579"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 255,80 h 23.63"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path2581"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 283.88,80 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path2583"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <rect
+       x="120"
+       y="100"
+       width="60"
+       height="30"
+       pointer-events="all"
+       id="rect2585"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="180"
+       y="100"
+       width="60"
+       height="30"
+       pointer-events="all"
+       id="rect2593"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="330"
+       y="100"
+       width="80"
+       height="30"
+       pointer-events="all"
+       id="rect2601"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="410"
+       y="100"
+       width="10"
+       height="30"
+       pointer-events="all"
+       id="rect2609"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="300"
+       y="100"
+       width="30"
+       height="30"
+       pointer-events="all"
+       id="rect2617"
+       style="fill:#ffffff;stroke:#000000" />
+    <path
+       d="m 435,90 h 23.63"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path2625"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 463.88,90 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path2627"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <rect
+       x="4.5"
+       y="40"
+       width="79"
+       height="20"
+       pointer-events="all"
+       id="rect2629"
+       style="fill:none;stroke:none" />
+    <rect
+       x="500"
+       y="30"
+       width="40"
+       height="20"
+       pointer-events="all"
+       id="rect2637"
+       style="fill:none;stroke:none" />
+    <rect
+       x="230"
+       y="0"
+       width="70"
+       height="20"
+       pointer-events="all"
+       id="rect2645"
+       style="fill:none;stroke:none" />
+    <g
+       transform="translate(232.5,1.5)"
+       id="g2651">
+      <switch
+         id="switch2649">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="64"
+           height="16"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 65px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">2º Passo</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="32"
+           y="16"
+           font-size="16px"
+           id="text2647"
+           style="font-size:16px;font-family:Helvetica;text-anchor:middle;fill:#000000">2º Passo</text>
+      </switch>
+    </g>
+    <rect
+       x="480"
+       y="60"
+       width="80"
+       height="60"
+       pointer-events="all"
+       id="rect2653"
+       style="fill:none;stroke:#000000" />
+    <rect
+       x="235"
+       y="11"
+       width="60"
+       height="30"
+       pointer-events="all"
+       id="rect2655"
+       style="fill:none;stroke:none" />
+    <g
+       transform="translate(236.5,19.5)"
+       id="g2661">
+      <switch
+         id="switch2659">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="55"
+           height="12"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(107, 107, 107); line-height: 1.2; vertical-align: top; white-space: nowrap; text-align: left;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;">O(4)+O(p)</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="28"
+           y="12"
+           font-size="12px"
+           id="text2657"
+           style="font-size:12px;font-family:Helvetica;text-anchor:middle;fill:#6b6b6b">O(4)+O(p)</text>
+      </switch>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="145.7569"
+       y="113.55003"
+       id="text1231"><tspan
+         sodipodi:role="line"
+         id="tspan1229"
+         x="145.7569"
+         y="113.55003"
+         style="font-style:italic;text-align:center;text-anchor:middle">Vertex</tspan><tspan
+         sodipodi:role="line"
+         x="145.7569"
+         y="126.88337"
+         id="tspan1233"
+         style="font-style:italic;text-align:center;text-anchor:middle">shader</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="202.3465"
+       y="117.8735"
+       id="text1237"><tspan
+         sodipodi:role="line"
+         id="tspan1235"
+         x="202.3465"
+         y="117.8735">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="309.33722"
+       y="119.15832"
+       id="text1237-3"><tspan
+         sodipodi:role="line"
+         id="tspan1235-6"
+         x="309.33722"
+         y="119.15832">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="410.87753"
+       y="118.52369"
+       id="text1237-7"><tspan
+         sodipodi:role="line"
+         id="tspan1235-5"
+         x="410.87753"
+         y="118.52369">..</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="370.49969"
+       y="113.41313"
+       id="text1267"><tspan
+         sodipodi:role="line"
+         id="tspan1265"
+         x="370.49969"
+         y="113.41313"
+         style="font-style:italic;text-align:center;text-anchor:middle">Fragment</tspan><tspan
+         sodipodi:role="line"
+         x="370.49969"
+         y="126.74647"
+         id="tspan1269"
+         style="font-style:italic;text-align:center;text-anchor:middle">shader</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="478.9696"
+       y="55.661423"
+       id="text1273"><tspan
+         sodipodi:role="line"
+         id="tspan1271"
+         x="478.9696"
+         y="55.661423"
+         style="font-style:italic">Framebuffer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="43.702568"
+       y="50.436653"
+       id="text1277"><tspan
+         sodipodi:role="line"
+         x="43.702568"
+         y="50.436653"
+         id="tspan1279">Quadrilátero</tspan><tspan
+         sodipodi:role="line"
+         x="43.702568"
+         y="63.769985"
+         id="tspan3254">com textura</tspan></text>
+  </g>
+</svg>

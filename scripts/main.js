@@ -17,6 +17,7 @@ const bespoke = require('bespoke'),
 // utilities
 const tutorial = require('./tutorial'),
   easter = require('./easter.js'),
+  comparative= require('./comparative.js'),
   markdownItConfig = require('./markdown-config');
 
 bespoke.from('article', [
@@ -37,6 +38,7 @@ bespoke.from('article', [
   backdrop(),
   //search()
   // qrcode(),
+  comparative(),
   tutorial(document.querySelector('.tutorial')),
   easter(),
   deck => {

@@ -222,6 +222,37 @@ const extensions = [
   ],
   [
     markdownItContainer,
+    'comparative',
+    {
+      validate: params => params.trim().match(/^comparative.*$/),
+
+      render: (tokens, idx, options, env, self) => {
+        // formato:
+        // ::: comparative .primeira-classe.segunda.terceira background-color: white; color: black;
+        // ![](img1)
+        // ![](img2)
+        // <figcaption></figcaption> -- opcional
+        // :::
+        let m = tokens[idx].info.trim().match(/^comparative\s+([^\s]*)\s*(.*)?$/),
+          className = '',
+          styleString = '';
+
+        if (tokens[idx].nesting === 1) {
+          // opening tag
+          if (!!m && Array.isArray(m)) {
+            className = (m[1] || '').trim().replace(/\./g, ' ');
+            styleString = (m[2] || '').trim();
+          }
+          return '<figure class="comparative ' + className + '" style="' + styleString + '">\n';
+        } else {
+          // closing tag
+          return '<div class="comparative-handle"></div></figure>\n';
+        }
+      }
+    }
+  ],
+  [
+    markdownItContainer,
     'result',
     {
       validate: params => params.trim().match(/^result.*$/),

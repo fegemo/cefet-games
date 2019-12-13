@@ -4,9 +4,9 @@
 ---
 ## Roteiro
 
-1. [Efeitos Visuais](http://fegemo.github.io/cefet-cg/classes/visual-effects/) (aula de CG)
-1. [Árvores e Vegetação](#arvores-e-vegetacao)
-1. [Sombreamento Tardio](#sombreamento-tardio) (_deferred shading_)
+1. [Efeitos visuais](http://fegemo.github.io/cefet-cg/classes/visual-effects/) (aula de CG)
+1. [Árvores e vegetação](#arvores-e-vegetacao)
+1. [Sombreamento tardio](#sombreamento-tardio) (_deferred shading_)
 
 ---
 <!-- { "layout": "section-header", "slideClass": "arvores-e-vegetacao", "slideHash": "arvores-e-vegetacao" } -->
