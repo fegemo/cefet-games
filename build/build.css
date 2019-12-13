@@ -799,6 +799,10 @@ ul.horizontal > li {
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
 }
+.no-margin,
+.no-margin.math > .katex-display {
+  margin: 0;
+}
 @-webkit-keyframes pulsating {
   from {
     -webkit-transform: scale(1) rotateZ(1turn);
@@ -2177,7 +2181,7 @@ ul.horizontal > li {
   margin-right: 0.5em;
 }
 .realtime-rendering-pt1 .layout-title.bespoke-slide h1::before {
-  background-image: url("../images/unity-ssao.jpg");
+  background-image: url("../images/zelda-links-awakening.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -2193,16 +2197,15 @@ ul.horizontal > li {
   background-position: center;
   background-repeat: no-repeat;
 }
-.realtime-rendering-pt1 .sombras-em-tempo-real.layout-section-header::after {
-  background-image: url("../images/the-witcher-2-shadows.jpg");
-  background-color: #000;
+.realtime-rendering-pt1 .pos-processamento.layout-section-header::after {
+  background-image: url("../images/g-toon.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
 }
-.realtime-rendering-pt1 .ambient-occlusion.layout-section-header::after {
-  background-image: url("../images/ssao-farcry4.png");
-  background-size: contain;
+.realtime-rendering-pt1 .efeitos-complexos.layout-section-header::after {
+  background-image: url("../images/zelda-links-awakening.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }

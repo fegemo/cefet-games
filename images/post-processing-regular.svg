@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="547.62476"
+   height="100.5"
+   viewBox="-0.5 -0.5 547.62476 100.5"
+   id="svg1195"
+   sodipodi:docname="post-processing-regular.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata1199">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1850"
+     inkscape:window-height="1009"
+     id="namedview1197"
+     showgrid="false"
+     inkscape:zoom="1.575729"
+     inkscape:cx="601.06635"
+     inkscape:cy="30.479752"
+     inkscape:window-x="70"
+     inkscape:window-y="34"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1193" />
+  <defs
+     id="defs1035" />
+  <g
+     id="g1193"
+     transform="translate(-7.5,-8.5)">
+    <rect
+       x="471"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1037"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="481"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1039"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="491"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1041"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="501"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1043"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="511"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1045"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="521"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1047"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="531"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1049"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="531"
+       y="38"
+       width="10"
+       height="60"
+       pointer-events="all"
+       id="rect1051"
+       style="fill:#ffffff;stroke:#d6d6d6" />
+    <rect
+       x="471"
+       y="38"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect1053"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="471"
+       y="48"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect1055"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="471"
+       y="58"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect1057"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="471"
+       y="68"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect1059"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="471"
+       y="78"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect1061"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="471"
+       y="88"
+       width="80"
+       height="10"
+       pointer-events="all"
+       id="rect1063"
+       style="fill:none;stroke:#d6d6d6" />
+    <rect
+       x="501"
+       y="78"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1065"
+       style="fill:#004c99;stroke:none" />
+    <rect
+       x="501"
+       y="68"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1067"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="511"
+       y="68"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1069"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="521"
+       y="58"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1071"
+       style="fill:#007fff;stroke:none" />
+    <rect
+       x="511"
+       y="48"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1073"
+       style="fill:#3399ff;stroke:none" />
+    <rect
+       x="511"
+       y="58"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1075"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="501"
+       y="58"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1077"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="521"
+       y="68"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1079"
+       style="fill:#007fff;stroke:none" />
+    <rect
+       x="511"
+       y="78"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1081"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="501"
+       y="48"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1083"
+       style="fill:#007fff;stroke:none" />
+    <rect
+       x="491"
+       y="58"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1085"
+       style="fill:#0066cc;stroke:none" />
+    <rect
+       x="491"
+       y="68"
+       width="10"
+       height="10"
+       pointer-events="all"
+       id="rect1087"
+       style="fill:#004c99;stroke:none" />
+    <rect
+       x="111"
+       y="18"
+       width="120"
+       height="60"
+       pointer-events="all"
+       id="rect1089"
+       style="fill:#ffffff;stroke:#000000" />
+    <g
+       transform="translate(133.5,39.5)"
+       id="g1095">
+      <switch
+         id="switch1093">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="75"
+           height="16"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 76px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Geometria</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="38"
+           y="16"
+           font-size="16px"
+           id="text1091"
+           style="font-size:16px;font-family:Helvetica;text-anchor:middle;fill:#000000">Geometria</text>
+      </switch>
+    </g>
+    <rect
+       x="291"
+       y="18"
+       width="120"
+       height="60"
+       pointer-events="all"
+       id="rect1097"
+       style="fill:#ffffff;stroke:#000000" />
+    <g
+       transform="translate(303.5,39.5)"
+       id="g1103">
+      <switch
+         id="switch1101">
+        <foreignObject
+           style="overflow:visible;"
+           pointer-events="all"
+           width="94"
+           height="16"
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+          <xhtml:div
+             style="display: inline-block; font-size: 16px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; vertical-align: top; width: 94px; white-space: nowrap; overflow-wrap: normal; text-align: center;">
+            <xhtml:div
+               style="display:inline-block;text-align:inherit;text-decoration:inherit;white-space:normal;">Rasterização</xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           x="47"
+           y="16"
+           font-size="16px"
+           id="text1099"
+           style="font-size:16px;font-family:Helvetica;text-anchor:middle;fill:#000000">Rasterização</text>
+      </switch>
+    </g>
+    <circle
+       cx="21"
+       cy="78"
+       pointer-events="all"
+       id="ellipse1105"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="31"
+       cy="88"
+       pointer-events="all"
+       id="ellipse1107"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="45"
+       cy="58"
+       pointer-events="all"
+       id="ellipse1109"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="31"
+       cy="53"
+       pointer-events="all"
+       id="ellipse1111"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="41"
+       cy="88"
+       pointer-events="all"
+       id="ellipse1113"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="51"
+       cy="78"
+       pointer-events="all"
+       id="ellipse1115"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="51"
+       cy="68"
+       pointer-events="all"
+       id="ellipse1117"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <path
+       d="M 71,68 H 94.63"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path1119"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 99.88,68 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path1121"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 246,58 h 23.63"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path1123"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 274.88,58 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path1125"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <rect
+       x="111"
+       y="78"
+       width="60"
+       height="30"
+       pointer-events="all"
+       id="rect1127"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="171"
+       y="78"
+       width="60"
+       height="30"
+       pointer-events="all"
+       id="rect1135"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="321"
+       y="78"
+       width="80"
+       height="30"
+       pointer-events="all"
+       id="rect1143"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="401"
+       y="78"
+       width="10"
+       height="30"
+       pointer-events="all"
+       id="rect1151"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="291"
+       y="78"
+       width="30"
+       height="30"
+       pointer-events="all"
+       id="rect1159"
+       style="fill:#ffffff;stroke:#000000" />
+    <path
+       d="m 426,68 h 23.63"
+       stroke-miterlimit="10"
+       pointer-events="stroke"
+       id="path1167"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    <path
+       d="m 454.88,68 -7,3.5 1.75,-3.5 -1.75,-3.5 z"
+       stroke-miterlimit="10"
+       pointer-events="all"
+       id="path1169"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:#000000;stroke-miterlimit:10" />
+    <rect
+       x="471"
+       y="38"
+       width="80"
+       height="60"
+       pointer-events="all"
+       id="rect1171"
+       style="fill:none;stroke:#000000" />
+    <circle
+       cx="25"
+       cy="58"
+       pointer-events="all"
+       id="ellipse1173"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <circle
+       cx="17.5"
+       cy="67.5"
+       pointer-events="all"
+       id="ellipse1175"
+       r="10"
+       style="fill:#ffffff;stroke:#000000" />
+    <rect
+       x="491"
+       y="8"
+       width="40"
+       height="20"
+       pointer-events="all"
+       id="rect1185"
+       style="fill:none;stroke:none" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="139.89125"
+       y="90.550034"
+       id="text1231"><tspan
+         sodipodi:role="line"
+         id="tspan1229"
+         x="139.89125"
+         y="90.550034"
+         style="font-style:italic;text-align:center;text-anchor:middle">Vertex</tspan><tspan
+         sodipodi:role="line"
+         x="139.89125"
+         y="103.88337"
+         id="tspan1233"
+         style="font-style:italic;text-align:center;text-anchor:middle">shader</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="193.7632"
+       y="95.622383"
+       id="text1237"><tspan
+         sodipodi:role="line"
+         id="tspan1235"
+         x="193.7632"
+         y="95.622383">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="299.82602"
+       y="96.158318"
+       id="text1237-3"><tspan
+         sodipodi:role="line"
+         id="tspan1235-6"
+         x="299.82602"
+         y="96.158318">...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="401.36633"
+       y="95.523689"
+       id="text1237-7"><tspan
+         sodipodi:role="line"
+         id="tspan1235-5"
+         x="401.36633"
+         y="95.523689">..</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="360.98849"
+       y="90.413132"
+       id="text1267"><tspan
+         sodipodi:role="line"
+         id="tspan1265"
+         x="360.98849"
+         y="90.413132"
+         style="font-style:italic;text-align:center;text-anchor:middle">Fragment</tspan><tspan
+         sodipodi:role="line"
+         x="360.98849"
+         y="103.74647"
+         id="tspan1269"
+         style="font-style:italic;text-align:center;text-anchor:middle">shader</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="471.13519"
+       y="32.661423"
+       id="text1273"><tspan
+         sodipodi:role="line"
+         id="tspan1271"
+         x="471.13519"
+         y="32.661423"
+         style="font-style:italic">Framebuffer</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.33333302px;line-height:1;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       x="37.836926"
+       y="25.481438"
+       id="text1277"><tspan
+         sodipodi:role="line"
+         id="tspan1275"
+         x="37.836926"
+         y="25.481438">Vértices</tspan><tspan
+         sodipodi:role="line"
+         x="37.836926"
+         y="38.81477"
+         id="tspan1279">da cena</tspan></text>
+  </g>
+</svg>
