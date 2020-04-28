@@ -1,10 +1,10 @@
 @import 'highlight.js/styles/vs.css'
 
 // variables
-$page-header-height = 0.75vw
+$page-header-height = 3vmin
 $page-header-height-portrait = 1.25vh
-$page-header-height-expanded = 4vw
-$page-header-height-expanded-portrait = 12vh
+$page-header-height-expanded = 9vmin
+$page-header-height-expanded-portrait = 4vh
 $header-background = #dcd6f3
 $accent-color = #3507a3
 
@@ -19,10 +19,16 @@ body
   background $header-background
 
 #page-header
-  padding 0
+  padding 0.25em
   font-size $page-header-height
   transition height 200ms ease-out, transform 200ms ease-out
-  transform translate3d(0, -($page-header-height / 2), 0)
+  position absolute
+  top - $page-header-height
+  left 0
+  right 0
+  display flex
+  justify-content space-between
+  align-items center
   &:hover,
   &.showing
     transform translate3d(0, 0, 0)
@@ -30,9 +36,10 @@ body
       transform translate3d(0, $page-header-height-expanded, 0)
       box-shadow -16px 0 24px #0006
     #page-title
-      padding-top 2vh
-      padding-bottom 2vh
       opacity 1
+      transform translate3d(0, 0, 0)
+    #page-author
+      transform translate3d(0, 0.25em, 0)
     .page-author-picture
       transform translate3d(0,0,0) rotateZ(0deg)
       opacity 1
@@ -44,35 +51,32 @@ body
       transform translate3d(0, $page-header-height-expanded-portrait, 0)
 
 #page-title
-  margin 0 0.25em
-  vertical-align top
-  padding-bottom "calc(%s - %s)" % ($page-header-height-expanded $page-header-height)
+  margin 0.25em
   font-weight bold
   text-shadow 0.015em 0.015em black
   opacity 0.25
   transition all 200ms ease
+  height 1em
+  transform translate3d(0, -0.25em, 0)
   a:link
     color $accent-color !important
 
 #page-author
-  display inline-block
-  float right
-  margin 8px
+//   margin 1em
+  transform translate3d(0, -0.25em, 0)
 
 #page-author-name
   display none
 
 .page-author-picture
-  width 60px
+  width "calc(%s * 2.5)" % $page-header-height
   height @width
   border-radius 50%
-  opacity .3
+  opacity 0
   transform translate3d(-200%,0,0) rotateZ(-270deg)
   transition transform 700ms cubic-bezier(0.18, 0.89, 0.32, 1.28)  0s, opacity 700ms ease-out 0s
 
 #presentation-container
-  position absolute
-  top 0
   height "calc(100vh - %s)" % $page-header-height
   width 100%
   transform translate3d(0, $page-header-height, 0)
