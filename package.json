@@ -31,7 +31,7 @@
     "bespoke-touch": "^1.0.0",
     "cheet.js": "^0.3.3",
     "ismobilejs": "^0.4.0",
-    "marked": "^0.3.2"
+    "marked": "^4.0.10"
   },
   "devDependencies": {
     "browserify": "^13.1.0",
